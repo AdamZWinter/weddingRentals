@@ -1,0 +1,131 @@
+
+:root {
+    --weddingRentalMauve: 213, 182, 174, .87;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+
+#Question1group{
+  padding-bottom: 25px;
+}
+
+.form-group {
+  padding-bottom: 50px;
+}
+
+.label {
+  padding-bottom: 5px;
+}
+/*
+end of CSS for check-inForm.html
+*/
+
+/*
+Start of CSS for aboutus.html
+*/
+
+.img-logo{
+  width:75px;
+  height:75px;
+  object-fit: cover;
+  float: right;
+}
+
+.fit-img{
+ width: 200px;
+ height: 200px;
+ object-fit: cover;
+}
+
+.about-us-foot{
+  height:50px;
+  background: linear-gradient(to bottom, white 0%, rgba(var(--weddingRentalMauve)) 50%);
+}
+
+.index-head{
+    text-align: left;
+    font-family: proxima-nova;
+    font-weight: 600;
+    font-style: normal;
+    height: 60px;
+    letter-spacing: 1px;
+    text-transform: none;
+    line-height: 1.2em;
+    color: rgba(var(--weddingRentalMauve));
+}
+
+h1 {
+    color: rgba(var(--weddingRentalMauve));
+}
+
+h3 {
+    font-family: proxima-nova;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: rgba(var(--weddingRentalMauve));
+}
+
+clear {
+  clear: both;
+  display: table;
+}
+
+.head-color{
+  background: linear-gradient(to right,  #000000 50%, #ffffff 100%); 
+}
+
+.center-align{
+  text-align: center;  
+}
+
+
+
+
+/*
+End of CSS for aboutus.html
+*/
+
+/*
+Start of Agreement Page CSS
+*/
+
+.agreement-head{
+  text-align:center;
+}
+.agreement-list{
+  margin-left:10%;
+  margin-right: 10%;
+}
+.first-p{
+  margin-left:10%;
+  margin-right: 10%;
+}
+.agreement-h2{
+  text-align:center;
+}
+.table-head{
+  height: 30px;
+}
+.agreement-th{
+  text-align: center !important;
+}
+.table-adjust{
+  width: 80%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+
+
+/*
+End of Agreement Page CSS
+*/

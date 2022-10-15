@@ -1,0 +1,86 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body{
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-bottom: 96px;
+    padding-top: 0px;
+
+}
+.extras-head{
+  background-color: #d5b6ae;
+  height:100px;
+  font-family: serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;  
+}
+.section-head{
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+}
+#setDescription{
+  color: rgba(26,26,26,.7);
+}
+#colorOptionsDescription{
+  color: #d5b6ae;
+  font-weight: bold;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.card-text {
+  text-align: center;
+}
+#buttonDiv{
+  padding: 5%;
+}
+#checkAvailabilityButton{
+  background-color:  #d5b6ae;
+  color: white;
+}
+section * {
+  padding: .5%;
+}
+
+div.setDescription > * {
+  text-align: left;
+}
+#sectionRentalPackagesDescription {
+  padding: 0% !important; 
+}
+
+hr {
+  padding: .5%;
+}
+#pick4price {
+  text-align: center !important;
+}
+#pick4directions {
+  text-align: center !important;
+}
+
+
+div.col-sm-6 {
+  padding: 2% !important;
+}
+
+
+#welcomeSignDiv{
+  text-align: center !important;
+}
+#photoCred{
+  text-align: center !important;
+}
+.youPickFourList *  {
+  padding: 1%;
+}
+
+
