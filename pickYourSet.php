@@ -131,7 +131,7 @@ if(empty($_GET[setOption])){
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
           <h2>Pick Your Set</h2>
-          <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic('layeredArch')">
+          <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic('layeredarch')">
           <h3 class="under-start text-center">Layered Arch</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
