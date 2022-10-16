@@ -1,21 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-  <link href="https://orange.greenriverdev.com/weddingRentals/style.css" rel="stylesheet" type="text/css" />
-  <link href="https://orange.greenriverdev.com/weddingRentals/bootstrap5.css" rel="stylesheet">
-  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="bootstrap5.css" rel="stylesheet">
   <link href="extras.css" rel="stylesheet" type="text/css" />
 
 <style>
-  
 </style>
     
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
   <div class="container-fluid upper">
   <div class="row">
     <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>

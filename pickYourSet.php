@@ -6,12 +6,39 @@ require('header.php');
   <br>
   <br>
 
-  <p>
-    <input type="date" class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#devops" aria-expanded="false" aria-controls="devops">
-      Show Options
-    </input>
-  </p>
-  <div class="collapse" id="devops">
+  <form name="pickYourSetForm" action="pickYourSet.php" onsubmit="return validateForm()" method="get">
+  <div class = "container-fluid">
+    <div class = "row">      
+        <div class = "col-3 d-none d-md-block"></div>
+        <div class = "col-1 d-none d-md-block"></div>
+        <div class = "col-12 col-md-4 text-center">
+          <p>Please, select or enter your wedding date.</p>
+        </div>
+        <div class = "col-1 d-none d-md-block"></div>
+        <div class = "col-3 d-none d-md-block"></div>
+    </div><!--end of row--> 
+    <div class = "row">      
+        <div class = "col-3 d-none d-md-block"></div>
+        <div class = "col-1 d-none d-md-block"></div>
+        <div class = "col-12 col-md-4 text-center">
+          <input type="date" id="weddingDate" name="weddingDate" onchange=showSets() value="2022-11-07">
+          <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
+        </div>
+        <div class = "col-1 d-none d-md-block"></div>
+        <div class = "col-3 d-none d-md-block"></div>
+    </div><!--end of row--> 
+  </div><!--End of container-fluid-->
+
+    <!--input type="date" class= "form-select date-selector-centered" id="weddingDate" name="weddingDate"-->
+    <button class="btn btn-primary w-100" id="showSetButton" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
+
+  <script>
+    function showSets(){
+      document.getElementById('showSetButton').click();
+    }
+  </script>
+
+  <div class="collapse" id="pickSet">
   <div class="card card-body">
 
 
@@ -69,10 +96,11 @@ require('header.php');
 
   </div><!-- Card collapse -->
   </div>
-
+</form>
 
   
-<br>
+
+
 
 
 <?php
