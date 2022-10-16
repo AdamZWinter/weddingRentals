@@ -24,14 +24,16 @@ if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
 }
 
 
-//require('checkAvailability.php');  // move the logic here later
+//require('checkAvailability.php');  // move the followig logic here later maybe
+
+
 $feedback = '';
 $redirect = '<script>
 window.location.href="packages.php?setOption='.$setOption.'";
 </script>';
 
 if(empty($_GET[setOption])){
-  $feedback = 'No setOption';
+  //$feedback = 'No setOption';
 }else{
   echo $redirect;
 }
@@ -45,7 +47,7 @@ if(empty($_GET[setOption])){
   <br>
   <br>
 
-  <form name="pickYourSetForm" id="pickYourSetForm" action="pickYourSet.php" method="get" onsubmit="event.preventDefault();">
+  <form name="pickYourSetForm" id="pickYourSetForm" action="packages.php" method="get" onsubmit="event.preventDefault();">
   <div class = "container-fluid">
     <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
