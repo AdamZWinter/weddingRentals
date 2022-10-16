@@ -23,8 +23,19 @@ if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
   $setOption = $_GET[setOption];
 }
 
-$feedback = '';
+
 //require('checkAvailability.php');  // move the logic here later
+$feedback = '';
+$redirect = '<script>
+window.location.href="packages.php?setOption='.$setOption.'";
+</script>';
+
+if(empty($_GET[setOption])){
+  $feedback = 'No setOption';
+}else{
+  echo $redirect;
+}
+
 
 
 
