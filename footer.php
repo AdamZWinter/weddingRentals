@@ -3,7 +3,6 @@
     -------------------- FOOTER ---------------------------------------------------------------
   -->
 
-<script src="script.js"></script>
   <!--
     The following script is required for the nav bar to work
   -->
