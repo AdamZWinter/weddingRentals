@@ -97,6 +97,19 @@ clear {
 }
 
 
+h1 {
+  color: rgba(var(--weddingRentalMauve));
+}
+
+.under-start {
+clear: left;
+white-space: nowrap;
+}
+
+.under-end {
+clear: right;
+white-space: nowrap;
+}
 
 
 /*
