@@ -22,7 +22,7 @@ require('header.php');
   $dateArray = date_parse($weddingDate);
   $weddingMonth = $dateArray['month'];
 
-  var_dump($weddingMonth);
+  //var_dump($weddingMonth);
 
   $available = true;
   if($setOption == 'layeredarch' && $weddingMonth == 1){

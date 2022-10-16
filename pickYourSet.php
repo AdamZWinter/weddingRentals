@@ -86,13 +86,14 @@ if(empty($_GET[setOption])){
       //console.log(dateNow);
       //console.log(weddingDateUnix - dateNow);
       let oneWeek = 2 * 24 * 60 * 60 * 1000;
+      let twoYears = 2 * 365 * 24 * 60 * 60 * 1000;
       //console.log(oneWeek);
       //console.log(weddingDateUnix - dateNow - oneWeek);
       let displaySets = document.getElementById('displaySets').value;
       //console.log(displaySets);
       //if(((weddingDateUnix - dateNow - oneWeek) > 0) && displaySets == false){
       //console.log('checking displaySets.');
-      if(((weddingDateUnix - dateNow - oneWeek) > 0) && displaySets == "false"){
+      if(((weddingDateUnix - dateNow - oneWeek) > 0) && ((weddingDateUnix - dateNow) < twoYears) && displaySets == "false"){
         console.log('displaySets is false.');
         document.getElementById('showSetButton').click();
         document.getElementById('displaySets').value = true;
