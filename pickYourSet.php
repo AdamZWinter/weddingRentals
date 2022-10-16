@@ -11,11 +11,22 @@ if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] =
   $collapse = 'collapse show';
 }
 
-if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
+if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
   $weddingDate = date('Y-m-d');
 }else{
-  $weddingDate = GET[weddingDate];
+  $weddingDate = $_GET[weddingDate];
 }
+
+if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
+  $setOption = '';
+}else{
+  $setOption = $_GET[setOption];
+}
+
+$feedback = '';
+//require('checkAvailability.php');  // move the logic here later
+
+
 
 ?>
 
@@ -23,7 +34,7 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
   <br>
   <br>
 
-  <form name="pickYourSetForm" id="pickYourSetForm" action="pickYourSet.php" onsubmit="return validateForm();" method="get">
+  <form name="pickYourSetForm" id="pickYourSetForm" action="pickYourSet.php" method="get" onsubmit="event.preventDefault();">
   <div class = "container-fluid">
     <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
@@ -38,11 +49,12 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
-          <input type="date" id="weddingDate" name="weddingDate" onchange=showSets() value="<?php echo $weddingDate;?>">
+          <input type="date" id="weddingDate" name="weddingDate" onchange="showSets()" value="<?php echo $weddingDate;?>">
           <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
+          <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
           <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
 
-          <p id="dateFeedback"></p>
+          <p id="dateFeedback" class="text-danger"><?php echo $feedback;?></p>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>
@@ -72,31 +84,20 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
         document.getElementById('showSetButton').click();
         document.getElementById('displaySets').value = true;
         document.getElementById("dateFeedback").innerHTML = '';
-        //return false;
+        return false;
+      }else if(((weddingDateUnix - dateNow - oneWeek) > 0) && displaySets == "true"){
+        document.getElementById("dateFeedback").innerHTML = '';
       }else{
         console.log('displaySets is true.');
         document.getElementById("dateFeedback").innerHTML = 'Date must be more than two days from now, and not more than two years away.';
         //do not click the button twice
-        //document.getElementById('showSetButton').click();
-        //return false;
+        return false;
       }
     }//end showSets()
 
-    function displaySetsByValue(){
-      let displaySets = document.getElementById('displaySets').value;
-      if(displaySets == "true"){
-        console.log('displaySetsByValue: true');
-        document.getElementById('showSetButton').click();
-        //return false;
-      }else{
-        console.log('displaySetsByValue: false.');
-        //return false;
-        //do not click the button twice
-      }
-    }
-
-    function submitSetPic(){
+    function submitSetPic(setOption){
       console.log('submitSetPic was called.');
+      document.getElementById('setOption').value = setOption;
       document.getElementById('pickYourSetForm').submit();
       //return false;
     }
@@ -116,10 +117,7 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
           <h2>Pick Your Set</h2>
-          <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic()">
-          <!--a href="layeredArchSet.html">
-          <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
-          </a-->
+          <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic('layeredArch')">
           <h3 class="under-start text-center">Layered Arch</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
@@ -129,16 +127,12 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
       <div class = "row" style="height:350px">      
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <a href="modernround.html">
-          <img class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round">
-          </a>
+          <img class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round" onclick="submitSetPic('modernround')">
           <h3 class="under-end text-end">Modern Round</h3>
         </div>
         <div class = "col-2 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <a href="vintagemirror.html">
-          <img class= "fit-img rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
-          </a>
+          <img class= "fit-img rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror" onclick="submitSetPic('vintagemirror')">
           <h3 class="under-start text-start">Vintage Mirror</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
@@ -147,16 +141,12 @@ if(!GET[weddingDate] || GET[weddingDate] == '' || empty(GET[weddingDate])){
       <div class = "row" style="height:300px">      
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <a href="darkwalnut.html">
-          <img class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
-          </a>
+          <img class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut" onclick="submitSetPic('darkwalnut')">
           <h3 class="under-end text-end">Dark Walnut</h3>
         </div>
         <div class = "col-2 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <a href="rusticWoodSet.html">
-          <img class= "fit-img rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
-          </a>
+          <img class= "fit-img rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood" onclick="submitSetPic('rusticwood')">
           <h3 class="under-start text-start">Rustic Wood</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
