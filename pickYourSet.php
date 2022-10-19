@@ -3,7 +3,7 @@
 //comments
 require('header.php');
 
-if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] == 'false'){
+if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
   $displaySets = 'false';
   $collapse = 'collapse';
 }else{
@@ -11,33 +11,17 @@ if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] =
   $collapse = 'collapse show';
 }
 
-if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
+if( !isset($_GET['weddingDate']) ){
   $weddingDate = date('Y-m-d');
 }else{
-  $weddingDate = $_GET[weddingDate];
+  $weddingDate = $_GET['weddingDate'];
 }
 
-if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
+if( !isset($_GET['setOption']) ){
   $setOption = '';
 }else{
-  $setOption = $_GET[setOption];
+  $setOption = $_GET['setOption'];
 }
-
-
-//require('checkAvailability.php');  // move the followig logic here later maybe
-
-
-$feedback = '';
-$redirect = '<script>
-window.location.href="packages.php?setOption='.$setOption.'";
-</script>';
-
-if(empty($_GET[setOption])){
-  //$feedback = 'No setOption';
-}else{
-  echo $redirect;
-}
-
 
 
 
@@ -67,7 +51,7 @@ if(empty($_GET[setOption])){
           <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
           <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
 
-          <p id="dateFeedback" class="text-danger"><?php echo $feedback;?></p>
+          <p id="dateFeedback" class="text-danger"></p>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>

@@ -7,21 +7,21 @@ $redirect = '<script>
 window.location.href="packages.php";
 </script>';
   
-  if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
+  if( !isset($_GET['weddingDate']) ){
     echo $redirect;
   }else{
-    $weddingDate = $_GET[weddingDate];
+    $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
   }
 
-  if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
+  if( !isset($_GET['setOption']) ){
     echo $redirect;
   }else{
-    $setOption = $_GET[setOption];
+    $setOption = $_GET['setOption'];
   }
 
-  if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] == 'false'){
+  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';

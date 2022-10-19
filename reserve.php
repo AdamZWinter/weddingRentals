@@ -7,73 +7,90 @@ $redirect = '<script>
 window.location.href="packages.php";
 </script>';
   
-  if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
+  if( !isset($_GET['weddingDate']) ){
     echo $redirect;
   }else{
-    $weddingDate = $_GET[weddingDate];
+    $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
   }
 
-  if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
+  if( !isset($_GET['setOption']) ){
     echo $redirect;
   }else{
-    $setOption = $_GET[setOption];
+    $setOption = $_GET['setOption'];
   }
 
-  if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] == 'false'){
+  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';
   }
 
-  if(!$_GET[hexarbor] || $_GET[hexarbor] == '' || empty($_GET[hexarbor])){
+  $hexarborLang ='';
+  $vintagesofaLang ='';
+  $antiquejugsLang ='';
+  $winejugLang ='';
+  $clearjarsLang ='';
+  $bluejarsLang ='';
+  $deliveryLang ='';
+
+  $extras = [];
+
+  if( !isset($_GET['hexarbor']) ){
     //nothing
   }else{
     $hexarbor = true;
     $hexarborLang = 'Hexagonal Arbor';
+    array_push($extras, 'Hexagonal Arbor');
   }
 
-  if(!$_GET[vintagesofa] || $_GET[vintagesofa] == '' || empty($_GET[vintagesofa])){
+  if( !isset($_GET['vintagesofa']) ){
     //nothing
   }else{
     $vintagesofa = true;
     $vintagesofaLang = 'Vintage Sofa';
+    array_push($extras, 'Vintage Sofa');
   }
 
-  if(!$_GET[antiquejugs] || $_GET[antiquejugs] == '' || empty($_GET[antiquejugs])){
+  if( !isset($_GET['antiquejugs']) ){
     //nothing
   }else{
     $antiquejugs = true;
     $antiquejugsLang = 'Antique Jugs';
+    array_push($extras, 'Antique Jugs');
   }
 
-  if(!$_GET[winejug] || $_GET[winejug] == '' || empty($_GET[winejug])){
+  if( !isset($_GET['winejug']) ){
     //nothing
   }else{
     $winejug = true;
     $winejugLang = 'Wine Jug';
+    array_push($extras, 'Wine Jug');
   }
 
-  if(!$_GET[clearjars] || $_GET[clearjars] == '' || empty($_GET[clearjars])){
+  if( !isset($_GET['clearjars']) ){
     //nothing
   }else{
     $clearjars = true;
-    $clearjarsLang = 'Wine Jug';
+    $clearjarsLang = 'Clear Jars';
+    array_push($extras, 'Clear Jars');
   }
 
-  if(!$_GET[bluejars] || $_GET[bluejars] == '' || empty($_GET[bluejars])){
+  if( !isset($_GET['bluejars']) ){
     //nothing
   }else{
     $bluejars = true;
-    $bluejarsLang = 'Wine Jug';
+    $bluejarsLang = 'Blue Jars';
+    array_push($extras, 'Blue Jars');
   }
 
-  if(!$_GET[delivery] || $_GET[delivery] == '' || empty($_GET[delivery])){
+  if( !isset($_GET['delivery']) ){
     //nothing
   }else{
     $delivery = true;
     $deliveryLang = 'Wine Jug';
+    array_push($extras,'Delivery');
   }
 
   switch ($setOption){
@@ -108,18 +125,14 @@ window.location.href="packages.php";
             <div class="text-start">
                 <?php
                     echo 'Set Selection: '.$setOption;
+                    echo '<br>';
                     echo 'Wedding Date: '.$weddingDate;
                     echo '<br>';
                     echo 'Extras: ';
-                    echo $hexarborLang;
-                    echo $vintagesofaLang;
-                    echo $antiquejugsLang;
-                    echo $winejugLang;
-                    echo $clearjarsLang;
-                    echo $bluejarsLang;
-                    echo $deliveryLang;
-
-
+                    
+                      foreach ($extras as $extra){
+                          echo '<br>'.$extra;
+                      }
 
 
                 ?>
