@@ -59,7 +59,7 @@ window.location.href="packages.php";
 
   $layeredArchMarkup = '
   <div class= row>
-  <div class="col-6">
+  <div class="col-12 center">
   <div class="form-group">     
     <label for="set" class="rental-head">Choose Your Package:</label>
   
