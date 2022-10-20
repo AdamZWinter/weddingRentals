@@ -6,7 +6,9 @@ require('header.php');
 $redirect = '<script>
 window.location.href="packages.php";
 </script>';
-  
+
+
+
   if( !isset($_GET['weddingDate']) ){
     echo $redirect;
   }else{
@@ -55,6 +57,30 @@ window.location.href="packages.php";
   $availableTrue = $available ? 'd-block' : 'd-none';
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
+  $layeredArchMarkup = '
+  <div class= row>
+  <div class="col-6">
+  
+</div>
+
+<div class="col-6">
+  <div class="form-group">     
+    <label for="set" class="rental-head">Choose Your Package:</label>
+  
+    <br>
+    <select class="form-control select-style" id="packageChoice">
+      <option class= "option-style" value= "fullSet">Full Set- $849</option>
+      <option class= "option-style" value= "pickSix">Pick 6- $749</option>
+      <option class= "option-style" value= "pick4">Pick 4- $649</option>
+      
+    </select>
+  </div>
+</div>    
+
+</div> 
+  
+  ';
+
 ?>
 
 
@@ -73,6 +99,9 @@ window.location.href="packages.php";
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
+                    <?php if($setOption == "layeredarch"){
+                      echo $layeredArchMarkup; ?>
+                    }
                     <button type="submit" >Continue</button>
                 </form>
             </p>
