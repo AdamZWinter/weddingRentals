@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  <link href="bootstrap5.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="bootstrap5.css" rel="stylesheet">
   <link href="extras.css" rel="stylesheet" type="text/css" />
 
 <style>

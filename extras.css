@@ -161,13 +161,7 @@ html, body {
 .extras-footer{
   background-color: #d5b6ae;
 }
-.footer-style{
-  background-color: #d5b6ae;
-  font-family:serif;
-  font-weight: 150;
-  font-size: large;
-  color: white;
-}
+
 /*Check Availability CSS  */
 .rental-head{
   color:#d5b6ae;

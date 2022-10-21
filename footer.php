@@ -12,15 +12,13 @@
 
 
 <footer class="mt-auto">
-  <div class="container">
-    <center>
-        <a class = "footer-style" href="extras.html">Contact Us</a>
-        <br><br>
-        <p class= "footer-style">WALNUT RIDGE LEATHER COMPANY<br>
-    ORRVILLE, OHIO</p>
-        <a class= "footer-style" href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
-    </center>
-    
+  <div class="container footer-style">
+        <p class = "text-center">
+          <a href="extras.html">Contact Us</a>
+          <br>WALNUT RIDGE LEATHER COMPANY
+          <br>ORRVILLE, OHIO
+          <br><a href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
+        </p>
   </div>
 </footer>
 

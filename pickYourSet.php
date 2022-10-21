@@ -110,7 +110,7 @@ if( !isset($_GET['setOption']) ){
 
 
     <div class = "container-fluid">
-      <div class = "row" style="height:300px">      
+      <div class = "row" style="height:250px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
@@ -122,7 +122,7 @@ if( !isset($_GET['setOption']) ){
         <div class = "col-3 d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      <div class = "row" style="height:350px">      
+      <div class = "row" style="height:250px">      
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
           <img id="modernRound" class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round" onclick="submitSetPic('modernround')">
@@ -136,7 +136,7 @@ if( !isset($_GET['setOption']) ){
         <div class = "col-1 d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      <div class = "row" style="height:300px">      
+      <div class = "row" style="height:250px">      
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
           <img id="darkWalnut" class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut" onclick="submitSetPic('darkwalnut')">
