@@ -13,19 +13,18 @@
     
 </head>
 
-<body class="d-flex flex-column h-100">
-  <div class="container-fluid upper">
-  <div class="row">
-    <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
-  <div class="col-md-9">
-    
+<header>
+
+<div class="position-relative headerImage">
+  <div class="position-absolute top-0 start-0">
+    <img src="img/logo.png" width="200" height="98">
   </div>
-  </div></div>
+
 
     <!--
     -------------------- NAV BAR ---------------------------------------------------------------
   -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark position-absolute top-0 end-0 navbar-custom">
           <div class="container-fluid">
             <!--a class="navbar-brand" href="#">Navbar</a-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,8 +62,28 @@
     -------------------- End of NAV BAR ---------------------------------------------------------------
   -->
 
+
+</div>
+</header>
+
   <!--
     -------------------- End of HEADER ---------------------------------------------------------------
   -->
+
+
+
+<body class="d-flex flex-column h-100">
+
+  <!--div class="container-fluid upper">
+  <div class="row">
+    <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
+  <div class="col-md-9">
+    
+  </div>
+  </div></div-->
+
+
+
+
 
 

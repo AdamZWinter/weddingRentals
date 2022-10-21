@@ -1,5 +1,5 @@
 /*
-style.css
+*********************  style.css  *****************************************************************
 */
 
 :root {
@@ -11,6 +11,37 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+
+/*
+************************  Header *********************************************************************
+*/
+
+.headerImage {
+  background-image: url('img/frontHeader.jpg');
+  background-position: 50% 30%;
+  background-size: cover;
+  height: 300px;
+}
+
+.navbar-custom {
+  font-size: x-large;
+  font-weight: 400;
+  
+}
+
+
+
+
+/*
+************************  Footer *********************************************************************
+*/
+
+
+
+
+
+
 
 
 #Question1group{
