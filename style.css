@@ -1,20 +1,6 @@
 /*
 style.css
-Changed again on Adam branch
 */
-
-
-
-/*
-change on Britany branch
-*/
-
-/*
-Checking Cpanel ability to edit.
-change by Adam
-change on Britany branch now even better
-*/
-
 
 :root {
     --weddingRentalMauve: 213, 182, 174, .87;
@@ -164,4 +150,23 @@ End of Agreement Page CSS
 ********************************************Pick Your Set ***********************************************
 */
 
+#layeredArch:hover {
+  border: 5px solid #555
+}
+
+#modernRound:hover {
+  border: 5px solid #555
+}
+
+#vintageMirror:hover {
+  border: 5px solid #555
+}
+
+#darkWalnut:hover {
+  border: 5px solid #555
+}
+
+#rusticWood:hover {
+  border: 5px solid #555
+}
 
