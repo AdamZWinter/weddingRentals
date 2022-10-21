@@ -18,8 +18,8 @@ html, body {
 ************************  Header *********************************************************************
 */
 
-.headerImage {
-  background-image: url('img/frontHeader.jpg');
+#headerImage {
+  background-image: url('img/headerImages/frontHeader.jpg');
   background-position: 50% 30%;
   background-size: cover;
   height: 300px;
@@ -31,8 +31,10 @@ html, body {
   
 }
 
-
-
+#navbarSupportedContent {
+  background: rgba(255,255,255,.5);
+  border-radius: 8px;
+}
 
 /*
 ************************  Footer *********************************************************************

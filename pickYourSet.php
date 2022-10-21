@@ -23,9 +23,12 @@ if( !isset($_GET['setOption']) ){
   $setOption = $_GET['setOption'];
 }
 
-
-
 ?>
+
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+</script>
 
 
   <br>

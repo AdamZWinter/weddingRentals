@@ -15,7 +15,7 @@
 
 <header>
 
-<div class="position-relative headerImage">
+<div id="headerImage" class="position-relative">
   <div class="position-absolute top-0 start-0">
     <img src="img/logo.png" width="200" height="98">
   </div>
@@ -24,7 +24,7 @@
     <!--
     -------------------- NAV BAR ---------------------------------------------------------------
   -->
-  <nav class="navbar navbar-expand-lg navbar-dark position-absolute top-0 end-0 navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-light position-absolute top-0 end-0 navbar-custom">
           <div class="container-fluid">
             <!--a class="navbar-brand" href="#">Navbar</a-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
