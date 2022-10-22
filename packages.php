@@ -125,9 +125,9 @@ $packageMarkup = '
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
-                    <?php if($setOption == "layeredarch"){
+                    <?php 
                       echo $packageMarkup; 
-                    }?>
+                    ?>
                     <button type="submit" >Continue</button>
                 </form>
             </p>
