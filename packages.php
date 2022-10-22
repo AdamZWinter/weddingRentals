@@ -96,10 +96,12 @@ $packageMarkup = '
 <div class= row>
 <div class="col-12 center">
 <div class="form-group">     
-<label for="set" class="rental-head">Choose Your Package:</label>'.$optionMarkup.'
+<label for="set" class="rental-head">Choose Your Package:</label>
 
 <br>
-<select class="form-control select-style" id="packageChoice"></select>
+<select class="form-control select-style" id="packageChoice">
+'.$optionMarkup.'
+</select>
 </div>
 </div>    
 </div>   
