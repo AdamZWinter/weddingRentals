@@ -99,8 +99,7 @@ $packageMarkup = '
 <label for="set" class="rental-head">Choose Your Package:</label>
 
 <br>
-<select class="form-control select-style" id="packageChoice">'.$optionMarkup.           
-'</select>
+<select class="form-control select-style" id="packageChoice"></select>
 </div>
 </div>    
 </div>   
