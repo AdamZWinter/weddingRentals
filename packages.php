@@ -79,7 +79,7 @@ $walnutRustic= '
   <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
 ';
 
-if($setOption == 'rusticwood'| 'darkwalnut'){
+if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
 $optionMarkup = $walnutRustic;
 }
 if($setOption == 'layeredarch'){
