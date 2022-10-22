@@ -78,19 +78,19 @@ $walnutRustic= '
   <option class= "option-style" value= "pickSix-wr">Pick 6- $245</option>
   <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
 ';
-$optionMarkup;
-if($setOption == 'rusticwood'| 'darkwalnut'){
-$optionMarkup = $walnutRustic;
-}
-if($setOption == 'layeredarch'){
-$optionMarkup = $layeredArch;
-}
-if($setOption == 'modernround'){
-$optionMarkup = $modernRound;
-}
-if($setOption == 'vintagemirror'){
-$optionMarkup = $vintageMirror;
-}
+
+// if($setOption == 'rusticwood'| 'darkwalnut'){
+// $optionMarkup = $walnutRustic;
+// }
+// if($setOption == 'layeredarch'){
+// $optionMarkup = $layeredArch;
+// }
+// if($setOption == 'modernround'){
+// $optionMarkup = $modernRound;
+// }
+// if($setOption == 'vintagemirror'){
+// $optionMarkup = $vintageMirror;
+// }
 
 $packageMarkup = '
 <div class= row>
