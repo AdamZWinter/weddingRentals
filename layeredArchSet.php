@@ -45,7 +45,7 @@ require('header.php');
   </div>
   <div class="col-sm-6" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/Black TieColorOption.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/Black TieColorOption.jpeg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Black Tie</p>
       </div>
@@ -53,7 +53,7 @@ require('header.php');
   </div>
      <div class="col-sm-6" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/Muted BlushColorOption.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/Muted BlushColorOption.jpg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Muted Blush</p>
       </div>
@@ -61,7 +61,7 @@ require('header.php');
   </div>
      <div class="col-sm-6" style="width: 18rem; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/Soft SageColorOption.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/Soft SageColorOption.jpeg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Soft Sage</p>
       </div>
@@ -69,7 +69,7 @@ require('header.php');
   </div>
      <div class="col-sm-6" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/GreyColorOption.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/GreyColorOption.jpg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Grey</p>
       </div>
@@ -98,7 +98,7 @@ require('header.php');
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image1.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image1.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-sm">
       <h1>PERSONALIZED 3-D FROSTED ACRYLIC WELCOME SIGN WITH FLOWER TRELLIS</h1>
@@ -115,13 +115,13 @@ require('header.php');
       <p>The smooth half arch option is commonly used for a message to guests or order of events.</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image2.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 
 <div class="row">
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image3.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image3.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-sm">
       <h1>3 PIECE HALF ARCH SEATING CHART</h1>
@@ -140,14 +140,14 @@ require('header.php');
       <p>Additional numbers are available upon request.</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image4.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image4.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 
 
     <div class="row">
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image5.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image5.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-sm">
       <h1>GLASS AND GOLDLOCKING CARD TERRARIUM</h1>
@@ -163,7 +163,7 @@ require('header.php');
       <p>Set of 5 signs.</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image6.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image6.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 
@@ -197,25 +197,25 @@ require('header.php');
    <div class="row">
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/inLovingMemory.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/inLovingMemory.jpg" alt="Card image cap">
     </div>
   </div>
      
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/takeOne.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/takeOne.jpg" alt="Card image cap">
     </div>
   </div>
      
     <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/giftsCards.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/giftsCards.jpg" alt="Card image cap">
     </div>
   </div>
      
      <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/iDo.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/iDo.jpg" alt="Card image cap">
     </div>
   </div>
      
@@ -247,19 +247,19 @@ require('header.php');
  <div class="row">
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/giftsAndCards.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/giftsAndCards.jpg" alt="Card image cap">
     </div>
   </div>
      
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/inLovingMemoryBig.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/inLovingMemoryBig.jpg" alt="Card image cap">
     </div>
   </div>
      
     <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/guestbook.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/guestbook.jpg" alt="Card image cap">
     </div>
   </div>
    </div>
@@ -274,7 +274,7 @@ require('header.php');
       <p>Medium Double Full Arch design in our table-top base.</p>
     </div>
     <div class="col-sm">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/image7.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/image7.jpg" alt="Card image cap">
     </div>
   </div>
 
@@ -284,7 +284,7 @@ require('header.php');
   
   <div class="row">
     <div class="col-sm">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/image8.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/image8.jpg" alt="Card image cap">
     </div>
     <div class="col-sm">
       <h1>SIGNATURE DRINK(S)</h1>
@@ -315,19 +315,19 @@ Lock & Key included with rental.</p>
   <div class="row">
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/image9.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/image9.jpg" alt="Card image cap">
     </div>
   </div>
      
   <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/image10.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/image10.jpg" alt="Card image cap">
     </div>
   </div>
      
     <div class="col-sm" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/image11.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/image11.jpg" alt="Card image cap">
     </div>
   </div>
    </div>
@@ -339,7 +339,7 @@ Lock & Key included with rental.</p>
   <section class="sectionPick6set">
   <div class="row">
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image12.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image12.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-sm">
       <h1>HAIR-PIN RECORD PLAYER PROP</h1>
@@ -355,7 +355,7 @@ Lock & Key included with rental.</p>
       <p>This custom piece is a free gift, yours to keep, with any Pick 6 or Full Package Rental. It also can be selected as a part of the Pick 4 package.</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/layeredArchPageImages/image13.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/layeredArchPageImages/image13.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 </section>
