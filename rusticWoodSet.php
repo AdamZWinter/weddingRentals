@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
+<?php
+require('header.php');
+?>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Rustic Wood Set</title>
-  <link href="rusticWoodSet.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  
-   <link href="extras.css" rel="stylesheet" type="text/css" />
-</head>
 
-<body>
   <!--
     General layout inherited from extras.html
   -->
@@ -23,48 +14,11 @@
   </div>
   </div></div>
   
-    <!--
-    -------------------- NAV BAR ---------------------------------------------------------------
-  -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <!--a class="navbar-brand" href="#">Navbar</a-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sign Rental Sets
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="layeredArchSet.html">Layered Arch</a></li>
-                    <li><a class="dropdown-item" href="modernround.html">Modern Round</a></li>
-                    <li><a class="dropdown-item" href="vintagemirror.html">Vintage Mirror</a></li>
-                    <li><a class="dropdown-item" href="darkwalnut.html">Dark Walnut</a></li>
-                    <li><a class="dropdown-item" href="rusticWoodSet.html">Rustic Wood</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="extras.html">Extras</a></li>
-                  </ul>
-                </li>
-                <!--li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li-->
-              </ul>
-            </div>
-          </div>
-        </nav>
-  <!--
-    -------------------- End of NAV BAR ---------------------------------------------------------------
-  -->
+
   
   
   <div id="buttonDiv" class="row justify-content-center">
-  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.html';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button></button>
+  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.php';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button></button>
 </div>
   <section class= "sectionPick6set">
    <h4 class="section-head sectionSetDescription">Rustic Wood Full Package Rental</h4
@@ -91,7 +45,7 @@
       </ul>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/rusticWoodSetImages/rusticWoodSetWelcome.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/rusticWoodSetImages/rusticWoodSetWelcome.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 </div>
@@ -126,7 +80,7 @@
       </ul>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/rusticWoodSetImages/rustedWoodSetJustMarried.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/rusticWoodSetImages/rustedWoodSetJustMarried.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 </div>
@@ -147,82 +101,82 @@
    <div class="row">
   <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image1.jpg" alt="Card image cap">
     </div>
   </div>
   <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image2.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image2.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image3.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image3.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image4.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image4.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image5.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image5.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image6.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image6.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image7.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image7.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image8.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image8.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image9.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image9.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image10.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image10.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image11.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image11.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image12.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image12.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image13.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image13.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image14.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image14.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image15.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image15.jpg" alt="Card image cap">
     </div>
   </div>
      <div class="col-sm-6" style="width: 18rem; padding:2%; ">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/rusticWoodSetImages/image16.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/rusticWoodSetImages/image16.jpg" alt="Card image cap">
     </div>
   </div>
 </div>
@@ -280,7 +234,7 @@
     </div>
 </div>
 
-  <img src="/weddingRentals/rusticWoodSetImages/welcome1.jpg">
+  <img src="img/rusticWoodSetImages/welcome1.jpg">
 
 
 
@@ -294,7 +248,7 @@
       <p>“Framed White” (right)</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/rusticWoodSetImages/welcome2.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/rusticWoodSetImages/welcome2.jpg" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 </div>
@@ -308,7 +262,7 @@
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img src="/weddingRentals/rusticWoodSetImages/welcome3.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/rusticWoodSetImages/welcome3.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div id="welcomeSignDiv" class="col-sm">
       <h1>AISLE RUNNER ADD-ON</h1>
@@ -332,7 +286,7 @@
       <p>$99 with any rustic wood rental package.</p>
     </div>
     <div class="col-sm">
-      <img src="/weddingRentals/rusticWoodSetImages/welcome4.jpg" class="img-fluid" alt="Responsive image">
+      <img src="img/rusticWoodSetImages/welcome4.jpg" class="img-fluid" alt="Responsive image">
     </div>
     
   </div>
@@ -346,21 +300,10 @@
   
 
   <div id="buttonDiv" class="row justify-content-center">
-  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.html';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button></button>
+  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.php';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button></button>
 </div>
 
-  
-<footer class="extras-footer">
-  <center>
-    <a class = "footer-style" href="extras.html">Contact Us</a>
-    <br><br>
-    <p class= "footer-style">WALNUT RIDGE LEATHER COMPANY<br>
-ORRVILLE, OHIO</p>
-    <a class= "footer-style" href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
-  </center>
-</footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<?php
+//footer
+require('footer.php');
+?>

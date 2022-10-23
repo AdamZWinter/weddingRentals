@@ -78,7 +78,7 @@ require('header.php');
 </div>
 
 <div id="buttonDiv" class="row justify-content-center">
-  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.html';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button>
+  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.php';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button>
 </div>
 
 
@@ -468,7 +468,7 @@ Lock & Key included with rental.</p>
 
 
  <div id="buttonDiv" class="row justify-content-center">
-  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.html';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button>
+  <button onclick="window.location.href='https://orange.greenriverdev.com/weddingRentals/extras.php';" id="checkAvailabilityButton" type="submit" class="btn">Extras Page</button>
 </div>
 
 
