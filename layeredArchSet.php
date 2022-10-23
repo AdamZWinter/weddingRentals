@@ -93,7 +93,7 @@
    <div class="row">
   <div class="col-sm-6" style="width: 18rem;">
     <div class="card">
-        <img class="card-img-top" src="/weddingRentals/layeredArchPageImages/Terra-cottaColorOption.jpg" alt="Card image cap">
+        <img class="card-img-top" src="img/layeredArchPageImages/Terra-cottaColorOption.jpg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Terra-cotta</p>
       </div>
