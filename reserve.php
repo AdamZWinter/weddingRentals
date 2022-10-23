@@ -37,12 +37,16 @@ window.location.href="packages.php";
 
   $extras = [];
 
+  // create list of prices to add
+  $totalPrice = [];
+
   if( !isset($_GET['hexarbor']) ){
     //nothing
   }else{
     $hexarbor = true;
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
+    array_push($totalPrice, 350);
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -51,6 +55,7 @@ window.location.href="packages.php";
     $vintagesofa = true;
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
+    array_push($totalPrice, 99);
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -59,6 +64,7 @@ window.location.href="packages.php";
     $antiquejugs = true;
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
+    array_push($totalPrice, 4);
   }
 
   if( !isset($_GET['winejug']) ){
@@ -67,6 +73,7 @@ window.location.href="packages.php";
     $winejug = true;
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
+    array_push($totalPrice, 20);
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -75,6 +82,7 @@ window.location.href="packages.php";
     $clearjars = true;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
+    array_push($totalPrice, 30);
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -83,6 +91,7 @@ window.location.href="packages.php";
     $bluejars = true;
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
+    array_push($totalPrice, 30);
   }
 
   if( !isset($_GET['delivery']) ){
@@ -96,18 +105,23 @@ window.location.href="packages.php";
   switch ($setOption){
     case 'layeredarch':
         $setOption = 'Layered Arch';
+        array_push($totalPrice, 849);
         break;
     case 'modernround':
         $setOption = 'Modern Round';
+        array_push($totalPrice, 799);
         break;
     case 'vintagemirror':
         $setOption = 'Vintage Mirror';
+        array_push($totalPrice, 849);
         break;
     case 'darkwalnut':
         $setOption = 'Dark Walnut';
+        array_push($totalPrice, 299);
         break;
     case 'rusticwood':
         $setOption = 'Rustic Wood';
+        array_push($totalPrice, 299);
         break;
   }//end switch
 
@@ -131,8 +145,14 @@ window.location.href="packages.php";
                     echo 'Extras: ';
                     
                       foreach ($extras as $extra){
-                          echo '<br>'.$extra;
+                          echo '<br>';
+                          echo '- ' .$extra ;
+
                       }
+
+                    echo '<br>';
+                    echo 'Estimated Total price: $' . array_sum($totalPrice);
+                    
 
 
                 ?>
