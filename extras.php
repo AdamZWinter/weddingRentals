@@ -41,11 +41,11 @@ window.location.href="packages.php";
 
 ?>
 
-<script>
+<!-- <script>
   document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
-</script>
+</script> -->
 
 
     <div class = "container-fluid ">
@@ -85,10 +85,10 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button class= "button" type="submit">Continue</button>
+                <button type="submit">Continue</button>
             </form>
             </div>
 
