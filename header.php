@@ -17,7 +17,9 @@
 
 <div id="headerImage" class="position-relative">
   <div class="position-absolute top-0 start-0">
-    <img src="img/logo.png" width="200" height="98">
+    <a href="../weddingRentals">
+      <img src="img/logo.png" width="200" height="98">
+    </a>
   </div>
 
 
