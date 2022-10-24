@@ -3,7 +3,10 @@ require('header.php');
 ?>
 
 
- 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/layeredArch.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
+</script>
   
   
   <section class= "sectionSetDescription">

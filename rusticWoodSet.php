@@ -2,19 +2,14 @@
 require('header.php');
 ?>
 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/rusticWood.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
+</script>
 
   <!--
     General layout inherited from extras.html
   -->
-  <div class="container-fluid upper">
-  <div class="row">
-    <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
-  <div class="col-md-9">
-    
-  </div>
-  </div></div>
-  
-
   
   
   <div id="buttonDiv" class="row justify-content-center">

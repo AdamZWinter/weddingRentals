@@ -53,7 +53,7 @@ display: table;
 }
 
 #navbarSupportedContent {
-  background: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.5);
   border-radius: 20px;
 }
 
@@ -131,25 +131,7 @@ Start of CSS for aboutus.html
   background: linear-gradient(to right,  #000000 50%, #ffffff 100%); 
 }
 
-.center-align{
-  text-align: center;  
-}
 
-
-.under-start {
-clear: left;
-white-space: nowrap;
-}
-
-.under-end {
-clear: right;
-white-space: nowrap;
-}
-
-
-/*
-End of CSS for aboutus.html
-*/
 
 /*
 Start of Agreement Page CSS
@@ -190,6 +172,20 @@ End of Agreement Page CSS
 /*
 ********************************************Pick Your Set ***********************************************
 */
+
+.center-align{
+  text-align: center;  
+}
+
+.under-start {
+clear: left;
+white-space: nowrap;
+}
+
+.under-end {
+clear: right;
+white-space: nowrap;
+}
 
 #layeredArch:hover {
   border: 5px solid #555
