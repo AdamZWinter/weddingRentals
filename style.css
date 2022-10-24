@@ -41,21 +41,21 @@ html, body {
 */
 
 .footer-style{
-  background: rgba(var(--mauveFaded));
-  font-family:serif;
+  background-color: rgba(var(--weddingRentalMauve));
+  font-family:sans-serif;
   font-weight: 150;
-  font-size: large;
-  color: black;
+  font-size: xlarge;
+  color: white;
 }
 
 
-.footer-style{
-  background-image: radial-gradient(circle, rgba(var(--mauveFaded)), rgba(255,255,255,1) );
-  font-family:serif;
-  font-weight: 150;
-  font-size: large;
-  color: black;
-}
+/*.footer-style{*/
+/*  background-image: radial-gradient(circle, rgba(var(--mauveFaded)), rgba(255,255,255,1) );*/
+/*  font-family:serif;*/
+/*  font-weight: 150;*/
+/*  font-size: large;*/
+/*  color: black;*/
+/*}*/
 
 
 
@@ -218,4 +218,197 @@ End of Agreement Page CSS
 #rusticWood:hover {
   border: 5px solid #555
 }
+
+
+/*Kat's CSS merged from extras.css*/
+.center{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo{
+  max-height: 75px;
+  width:auto;
+}
+.upper{
+  background-color: #d5b6ae;
+}
+.top-desc{
+  max-width: 700px;
+  text-align: center;
+  font-family: sans-serifif;
+  font-weight: 250;
+  font-size: x-large;
+  color: white;
+  text-shadow: 3px 3px 6px #4d4d4d;
+}
+.back-img{
+  background-color: #d5b6ae;
+  background-image: url(img/DecorAccent4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.extras-head{
+  background-color: #d5b6ae;
+  height:100px;
+  font-family: serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;  
+}
+.site-head{
+  text-shadow: 3px 3px 6px #4d4d4d;
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 75px;
+  font-weight: 100;
+  text-align: center;
+}
+.section-head{
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+}
+.text-box{
+  display: flex;
+  justify-content: center;
+}
+.description{
+  max-width: 700px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: x-large;
+  color: #808080;
+}
+.topper{
+  align-content: center;
+}
+
+.section{
+  padding: 10rem 3rem;
+  border-bottom: 1px solid #ddd;
+  transition: transform 1s, opacity 1s;
+}
+/*Slide Show CSS  */
+.slidshow-container{
+  max-width: 75%;
+  position: relative;
+  margin: auto;
+}
+.slide-pics{
+  height: auto; 
+    width: auto; 
+    max-width: 75%; 
+    max-height: 600px;
+}
+.slider, .slider2{
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.slide, .slide2{
+  position:absolute;
+  top: 0;
+  width:100%;
+  height: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+}
+.slider_btn, .slider_btn2 {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: #d5b6ae;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.slider_btn-left {
+  left: 5%;
+  transform: translate(-30%, -50%);
+}
+.slider_btn-right {
+  right: 5%;
+  transform: translate(30%, -50%);
+}
+/*Dots for carosel  */
+.dots1, .dots2{
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%) ;
+  display: flex;
+}
+.dots_dot1, .dots_dot2 {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.dots_dot:last-child {
+  margin: 0;
+}
+.dots_dot-active{
+  background-color:#d5b6ae ;
+  opacity: 1;
+}
+.party-img{
+  max-height: 300px;
+  
+  width: auto;
+}
+.button{
+  background-color:#d5b6ae !important ;
+  border-color: white !important;
+}
+.extras-footer{
+  background-color: #d5b6ae;
+}
+
+/*Check Availability CSS  */
+.rental-head{
+  color:#d5b6ae;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  text-align: center;
+}
+.select-style{
+  max-width: 400px;
+}
+.option-style{
+  font-family: sans-serif;
+  color: #808080;
+}
+.form-align{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+}
+
+/* footer link css */
+.foot-link {
+  color: white !important;
+}
+
 

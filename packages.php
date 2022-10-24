@@ -57,25 +57,55 @@ window.location.href="packages.php";
   $availableTrue = $available ? 'd-block' : 'd-none';
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
-  $layeredArchMarkup = '
-  <div class= row>
-  <div class="col-12 center">
-  <div class="form-group">     
-    <label for="set" class="rental-head">Choose Your Package:</label>
-  
-    <br>
-    <select class="form-control select-style" id="packageChoice">
-      <option class= "option-style" value= "fullSet">Full Set- $849</option>
-      <option class= "option-style" value= "pickSix">Pick 6- $749</option>
-      <option class= "option-style" value= "pick4">Pick 4- $649</option>
-      
-    </select>
-  </div>
-</div>    
+  $layeredArch = '
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "fullSet-la">Full Set- $849</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pickSix-la">Pick 6- $749</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pick4-la">Pick 4- $649</option>
+';
+$modernRound = '
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "fullSet-mr">Full Set- $799</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" id="packageChoice" value= "pickSix-mr">Pick 6- $699</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pick4-mr">Pick 4- $599</option>
+';
+$vintageMirror ='
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "platinum-vm">Platinum Package Rental- $849</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "fullSet-vm">Gold Package Rental- $799</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pickSix-vm">Pick 6- $649</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pick4-vm">Pick 4- $599</option>
+';
+$walnutRustic= '
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "fullSet-wr">Full Set- $299</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pickSix-wr">Pick 6- $245</option>
+  <option class= "option-style" name="packageChoice" id="packageChoice" value= "pick4-wr">Pick 4- $199</option>
+';
 
-</div> 
-  
-  ';
+if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
+$optionMarkup = $walnutRustic;
+}
+if($setOption == 'layeredarch'){
+$optionMarkup = $layeredArch;
+}
+if($setOption == 'modernround'){
+$optionMarkup = $modernRound;
+}
+if($setOption == 'vintagemirror'){
+$optionMarkup = $vintageMirror;
+}
+
+$packageMarkup = '
+<div class= "row">
+<div class="col-12">
+<div class="form-group">     
+<label for="set" class="rental-head">Choose Your Package:</label>
+
+<br>
+<select class="form-control select-style" id="packageChoice">
+'.$optionMarkup.'
+</select>
+</div>
+</div>    
+</div>   
+';
 
 ?>
 
@@ -84,21 +114,21 @@ window.location.href="packages.php";
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-12 col-md-4 text-center">
+        <div class = "col-md-4 text-center center">
 
             <p id="availableTrue">
                 <br>
-                <form name="conntinue2extras" id="conntinue2extras" action="extras.php" method="get" class="<?php echo $availableTrue;?>">
+                <form name="conntinue2extras" id="conntinue2extras" action="extras.php" method="get" class="form-align <?php echo $availableTrue;?>">
                     Great!  This set is available on <?php echo $weddingDate;?>
                     <br>
                     <br>
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
-                    <?php if($setOption == "layeredarch"){
-                      echo $layeredArchMarkup; 
-                    }?>
-                    <button type="submit" >Continue</button>
+                    <?php 
+                      echo $packageMarkup; 
+                    ?>
+                    <button type="submit" class= "btn btn-primary button" >Continue</button>
                 </form>
             </p>
 
@@ -121,7 +151,7 @@ window.location.href="packages.php";
         <div class = "col-3 d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      </div><!--end of row--> 
+      
     </div><!--End of container-fluid-->
 
 

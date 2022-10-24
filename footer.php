@@ -14,10 +14,10 @@
 <footer class="mt-auto">
   <div class="container footer-style">
         <p class = "text-center">
-          <a href="extras.html">Contact Us</a>
+          <a class="foot-link" href="extras.html">Contact Us</a>
           <br>WALNUT RIDGE LEATHER COMPANY
           <br>ORRVILLE, OHIO
-          <br><a href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
+          <br><a class="foot-link" href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
         </p>
   </div>
 </footer>
