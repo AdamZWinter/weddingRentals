@@ -37,13 +37,13 @@
                     Menu
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="layeredArchSet.html">Layered Arch</a></li>
-                    <li><a class="dropdown-item" href="modernround.html">Modern Round</a></li>
-                    <li><a class="dropdown-item" href="vintagemirror.html">Vintage Mirror</a></li>
-                    <li><a class="dropdown-item" href="darkwalnut.html">Dark Walnut</a></li>
-                    <li><a class="dropdown-item" href="rusticWoodSet.html">Rustic Wood</a></li>
+                    <li><a class="dropdown-item" href="layeredArchSet.php">Layered Arch</a></li>
+                    <li><a class="dropdown-item" href="modernround.php">Modern Round</a></li>
+                    <li><a class="dropdown-item" href="vintagemirror.php">Vintage Mirror</a></li>
+                    <li><a class="dropdown-item" href="darkwalnut.php">Dark Walnut</a></li>
+                    <li><a class="dropdown-item" href="rusticWoodSet.php">Rustic Wood</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="extras.html">Extras</a></li>
+                    <li><a class="dropdown-item" href="extras.php">Extras</a></li>
                     <li><a class="dropdown-item" href="availability.php">Check Availability</a></li>
                     <li><a class="dropdown-item" href="pickYourSet.php">Pick Your Set</a></li>
                   </ul>
