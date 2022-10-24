@@ -1,5 +1,5 @@
 <?php
-
+//Test comment
 //packages.php
 require('header.php');
 
@@ -78,7 +78,6 @@ $walnutRustic= '
   <option class= "option-style" value= "pickSix-wr">Pick 6- $245</option>
   <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
 ';
-<<<<<<< HEAD
 
 if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
 $optionMarkup = $walnutRustic;
@@ -93,22 +92,6 @@ if($setOption == 'vintagemirror'){
 $optionMarkup = $vintageMirror;
 }
 
-=======
-$optionMarkup;
-if($setOption == 'rusticwood'| 'darkwalnut'){
-$optionMarkup = $walnutRustic;
-}
-if($setOption == 'layeredarch'){
-$optionMarkup = $layeredArch;
-}
-if($setOption == 'modernround'){
-$optionMarkup = $modernRound;
-}
-if($setOption == 'vintagemirror'){
-$optionMarkup = $vintageMirror;
-}
-
->>>>>>> temp
 $packageMarkup = '
 <div class= row>
 <div class="col-12 center">
@@ -116,14 +99,9 @@ $packageMarkup = '
 <label for="set" class="rental-head">Choose Your Package:</label>
 
 <br>
-<<<<<<< HEAD
 <select class="form-control select-style" id="packageChoice">
 '.$optionMarkup.'
 </select>
-=======
-<select class="form-control select-style" id="packageChoice">'.$optionMarkup.           
-'</select>
->>>>>>> temp
 </div>
 </div>    
 </div>   
@@ -156,11 +134,7 @@ $packageMarkup = '
                     <?php 
                       echo $packageMarkup; 
                     ?>
-<<<<<<< HEAD
                     <button type="submit" >Continue</button>
-=======
-                    <button type="submit" class= "btn btn-primary button" >Continue</button>
->>>>>>> temp
                 </form>
             </p>
 
