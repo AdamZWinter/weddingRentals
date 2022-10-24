@@ -54,8 +54,8 @@ window.location.href="packages.php";
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
 
-            <div class = "form-group text-start">
-            <form name="conntinue2extras" id="conntinue2extras" action="index.php" method="get">
+        <div class = "form-group text-start">
+            <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
@@ -88,7 +88,7 @@ window.location.href="packages.php";
                 <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button class = "btn btn-primary button" type="submit" >Continue</button>
+                <button class= "button" type="submit">Continue</button>
             </form>
             </div>
 
