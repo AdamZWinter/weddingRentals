@@ -61,23 +61,27 @@
 
 
 </div>
+
 </header>
+
+
+<script>
+//document.getElementById("headerImage").addEventListener("scroll", changeHeight());
+window.onscroll = function() {changeHeight()};
+
+function changeHeight() {
+  console.log("changeHeight called");
+  document.getElementById("headerImage").style.height = "300px";
+}
+</script>
 
   <!--
     -------------------- End of HEADER ---------------------------------------------------------------
   -->
 
 
-
 <body class="d-flex flex-column h-100">
 
-  <!--div class="container-fluid upper">
-  <div class="row">
-    <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
-  <div class="col-md-9">
-    
-  </div>
-  </div></div-->
 
 
 
