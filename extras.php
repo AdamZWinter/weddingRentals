@@ -79,10 +79,10 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button type="submit">Continue</button>
+                <button class= "btn btn-primary button" type="submit">Continue</button>
             </form>
             </div>
 
