@@ -55,7 +55,7 @@ window.location.href="packages.php";
         <div class = "col-12 col-md-4 text-center">
 
             <div class = "form-group text-start">
-            <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
+            <form name="conntinue2extras" id="conntinue2extras" action="index.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
