@@ -41,6 +41,12 @@ window.location.href="packages.php";
 
 ?>
 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+</script>
+
 
     <div class = "container-fluid ">
       <div class = "row" style="height:300px">      
