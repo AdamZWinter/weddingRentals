@@ -140,6 +140,9 @@ window.location.href="packages.php";
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
+          <br>
+          <br>
+          <br>
 
             <div class="text-start">
                 <?php
