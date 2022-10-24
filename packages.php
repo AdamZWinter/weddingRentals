@@ -78,6 +78,7 @@ $walnutRustic= '
   <option class= "option-style" value= "pickSix-wr">Pick 6- $245</option>
   <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
 ';
+<<<<<<< HEAD
 
 if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
 $optionMarkup = $walnutRustic;
@@ -92,6 +93,22 @@ if($setOption == 'vintagemirror'){
 $optionMarkup = $vintageMirror;
 }
 
+=======
+$optionMarkup;
+if($setOption == 'rusticwood'| 'darkwalnut'){
+$optionMarkup = $walnutRustic;
+}
+if($setOption == 'layeredarch'){
+$optionMarkup = $layeredArch;
+}
+if($setOption == 'modernround'){
+$optionMarkup = $modernRound;
+}
+if($setOption == 'vintagemirror'){
+$optionMarkup = $vintageMirror;
+}
+
+>>>>>>> temp
 $packageMarkup = '
 <div class= row>
 <div class="col-12 center">
@@ -99,9 +116,14 @@ $packageMarkup = '
 <label for="set" class="rental-head">Choose Your Package:</label>
 
 <br>
+<<<<<<< HEAD
 <select class="form-control select-style" id="packageChoice">
 '.$optionMarkup.'
 </select>
+=======
+<select class="form-control select-style" id="packageChoice">'.$optionMarkup.           
+'</select>
+>>>>>>> temp
 </div>
 </div>    
 </div>   
@@ -109,16 +131,22 @@ $packageMarkup = '
 
 ?>
 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+</script>
+
 
     <div class = "container-fluid">
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-12 col-md-4 text-center">
+        <div class = "col-md-4 text-center center">
 
             <p id="availableTrue">
                 <br>
-                <form name="conntinue2extras" id="conntinue2extras" action="extras.php" method="get" class="<?php echo $availableTrue;?>">
+                <form name="conntinue2extras" id="conntinue2extras" action="extras.php" method="get" class="form-align <?php echo $availableTrue;?>">
                     Great!  This set is available on <?php echo $weddingDate;?>
                     <br>
                     <br>
@@ -128,7 +156,11 @@ $packageMarkup = '
                     <?php 
                       echo $packageMarkup; 
                     ?>
+<<<<<<< HEAD
                     <button type="submit" >Continue</button>
+=======
+                    <button type="submit" class= "btn btn-primary button" >Continue</button>
+>>>>>>> temp
                 </form>
             </p>
 
@@ -151,7 +183,7 @@ $packageMarkup = '
         <div class = "col-3 d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      </div><!--end of row--> 
+      
     </div><!--End of container-fluid-->
 
 

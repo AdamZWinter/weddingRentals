@@ -33,6 +33,8 @@ if( !isset($_GET['setOption']) ){
 
   <br>
   <br>
+  <br>
+  <br>
 
   <form name="pickYourSetForm" id="pickYourSetForm" action="packages.php" method="get" onsubmit="event.preventDefault();">
   <div class = "container-fluid">
@@ -54,7 +56,12 @@ if( !isset($_GET['setOption']) ){
           <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
           <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
 
-          <p id="dateFeedback" class="text-danger"></p>
+          <p id="dateFeedback" class="text-danger">
+            <br>
+            <br>
+            <br>
+            <br>          
+          </p>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>

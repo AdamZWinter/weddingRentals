@@ -1,16 +1,36 @@
 /*
-*********************  style.css  *****************************************************************
+*********************  style.css  Site-Wide *****************************************************************
 */
 
 :root {
     --weddingRentalMauve: 213, 182, 174, .87;
-    --mauveFaded: 213, 182, 174, .4;
+    --mauveFooter: 213, 182, 174, 1;
 }
 
 
 html, body {
   height: 100%;
   width: 100%;
+}
+
+h1 {
+  color: rgba(var(--weddingRentalMauve));
+}
+
+h3 {
+  font-family: proxima-nova;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  color: rgba(var(--weddingRentalMauve));
+}
+
+clear {
+clear: both;
+display: table;
 }
 
 
@@ -22,7 +42,8 @@ html, body {
   background-image: url('img/headerImages/frontHeader.jpg');
   background-position: 50% 30%;
   background-size: cover;
-  height: 300px;
+  height: 600px;
+  transition: 1.9s;
 }
 
 .navbar-custom {
@@ -33,30 +54,25 @@ html, body {
 
 #navbarSupportedContent {
   background: rgba(255,255,255,.5);
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 /*
 ************************  Footer *********************************************************************
 */
 
-.footer-style{
-  background: rgba(var(--mauveFaded));
-  font-family:serif;
-  font-weight: 150;
-  font-size: large;
-  color: black;
-}
-
 
 .footer-style{
-  background-image: radial-gradient(circle, rgba(var(--mauveFaded)), rgba(255,255,255,1) );
-  font-family:serif;
+  background-image: radial-gradient(circle, rgba(var(--mauveFooter)), rgba(255,255,255,1) );
+  font-family:sans-serif;
   font-weight: 150;
   font-size: large;
-  color: black;
+  color: white;
 }
 
+.foot-link {
+  color: white !important;
+}
 
 
 
@@ -111,53 +127,11 @@ Start of CSS for aboutus.html
     color: rgba(var(--weddingRentalMauve));
 }
 
-h1 {
-    color: rgba(var(--weddingRentalMauve));
-}
-
-h3 {
-    font-family: proxima-nova;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    line-height: 1.2em;
-    color: rgba(var(--weddingRentalMauve));
-}
-
-clear {
-  clear: both;
-  display: table;
-}
-
 .head-color{
   background: linear-gradient(to right,  #000000 50%, #ffffff 100%); 
 }
 
-.center-align{
-  text-align: center;  
-}
 
-
-h1 {
-  color: rgba(var(--weddingRentalMauve));
-}
-
-.under-start {
-clear: left;
-white-space: nowrap;
-}
-
-.under-end {
-clear: right;
-white-space: nowrap;
-}
-
-
-/*
-End of CSS for aboutus.html
-*/
 
 /*
 Start of Agreement Page CSS
@@ -199,6 +173,20 @@ End of Agreement Page CSS
 ********************************************Pick Your Set ***********************************************
 */
 
+.center-align{
+  text-align: center;  
+}
+
+.under-start {
+clear: left;
+white-space: nowrap;
+}
+
+.under-end {
+clear: right;
+white-space: nowrap;
+}
+
 #layeredArch:hover {
   border: 5px solid #555
 }
@@ -218,4 +206,343 @@ End of Agreement Page CSS
 #rusticWood:hover {
   border: 5px solid #555
 }
+
+/*
+********************************************Layered Arch Set Page CSS***********************************************
+*/
+
+
+/*Kat's CSS merged from extras.css*/
+.center{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo{
+  max-height: 75px;
+  width:auto;
+}
+
+.upper{
+  background-color: #d5b6ae !important;
+}
+
+.top-desc{
+  max-width: 700px;
+  text-align: center;
+  font-family: sans-serifif;
+  font-weight: 250;
+  font-size: x-large;
+  color: white;
+  text-shadow: 3px 3px 6px #4d4d4d;
+}
+
+.back-img{
+  background-color: #d5b6ae;
+  background-image: url(img/DecorAccent4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.extras-head{
+  background-color: #d5b6ae;
+  height:100px;
+  font-family: serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;  
+}
+
+.site-head{
+  text-shadow: 3px 3px 6px #4d4d4d;
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 75px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.section-head{
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+}
+
+#setDescription{
+  color: rgba(26,26,26,.7);
+}
+
+#colorOptionsDescription{
+  color: #d5b6ae;
+  font-weight: bold;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.card-text {
+  text-align: center;
+}
+#buttonDiv{
+  padding: 5%;
+}
+#checkAvailabilityButton{
+  background-color:  #d5b6ae;
+  color: white;
+}
+section * {
+  padding: .5%;
+}
+
+div.setDescription > * {
+  text-align: left;
+}
+#sectionRentalPackagesDescription {
+  padding: 0% !important; 
+}
+
+hr {
+  padding: .5%;
+}
+
+.sectionPick6set > * {
+  text-align: center;
+}
+#unpluggedCeremonySignRow {
+  padding-top: 5%;
+}
+
+/*
+********************************************End of Layered Arch Set Page CSS***********************************************
+*/
+
+
+
+
+/*
+********************************************Rustic Wood Set Page CSS***********************************************
+*/
+
+.extras-head{
+  background-color: #d5b6ae;
+  height:100px;
+  font-family: serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;  
+}
+.section-head{
+  color:#d5b6ae;
+  font-family: serif;
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+}
+#setDescription{
+  color: rgba(26,26,26,.7);
+}
+#colorOptionsDescription{
+  color: #d5b6ae;
+  font-weight: bold;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.card-text {
+  text-align: center;
+}
+#buttonDiv{
+  padding: 5%;
+}
+#checkAvailabilityButton{
+  background-color:  #d5b6ae;
+  color: white;
+}
+section * {
+  padding: .5%;
+}
+
+div.setDescription > * {
+  text-align: left;
+}
+#sectionRentalPackagesDescription {
+  padding: 0% !important; 
+}
+
+hr {
+  padding: .5%;
+}
+#pick4price {
+  text-align: center !important;
+}
+#pick4directions {
+  text-align: center !important;
+}
+
+
+div.col-sm-6 {
+  padding: 2% !important;
+}
+
+
+#welcomeSignDiv{
+  text-align: center !important;
+}
+#photoCred{
+  text-align: center !important;
+}
+.youPickFourList *  {
+  padding: 1%;
+}
+
+
+
+
+/*
+********************************************End of Rustic Wood  Set Page CSS***********************************************
+*/
+
+.text-box{
+  display: flex;
+  justify-content: center;
+}
+.description{
+  max-width: 700px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: x-large;
+  color: #808080;
+}
+.topper{
+  align-content: center;
+}
+
+.section{
+  padding: 10rem 3rem;
+  border-bottom: 1px solid #ddd;
+  transition: transform 1s, opacity 1s;
+}
+/*Slide Show CSS  */
+.slidshow-container{
+  max-width: 75%;
+  position: relative;
+  margin: auto;
+}
+.slide-pics{
+  height: auto; 
+    width: auto; 
+    max-width: 75%; 
+    max-height: 600px;
+}
+.slider, .slider2{
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.slide, .slide2{
+  position:absolute;
+  top: 0;
+  width:100%;
+  height: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+}
+.slider_btn, .slider_btn2 {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: #d5b6ae;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.slider_btn-left {
+  left: 5%;
+  transform: translate(-30%, -50%);
+}
+.slider_btn-right {
+  right: 5%;
+  transform: translate(30%, -50%);
+}
+/*Dots for carosel  */
+.dots1, .dots2{
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%) ;
+  display: flex;
+}
+.dots_dot1, .dots_dot2 {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.dots_dot:last-child {
+  margin: 0;
+}
+.dots_dot-active{
+  background-color:#d5b6ae ;
+  opacity: 1;
+}
+.party-img{
+  max-height: 300px;
+  
+  width: auto;
+}
+.button{
+  background-color:#d5b6ae !important ;
+  border-color: white !important;
+}
+.extras-footer{
+  background-color: #d5b6ae;
+}
+
+/*Check Availability CSS  */
+.rental-head{
+  color:#d5b6ae;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  text-align: center;
+}
+.select-style{
+  max-width: 400px;
+}
+.option-style{
+  font-family: sans-serif;
+  color: #808080;
+}
+.form-align{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+}
+
 

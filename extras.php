@@ -41,6 +41,12 @@ window.location.href="packages.php";
 
 ?>
 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+</script>
+
 
     <div class = "container-fluid ">
       <div class = "row" style="height:300px">      
@@ -79,10 +85,10 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button type="submit">Continue</button>
+                <button class= "button" type="submit">Continue</button>
             </form>
             </div>
 
@@ -94,7 +100,8 @@ window.location.href="packages.php";
       </div><!--end of row--> 
     </div><!--End of container-fluid-->
 
-
+<br>
+<br>
 <?php
 //footer
 require('footer.php');

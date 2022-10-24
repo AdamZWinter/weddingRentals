@@ -1,7 +1,5 @@
 <?php
-
-//comments
-// britany's comment
+//index.php
 require('header.php');
 ?>
   <br>
@@ -12,7 +10,7 @@ require('header.php');
       <div class = "col-3 d-none d-md-block"></div>
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-12 col-md-4 text-center">
-        <a href="layeredArchSet.html">
+        <a href="layeredArchSet.php">
         <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
         </a>
         <h3 class="under-start text-center">Layered Arch</h3>
@@ -24,14 +22,14 @@ require('header.php');
     <div class = "row" style="height:350px">      
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
-        <a href="modernround.html">
+        <a href="modernround.php">
         <img class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round">
         </a>
         <h3 class="under-end text-end">Modern Round</h3>
       </div>
       <div class = "col-2 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
-        <a href="vintagemirror.html">
+        <a href="vintagemirror.php">
         <img class= "fit-img rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
         </a>
         <h3 class="under-start text-start">Vintage Mirror</h3>
@@ -42,14 +40,14 @@ require('header.php');
     <div class = "row" style="height:300px">      
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
-        <a href="darkwalnut.html">
+        <a href="darkwalnut.php">
         <img class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
         </a>
         <h3 class="under-end text-end">Dark Walnut</h3>
       </div>
       <div class = "col-2 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
-        <a href="rusticWoodSet.html">
+        <a href="rusticWoodSet.php">
         <img class= "fit-img rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
         </a>
         <h3 class="under-start text-start">Rustic Wood</h3>

@@ -17,7 +17,9 @@
 
 <div id="headerImage" class="position-relative">
   <div class="position-absolute top-0 start-0">
-    <img src="img/logo.png" width="200" height="98">
+    <a href="../weddingRentals">
+      <img src="img/logo.png" width="200" height="98">
+    </a>
   </div>
 
 
@@ -37,13 +39,13 @@
                     Menu
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="layeredArchSet.html">Layered Arch</a></li>
-                    <li><a class="dropdown-item" href="modernround.html">Modern Round</a></li>
-                    <li><a class="dropdown-item" href="vintagemirror.html">Vintage Mirror</a></li>
-                    <li><a class="dropdown-item" href="darkwalnut.html">Dark Walnut</a></li>
-                    <li><a class="dropdown-item" href="rusticWoodSet.html">Rustic Wood</a></li>
+                    <li><a class="dropdown-item" href="layeredArchSet.php">Layered Arch</a></li>
+                    <li><a class="dropdown-item" href="modernround.php">Modern Round</a></li>
+                    <li><a class="dropdown-item" href="vintagemirror.php">Vintage Mirror</a></li>
+                    <li><a class="dropdown-item" href="darkwalnut.php">Dark Walnut</a></li>
+                    <li><a class="dropdown-item" href="rusticWoodSet.php">Rustic Wood</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="extras.html">Extras</a></li>
+                    <li><a class="dropdown-item" href="extras.php">Extras</a></li>
                     <li><a class="dropdown-item" href="availability.php">Check Availability</a></li>
                     <li><a class="dropdown-item" href="pickYourSet.php">Pick Your Set</a></li>
                   </ul>
@@ -61,23 +63,26 @@
 
 
 </div>
+
 </header>
+
+
+<script>
+window.onscroll = function() {changeHeight()};
+
+function changeHeight() {
+  console.log("changeHeight called");
+  document.getElementById("headerImage").style.height = "300px";
+}
+</script>
 
   <!--
     -------------------- End of HEADER ---------------------------------------------------------------
   -->
 
 
-
 <body class="d-flex flex-column h-100">
 
-  <!--div class="container-fluid upper">
-  <div class="row">
-    <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
-  <div class="col-md-9">
-    
-  </div>
-  </div></div-->
 
 
 
