@@ -1,16 +1,36 @@
 /*
-*********************  style.css  *****************************************************************
+*********************  style.css  Site-Wide *****************************************************************
 */
 
 :root {
     --weddingRentalMauve: 213, 182, 174, .87;
-    --mauveFaded: 213, 182, 174, .4;
+    --mauveFooter: 213, 182, 174, 1;
 }
 
 
 html, body {
   height: 100%;
   width: 100%;
+}
+
+h1 {
+  color: rgba(var(--weddingRentalMauve));
+}
+
+h3 {
+  font-family: proxima-nova;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  color: rgba(var(--weddingRentalMauve));
+}
+
+clear {
+clear: both;
+display: table;
 }
 
 
@@ -41,23 +61,18 @@ html, body {
 ************************  Footer *********************************************************************
 */
 
+
 .footer-style{
-  background-color: rgba(var(--weddingRentalMauve));
+  background-image: radial-gradient(circle, rgba(var(--mauveFooter)), rgba(255,255,255,1) );
   font-family:sans-serif;
   font-weight: 150;
-  font-size: xlarge;
+  font-size: large;
   color: white;
 }
 
-
-/*.footer-style{*/
-/*  background-image: radial-gradient(circle, rgba(var(--mauveFaded)), rgba(255,255,255,1) );*/
-/*  font-family:serif;*/
-/*  font-weight: 150;*/
-/*  font-size: large;*/
-/*  color: black;*/
-/*}*/
-
+.foot-link {
+  color: white !important;
+}
 
 
 
@@ -112,26 +127,6 @@ Start of CSS for aboutus.html
     color: rgba(var(--weddingRentalMauve));
 }
 
-h1 {
-    color: rgba(var(--weddingRentalMauve));
-}
-
-h3 {
-    font-family: proxima-nova;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    line-height: 1.2em;
-    color: rgba(var(--weddingRentalMauve));
-}
-
-clear {
-  clear: both;
-  display: table;
-}
-
 .head-color{
   background: linear-gradient(to right,  #000000 50%, #ffffff 100%); 
 }
@@ -140,10 +135,6 @@ clear {
   text-align: center;  
 }
 
-
-h1 {
-  color: rgba(var(--weddingRentalMauve));
-}
 
 .under-start {
 clear: left;
@@ -240,14 +231,6 @@ End of Agreement Page CSS
 
 .upper{
   background-color: #d5b6ae !important;
-}
-
-body{
-    padding-right: 32px;
-    padding-left: 32px;
-    padding-bottom: 96px;
-    padding-top: 0px;
-    background-color: #d5b6ae;
 }
 
 .top-desc{
@@ -351,17 +334,6 @@ hr {
 ********************************************Rustic Wood Set Page CSS***********************************************
 */
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-body{
-    padding-right: 32px;
-    padding-left: 32px;
-    padding-bottom: 96px;
-    padding-top: 0px;
-
-}
 .extras-head{
   background-color: #d5b6ae;
   height:100px;
@@ -577,8 +549,4 @@ div.col-sm-6 {
     align-items: center;
 }
 
-/* footer link css */
-.foot-link {
-  color: white !important;
-}
 

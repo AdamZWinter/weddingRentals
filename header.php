@@ -66,7 +66,6 @@
 
 
 <script>
-//document.getElementById("headerImage").addEventListener("scroll", changeHeight());
 window.onscroll = function() {changeHeight()};
 
 function changeHeight() {
