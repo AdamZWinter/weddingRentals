@@ -134,7 +134,7 @@ $packageMarkup = '
                     <?php 
                       echo $packageMarkup; 
                     ?>
-                    <button type="submit" >Continue</button>
+                    <button class = "btn btn-primary button" type="submit" >Continue</button>
                 </form>
             </p>
 
