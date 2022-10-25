@@ -38,10 +38,10 @@ window.location.href="pickYourSet.php";
   }
 
   //package
-  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
-    $displaySets = 'true';
+  if( !isset($_GET['packageChoice']) ){
+    echo $redirect;
   }else{
-    $displaySets = 'true';
+    $packageChoice = $_GET['packageChoice'];
   }
 
 
@@ -122,6 +122,34 @@ window.location.href="pickYourSet.php";
 
 ?>
 
+<h1 class="text-center">Selections </h1>
+
+<div class="text-start">
+    
+    <?php
+        echo 'First Name: '.$fname;
+        echo '<br>';
+        echo 'Last Name: '.$lname;
+        echo '<br>';
+        echo 'Phone Number: '.$phone;
+        echo '<br>';
+        echo 'Email: '.$email;
+        echo '<br>';
+        echo 'Set Option: '.$setOption;
+        echo '<br>';
+        echo 'Package: '.$packageChoice;
+        echo '<br>';
+        echo 'Wedding Date: '.$weddingDate;
+        echo '<br>';
+        echo 'Extras: ';
+
+            foreach ($extras as $extra){
+                echo '<br>';
+                echo '- ' .$extra ;
+            }
+
+    ?>
+</div>
 
 
 <?php
