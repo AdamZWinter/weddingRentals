@@ -8,25 +8,25 @@ window.location.href="pickYourSet.php";
 </script>';
   
   if( !isset($_GET['fname']) ){
-    echo $redirect
+    echo $redirect;
   }else{
     $fname = $_GET['fname'];
   }
  
   if( !isset($_GET['lname']) ){
-    echo $redirect
+    echo $redirect;
   }else{
     $lname = $_GET['lname'];
   }
 
   if( !isset($_GET['phone']) ){
-    echo $redirect
+    echo $redirect;
   }else{
     $phone = $_GET['phone'];
   }
 
   if( !isset($_GET['email']) ){
-    echo $redirect
+    echo $redirect;
   }else{
     $email = $_GET['email'];
   }
