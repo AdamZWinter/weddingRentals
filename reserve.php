@@ -55,7 +55,7 @@ $packageCode = 0;
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
     array_push($totalPrice, 350);
-    $packageCode = $packageCode & 256;
+    $packageCode = $packageCode | 256;
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -65,7 +65,7 @@ $packageCode = 0;
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
     array_push($totalPrice, 99);
-    $packageCode = $packageCode & 257;
+    $packageCode = $packageCode | 257;
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -75,7 +75,7 @@ $packageCode = 0;
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
     array_push($totalPrice, 4);
-    $packageCode = $packageCode & 258;
+    $packageCode = $packageCode | 258;
   }
 
   if( !isset($_GET['winejug']) ){
@@ -85,7 +85,7 @@ $packageCode = 0;
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
     array_push($totalPrice, 20);
-    $packageCode = $packageCode & 259;
+    $packageCode = $packageCode | 259;
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -95,7 +95,7 @@ $packageCode = 0;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode & 260;
+    $packageCode = $packageCode | 260;
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -105,7 +105,7 @@ $packageCode = 0;
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode & 261;
+    $packageCode = $packageCode | 261;
   }
 
   if( !isset($_GET['delivery']) ){
@@ -114,49 +114,49 @@ $packageCode = 0;
     $delivery = true;
     $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
-    $packageCode = $packageCode & 262;
+    $packageCode = $packageCode | 262;
   }
 
   switch ($setOption){
     case 'layeredarch':
         $setOption = 'Layered Arch';
         array_push($totalPrice, 849);
-        $packageCode = $packageCode & 1;
+        $packageCode = $packageCode | 1;
         break;
     case 'modernround':
         $setOption = 'Modern Round';
         array_push($totalPrice, 799);
-        $packageCode = $packageCode & 2;
+        $packageCode = $packageCode | 2;
         break;
     case 'vintagemirror':
         $setOption = 'Vintage Mirror';
         array_push($totalPrice, 849);
-        $packageCode = $packageCode & 3;
+        $packageCode = $packageCode | 3;
         break;
     case 'darkwalnut':
         $setOption = 'Dark Walnut';
         array_push($totalPrice, 299);
-        $packageCode = $packageCode & 4;
+        $packageCode = $packageCode | 4;
         break;
     case 'rusticwood':
         $setOption = 'Rustic Wood';
         array_push($totalPrice, 299);
-        $packageCode = $packageCode & 5;
+        $packageCode = $packageCode | 5;
         break;
   }//end switch
 
   switch ($packageChoice){
     case 'fullSet':
-        $packageCode = $packageCode & 16;
+        $packageCode = $packageCode | 16;
         break;
     case 'pickSix':
-        $packageCode = $packageCode & 17;
+        $packageCode = $packageCode | 17;
         break;
     case 'pick4':
-        $packageCode = $packageCode & 18;
+        $packageCode = $packageCode | 18;
         break;
     case 'platinum':
-        $packageCode = $packageCode & 19;
+        $packageCode = $packageCode | 19;
         break;
   }//end switch
 
