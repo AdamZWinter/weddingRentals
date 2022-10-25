@@ -52,7 +52,7 @@ window.location.href="packages.php";
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-12 col-md-4 text-center">
+        <div class = "col-md-4 text-center">
 
         <div class = "form-group text-start">
             <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
