@@ -1,5 +1,15 @@
 <?php
 
+//Set, package, and extras are bitwise encoded into the $packageCode as follows:
+// |------------------Extras--------------------||--Package--||----Set----|
+//                 [remaining bits]                 [4 bits]    [4 bits] 
+//
+// 1 = Layered Arch, 2 = Modern Round, 3 = Vintage Mirror, 4 = Dark Walnut, 5 = Rustic Wood
+// 16 = Full Set, 17 = Pick Six, 18 = Pick Four
+// 256 = Hex Arbor,  257 = Vintage Sofa,  258 = Gallon Jug,  259 = XL Win Jugs,  260 = Clear Jars,  261 = Blue Jars
+// 262 =  Delivery
+
+
 //reserve.php
 require('header.php');
 
@@ -119,27 +129,27 @@ $packageCode = 0;
 
   switch ($setOption){
     case 'layeredarch':
-        $setOption = 'Layered Arch';
+        $setOptionLang = 'Layered Arch';
         array_push($totalPrice, 849);
         $packageCode = $packageCode | 1;
         break;
     case 'modernround':
-        $setOption = 'Modern Round';
+        $setOptionLang = 'Modern Round';
         array_push($totalPrice, 799);
         $packageCode = $packageCode | 2;
         break;
     case 'vintagemirror':
-        $setOption = 'Vintage Mirror';
+        $setOptionLang = 'Vintage Mirror';
         array_push($totalPrice, 849);
         $packageCode = $packageCode | 3;
         break;
     case 'darkwalnut':
-        $setOption = 'Dark Walnut';
+        $setOptionLang = 'Dark Walnut';
         array_push($totalPrice, 299);
         $packageCode = $packageCode | 4;
         break;
     case 'rusticwood':
-        $setOption = 'Rustic Wood';
+        $setOptionLang = 'Rustic Wood';
         array_push($totalPrice, 299);
         $packageCode = $packageCode | 5;
         break;
@@ -181,7 +191,7 @@ $packageCode = 0;
 
             <div class="text-start">
                 <?php
-                    echo 'Set Selection: '.$setOption;
+                    echo 'Set Selection: '.$setOptionLang;
                     echo '<br>';
                     echo 'Wedding Date: '.$weddingDate;
                     echo '<br>';
