@@ -52,7 +52,7 @@ window.location.href="packages.php";
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-12 col-md-4 text-center">
+        <div class = "col- 12 col-md-4 text-center">
 
             <div class = "form-group text-start">
             <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
@@ -85,7 +85,7 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
                 <button class= "button" type="submit">Continue</button>
