@@ -49,19 +49,20 @@ window.location.href="packages.php";
 
 
     <div class = "container-fluid ">
-      <div class = "row" style="height:300px">      
+      <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
 
             <div class = "form-group text-start">
-            <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
+            <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
 
-                <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
+                <br>
+                <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
                 <br>
                 <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p>
@@ -85,13 +86,13 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
                 <br>
                 <br>
-                <button type="submit">Continue</button>
+                <input type="submit" value="Continue">
             </form>
             </div>
-
+            
         </div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>
