@@ -92,6 +92,9 @@ if( !isset($_GET['setOption']) ){
         document.getElementById('showSetButton').click();
         document.getElementById('displaySets').value = true;
         document.getElementById("dateFeedback").innerHTML = '';
+        //document.getElementById("footerContainer").focus();
+        //document.getElementById("footerContainer").scrollIntoView();
+        //window.location = '#footerContainer';\
         return false;
       }else if(((weddingDateUnix - dateNow - oneWeek) > 0) && displaySets == "true"){
         document.getElementById("dateFeedback").innerHTML = '';
