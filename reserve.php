@@ -59,7 +59,7 @@ $packageCode = 0;
   $totalPrice = [];
 
   if( !isset($_GET['hexarbor']) ){
-    //nothing
+    $hexarbor = false;
   }else{
     $hexarbor = true;
     $hexarborLang = 'Hexagonal Arbor';
@@ -69,7 +69,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['vintagesofa']) ){
-    //nothing
+    $vintagesofa = false;
   }else{
     $vintagesofa = true;
     $vintagesofaLang = 'Vintage Sofa';
@@ -79,7 +79,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['antiquejugs']) ){
-    //nothing
+    $antiquejugs = false;
   }else{
     $antiquejugs = true;
     $antiquejugsLang = 'Antique Jugs';
@@ -89,7 +89,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['winejug']) ){
-    //nothing
+    $winejug = false;
   }else{
     $winejug = true;
     $winejugLang = 'Wine Jug';
@@ -99,7 +99,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['clearjars']) ){
-    //nothing
+    $clearjars = false;
   }else{
     $clearjars = true;
     $clearjarsLang = 'Clear Jars';
@@ -109,7 +109,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['bluejars']) ){
-    //nothing
+    $bluejars = false;
   }else{
     $bluejars = true;
     $bluejarsLang = 'Blue Jars';
@@ -119,7 +119,7 @@ $packageCode = 0;
   }
 
   if( !isset($_GET['delivery']) ){
-    //nothing
+    $delivery = false;
   }else{
     $delivery = true;
     $deliveryLang = 'Delivery';
