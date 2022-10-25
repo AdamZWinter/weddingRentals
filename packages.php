@@ -100,9 +100,7 @@ $packageMarkup = '
 
 <br>
 <select class="form-control select-style" id="packageChoice">
-<option class= "option-style" value= "fullSet-wr">Full Set- $299</option>
-  <option class= "option-style" value= "pickSix-wr">Pick 6- $245</option>
-  <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
+'.$optionMarkup.'
 </select>
 </div>
 </div>    
