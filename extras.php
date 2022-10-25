@@ -88,7 +88,7 @@ window.location.href="packages.php";
                 <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button type="submit">Continue</button>
+                <button class = "btn btn-primary button" type="submit">Continue</button>
             </form>
             </div>
 
@@ -98,7 +98,7 @@ window.location.href="packages.php";
       </div><!--end of row--> 
 
       </div><!--end of row--> 
-    </div><!--End of container-fluid-->
+    <!-- </div>End of container-fluid -->
 
 <br>
 <br>
