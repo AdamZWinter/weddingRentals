@@ -44,6 +44,12 @@ window.location.href="pickYourSet.php";
     $packageChoice = $_GET['packageChoice'];
   }
 
+  if( !isset($_GET['packageCode']) ){
+    echo $redirect;
+  }else{
+    $packageCode = $_GET['packageCode'];
+  }
+
 
   if( !isset($_GET['weddingDate']) ){
     echo $redirect;
@@ -63,6 +69,36 @@ window.location.href="pickYourSet.php";
   $deliveryLang ='';
 
   $extras = [];
+
+  // if(($packageCode & 256) != 0){
+  //   array_push($extras, 'Hexagonal Arbor');
+  // }
+
+  // if(($packageCode & 257) != 0){
+  //   array_push($extras, 'Vintage Sofa');
+  // }
+
+  // if($packageCode & 258){
+  //   array_push($extras, 'Antique Jugs');
+  // }
+
+  // if($packageCode & 259){
+  //   array_push($extras, 'Wine Jug');
+  // }
+
+  // if($packageCode & 260){
+  //   array_push($extras, 'Clear Jars');
+  // }
+
+  // if($packageCode & 261){
+  //   array_push($extras, 'Blue Jars');
+  // }
+
+  // if($packageCode & 262){
+  //   array_push($extras,'Delivery');
+  // }
+
+
 
   if( !isset($_GET['hexarbor']) ){
     //nothing
@@ -127,6 +163,10 @@ window.location.href="pickYourSet.php";
 <div class="text-start">
     
     <?php
+    //var_dump($extras);
+    //var_dump($packageCode & 260);
+    //echo '<br><br>';
+
         echo 'First Name: '.$fname;
         echo '<br>';
         echo 'Last Name: '.$lname;
