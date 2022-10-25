@@ -136,7 +136,7 @@ window.location.href="packages.php";
 </script>
 
     <div class = "container-fluid ">
-      <div class = "row" style="height:300px">      
+      <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
@@ -164,6 +164,30 @@ window.location.href="packages.php";
 
 
                 ?>
+            </div>
+
+            <div class = "form-group text-start">
+            <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
+                <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
+                <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
+                <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
+
+
+                <label for="fname" class="rental-head">First Name: </label>
+                <input type="text" class= "form-control" id="fname" name="fname">
+                <br>
+                <label for="lname" class="rental-head">Last Name: </label>
+                <input type="text" class= "form-control" id="lname" name="lname">
+                <br>
+                <label for="phone" class="rental-head">Phone: </label>
+                <input type="text" class= "form-control" id="phone" name="phone">
+                <br>
+                <label for="email" class="rental-head">E-mail: </label>
+                <input type="email" class= "form-control" id="email" name="email">
+                <br>
+                <br>
+                <input type="submit" value="Continue">
+            </form>
             </div>
 
         </div>
