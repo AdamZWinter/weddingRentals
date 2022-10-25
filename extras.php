@@ -7,21 +7,21 @@ $redirect = '<script>
 window.location.href="packages.php";
 </script>';
   
-  if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
+  if( !isset($_GET['weddingDate']) ){
     echo $redirect;
   }else{
-    $weddingDate = $_GET[weddingDate];
+    $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
   }
 
-  if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
+  if( !isset($_GET['setOption']) ){
     echo $redirect;
   }else{
-    $setOption = $_GET[setOption];
+    $setOption = $_GET['setOption'];
   }
 
-  if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] == 'false'){
+  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';
@@ -40,6 +40,12 @@ window.location.href="packages.php";
   //$extrasWarning = "d-block";
 
 ?>
+
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+</script>
 
 
     <div class = "container-fluid ">
@@ -79,10 +85,10 @@ window.location.href="packages.php";
                 <br>
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
+                <label for="delivery" class = "button option-style">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button type="submit">Continue</button>
+                <button class= "button" type="submit">Continue</button>
             </form>
             </div>
 
@@ -94,7 +100,8 @@ window.location.href="packages.php";
       </div><!--end of row--> 
     </div><!--End of container-fluid-->
 
-
+<br>
+<br>
 <?php
 //footer
 require('footer.php');
