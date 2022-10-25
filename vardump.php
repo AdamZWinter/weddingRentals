@@ -59,7 +59,10 @@ window.location.href="pickYourSet.php";
     $weddingMonth = $dateArray['month'];
   }
 
+
   //extras
+
+  $extras = [];
   $hexarborLang ='';
   $vintagesofaLang ='';
   $antiquejugsLang ='';
@@ -68,7 +71,7 @@ window.location.href="pickYourSet.php";
   $bluejarsLang ='';
   $deliveryLang ='';
 
-  $extras = [];
+  
 
   // if(($packageCode & 256) != 0){
   //   array_push($extras, 'Hexagonal Arbor');
@@ -158,37 +161,54 @@ window.location.href="pickYourSet.php";
 
 ?>
 
-<h1 class="text-center">Selections </h1>
+<h1 class="text-center">Selections </h1><br><br>
 
-<div class="text-start">
-    
-    <?php
-    //var_dump($extras);
-    //var_dump($packageCode & 260);
-    //echo '<br><br>';
+<div class="row justify-content-center">
+    <div class="col-2">
+    <h3>First Name: </h3>
+    <span class="text-color"><?php echo $_GET['fname'] ?></span>
+    </div>
+    <div class="col-2">
+    <h3>Last Name: </h3>
+    <p><?php echo $_GET['lname'] ?></p>
+    </div>
+</div>
 
-        echo 'First Name: '.$fname;
-        echo '<br>';
-        echo 'Last Name: '.$lname;
-        echo '<br>';
-        echo 'Phone Number: '.$phone;
-        echo '<br>';
-        echo 'Email: '.$email;
-        echo '<br>';
-        echo 'Set Option: '.$setOption;
-        echo '<br>';
-        echo 'Package: '.$packageChoice;
-        echo '<br>';
-        echo 'Wedding Date: '.$weddingDate;
-        echo '<br>';
-        echo 'Extras: ';
+<div class="row justify-content-center">
+    <div class="col-2">
+    <h3>Email: </h3>
+    <span class="text-color"><?php echo $_GET['email'] ?></span>
+    </div>
+    <div class="col-2">
+    <h3>Phone Number: </h3>
+    <p><?php echo $_GET['phone'] ?></p>
+    </div>
+</div>
 
-            foreach ($extras as $extra){
-                echo '<br>';
-                echo '- ' .$extra ;
-            }
-
-    ?>
+<div class="row justify-content-center">
+    <div class="col-2">
+    <h3>Set Option: </h3>
+    <span class="text-color"><?php echo $_GET['setOption'] ?></span>
+    </div>
+    <div class="col-2">
+    <h3>Package: </h3>
+    <p><?php echo $_GET['packageChoice'] ?></p>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-2">
+    <h3>Wedding Date: </h3>
+    <span class="text-color"><?php echo $_GET['weddingDate'] ?></span>
+    </div>
+    <div class="col-2">
+        <h3>Extras:</h3> 
+        <p>
+        <?php foreach ($extras as $extra){
+                          echo '<br>';
+                          echo '- ' .$extra ;} 
+        ?>
+        </p>
+    </div>
 </div>
 
 

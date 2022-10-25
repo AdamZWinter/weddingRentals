@@ -545,4 +545,7 @@ div.col-sm-6 {
     align-items: center;
 }
 
-
+/* vardump styles */
+.text-color{
+  color:#4d4d4d !important;
+}
