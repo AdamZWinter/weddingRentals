@@ -5,7 +5,7 @@
 //                 [remaining bits]                 [4 bits]    [4 bits] 
 //
 // 1 = Layered Arch, 2 = Modern Round, 3 = Vintage Mirror, 4 = Dark Walnut, 5 = Rustic Wood
-// 16 = Full Set, 17 = Pick Six, 18 = Pick Four
+// 16 = Full Set, 17 = Pick Six, 18 = Pick Four,  19 = platinum
 // 256 = Hex Arbor,  257 = Vintage Sofa,  258 = Gallon Jug,  259 = XL Win Jugs,  260 = Clear Jars,  261 = Blue Jars
 // 262 =  Delivery
 
