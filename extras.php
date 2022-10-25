@@ -88,7 +88,7 @@ window.location.href="packages.php";
                 <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <input type="submit">
+                <button type = "submit">Continue</button>
             </form>
             </div>
 
