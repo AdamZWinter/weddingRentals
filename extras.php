@@ -7,21 +7,21 @@ $redirect = '<script>
 window.location.href="packages.php";
 </script>';
   
-  if( !isset($_GET['weddingDate']) ){
+  if(!$_GET[weddingDate] || $_GET[weddingDate] == '' || empty($_GET[weddingDate])){
     echo $redirect;
   }else{
-    $weddingDate = $_GET['weddingDate'];
+    $weddingDate = $_GET[weddingDate];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
   }
 
-  if( !isset($_GET['setOption']) ){
+  if(!$_GET[setOption] || $_GET[setOption] == '' || empty($_GET[setOption])){
     echo $redirect;
   }else{
-    $setOption = $_GET['setOption'];
+    $setOption = $_GET[setOption];
   }
 
-  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
+  if($_GET[displaySets] == '' || empty($_GET[displaySets]) || $_GET[displaySets] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';
@@ -41,14 +41,8 @@ window.location.href="packages.php";
 
 ?>
 
-<!-- <script>
-  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
-  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
-  document.getElementById("headerImage").style.height = "300px";
-</script> -->
 
-
-<div class = "container-fluid ">
+    <div class = "container-fluid ">
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
@@ -99,7 +93,8 @@ window.location.href="packages.php";
 
       </div><!--end of row--> 
     </div><!--End of container-fluid-->
-    <br>
+
+
 <?php
 //footer
 require('footer.php');
