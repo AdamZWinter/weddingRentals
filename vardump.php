@@ -103,7 +103,7 @@ window.location.href="pickYourSet.php";
 
 
 
-  if( !isset($_GET['hexarbor']) ){
+  if( !isset($_GET['hexarbor']) || $_GET['hexarbor'] == '' ){
     //nothing
   }else{
     $hexarbor = true;
@@ -111,7 +111,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Hexagonal Arbor');
   }
 
-  if( !isset($_GET['vintagesofa']) ){
+  if( !isset($_GET['vintagesofa']) || $_GET['vintagesofa'] == ''){
     //nothing
   }else{
     $vintagesofa = true;
@@ -119,7 +119,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Vintage Sofa');
   }
 
-  if( !isset($_GET['antiquejugs']) ){
+  if( !isset($_GET['antiquejugs']) || $_GET['antiquejugs'] == ''){
     //nothing
   }else{
     $antiquejugs = true;
@@ -127,7 +127,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Antique Jugs');
   }
 
-  if( !isset($_GET['winejug']) ){
+  if( !isset($_GET['winejug']) || $_GET['winejug'] == '' ){
     //nothing
   }else{
     $winejug = true;
@@ -135,7 +135,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Wine Jug');
   }
 
-  if( !isset($_GET['clearjars']) ){
+  if( !isset($_GET['clearjars']) || $_GET['clearjars'] == '' ){
     //nothing
   }else{
     $clearjars = true;
@@ -143,7 +143,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Clear Jars');
   }
 
-  if( !isset($_GET['bluejars']) ){
+  if( !isset($_GET['bluejars']) || $_GET['bluejars'] == ''){
     //nothing
   }else{
     $bluejars = true;
@@ -151,7 +151,7 @@ window.location.href="pickYourSet.php";
     array_push($extras, 'Blue Jars');
   }
 
-  if( !isset($_GET['delivery']) ){
+  if( !isset($_GET['delivery']) || $_GET['delivery'] == ''){
     //nothing
   }else{
     $delivery = true;
@@ -204,8 +204,9 @@ window.location.href="pickYourSet.php";
         <h3>Extras:</h3> 
         <p>
         <?php foreach ($extras as $extra){
-                          echo '<br>';
-                          echo '- ' .$extra ;} 
+                        echo '- ' .$extra ;
+                        echo '<br>';
+                } 
         ?>
         </p>
     </div>
