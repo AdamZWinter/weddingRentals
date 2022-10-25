@@ -217,6 +217,7 @@ $packageCode = 0;
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $packageCode;?>">
+                <input type="hidden" id="packageChoice" name="packageChoice" value="<?php echo $packageChoice;?>">
 
 
                 <label for="fname" class="rental-head">First Name: </label>
