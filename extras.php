@@ -99,9 +99,7 @@ window.location.href="packages.php";
 
       </div><!--end of row--> 
     </div><!--End of container-fluid-->
-    <?php echo $weddingDate;
-    echo $displaySets;
-    echo $setOption; ?>
+    
 
 <br>
 <br>
