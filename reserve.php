@@ -1,11 +1,13 @@
 <?php
 
-//extras.php
+//reserve.php
 require('header.php');
 
 $redirect = '<script>
-window.location.href="packages.php";
+window.location.href="pickYourSet.php";
 </script>';
+
+$packageCode = 0;
   
   if( !isset($_GET['weddingDate']) ){
     echo $redirect;
@@ -19,6 +21,12 @@ window.location.href="packages.php";
     echo $redirect;
   }else{
     $setOption = $_GET['setOption'];
+  }
+
+  if( !isset($_GET['packageChoice']) ){
+    //echo $redirect;
+  }else{
+    $packageChoice = $_GET['packageChoice'];
   }
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
@@ -47,6 +55,7 @@ window.location.href="packages.php";
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
     array_push($totalPrice, 350);
+    $packageCode = $packageCode & 256;
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -56,6 +65,7 @@ window.location.href="packages.php";
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
     array_push($totalPrice, 99);
+    $packageCode = $packageCode & 257;
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -65,6 +75,7 @@ window.location.href="packages.php";
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
     array_push($totalPrice, 4);
+    $packageCode = $packageCode & 258;
   }
 
   if( !isset($_GET['winejug']) ){
@@ -74,6 +85,7 @@ window.location.href="packages.php";
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
     array_push($totalPrice, 20);
+    $packageCode = $packageCode & 259;
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -83,6 +95,7 @@ window.location.href="packages.php";
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
     array_push($totalPrice, 30);
+    $packageCode = $packageCode & 260;
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -92,36 +105,58 @@ window.location.href="packages.php";
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
     array_push($totalPrice, 30);
+    $packageCode = $packageCode & 261;
   }
 
   if( !isset($_GET['delivery']) ){
     //nothing
   }else{
     $delivery = true;
-    $deliveryLang = 'Wine Jug';
+    $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
+    $packageCode = $packageCode & 262;
   }
 
   switch ($setOption){
     case 'layeredarch':
         $setOption = 'Layered Arch';
         array_push($totalPrice, 849);
+        $packageCode = $packageCode & 1;
         break;
     case 'modernround':
         $setOption = 'Modern Round';
         array_push($totalPrice, 799);
+        $packageCode = $packageCode & 2;
         break;
     case 'vintagemirror':
         $setOption = 'Vintage Mirror';
         array_push($totalPrice, 849);
+        $packageCode = $packageCode & 3;
         break;
     case 'darkwalnut':
         $setOption = 'Dark Walnut';
         array_push($totalPrice, 299);
+        $packageCode = $packageCode & 4;
         break;
     case 'rusticwood':
         $setOption = 'Rustic Wood';
         array_push($totalPrice, 299);
+        $packageCode = $packageCode & 5;
+        break;
+  }//end switch
+
+  switch ($packageChoice){
+    case 'fullSet':
+        $packageCode = $packageCode & 16;
+        break;
+    case 'pickSix':
+        $packageCode = $packageCode & 17;
+        break;
+    case 'pick4':
+        $packageCode = $packageCode & 18;
+        break;
+    case 'platinum':
+        $packageCode = $packageCode & 19;
         break;
   }//end switch
 
@@ -171,6 +206,7 @@ window.location.href="packages.php";
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
+                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $packageCode;?>">
 
 
                 <label for="fname" class="rental-head">First Name: </label>
