@@ -48,13 +48,13 @@ window.location.href="packages.php";
 </script> -->
 
 
-    <div class = "container-fluid ">
+<div class = "container-fluid ">
       <div class = "row" style="height:300px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-md-4 text-center">
+        <div class = "col-12 col-md-4 text-center">
 
-        <div class = "form-group text-start">
+            <div class = "form-group text-start">
             <form name="conntinue2extras" id="conntinue2extras" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
@@ -88,7 +88,7 @@ window.location.href="packages.php";
                 <label for="delivery" class = "button">Delivery <a href="delivery.html">?</a></label>
                 <br>
                 <br>
-                <button class = "btn btn-primary button" type="submit">Continue</button>
+                <button type="submit">Continue</button>
             </form>
             </div>
 
@@ -98,10 +98,8 @@ window.location.href="packages.php";
       </div><!--end of row--> 
 
       </div><!--end of row--> 
-    <!-- </div>End of container-fluid -->
-
-<br>
-<br>
+    </div><!--End of container-fluid-->
+    <br>
 <?php
 //footer
 require('footer.php');
