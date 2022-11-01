@@ -184,8 +184,8 @@ window.location.href="pickYourSet.php";
     <div class = "col-sm-3"></div>
     <div class = "col-sm-6">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
-     <h6 > <?php echo $titleName;?> </h6>
-     <ul class = "descriptionList"> <?php echo $titleName;?> </ul>  
+     <h6 > <?php echo $subtitle;?> </h6>
+     <ul class = "descriptionList"> <?php echo $packageList;?> </ul>  
     
     
     
