@@ -1,3 +1,4 @@
+
 <?php
 
 //extras.php
@@ -21,17 +22,16 @@ window.location.href="pickYourSet.php";
     $setOption = $_GET['setOption'];
   }
 
-  if( !isset($_GET['packageChoice']) ){
-    //echo $redirect;
-  }else{
-    $packageChoice = $_GET['packageChoice'];
-  }
+  
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';
   }
+
+
+
 
 
   $hexarchAvailable = $weddingMonth == 1 ? 'disabled' : '';
@@ -51,7 +51,16 @@ window.location.href="pickYourSet.php";
   document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
+
+
+  function checkAllExtrasBoxes() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+    }
+}
 </script>
+
 
 
     <div class = "container-fluid ">
@@ -111,6 +120,31 @@ window.location.href="pickYourSet.php";
 
 <br>
 <br>
+
+
+<?php
+if( !isset($_GET['packageChoice']) ){
+  //echo $redirect;
+}else{
+  $packageChoice = $_GET['packageChoice'];
+  if( $packageChoice == 'fullSet'){
+    echo '<script type="text/javascript">',
+     'checkAllExtrasBoxes();',
+     '</script>';
+  }
+  if( $packageChoice == 'pickSix'){
+    echo '<script type="text/javascript">',
+     'checkFourBoxes();',
+     '</script>';
+  }
+  if( $packageChoice == 'pick4'){
+    echo("<script>console.log('pick4 was selected ');</script>");
+  }
+ 
+
+}
+?>
+
 <?php
 //footer
 require('footer.php');
