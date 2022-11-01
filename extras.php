@@ -84,14 +84,33 @@ window.location.href="pickYourSet.php";
         $cost = 599;
     }  
   }
-  if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
+  if(($setOption == 'darkwalnut' || $setOption == 'rusticwood')&& $packageChoice == 'pick4'){
+    $cost += 199;
+  }
+  if(($setOption == 'darkwalnut' || $setOption == 'rusticwood')&& $packageChoice == 'pick6'){
     $cost += 245;
+  }
+  if(($setOption == 'darkwalnut' || $setOption == 'rusticwood')&& $packageChoice == 'fullset'){
+    $cost += 299;
   }
     
 
   if($setOption == 'darkwalnut'){
     $setName = "Dark Walnut";
   }
+  if($setOption == 'rusticwood'){
+    $setName = "Rustic Wood";
+  }
+  if($setOption == 'layeredarch'){
+    $setName = "Layered Arch";
+  }
+  if($setOption == 'modernround'){
+    $setName = "Modern Round";
+  }
+  if($setOption == 'vintagemirror'){
+    $setName = "Vintage Mirror";
+  }
+  
   //reusable text
   $VMPlatinumSub = "INCLUDES ALL OF THE FOLLOWING 11 ITEMS";
   $VMGoldSub = "INCLUDES ALL THE FOLLOWING 8 ITEMS";
@@ -130,17 +149,17 @@ window.location.href="pickYourSet.php";
    
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
-      $titleName = "{$setName} {$fullpackageTitle} {$cost}";
+      $titleName = "{$setName} {$fullpackageTitle} ${$cost}";
     }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick6'){
-      $titleName = "{$setName} {$noSeatingTitle} {$cost}";
+      $titleName = "{$setName} {$noSeatingTitle} ${$cost}";
       }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick4'){
-      $titleName = "{$setName} {$pick4Title} {$cost}";
+      $titleName = "{$setName} {$pick4Title} ${$cost}";
     }
   }
   
