@@ -84,22 +84,22 @@ window.location.href="pickYourSet.php";
         $cost = 599;
     }  
   }
-  if(($setOption == 'darkwalnut')&& $packageChoice == 'pick4'){
+  if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
     $cost += 199;
   }
-  if(($setOption == 'darkwalnut')&& $packageChoice == 'pick6'){
+  if($setOption == 'darkwalnut' && $packageChoice == 'pick6'){
     $cost += 245;
   }
-  if(($setOption == 'darkwalnut')&& $packageChoice == 'fullset'){
+  if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
     $cost += 299;
   }
-  if(($setOption == 'rusticwood')&& $packageChoice == 'pick4'){
+  if($setOption == 'rusticwood' && $packageChoice == 'pick4'){
     $cost += 199;
   }
-  if(($setOption == 'rusticwood')&& $packageChoice == 'pick6'){
+  if($setOption == 'rusticwood' && $packageChoice == 'pick6'){
     $cost += 245;
   }
-  if(($setOption == 'rusticwood')&& $packageChoice == 'fullset'){
+  if($setOption == 'rusticwood' && $packageChoice == 'fullset'){
     $cost += 299;
   }
     
