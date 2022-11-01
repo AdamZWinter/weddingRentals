@@ -94,6 +94,10 @@ window.location.href="pickYourSet.php";
         $cost = 199;
     }    
   }
+
+  if($setOption == 'darkwalnut'){
+    $setName = "Dark Walnut";
+  }
   //reusable text
   $VMPlatinumSub = "INCLUDES ALL OF THE FOLLOWING 11 ITEMS";
   $VMGoldSub = "INCLUDES ALL THE FOLLOWING 8 ITEMS";
@@ -137,7 +141,7 @@ window.location.href="pickYourSet.php";
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick6'){
-      $titleName = "{$setOption} {$noSeatingTitle}";
+      $titleName = "{$setName} {$noSeatingTitle} {$cost}";
       }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
