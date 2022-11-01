@@ -155,6 +155,7 @@ window.location.href="pickYourSet.php";
 
   if($setOption == 'layeredarch'){
     $packageList = `
+    <ul class = "descriptionList"> 
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
                     <li>3 piece seating chart half arch set (print service for cards is available for a small additional fee)</li>
                     <li>Table numbers 1-30</li>
@@ -167,6 +168,7 @@ window.location.href="pickYourSet.php";
                     <li>Unplugged Ceremony sign</li>
                     <li>Hairpin Record Player Prop</li>
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
+                    </ul>
     `;
   }
 
@@ -185,7 +187,7 @@ window.location.href="pickYourSet.php";
     <div class = "col-sm-6">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
      <h6 > <?php echo $subtitle;?> </h6>
-     <ul class = "descriptionList"> <?php echo $packageList;?> </ul>  
+     <?php echo $packageList;?>   
     
     
     
