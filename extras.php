@@ -134,7 +134,7 @@ window.location.href="pickYourSet.php";
       $titleName == $pick4Title;
     }
   }
-  if($setOption == 'vintagemirror'){
+  while($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
       $titleName = $VMPlatinumTitle;
       $subtitle = $VMPlatinumSub;
