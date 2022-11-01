@@ -123,15 +123,21 @@ window.location.href="pickYourSet.php";
       $subtitle = $pick6Sub;
     }
   }
+  if($setOption == 'layeredarch' || $setOption == 'modernround'){
+    if($packageChoice == 'pick4'){
+      $titleName = $pick4Title;
+      $subtitle = $pick4Sub;
+    }
+  }
    
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
       $titleName = $fullpackageTitle;
     }
-    if($packageChoice == 'pick6'){
+    elseif($packageChoice == 'pick6'){
       $titleName == $noSeatingTitle;
     }
-    if($packageChoice == 'pick4'){
+    else($packageChoice == 'pick4'){
       $titleName == $pick4Title;
     }
   }
