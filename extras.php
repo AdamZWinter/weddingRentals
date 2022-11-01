@@ -167,7 +167,7 @@ window.location.href="pickYourSet.php";
                     <li>Unplugged Ceremony sign</li>
                     <li>Hairpin Record Player Prop</li>
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
-    `
+    `;
   }
 
 
