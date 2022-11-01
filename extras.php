@@ -158,17 +158,17 @@ window.location.href="pickYourSet.php";
    
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
-      $titleName = "{$setName} {$fullpackageTitle} ${$cost}";
+      $titleName = "{$setName} {$fullpackageTitle} $ {$cost}";
     }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick6'){
-      $titleName = "{$setName} {$noSeatingTitle} ${$cost}";
+      $titleName = "{$setName} {$noSeatingTitle} $ {$cost}";
       }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick4'){
-      $titleName = "{$setName} {$pick4Title} ${$cost}";
+      $titleName = "{$setName} {$pick4Title} $ {$cost}";
     }
   }
   
