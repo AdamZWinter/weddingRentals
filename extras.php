@@ -47,6 +47,7 @@ window.location.href="pickYourSet.php";
 
    //adding cost variable based on set choice 
   //TODO : UPDATE packageChoice names on package.php!!!!
+  $cost = 0;
   if($setOption == 'layeredarch'){
     if($packageChoice == 'fullset'){
         $cost = 849;
@@ -136,7 +137,7 @@ window.location.href="pickYourSet.php";
    
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
-      $titleName = $fullpackageTitle;
+      $titleName = "{$setName} {$fullpackageTitle}";
     }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
@@ -146,7 +147,7 @@ window.location.href="pickYourSet.php";
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick4'){
-      $titleName = $pick4Title;
+      $titleName = "{$setName} {$pick4Title}";
     }
   }
   
