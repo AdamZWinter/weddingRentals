@@ -116,15 +116,14 @@ window.location.href="pickYourSet.php";
       $titleName = $fullSetTitle;
       $subtitle = $fullsetSub;
     }
-    else if($packageChoice == 'pick6'){
-      $titleName == "PICK 6 Rental";
-      $subtitle == $pick6Sub;
-    }
-    else if($packageChoice == 'pick4'){
-      $titleName == $pick4Title;
-      $subtitle == $pick4Sub;
+  }
+  if($setOption == 'layeredarch' || $setOption == 'modernround'){
+    if($packageChoice == 'pick6'){
+      $titleName = $pick6Title;
+      $subtitle = $pick6Sub;
     }
   }
+   
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
       $titleName = $fullpackageTitle;
