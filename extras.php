@@ -139,19 +139,19 @@ window.location.href="pickYourSet.php";
   $subtitle = '';
   if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'fullset'){
-      $titleName = $fullSetTitle;
+      $titleName = "{$setName} {$fullSetTitle} $".$cost;
       $subtitle = $fullsetSub;
     }
   }
   if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'pick6'){
-      $titleName = $pick6Title;
+      $titleName = "{$setName} {$pick6Title} $".$cost;
       $subtitle = $pick6Sub;
     }
   }
   if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'pick4'){
-      $titleName = $pick4Title;
+      $titleName = "{$setName} {$pick4Title} $".$cost;
       $subtitle = $pick4Sub;
     }
   }
