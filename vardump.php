@@ -60,6 +60,7 @@ window.location.href="pickYourSet.php";
   }
 
 
+
   //extras
 
   $extras = [];
@@ -161,55 +162,61 @@ window.location.href="pickYourSet.php";
 
 ?>
 
-<h1 class="text-center">Selections </h1><br><br>
+<h1 class="text-center">Thank you for choosing Walnut Ridge</h1>
+<p class="text-center">The Walnut Ridge Wedding Rental Team will be confirming your order soon</p>
+<p class="text-center">A copy of the information below will be emailed to you</p><br><br>
 
-<div class="row justify-content-center">
-    <div class="col-2">
-    <h3>First Name: </h3>
-    <span class="text-color"><?php echo $_GET['fname'] ?></span>
+<div class="container">
+  <span id="wrap">
+    <div class="row justify-content-center">
+        <div class="col-2">
+        <h3>First Name: </h3>
+        <span class="text-color"><?php echo $_GET['fname'] ?></span>
+        </div>
+        <div class="col-2">
+        <h3>Last Name: </h3>
+        <p><?php echo $_GET['lname'] ?></p>
+        </div>
     </div>
-    <div class="col-2">
-    <h3>Last Name: </h3>
-    <p><?php echo $_GET['lname'] ?></p>
-    </div>
-</div>
 
-<div class="row justify-content-center">
-    <div class="col-2">
-    <h3>Email: </h3>
-    <span class="text-color"><?php echo $_GET['email'] ?></span>
+    <div class="row justify-content-center">
+        <div class="col-2">
+        <h3>Email: </h3>
+        <span class="text-color"><?php echo $_GET['email'] ?></span>
+        </div>
+        <div class="col-2">
+        <h3>Phone Number: </h3>
+        <p><?php echo $_GET['phone'] ?></p>
+        </div>
     </div>
-    <div class="col-2">
-    <h3>Phone Number: </h3>
-    <p><?php echo $_GET['phone'] ?></p>
-    </div>
-</div>
 
-<div class="row justify-content-center">
-    <div class="col-2">
-    <h3>Set Option: </h3>
-    <span class="text-color"><?php echo $_GET['setOption'] ?></span>
+    <div class="row justify-content-center">
+        <div class="col-2">
+        <h3>Set Option: </h3>
+        <span class="text-color"><?php echo $_GET['setOption'] ?></span>
+        </div>
+        <div class="col-2">
+        <h3>Package: </h3>
+        <p><?php echo $_GET['packageChoice'] ?></p>
+        </div>
     </div>
-    <div class="col-2">
-    <h3>Package: </h3>
-    <p><?php echo $_GET['packageChoice'] ?></p>
+    <div class="row justify-content-center">
+        <div class="col-2">
+        <h3>Wedding Date: </h3>
+        <span class="text-color"><?php echo $_GET['weddingDate'] ?></span>
+        </div>
+        <div class="col-2">
+            <h3>Extras:</h3> 
+            <p>
+            <?php foreach ($extras as $extra){
+                            echo '- ' .$extra ;
+                            echo '<br>';
+                    } 
+            ?>
+            </p>
+        </div>
     </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col-2">
-    <h3>Wedding Date: </h3>
-    <span class="text-color"><?php echo $_GET['weddingDate'] ?></span>
-    </div>
-    <div class="col-2">
-        <h3>Extras:</h3> 
-        <p>
-        <?php foreach ($extras as $extra){
-                        echo '- ' .$extra ;
-                        echo '<br>';
-                } 
-        ?>
-        </p>
-    </div>
+  </span>
 </div>
 
 

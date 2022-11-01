@@ -549,3 +549,7 @@ div.col-sm-6 {
 .text-color{
   color:#4d4d4d !important;
 }
+
+#wrap{
+  display: inline-block;
+}
