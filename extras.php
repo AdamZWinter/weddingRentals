@@ -137,7 +137,7 @@ window.location.href="pickYourSet.php";
    
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'fullset'){
-      $titleName = "{$setName} {$fullpackageTitle}";
+      $titleName = "{$setName} {$fullpackageTitle} {$cost}";
     }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
