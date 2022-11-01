@@ -115,7 +115,7 @@ window.location.href="pickYourSet.php";
       $subtitle = $fullsetSub;
     }
     if($packageChoice == 'pick6'){
-      $titleName == $pick6Title;
+      $titleName == "PICK 6 Rental";
       $subtitle == $pick6Sub;
     }
     if($packageChoice == 'pick4'){
