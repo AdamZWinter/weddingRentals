@@ -192,14 +192,14 @@ window.location.href="pickYourSet.php";
   }
 
   if($setOption == 'layeredarch'){
-    $packageList = `
+    $packageList = '
     <ul class = "descriptionList"> 
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
                     <li>3 piece seating chart half arch set (print service for cards is available for a small additional fee)</li>
                     <li>Table numbers 1-30</li>
                     <li>Gold Card Terrarium with choice of “Gifts & Cards” sign</li>
                     <li>5 “Reserved” signs</li>
-                    <li>Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Don't Mind if I Do,” “In Loving Memory”)</li>
+                    <li>Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Dont Mind if I Do,” “In Loving Memory”)</li>
                     <li>Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</li>
                     <li>1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</li>
                     <li>1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text) </li>
@@ -207,7 +207,7 @@ window.location.href="pickYourSet.php";
                     <li>Hairpin Record Player Prop</li>
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
                     </ul>
-    `;
+    ';
   }
 
 
