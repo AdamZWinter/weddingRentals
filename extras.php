@@ -174,20 +174,20 @@ window.location.href="pickYourSet.php";
   
   if($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
-      $titleName = $VMPlatinumTitle;
+      $titleName = "{$setName} {$VMPlatinumTitle} $".$cost;
       $subtitle = $VMPlatinumSub;
     }
     if($packageChoice == 'gold'){
-      $titleName == $VMGoldTitle;
-      $subtitle == $VMGoldSub;
+      $titleName = "{$setName} {$VMGoldTitle} $".$cost;
+      $subtitle = $VMGoldSub;
     }
     if($packageChoice == 'pick6'){
-      $titleName == $pick6Title;
-      $subtitle == $pick6Sub;
+      $titleName = "{$setName} {$pick6Title} $".$cost;
+      $subtitle = $pick6Sub;
     }
     if($packageChoice == 'pick4'){
-      $titleName == $pick4Title;
-      $subtitle == $pick4Sub;
+      $titleName = "{$setName} {$pick4Title} $".$cost;
+      $subtitle = $pick4Sub;
     }
   }
 
