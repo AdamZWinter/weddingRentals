@@ -85,7 +85,7 @@ window.location.href="pickYourSet.php";
     }  
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
-    $cost = 245;
+    $cost += 245;
   }
     
 
