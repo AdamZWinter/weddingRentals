@@ -137,7 +137,7 @@ window.location.href="pickYourSet.php";
     elseif($packageChoice == 'pick6'){
       $titleName == $noSeatingTitle;
     }
-    else($packageChoice == 'pick4'){
+    else{
       $titleName == $pick4Title;
     }
   }
