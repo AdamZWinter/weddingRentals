@@ -4,7 +4,7 @@
 require('header.php');
 
 $redirect = '<script>
-window.location.href="packages.php";
+window.location.href="pickYourSet.php";
 </script>';
 
 
@@ -58,25 +58,25 @@ window.location.href="packages.php";
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
   $layeredArch = '
-  <option class= "option-style" value= "fullSet-la">Full Set- $849</option>
-  <option class= "option-style" value= "pickSix-la">Pick 6- $749</option>
-  <option class= "option-style" value= "pick4-la">Pick 4- $649</option>
+  <option class= "option-style" value= "fullSet" name="">Full Set- $849</option>
+  <option class= "option-style" value= "pickSix">Pick 6- $749</option>
+  <option class= "option-style" value= "pick4">Pick 4- $649</option>
 ';
 $modernRound = '
-  <option class= "option-style" value= "fullSet-mr">Full Set- $799</option>
-  <option class= "option-style" value= "pickSix-mr">Pick 6- $699</option>
-  <option class= "option-style" value= "pick4-mr">Pick 4- $599</option>
+  <option class= "option-style" value= "fullSet">Full Set- $799</option>
+  <option class= "option-style" value= "pickSix">Pick 6- $699</option>
+  <option class= "option-style" value= "pick4">Pick 4- $599</option>
 ';
 $vintageMirror ='
-  <option class= "option-style" value= "platinum-vm">Platinum Package Rental- $849</option>
-  <option class= "option-style" value= "fullSet-vm">Gold Package Rental- $799</option>
-  <option class= "option-style" value= "pickSix-vm">Pick 6- $649</option>
-  <option class= "option-style" value= "pick4-vm">Pick 4- $599</option>
+  <option class= "option-style" value= "platinum">Platinum Package Rental- $849</option>
+  <option class= "option-style" value= "fullSet">Gold Package Rental- $799</option>
+  <option class= "option-style" value= "pickSix">Pick 6- $649</option>
+  <option class= "option-style" value= "pick4">Pick 4- $599</option>
 ';
 $walnutRustic= '
-  <option class= "option-style" value= "fullSet-wr">Full Set- $299</option>
-  <option class= "option-style" value= "pickSix-wr">Pick 6- $245</option>
-  <option class= "option-style" value= "pick4-wr">Pick 4- $199</option>
+  <option class= "option-style" value= "fullSet">Full Set- $299</option>
+  <option class= "option-style" value= "pickSix">Pick 6- $245</option>
+  <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 
 if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
@@ -96,10 +96,10 @@ $packageMarkup = '
 <div class= row>
 <div class="col-12 center">
 <div class="form-group">     
-<label for="set" class="rental-head">Choose Your Package:</label>
+<label for="packageChoice" class="rental-head">Choose Your Package:</label>
 
 <br>
-<select class="form-control select-style" id="packageChoice">
+<select class="form-control select-style" id="packageChoice" name="packageChoice">
 '.$optionMarkup.'
 </select>
 </div>

@@ -12,7 +12,7 @@
 
 
 <footer class="mt-auto">
-  <div class="container footer-style footer">
+  <div class="container footer-style" id="footerContainer">
         <p class = "text-center">
           <a class="foot-link" href="extras.html">Contact Us</a>
           <br>WALNUT RIDGE LEATHER COMPANY
