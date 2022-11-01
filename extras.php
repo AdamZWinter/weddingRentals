@@ -137,7 +137,7 @@ window.location.href="pickYourSet.php";
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
     if($packageChoice == 'pick6'){
-      $titleName = $noSeatingTitle;
+      $titleName = "{$setOption} {$noSeatingTitle}";
       }
   }
   if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
