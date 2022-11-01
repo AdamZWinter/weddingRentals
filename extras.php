@@ -153,7 +153,7 @@ window.location.href="pickYourSet.php";
     }
   }
 
-  if($packageChoice == 'layeredarch'){
+  if($setOption == 'layeredarch'){
     $packageList = `
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
                     <li>3 piece seating chart half arch set (print service for cards is available for a small additional fee)</li>
