@@ -84,17 +84,10 @@ window.location.href="pickYourSet.php";
         $cost = 599;
     }  
   }
-  if($setOption == 'darkwalnut' || $setOption == 'rusticwood'){
-    if($packageChoice == 'fullpackage'){
-        $cost = 299;
-    }
-    if($packageChoice == 'noseating'){
-        $cost = 245;
-    }
-    if($packageChoice == 'drpick4'){
-        $cost = 199;
-    }    
+  if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
+    $cost = 245;
   }
+    
 
   if($setOption == 'darkwalnut'){
     $setName = "Dark Walnut";
