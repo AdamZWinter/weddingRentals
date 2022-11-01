@@ -45,6 +45,80 @@ window.location.href="pickYourSet.php";
   $extrasWarning = ($hexarchAvailable || $couchAvailable || $antiquejugsAvailable || $clearjarsAvailable || $deliveryAvailable) ? 'd-block' : 'd-none';
   //$extrasWarning = "d-block";
 
+   //adding cost variable based on set choice 
+  //TODO : UPDATE packageChoice names on package.php!!!!
+  if($setOption == 'layeredarch'){
+    if($packageChoice == 'fullset'){
+        $cost = 849;
+    }
+    if($packageChoice == 'pick6'){
+        $cost = 749;
+    }
+    if($packageChoice == 'pick4'){
+        $cost = 699;
+    }    
+  }
+  if($setOption == 'modernround'){
+    if($packageChoice == 'fullset'){
+        $cost = 799;
+    }
+    if($packageChoice == 'pick6'){
+        $cost = 699;
+    }
+    if($packageChoice == 'pick4'){
+        $cost = 599;
+    }    
+  }
+  if($setOption == 'vintagemirror'){
+    if($packageChoice == 'vmplatinum'){
+        $cost = 849;
+    }
+    if($packageChoice == 'vmgold'){
+        $cost = 799;
+    }
+    if($packageChoice == 'vmpick6'){
+        $cost = 649;
+    }    
+    if($packageChoice == 'vmpick4'){
+        $cost = 599;
+    }  
+  }
+  if($setOption == 'darkwalnut' || $setOption == 'rusticwood'){
+    if($packageChoice == 'fullpackage'){
+        $cost = 299;
+    }
+    if($packageChoice == 'noseating'){
+        $cost = 245;
+    }
+    if($packageChoice == 'drpick4'){
+        $cost = 199;
+    }    
+  }
+  //reusable text
+  $VMPlatinumSub = "INCLUDES ALL OF THE FOLLOWING 11 ITEMS";
+  $VMGoldSub = "INCLUDES ALL THE FOLLOWING 8 ITEMS";
+  $fullsetSub = "INCLUDES ALL OF THE FOLLOWING ITEMS";
+  $pick6Sub = "CHOOSE 6 OF THE FOLLOWING ITEMS";
+  $pick4Sub = "CHOOSE 4 OF THE FOLLOWING ITEMS";
+
+  $pick6Title = "PICK 6 Rental";
+  $pick4Title = "PICK 4 Rental";
+  $fullSetTitle= "Full Set Rental";
+  $VMPlatinumTitle= "Vintage Mirror Platinum Package Rental";
+  $VMGoldTitle= "Vintage Mirror Gold Package Rental";
+  //TODO : HTML mark-up for upsell package AND logic to decide which to show below
+  if($setOption == 'layeredarch'){
+    if($packageChoice == 'fullset'){
+      $titleName = $fullSetTitle;
+      $subtitle = $fullsetSub;
+    }
+    if($packageChoice == 'pick6'){
+      $titleName == $pick6Sub;
+    }
+  }
+
+
+
 ?>
 
 <script>

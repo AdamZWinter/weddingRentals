@@ -58,24 +58,24 @@ window.location.href="pickYourSet.php";
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
   $layeredArch = '
-  <option class= "option-style" value= "fullSet" name="">Full Set- $849</option>
-  <option class= "option-style" value= "pickSix">Pick 6- $749</option>
+  <option class= "option-style" value= "fullset" name="">Full Set- $849</option>
+  <option class= "option-style" value= "pick6">Pick 6- $749</option>
   <option class= "option-style" value= "pick4">Pick 4- $649</option>
 ';
 $modernRound = '
-  <option class= "option-style" value= "fullSet">Full Set- $799</option>
-  <option class= "option-style" value= "pickSix">Pick 6- $699</option>
+  <option class= "option-style" value= "fullset">Full Set- $799</option>
+  <option class= "option-style" value= "pick6">Pick 6- $699</option>
   <option class= "option-style" value= "pick4">Pick 4- $599</option>
 ';
 $vintageMirror ='
   <option class= "option-style" value= "platinum">Platinum Package Rental- $849</option>
-  <option class= "option-style" value= "fullSet">Gold Package Rental- $799</option>
-  <option class= "option-style" value= "pickSix">Pick 6- $649</option>
-  <option class= "option-style" value= "pick4">Pick 4- $599</option>
+  <option class= "option-style" value= "gold">Gold Package Rental- $799</option>
+  <option class= "option-style" value= "vmpick6">Pick 6- $649</option>
+  <option class= "option-style" value= "vmpick4">Pick 4- $599</option>
 ';
 $walnutRustic= '
-  <option class= "option-style" value= "fullSet">Full Set- $299</option>
-  <option class= "option-style" value= "pickSix">Pick 6- $245</option>
+  <option class= "option-style" value= "fullset">Full Set- $299</option>
+  <option class= "option-style" value= "pick6">Pick 6- $245</option>
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 
