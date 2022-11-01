@@ -71,10 +71,10 @@ window.location.href="pickYourSet.php";
     }    
   }
   if($setOption == 'vintagemirror'){
-    if($packageChoice == 'vmplatinum'){
+    if($packageChoice == 'platinum'){
         $cost = 849;
     }
-    if($packageChoice == 'vmgold'){
+    if($packageChoice == 'gold'){
         $cost = 799;
     }
     if($packageChoice == 'vmpick6'){
@@ -132,8 +132,8 @@ window.location.href="pickYourSet.php";
   $fullSetTitle= "Full Set Rental";
   $fullpackageTitle = "Full Package Rental";
   $noSeatingTitle = '“No Seating” Rental';
-  $VMPlatinumTitle= "Vintage Mirror Platinum Package Rental";
-  $VMGoldTitle= "Vintage Mirror Gold Package Rental";
+  $VMPlatinumTitle= "Platinum Package Rental";
+  $VMGoldTitle= "Gold Package Rental";
   //TODO : HTML mark-up for upsell package AND logic to decide which to show below
   $titleName = '';
   $subtitle = '';
@@ -181,11 +181,11 @@ window.location.href="pickYourSet.php";
       $titleName = "{$setName} {$VMGoldTitle} $".$cost;
       $subtitle = $VMGoldSub;
     }
-    if($packageChoice == 'pick6'){
+    if($packageChoice == 'vmpick6'){
       $titleName = "{$setName} {$pick6Title} $".$cost;
       $subtitle = $pick6Sub;
     }
-    if($packageChoice == 'pick4'){
+    if($packageChoice == 'vmpick4'){
       $titleName = "{$setName} {$pick4Title} $".$cost;
       $subtitle = $pick4Sub;
     }
