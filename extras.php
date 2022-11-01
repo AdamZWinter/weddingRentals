@@ -109,6 +109,8 @@ window.location.href="pickYourSet.php";
   $VMPlatinumTitle= "Vintage Mirror Platinum Package Rental";
   $VMGoldTitle= "Vintage Mirror Gold Package Rental";
   //TODO : HTML mark-up for upsell package AND logic to decide which to show below
+  $titleName = '';
+  $subtitle = '';
   if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'fullset'){
       $titleName = $fullSetTitle;
