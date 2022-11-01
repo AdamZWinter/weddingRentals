@@ -104,19 +104,71 @@ window.location.href="pickYourSet.php";
   $pick6Title = "PICK 6 Rental";
   $pick4Title = "PICK 4 Rental";
   $fullSetTitle= "Full Set Rental";
+  $fullpackageTitle = "Full Package Rental";
+  $noSeatingTitle = '“No Seating” Rental';
   $VMPlatinumTitle= "Vintage Mirror Platinum Package Rental";
   $VMGoldTitle= "Vintage Mirror Gold Package Rental";
   //TODO : HTML mark-up for upsell package AND logic to decide which to show below
-  if($setOption == 'layeredarch'){
+  if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'fullset'){
       $titleName = $fullSetTitle;
       $subtitle = $fullsetSub;
     }
     if($packageChoice == 'pick6'){
-      $titleName == $pick6Sub;
+      $titleName == $pick6Title;
+      $subtitle == $pick6Sub;
+    }
+    if($packageChoice == 'pick4'){
+      $titleName == $pick4Title;
+      $subtitle == $pick4Sub;
+    }
+  }
+  if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
+    if($packageChoice == 'fullset'){
+      $titleName = $fullpackageTitle;
+    }
+    if($packageChoice == 'pick6'){
+      $titleName == $noSeatingTitle;
+    }
+    if($packageChoice == 'pick4'){
+      $titleName == $pick4Title;
+    }
+  }
+  if($setOption == 'vintagemirror'){
+    if($packageChoice == 'platinum'){
+      $titleName = $VMPlatinumTitle;
+      $subtitle = $VMPlatinumSub;
+    }
+    if($packageChoice == 'gold'){
+      $titleName == $VMGoldTitle;
+      $subtitle == $VMGoldSub;
+    }
+    if($packageChoice == 'pick6'){
+      $titleName == $pick6Title;
+      $subtitle == $pick6Sub;
+    }
+    if($packageChoice == 'pick4'){
+      $titleName == $pick4Title;
+      $subtitle == $pick4Sub;
     }
   }
 
+  if($packageChoice == 'layeredarch'){
+    $packageList = `
+                    <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
+                    <li>3 piece seating chart half arch set (print service for cards is available for a small additional fee)</li>
+                    <li>Table numbers 1-30</li>
+                    <li>Gold Card Terrarium with choice of “Gifts & Cards” sign</li>
+                    <li>5 “Reserved” signs</li>
+                    <li>Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Don't Mind if I Do,” “In Loving Memory”)</li>
+                    <li>Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</li>
+                    <li>1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</li>
+                    <li>1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text) </li>
+                    <li>Unplugged Ceremony sign</li>
+                    <li>Hairpin Record Player Prop</li>
+                    <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
+    `
+  }
 
 
 ?>
@@ -126,6 +178,23 @@ window.location.href="pickYourSet.php";
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
 </script>
+<div class = "container-fluid">
+  <h3>Your Package:</h3>
+  <div class = "row">
+    <div class = "col-sm-3"></div>
+    <div class = "col-sm-6">
+     <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
+     <h6 > <?php echo $titleName;?> </h6>
+     <ul class = "descriptionList"> <?php echo $titleName;?> </ul>  
+    
+    
+    
+    
+    <div>
+    <div class = "col-sm-3"></div>
+  </div>
+
+</div>
 
 
     <div class = "container-fluid ">
@@ -143,6 +212,8 @@ window.location.href="pickYourSet.php";
 
                 <br>
                 <br>
+
+
                 <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
                 <br>
