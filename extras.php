@@ -47,19 +47,7 @@ window.location.href="pickYourSet.php";
 
 ?>
 
-<script>
-  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
-  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
-  document.getElementById("headerImage").style.height = "300px";
 
-
-  function checkAllExtrasBoxes() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (var checkbox of checkboxes) {
-        checkbox.checked = this.checked;
-    }
-}
-</script>
 
 
 
@@ -122,23 +110,50 @@ window.location.href="pickYourSet.php";
 <br>
 
 
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+
+
+  function checkAllExtrasBoxes() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      checkbox.checked = true;
+    }
+  }
+
+  
+  function checkFourBoxes(){
+  console.log("checkFourBoxes() is triggered ");
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  for (var checkbox of checkboxes) {
+      checkbox.checked = true;
+  }
+}
+</script>
+
 <?php
 if( !isset($_GET['packageChoice']) ){
   //echo $redirect;
 }else{
   $packageChoice = $_GET['packageChoice'];
   if( $packageChoice == 'fullSet'){
+    //echo("<script>console.log('packageChoice = fullSet');</script>");
+
     echo '<script type="text/javascript">',
      'checkAllExtrasBoxes();',
      '</script>';
   }
   if( $packageChoice == 'pickSix'){
-    echo '<script type="text/javascript">',
-     'checkFourBoxes();',
-     '</script>';
+    //echo("<script>console.log('packageChoice = pickSix');</script>");
+
   }
   if( $packageChoice == 'pick4'){
-    echo("<script>console.log('pick4 was selected ');</script>");
+    //echo("<script>console.log('packageChoice = pick4');</script>");
+    echo '<script type="text/javascript">',
+     'checkFourBoxes();',
+     '</script>';;
   }
  
 

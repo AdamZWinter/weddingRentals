@@ -101,11 +101,10 @@ slider3(slideOne);
 slider3(slideTwo);
 
 
-function checkAllExtrasBoxes(){
-  console.log("checkAllExtrasBoxes() is triggered ");
+function checkAllExtrasBoxes() {
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
   for (var checkbox of checkboxes) {
-      checkbox.checked = true;
+    checkbox.checked = true;
   }
 }
 
@@ -116,3 +115,4 @@ function checkFourBoxes(){
       checkbox.checked = true;
   }
 }
+
