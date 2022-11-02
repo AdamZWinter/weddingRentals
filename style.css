@@ -550,7 +550,7 @@ div.col-sm-6 {
   color:#4d4d4d !important;
 }
 .descriptionList{
-  text-align: center;
+  align-content: center;
   font-family: sans-serif;
   font-weight: 75;
   font-size: medium;
