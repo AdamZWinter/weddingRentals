@@ -21,7 +21,11 @@ window.location.href="pickYourSet.php";
   }else{
     $setOption = $_GET['setOption'];
   }
-
+  if( !isset($_GET['packageChoice']) ){
+    echo $redirect;
+  }else{
+    $packageChoice = $_GET['packageChoice'];
+  }
   
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
