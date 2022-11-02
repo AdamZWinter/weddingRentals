@@ -223,7 +223,7 @@ window.location.href="pickYourSet.php";
   <h3>Your Package:</h3>
   <div class = "row">
     <div class = "col-sm-3"></div>
-    <div class = "col-sm-6">
+    <div class = "col-sm-6 topper">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
      <h6 > <?php echo $subtitle;?> </h6>
      <?php echo $packageList;?>   
