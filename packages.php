@@ -58,7 +58,7 @@ window.location.href="pickYourSet.php";
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
   $layeredArch = '
-  <option class= "option-style" value= "fullset" name="">Full Set- $849</option>
+  <option class= "option-style" value= "fullset">Full Set- $849</option>
   <option class= "option-style" value= "pick6">Pick 6- $749</option>
   <option class= "option-style" value= "pick4">Pick 4- $649</option>
 ';

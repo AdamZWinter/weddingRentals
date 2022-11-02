@@ -556,3 +556,6 @@ div.col-sm-6 {
   font-size: medium;
   color: #808080;
 }
+#wrap{
+  display: inline-block;
+}

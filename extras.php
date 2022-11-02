@@ -1,3 +1,4 @@
+
 <?php
 
 //extras.php
@@ -21,17 +22,16 @@ window.location.href="pickYourSet.php";
     $setOption = $_GET['setOption'];
   }
 
-  if( !isset($_GET['packageChoice']) ){
-    //echo $redirect;
-  }else{
-    $packageChoice = $_GET['packageChoice'];
-  }
+  
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
   }else{
     $displaySets = 'true';
   }
+
+
+
 
 
   $hexarchAvailable = $weddingMonth == 1 ? 'disabled' : '';
@@ -213,11 +213,8 @@ window.location.href="pickYourSet.php";
 
 ?>
 
-<script>
-  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
-  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
-  document.getElementById("headerImage").style.height = "300px";
-</script>
+
+
 <div class = "container-fluid">
   <h3>Your Package:</h3>
   <div class = "row">
@@ -296,6 +293,58 @@ window.location.href="pickYourSet.php";
 
 <br>
 <br>
+
+
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
+
+
+  function checkAllExtrasBoxes() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      checkbox.checked = true;
+    }
+  }
+
+  
+  function checkFourBoxes(){
+  console.log("checkFourBoxes() is triggered ");
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  for (var checkbox of checkboxes) {
+      checkbox.checked = true;
+  }
+}
+</script>
+
+<?php
+if( !isset($_GET['packageChoice']) ){
+  //echo $redirect;
+}else{
+  $packageChoice = $_GET['packageChoice'];
+  if( $packageChoice == 'fullSet'){
+    //echo("<script>console.log('packageChoice = fullSet');</script>");
+
+    echo '<script type="text/javascript">',
+     'checkAllExtrasBoxes();',
+     '</script>';
+  }
+  if( $packageChoice == 'pickSix'){
+    //echo("<script>console.log('packageChoice = pickSix');</script>");
+
+  }
+  if( $packageChoice == 'pick4'){
+    //echo("<script>console.log('packageChoice = pick4');</script>");
+    echo '<script type="text/javascript">',
+     'checkFourBoxes();',
+     '</script>';;
+  }
+ 
+
+}
+?>
+
 <?php
 //footer
 require('footer.php');
