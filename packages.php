@@ -29,6 +29,17 @@ window.location.href="pickYourSet.php";
     $displaySets = 'true';
   }
 
+
+  // for package list
+  if(!isset($_GET['packageChoice'])){
+    $packageCheckList = ($_GET['packageChoice']);
+  }
+  if($packageCheckList == 'fullset'){
+    $packageListMarkup = $layeredArchFullSetPackageDetails;
+  }
+
+
+
   //var_dump($weddingMonth);
 
   $available = true;
@@ -107,6 +118,43 @@ $packageMarkup = '
 </div>   
 ';
 
+
+$layeredArchFullSetPackageDetails = '
+<label for="packageItemsForm" class="rental-head">INCLUDES EACH OF THE FOLLOWING ITEMS:</label>              
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="vintagesofa" class = "option-style"> Vintage Sofa</label>
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="antiquejugs" class = "option-style"> Antique Gallon Jugs</label>   
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="winejug" class = "option-style"> XL Wine Jugs</label>
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="clearjars" class = "option-style"> Clear Antique Ball Jars</label>
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+                <label for="bluejars" class = "option-style"> Blue Antique Ball Jars</label>
+                <br>
+                <br>
+                <input  type="checkbox" id="hexarbor" name="hexarbor">
+
+';
+
+
+$packageCheckList = '
+            <form name="packageItemsForm" id="packageItemsForm" action="packages.php" method="get">
+            '.$packageListMarkup.'
+                <input type="submit" value="Continue">
+            </form>
+           
+';
+
+
+
 ?>
 
 
@@ -116,6 +164,7 @@ $packageMarkup = '
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
 </script>
+
 
 
     <div class = "container-fluid">
@@ -136,22 +185,8 @@ $packageMarkup = '
                     <?php 
                       echo $packageMarkup; 
                     ?>
-                    <button class = "btn btn-primary button" type="submit" >Continue</button>
-
-                    <!-- Collapse to show  -->
-    
-
-
-    <div class="collapse" id="collapseDiv">
-  <div class="card card-body">
-
-<h1>Show stuff</h1>
-
-
-  </div><!-- Card collapse -->
-                    
-                </form>
-                
+                    <button class = "btn btn-primary button" type="submit" >Continue</button>                             
+                </form>               
             </p>
 
             <p id="availableFalse">
@@ -163,13 +198,7 @@ $packageMarkup = '
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="">
-                    <button type="submit">Try a Different Set</button>
-
-
-
-
-
-                    
+                    <button type="submit">Try a Different Set</button>   
                 </form>            
             </p>
 
@@ -178,12 +207,18 @@ $packageMarkup = '
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>
       </div><!--end of row--> 
-
       
-    </div><!--End of container-fluid-->
+      </div><!--End of container-fluid-->
 
 
-    
+
+
+    <!-- Collapse that displays the Package checkboxes  -->
+    <div class="collapse" id="collapseDiv">
+      <div class="card card-body">
+
+      <h1 id= "insertInfo"><?php echo $packageCheckList;?></h1>
+    </div><!-- Card collapse -->
 
 
   <script>
@@ -194,21 +229,25 @@ $packageMarkup = '
       optionChoiceValue = document.getElementsByTagName("option")[optionChoice].value;
       optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
       console.log( optionChoiceValue + " was chosen");
-      console.log( "Opotion choice details: " + optionChoiceDetails);
+      console.log( "Option choice details: " + optionChoiceDetails);
 
       if(optionChoiceValue != null ){
         document.getElementById("collapseDiv").className = "collapse show";
       }
-      if(optionChoiceValue != null ){
-        document.getElementById("collapseDiv").className = "collapse show";
-      }
+      // if(optionChoiceDetails == "Full Set- $849" ){
+        // showLayeredArchFullSetPackage();
+      // }
+      // else {
+        // document.getElementById("insertInfo").innerHTML = "not layered arch";
+
+      // }
   }
     
       
     
 
-    function showLayeredArchPackages(){
-      
+    function showLayeredArchFullSetPackage(){
+      document.getElementById("insertInfo").innerHTML = "LayeredArch full set";
     }
     
   </script>
