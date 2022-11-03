@@ -99,7 +99,7 @@ $packageMarkup = '
 <label for="packageChoice" class="rental-head">Choose Your Package:</label>
 
 <br>
-<select class="form-control select-style" id="packageChoice" name="packageChoice">
+<select class="form-control select-style" id="packageChoice" name="packageChoice" onchange="displayPackageDetails();">
 '.$optionMarkup.'
 </select>
 </div>
@@ -108,6 +108,8 @@ $packageMarkup = '
 ';
 
 ?>
+
+
 
 <script>
   document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
@@ -135,7 +137,21 @@ $packageMarkup = '
                       echo $packageMarkup; 
                     ?>
                     <button class = "btn btn-primary button" type="submit" >Continue</button>
+
+                    <!-- Collapse to show  -->
+    
+
+
+    <div class="collapse" id="collapseDiv">
+  <div class="card card-body">
+
+<h1>Show stuff</h1>
+
+
+  </div><!-- Card collapse -->
+                    
                 </form>
+                
             </p>
 
             <p id="availableFalse">
@@ -148,6 +164,12 @@ $packageMarkup = '
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="">
                     <button type="submit">Try a Different Set</button>
+
+
+
+
+
+                    
                 </form>            
             </p>
 
@@ -161,8 +183,38 @@ $packageMarkup = '
     </div><!--End of container-fluid-->
 
 
+    
 
 
+  <script>
+  
+  function displayPackageDetails() {
+
+    var optionChoice = document.getElementById("packageChoice").selectedIndex;
+      optionChoiceValue = document.getElementsByTagName("option")[optionChoice].value;
+      optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
+      console.log( optionChoiceValue + " was chosen");
+      console.log( "Opotion choice details: " + optionChoiceDetails);
+
+      if(optionChoiceValue != null ){
+        document.getElementById("collapseDiv").className = "collapse show";
+      }
+      if(optionChoiceValue != null ){
+        document.getElementById("collapseDiv").className = "collapse show";
+      }
+  }
+    
+      
+    
+
+    function showLayeredArchPackages(){
+      
+    }
+    
+  </script>
+
+
+  
 
 <?php
 //footer
