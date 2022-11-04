@@ -8,7 +8,7 @@
 // Package 16 = Full Set, 32 = Pick Six, 48 = Pick Four,  64 = platinum
 // 256 and above will individual bit flags for the package choices
 
-class LayeredArchPackage implements Package{
+class ModernRoundPackage implements Package{
     private int $packageCode;
     private int $subsetType;
 

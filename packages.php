@@ -2,11 +2,17 @@
 //Test comment
 //packages.php
 require('header.php');
+require('./models/Package.php');
+require('./models/LayeredArchPackage.php');
+require('./models/ModernRoundPackage.php');
+require('./models/VintageMirrorPackage.php');
+require('./models/DarkWalnutPackage.php');
+
+$thisPackage;
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
 </script>';
-
 
 
   if( !isset($_GET['weddingDate']) ){
@@ -79,18 +85,27 @@ $walnutRustic= '
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 
-if($setOption == 'rusticwood'|| $setOption ==  'darkwalnut'){
-$optionMarkup = $walnutRustic;
-}
 if($setOption == 'layeredarch'){
-$optionMarkup = $layeredArch;
+  $optionMarkup = $layeredArch;
+  $thisPackage = new LayeredArchPackage();
 }
 if($setOption == 'modernround'){
-$optionMarkup = $modernRound;
+    $optionMarkup = $modernRound;
+    $thisPackage = new ModernRoundPackage();
 }
 if($setOption == 'vintagemirror'){
-$optionMarkup = $vintageMirror;
+    $optionMarkup = $vintageMirror;
+    $thisPackage = new VintageMirrorPackage();
 }
+if($setOption ==  'darkwalnut'){
+  $optionMarkup = $walnutRustic;
+  $thisPackage = new DarkWalnutPackage();
+}
+if($setOption == 'rusticwood'){
+  $optionMarkup = $walnutRustic;
+  $thisPackage = new RusticWoodPackage();
+}
+
 
 $packageMarkup = '
 <div class= row>
@@ -128,6 +143,7 @@ $packageMarkup = '
                     Great!  This set is available on <?php echo $weddingDate;?>
                     <br>
                     <br>
+                    <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                     <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
