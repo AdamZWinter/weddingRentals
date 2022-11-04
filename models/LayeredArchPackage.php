@@ -107,6 +107,19 @@ class LayeredArchPackage implements Package{
 
     public function decode($packageCode){
         $this->packageCode = $packageCode;
+        $this->subsetType = $packageCode & 0b00000000000000000000000011110000;
+        if( ((1 << 8) & $packageCode) != 0 ){$this->setOption01(TRUE);}
+        if( ((1 << 9) & $packageCode) != 0 ){$this->setOption02(TRUE);}
+        if( ((1 << 10) & $packageCode) != 0 ){$this->setOption03(TRUE);}
+        if( ((1 << 11) & $packageCode) != 0 ){$this->setOption04(TRUE);}
+        if( ((1 << 12) & $packageCode) != 0 ){$this->setOption05(TRUE);}
+        if( ((1 << 13) & $packageCode) != 0 ){$this->setOption06(TRUE);}
+        if( ((1 << 14) & $packageCode) != 0 ){$this->setOption07(TRUE);}
+        if( ((1 << 15) & $packageCode) != 0 ){$this->setOption08(TRUE);}
+        if( ((1 << 16) & $packageCode) != 0 ){$this->setOption09(TRUE);}
+        if( ((1 << 17) & $packageCode) != 0 ){$this->setOption10(TRUE);}
+        if( ((1 << 18) & $packageCode) != 0 ){$this->setOption11(TRUE);}
+        if( ((1 << 19) & $packageCode) != 0 ){$this->setOption12(TRUE);}
     }
 
     public function setSubsetType($typeCode){
