@@ -21,12 +21,12 @@ window.location.href="pickYourSet.php";
   }else{
     $setOption = $_GET['setOption'];
   }
+
   if( !isset($_GET['packageChoice']) ){
     echo $redirect;
   }else{
     $packageChoice = $_GET['packageChoice'];
-  }
-  
+  }  
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
@@ -51,10 +51,13 @@ window.location.href="pickYourSet.php";
 
    //adding cost variable based on set choice 
   //TODO : UPDATE packageChoice names on package.php!!!!
+  $priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
+
+
   $cost = 0;
   if($setOption == 'layeredarch'){
     if($packageChoice == 'fullset'){
-        $cost = 849;
+        $cost = $priceArray[0];
     }
     if($packageChoice == 'pick6'){
         $cost = 749;
@@ -212,6 +215,16 @@ window.location.href="pickYourSet.php";
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
                     </ul>
     ';
+  }
+
+  // UPSELL package
+  $upgradeForm = '
+  <div>
+  <form 
+  </div>
+  '
+  if($packageChoice == "pick4"){
+
   }
 
 

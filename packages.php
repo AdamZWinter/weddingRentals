@@ -29,6 +29,12 @@ window.location.href="pickYourSet.php";
     $displaySets = 'true';
   }
 
+  if( !isset($_GET['upsellPackage']) ){
+    $upsellPackage = '';
+  }else{
+    $upsellPackage = $_GET['upsellPackage'];
+  }
+
   //var_dump($weddingMonth);
 
   $available = true;
@@ -57,25 +63,51 @@ window.location.href="pickYourSet.php";
   $availableTrue = $available ? 'd-block' : 'd-none';
   $availableFalse = !$available ? 'd-block' : 'd-none';
 
+  //selected logic to handle extras package upsell
+  if($upsellPackage == 'fullset'){
+    $fullSelected = 'selected';
+  }
+  else{
+    $fullSelected = '';
+  }
+  
+  if($upsellPackage == 'pick6' || $upsellPackage == 'vmpick6'){
+    $sixSelected = 'selected';
+  }else{
+    $sixSelected = '';
+  }
+
+  if($upsellPackage == 'platinum'){
+    $platinumSelected = 'selected';
+  }else{
+    $platinumSelected = '';
+  }
+  if($upsellPackage == 'gold'){
+    $goldSelected = 'selected';
+  }else{
+    $goldSelected = '';
+  }
+
+
   $layeredArch = '
-  <option class= "option-style" value= "fullset">Full Set- $849</option>
-  <option class= "option-style" value= "pick6">Pick 6- $749</option>
+  <option class= "option-style" value= "fullset"'.$fullSelected.'>Full Set- $849</option>
+  <option class= "option-style" value= "pick6"'.$sixSelected.'>Pick 6- $749</option>
   <option class= "option-style" value= "pick4">Pick 4- $649</option>
 ';
 $modernRound = '
-  <option class= "option-style" value= "fullset">Full Set- $799</option>
-  <option class= "option-style" value= "pick6">Pick 6- $699</option>
+  <option class= "option-style" value= "fullset"'.$fullSelected.'>Full Set- $799</option>
+  <option class= "option-style" value= "pick6"'.$sixSelected.'>Pick 6- $699</option>
   <option class= "option-style" value= "pick4">Pick 4- $599</option>
 ';
 $vintageMirror ='
-  <option class= "option-style" value= "platinum">Platinum Package Rental- $849</option>
-  <option class= "option-style" value= "gold">Gold Package Rental- $799</option>
-  <option class= "option-style" value= "vmpick6">Pick 6- $649</option>
+  <option class= "option-style" value= "platinum"'.$platinumSelected.'>Platinum Package Rental- $849</option>
+  <option class= "option-style" value= "gold"'.$goldSelected.'>Gold Package Rental- $799</option>
+  <option class= "option-style" value= "vmpick6"'.$sixSelected.'>Pick 6- $649</option>
   <option class= "option-style" value= "vmpick4">Pick 4- $599</option>
 ';
 $walnutRustic= '
-  <option class= "option-style" value= "fullset">Full Set- $299</option>
-  <option class= "option-style" value= "pick6">Pick 6- $245</option>
+  <option class= "option-style" value= "fullset"'.$fullSelected.'>Full Set- $299</option>
+  <option class= "option-style" value= "pick6"'.$sixSelected.'>Pick 6- $245</option>
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 
