@@ -8,7 +8,7 @@
 // Package 16 = Full Set, 32 = Pick Six, 48 = Pick Four,  64 = platinum
 // 256 and above will individual bit flags for the package choices
 
-class LayeredArchPackage implements Package{
+class VintageMirrorPackage implements Package{
     private int $packageCode;
     private int $subsetType;
 
@@ -30,31 +30,35 @@ class LayeredArchPackage implements Package{
     private bool $option10;
     private bool $option11;
     private bool $option12; 
+    private bool $option13;
+    private bool $option14; 
 
     public function __construct(){
-        $this->packageCode = 1;
-        $this->subsetType = 0;
-        $this->setName = "layeredarch";
-        $this->setNameLang = "Layered Arch";
+        $this->packageCode = 3;
+        $this->subsetType = 0;  //a la cart
+        $this->setName = "vintagemirror";
+        $this->setNameLang = "Vintage Mirror";
 
-        $this->packageOptionsArray = array("Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)",
-                                            "3 piece seating chart half arch set (print service for cards is available for a small additional fee)",
-                                            "Table numbers 1-30",
-                                            "Gold Card option04 with choice of Gifts & Cards sign",
-                                            "5 Reserved signs",
-                                            "Up to 2 Double Half Arch Small signs (Gifts & Cards, Take One, Dont Mind if I Do, In Loving Memory)",
-                                            "Up to 2 Sunset Small signs (Please Sign Our Guestbook, Gifts & Cards, In Loving Memory)",
-                                            "1 Double Half Arch Medium sign (Cheers, The Bar, Guestbook, or Custom Acrylic Text)",
-                                            "1 Double Full Arch Medium sign (Signature Drinks, or Custom Acrylic Text)",
-                                            "Unplugged Ceremony sign",
-                                            "Hairpin Record Player Prop",
-                                            "%22Mr & Mrs%22 Custom Head Table Keepsake is a free gift in addition to the items above"
+        $this->packageOptionsArray = array("Welcome Sign with custom names & date & large wrought iron easel",
+                                            "Antique Typewriter Rental with customized message (100 words or less)",
+                                            "Choice of Linen Seating Chart Stringer or Large Custom Mirror for gold seal application",
+                                            "Table Numbers 1-30",
+                                            "Leather Domed Trunk with “cards” mirror with stand",
+                                            "Enjoy the Moment- no photography please mirror with stand",
+                                            "Guestbook mirror with stand",
+                                            "Take One small vanity mirror",
+                                            "1 Large Full Custom Mirror (50 words or less) with large wrought iron easel",
+                                            "1 Medium Full Custom Mirror (20 words or less)  with large wrought iron easel",
+                                            "1 Small Custom Mirror (10 words or less) with wrought iron easel",
+                                            "Custom Mirror SMALL (up to 12 words) $40",
+                                            "Custom Mirror MEDIUM (up to 24 words) $60",
+                                            "Customer Mirror LARGE (up to 60 words) $80"
                                             );
         
-        $this->subsetTypeArray = array("Full Set",   //16
-                                        "Pick Six",  //32
-                                        "Pick Four", //48
-                                        "Platinum"   //64
+        $this->subsetTypeArray = array("Platinum",   //16
+                                        "Gold",      //32
+                                        "Pick Six",  //48
+                                        "Pick Four"  //64
                                         );
 
         $this->option01 = False;
@@ -69,6 +73,8 @@ class LayeredArchPackage implements Package{
         $this->option10 = False;
         $this->option11 = False;
         $this->option12 = False;
+        $this->option13 = False;
+        $this->option14 = False;
     }
 
     public function getSetName(){return $this->setName;}
@@ -102,6 +108,8 @@ class LayeredArchPackage implements Package{
         if($this->option10){$this->packageCode = $this->packageCode ^ (1 << 17);}
         if($this->option11){$this->packageCode = $this->packageCode ^ (1 << 18);}
         if($this->option12){$this->packageCode = $this->packageCode ^ (1 << 19);}
+        if($this->option13){$this->packageCode = $this->packageCode ^ (1 << 20);}
+        if($this->option14){$this->packageCode = $this->packageCode ^ (1 << 21);}
         return $this->packageCode;
     }
 
@@ -120,6 +128,8 @@ class LayeredArchPackage implements Package{
         if( ((1 << 17) & $packageCode) != 0 ){$this->setOption10(TRUE);}
         if( ((1 << 18) & $packageCode) != 0 ){$this->setOption11(TRUE);}
         if( ((1 << 19) & $packageCode) != 0 ){$this->setOption12(TRUE);}
+        if( ((1 << 20) & $packageCode) != 0 ){$this->setOption13(TRUE);}
+        if( ((1 << 21) & $packageCode) != 0 ){$this->setOption14(TRUE);}
     }
 
     public function setSubsetType($typeCode){

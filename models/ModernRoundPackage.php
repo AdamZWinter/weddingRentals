@@ -32,29 +32,25 @@ class LayeredArchPackage implements Package{
     private bool $option12; 
 
     public function __construct(){
-        $this->packageCode = 1;
-        $this->subsetType = 0;
-        $this->setName = "layeredarch";
-        $this->setNameLang = "Layered Arch";
+        $this->packageCode = 2;
+        $this->subsetType = 0;  //a la cart
+        $this->setName = "modernround";
+        $this->setNameLang = "Modern Round";
 
-        $this->packageOptionsArray = array("Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)",
-                                            "3 piece seating chart half arch set (print service for cards is available for a small additional fee)",
-                                            "Table numbers 1-30",
-                                            "Gold Card option04 with choice of Gifts & Cards sign",
-                                            "5 Reserved signs",
-                                            "Up to 2 Double Half Arch Small signs (Gifts & Cards, Take One, Dont Mind if I Do, In Loving Memory)",
-                                            "Up to 2 Sunset Small signs (Please Sign Our Guestbook, Gifts & Cards, In Loving Memory)",
-                                            "1 Double Half Arch Medium sign (Cheers, The Bar, Guestbook, or Custom Acrylic Text)",
-                                            "1 Double Full Arch Medium sign (Signature Drinks, or Custom Acrylic Text)",
-                                            "Unplugged Ceremony sign",
-                                            "Hairpin Record Player Prop",
-                                            "%22Mr & Mrs%22 Custom Head Table Keepsake is a free gift in addition to the items above"
+        $this->packageOptionsArray = array("Large Custom Welcome (round center becomes a keepsake)",
+                                            "Large Magnetic Rectangular (Find Your Seat, Cocktails, Let%27s Party, or customize)",
+                                            "1-30 free standing table numbers",
+                                            "Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)",
+                                            "Set of Reserved signs (5)",
+                                            "2 Selections of Small Square Bracket Signs (In Loving Memory, Gifts & Cards, Take One, and/or customize)",
+                                            "2 Selections of Small Horizontal Bracket Signs (Guestbook, Programs, Mr. & Mrs. Take One, Gifts and Cards,  and/or customize)",
+                                            "1 Medium Table Top  (Unplugged Ceremony, or Magnetic Sign with Cocktails heading,  In Loving Memory heading or customize",
+                                            "All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake"
                                             );
         
         $this->subsetTypeArray = array("Full Set",   //16
                                         "Pick Six",  //32
-                                        "Pick Four", //48
-                                        "Platinum"   //64
+                                        "Pick Four" //48
                                         );
 
         $this->option01 = False;
