@@ -60,54 +60,54 @@ window.location.href="pickYourSet.php";
         $cost = $priceArray[0];
     }
     if($packageChoice == 'pick6'){
-        $cost = 749;
+        $cost = $priceArray[2];
     }
     if($packageChoice == 'pick4'){
-        $cost = 699;
+        $cost = $priceArray[3];
     }    
   }
   if($setOption == 'modernround'){
     if($packageChoice == 'fullset'){
-        $cost = 799;
+        $cost = $priceArray[1];
     }
     if($packageChoice == 'pick6'){
-        $cost = 699;
+        $cost = $priceArray[3];
     }
     if($packageChoice == 'pick4'){
-        $cost = 599;
+        $cost = $priceArray[5];
     }    
   }
   if($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
-        $cost = 849;
+        $cost = $priceArray[0];
     }
     if($packageChoice == 'gold'){
-        $cost = 799;
+        $cost = $priceArray[1];
     }
     if($packageChoice == 'vmpick6'){
-        $cost = 649;
+        $cost = $priceArray[4];
     }    
     if($packageChoice == 'vmpick4'){
-        $cost = 599;
+        $cost = $priceArray[5];
     }  
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
-    $cost += 199;
+    $cost += $priceArray[8];
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick6'){
-    $cost += 245;
+    $cost += $priceArray[7];
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
-    $cost += 299;
+    $cost += $priceArray[6];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick4'){
-    $cost += 199;
+    $cost += $priceArray[8];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick6'){
-    $cost += 245;
+    $cost += $priceArray[7];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'fullset'){
-    $cost += 299;
+    $cost += $priceArray[6];
   }
     
 
