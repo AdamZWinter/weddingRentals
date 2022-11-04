@@ -2,7 +2,7 @@
 
 //vardump.php
 require('header.php');
-require('../conf.php');
+require('../weddingRentals.conf.php');
 require('utilities/DatabaseConnector.php');
 
 $myDB = new DatabaseConnector();
