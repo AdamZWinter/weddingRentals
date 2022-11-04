@@ -2,6 +2,11 @@
 
 //vardump.php
 require('header.php');
+require('../conf.php');
+require('utilities/DatabaseConnector.php');
+
+$myDB = new DatabaseConnector();
+$db = $myDB->getdb();
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
