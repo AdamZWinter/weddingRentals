@@ -218,14 +218,14 @@ window.location.href="pickYourSet.php";
   }
 
   // UPSELL package
-  $upgradeForm = '
-  <div>
-  <form 
-  </div>
-  '
-  if($packageChoice == "pick4"){
+  // $upgradeForm = '
+  // <div>
+  // <form 
+  // </div>
+  // '
+  // if($packageChoice == "pick4"){
 
-  }
+  // }
 
 
 ?>
