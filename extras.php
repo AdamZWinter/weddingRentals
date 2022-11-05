@@ -245,10 +245,10 @@ window.location.href="pickYourSet.php";
         $packageUp = $pick6Title;
       }
       if($value == 'platinum'){
-        $packageUp = $platinumTitle;
+        $packageUp = $VMPlatinumTitle;
       }
       if($value == 'gold'){
-        $packageUp = $goldTitle;
+        $packageUp = $VMGoldTitle;
       }
             $upgradeMarkup .= '
                <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
