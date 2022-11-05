@@ -243,6 +243,7 @@ window.location.href="pickYourSet.php";
   if($packageChoice == "gold"){
     $upgradeOptions = ['platinum'];
   };
+  $upgradeTo = '';
   $upgradeMarkup = '';
   foreach($upgradeOptions as $value){
       $upgradeTo = $value;
