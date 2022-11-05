@@ -140,8 +140,8 @@ if( !isset($_GET['packageCode']) ){
 
 //****************************************Insert to Database *****************************************************/
 
-$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-$db->query($query);
+//$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+//$db->query($query);
 
 //$query = "INSERT INTO `extras`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
 //$db->query($query);
