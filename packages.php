@@ -306,9 +306,7 @@ $packageCheckList = '
     for (var checkbox of checkboxes) {
       checkbox.checked = false;
     }
-    for(){
-
-    }
+    
   }
 
 
