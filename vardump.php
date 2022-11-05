@@ -2,6 +2,7 @@
 
 //vardump.php
 require('header.php');
+
 require('../weddingRentals.conf.php');
 require('utilities/DatabaseConnector.php');
 
@@ -40,13 +41,48 @@ window.location.href="pickYourSet.php";
     echo $redirect;
   }else{
     $setOption = $_GET['setOption'];
+
+    switch ($setOption){
+      case 'layeredarch':
+          $setOptionLang = 'Layered Arch';
+          break;
+      case 'modernround':
+          $setOptionLang = 'Modern Round';
+          break;
+      case 'vintagemirror':
+          $setOptionLang = 'Vintage Mirror';
+          break;
+      case 'darkwalnut':
+          $setOptionLang = 'Dark Walnut';
+          break;
+      case 'rusticwood':
+          $setOptionLang = 'Rustic Wood';
+          break;
+    }//end switch
   }
+
+  
 
   //package
   if( !isset($_GET['packageChoice']) ){
     echo $redirect;
   }else{
     $packageChoice = $_GET['packageChoice'];
+
+    switch($packageChoice){
+      case 'fullSet':
+        $packageChoiceLang = 'Full Set';
+        break;
+    case 'pickSix':
+        $packageChoiceLang = 'Pick Six';
+        break;
+    case 'pick4':
+        $packageChoiceLang = 'Pick 4';
+        break;
+    case 'platinum':
+        $packageChoiceLang = 'Platinum';
+        break;
+    }//end switch
   }
 
   if( !isset($_GET['packageCode']) ){
@@ -165,14 +201,16 @@ window.location.href="pickYourSet.php";
     array_push($extras,'Delivery');
   }
 
+
+
+
 ?>
 
 <h1 class="text-center">Thank you for choosing Walnut Ridge</h1>
 <p class="text-center">The Walnut Ridge Wedding Rental Team will be confirming your order soon</p>
 <p class="text-center">A copy of the information below will be emailed to you</p><br><br>
 
-<div class="container">
-  <span id="wrap">
+
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>First Name: </h3>
@@ -181,7 +219,7 @@ window.location.href="pickYourSet.php";
         <div class="col-2">
         <h3>Last Name: </h3>
         <p><?php echo $_GET['lname'] ?></p>
-        </div>
+      </div>
     </div>
 
     <div class="row justify-content-center">
@@ -198,11 +236,11 @@ window.location.href="pickYourSet.php";
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>Set Option: </h3>
-        <span class="text-color"><?php echo $_GET['setOption'] ?></span>
+        <span class="text-color"><?php echo $setOptionLang ?></span>
         </div>
         <div class="col-2">
         <h3>Package: </h3>
-        <p><?php echo $_GET['packageChoice'] ?></p>
+        <p><?php echo $packageChoiceLang ?></p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -221,8 +259,62 @@ window.location.href="pickYourSet.php";
             </p>
         </div>
     </div>
-  </span>
-</div>
+
+
+  
+<?php
+//Sending the email
+  //recipient
+  //$to = "britanytorres888@gmail.com";
+
+  //subject
+  //$subject = "Walnut Ridge Wedding Rental Reservation Confirmation";
+
+  //message
+  //$message ="
+  //<html>
+  //<head>
+    //<title>Walnut Ridge Wedding Rental Reservation Confirmation</title>
+  //</head>
+  //<body>
+  //<h1>Thank you for choosing Walnut Ridge</h1>
+  //<p>The Walnut Ridge Wedding Rental Team will be confirming your order soon</p>
+  //<p>A copy of the information below will be emailed to you</p><br><br>
+
+  //<h3>First name: </h3>
+  //<p>".echo $fname."</p>
+  //<h3>Last name: </h3>
+  //<p>".echo $lname."</p>
+  //<h3>Email: </h3>
+  //<p>".echo $email."</p>
+  //<h3>Phone Number: </h3>
+  //<p>".echo $phone."</p>
+  //<h3>Set Option: </h3>
+  //<p>".echo $setOptionLang."</p>
+  //<h3>Package: </h3>
+  //<p>".echo $packageChoiceLang."</p>
+  //<h3>Wedding Date: </h3>
+  //<p>".echo $weddingDate."</p>
+  //<h3>Extras: </h3>
+  //<p>". foreach ($extras as $extra){
+    //echo '- ' .$extra ;
+    //echo '<br>';
+    //} 
+    //."</p>
+
+  //</body>
+  //</html
+  //";
+
+  //$message = wordwrap($message, 70);
+
+  //headers
+  //$headers = "From: Walnut Ridge Wedding Rentals <walnutridge@wedding.com>" . "\r\n" .
+  //$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+  //send email
+  //mail($to, $subject, $message, $headers);
+?>
 
 
 <?php
