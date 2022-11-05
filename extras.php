@@ -3,6 +3,9 @@
 
 //extras.php
 require('header.php');
+require('./models/Packages.php');
+
+$thisPackage;
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
@@ -16,17 +19,28 @@ window.location.href="pickYourSet.php";
     $weddingMonth = $dateArray['month'];
   }
 
+  if( !isset($_GET['packageCode']) ){
+    echo $redirect;
+  }else{
+    $packageCode = $_GET['packageCode'];
+    $thisPackage = Packages::getPackageByCode($packageCode);
+    //$thisPackage->setSubsetType(32);                            //***************For testing only   REMOVE THESE */
+    $thisPackage->setOption01(TRUE);                            //***************For testing only   REMOVE THESE */
+    $thisPackage->setOption04(TRUE);                            //***************For testing only   REMOVE THESE */
+    $thisPackage->setOption10(TRUE);                            //***************For testing only   REMOVE THESE */
+  }
+
   if( !isset($_GET['setOption']) ){
     echo $redirect;
   }else{
     $setOption = $_GET['setOption'];
   }
+
   if( !isset($_GET['packageChoice']) ){
     echo $redirect;
   }else{
     $packageChoice = $_GET['packageChoice'];
-  }
-  
+  }  
 
   if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
     $displaySets = 'true';
@@ -51,60 +65,63 @@ window.location.href="pickYourSet.php";
 
    //adding cost variable based on set choice 
   //TODO : UPDATE packageChoice names on package.php!!!!
+  $priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
+
+
   $cost = 0;
   if($setOption == 'layeredarch'){
     if($packageChoice == 'fullset'){
-        $cost = 849;
+        $cost = $priceArray[0];
     }
     if($packageChoice == 'pick6'){
-        $cost = 749;
+        $cost = $priceArray[2];
     }
     if($packageChoice == 'pick4'){
-        $cost = 699;
+        $cost = $priceArray[3];
     }    
   }
   if($setOption == 'modernround'){
     if($packageChoice == 'fullset'){
-        $cost = 799;
+        $cost = $priceArray[1];
     }
     if($packageChoice == 'pick6'){
-        $cost = 699;
+        $cost = $priceArray[3];
     }
     if($packageChoice == 'pick4'){
-        $cost = 599;
+        $cost = $priceArray[5];
     }    
   }
   if($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
-        $cost = 849;
+        $cost = $priceArray[0];
     }
     if($packageChoice == 'gold'){
-        $cost = 799;
+        $cost = $priceArray[1];
     }
     if($packageChoice == 'vmpick6'){
-        $cost = 649;
+        $cost = $priceArray[4];
     }    
     if($packageChoice == 'vmpick4'){
-        $cost = 599;
+        $cost = $priceArray[5];
     }  
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
-    $cost += 199;
+    $cost = $priceArray[8];
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick6'){
-    $cost += 245;
+    $cost = $priceArray[7];
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
-    $cost += 299;
+    $cost = $priceArray[6];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick4'){
-    $cost += 199;
+    $cost = $priceArray[8];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick6'){
-    $cost += 245;
+    $cost = $priceArray[7];
   }
   if($setOption == 'rusticwood' && $packageChoice == 'fullset'){
-    $cost += 299;
+    $cost = $priceArray[6];
   }
     
 
@@ -128,8 +145,8 @@ window.location.href="pickYourSet.php";
   $VMPlatinumSub = "INCLUDES ALL OF THE FOLLOWING 11 ITEMS";
   $VMGoldSub = "INCLUDES ALL THE FOLLOWING 8 ITEMS";
   $fullsetSub = "INCLUDES ALL OF THE FOLLOWING ITEMS";
-  $pick6Sub = "CHOOSE 6 OF THE FOLLOWING ITEMS";
-  $pick4Sub = "CHOOSE 4 OF THE FOLLOWING ITEMS";
+  $pick6Sub = "YOUR 6 SET ITEMS";
+  $pick4Sub = "YOUR 4 SET ITEMS";
 
   $pick6Title = "PICK 6 Rental";
   $pick4Title = "PICK 4 Rental";
@@ -195,7 +212,7 @@ window.location.href="pickYourSet.php";
     }
   }
 
-  if($setOption == 'layeredarch'){
+//TODO update $packageList to only include items selected on packages page.  
     $packageList = '
     <ul class = "descriptionList"> 
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
@@ -212,7 +229,78 @@ window.location.href="pickYourSet.php";
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
                     </ul>
     ';
+  
+
+  // UPSELL package code below  
+  if($packageChoice == "pick4"){
+    $upgradeOptions = ['fullset' , 'pick6'];
+  };
+  if($packageChoice == "pick6"){
+    $upgradeOptions = ['fullset'];
+  };
+  if($packageChoice == "vmpick4"){
+    $upgradeOptions = ['platinum', 'gold' , 'vmpick6'];
+  };
+  if($packageChoice == "vmpick6"){
+    $upgradeOptions = ['platinum', 'gold'];
+  };
+  if($packageChoice == "gold"){
+    $upgradeOptions = ['platinum'];
+  };
+  
+  $upgradeMarkup = '';
+  if(!empty($upgradeOptions)){
+    foreach($upgradeOptions as $value){
+      //FULL SET UPGRADE
+      if($value == 'fullset'){
+        $packageUp = $fullSetTitle;
+        if($setOption == 'layeredarch'){
+          $priceDiff = $priceArray[0] - $cost;
+        }
+        if($setOption == 'modernround'){
+          $priceDiff = $priceArray[1] - $cost;
+        }
+        if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
+          $priceDiff = $priceArray[6] - $cost;
+        }
+      }
+      //PICK 6 UPGRADE
+      if($value == 'pick6' || $value == 'vmpick6' ){
+        $packageUp = $pick6Title;
+        if($setOption == 'layeredarch'){
+          $priceDiff = $priceArray[2] - $cost;
+        }
+        if($setOption == 'modernround'){
+          $priceDiff = $priceArray[3] - $cost;
+        }
+        if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
+          $priceDiff = $priceArray[7] - $cost;
+        }
+        if($setOption == 'vintagemirror'){
+          $priceDiff = $priceArray[4] - $cost;
+        }
+      }
+      //PLATINUM UPGRADE
+      if($value == 'platinum'){
+        $packageUp = $VMPlatinumTitle;
+        $priceDiff = $priceArray[0] - $cost;
+      }
+      //GOLD UPGRADE
+      if($value == 'gold'){
+        $packageUp = $VMGoldTitle;
+        $priceDiff  = $priceArray[1] - $cost;
+      }
+            $upgradeMarkup .= '
+               <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
+                  <input type="hidden" id="weddingDate" name="weddingDate" value="'.$weddingDate.'">
+                  <input type="hidden" id="displaySets" name="displaySets" value="'.$displaySets.'">
+                  <input type="hidden" id="setOption" name="setOption" value="'.$setOption.'">
+                  <input type="hidden" id="upsellPackage" name="upsellPackage" value="'.$value.'">                
+                  <input type="submit" value="Upgrade to '.$packageUp.' for $'.$priceDiff.'">
+              </form>              
+  ';
   }
+}
 
 
 ?>
@@ -223,18 +311,29 @@ window.location.href="pickYourSet.php";
   <h3>Your Package:</h3>
   <div class = "row">
     <div class = "col-sm-3"></div>
-    <div class = "col-sm-6">
+    <div class = "col-sm-6 topper">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
      <h6 > <?php echo $subtitle;?> </h6>
      <?php echo $packageList;?>   
     
-    
-    
+       
     
     <div>
     <div class = "col-sm-3"></div>
   </div>
 
+</div>
+
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-sm-3"></div>
+
+    <div class = "col-sm-6 topper">
+      <?php echo $upgradeMarkup;?>       
+    </div>
+
+    <div class = "col-sm-3"></div>
+  </div>
 </div>
 
 
@@ -246,6 +345,7 @@ window.location.href="pickYourSet.php";
 
             <div class = "form-group text-start">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
+                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
