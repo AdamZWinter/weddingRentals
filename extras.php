@@ -397,12 +397,7 @@ window.location.href="pickYourSet.php";
   document.getElementById("headerImage").style.height = "300px";
 
 
-  function checkAllExtrasBoxes() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (var checkbox of checkboxes) {
-      checkbox.checked = true;
-    }
-  }
+  
 
   
   function checkFourBoxes(){
