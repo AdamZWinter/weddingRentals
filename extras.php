@@ -197,7 +197,7 @@ window.location.href="pickYourSet.php";
       $subtitle = $pick4Sub;
     }
   }
-
+//TODO update $packageList to only include items selected on packages page.
   if($setOption == 'layeredarch'){
     $packageList = '
     <ul class = "descriptionList"> 
@@ -217,7 +217,7 @@ window.location.href="pickYourSet.php";
     ';
   }
 
-  // UPSELL package
+  // UPSELL package code below
   
   if($packageChoice == "pick4"){
     $upgradeOptions = ['fullset' , 'pick6'];
@@ -238,13 +238,25 @@ window.location.href="pickYourSet.php";
   $upgradeMarkup = '';
   if(!empty($upgradeOptions)){
     foreach($upgradeOptions as $value){
+      if($value == 'fullset'){
+        $packageUp = $fullSetTitle;
+      }
+      if($value == 'pick6' || $value == ['vmpick6'] ){
+        $packageUp = $pick6Title;
+      }
+      if($value == 'platinum'){
+        $packageUp = $platinumTitle;
+      }
+      if($value == 'gold'){
+        $packageUp = $goldTitle;
+      }
             $upgradeMarkup .= '
                <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
                   <input type="hidden" id="weddingDate" name="weddingDate" value="'.$weddingDate.'">
                   <input type="hidden" id="displaySets" name="displaySets" value="'.$displaySets.'">
                   <input type="hidden" id="setOption" name="setOption" value="'.$setOption.'">
                   <input type="hidden" id="upsellPackage" name="upsellPackage" value="'.$value.'">                
-                  <input type="submit" value="Upgrade">
+                  <input type="submit" value="Upgrade to '.$packageUp.'">
               </form>              
   ';
   }
