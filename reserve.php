@@ -162,7 +162,7 @@ $packageCode = 0;
 
             <div class="text-start">
                 <?php
-                    echo 'Set Selection: '.$setOptionLang;
+                    echo 'Set Selection: '.$thisPackage->getSetNameLang();
                     echo '<br>';
                     echo 'Wedding Date: '.$weddingDate;
                     echo '<br>';
