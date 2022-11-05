@@ -3,6 +3,9 @@
 
 //extras.php
 require('header.php');
+require('./models/Packages.php');
+
+$thisPackage;
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
@@ -14,6 +17,16 @@ window.location.href="pickYourSet.php";
     $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
+  }
+
+  if( !isset($_GET['packageCode']) ){
+    echo $redirect;
+  }else{
+    $packageCode = $_GET['packageCode'];
+    $thisPackage = Packages::getPackageByCode($packageCode);
+    $thisPackage->setOption01(TRUE);                            //***************For testing only   REMOVE THESE */
+    $thisPackage->setOption04(TRUE);                            //***************For testing only   REMOVE THESE */
+    $thisPackage->setOption10(TRUE);                            //***************For testing only   REMOVE THESE */
   }
 
   if( !isset($_GET['setOption']) ){
@@ -246,6 +259,7 @@ window.location.href="pickYourSet.php";
 
             <div class = "form-group text-start">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
+                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">

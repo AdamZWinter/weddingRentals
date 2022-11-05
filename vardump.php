@@ -4,6 +4,7 @@
 require('header.php');
 require('../weddingRentals.conf.php');
 require('utilities/DatabaseConnector.php');
+require('./models/Packages.php');
 
 $myDB = new DatabaseConnector();
 $db = $myDB->getdb();
@@ -11,6 +12,13 @@ $db = $myDB->getdb();
 $redirect = '<script>
 window.location.href="pickYourSet.php";
 </script>';
+
+if( !isset($_GET['packageCode']) ){
+  echo $redirect;
+}else{
+  $packageCode = $_GET['packageCode'];
+  $thisPackage = Packages::getPackageByCode($packageCode);
+}
   
   if( !isset($_GET['fname']) ){
     echo $redirect;
@@ -49,13 +57,6 @@ window.location.href="pickYourSet.php";
     $packageChoice = $_GET['packageChoice'];
   }
 
-  if( !isset($_GET['packageCode']) ){
-    echo $redirect;
-  }else{
-    $packageCode = $_GET['packageCode'];
-  }
-
-
   if( !isset($_GET['weddingDate']) ){
     echo $redirect;
   }else{
@@ -77,35 +78,6 @@ window.location.href="pickYourSet.php";
   $bluejarsLang ='';
   $deliveryLang ='';
 
-  
-
-  // if(($packageCode & 256) != 0){
-  //   array_push($extras, 'Hexagonal Arbor');
-  // }
-
-  // if(($packageCode & 257) != 0){
-  //   array_push($extras, 'Vintage Sofa');
-  // }
-
-  // if($packageCode & 258){
-  //   array_push($extras, 'Antique Jugs');
-  // }
-
-  // if($packageCode & 259){
-  //   array_push($extras, 'Wine Jug');
-  // }
-
-  // if($packageCode & 260){
-  //   array_push($extras, 'Clear Jars');
-  // }
-
-  // if($packageCode & 261){
-  //   array_push($extras, 'Blue Jars');
-  // }
-
-  // if($packageCode & 262){
-  //   array_push($extras,'Delivery');
-  // }
 
 
 
@@ -164,6 +136,21 @@ window.location.href="pickYourSet.php";
     $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
   }
+
+
+//****************************************Insert to Database *****************************************************/
+
+$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+$db->query($query);
+
+//$query = "INSERT INTO `extras`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+//$db->query($query);
+
+//$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+//$db->query($query);
+
+
+
 
 ?>
 

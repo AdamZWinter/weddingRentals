@@ -2,11 +2,7 @@
 //Test comment
 //packages.php
 require('header.php');
-require('./models/Package.php');
-require('./models/LayeredArchPackage.php');
-require('./models/ModernRoundPackage.php');
-require('./models/VintageMirrorPackage.php');
-require('./models/DarkWalnutPackage.php');
+require('./models/Packages.php');
 
 $thisPackage;
 
