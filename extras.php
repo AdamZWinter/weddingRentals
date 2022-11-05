@@ -261,7 +261,7 @@ window.location.href="pickYourSet.php";
                   <input type="hidden" id="displaySets" name="displaySets" value="'.$displaySets.'">
                   <input type="hidden" id="setOption" name="setOption" value="'.$setOption.'">
                   <input type="hidden" id="upsellPackage" name="upsellPackage" value="'.$value.'">                
-                  <input type="submit" value="Upgrade to '.$packageUp.'">
+                  <input type="submit" value="Upgrade to '.$packageUp.' for $'.$priceDiff.'">
               </form>              
   ';
   }
