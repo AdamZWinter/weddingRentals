@@ -25,12 +25,6 @@ window.location.href="pickYourSet.php";
     $setOption = $_GET['setOption'];
   }
 
-  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
-    $displaySets = 'true';
-  }else{
-    $displaySets = 'true';
-  }
-
   if( !isset($_GET['upsellPackage']) ){
     $upsellPackage = '';
   }else{
@@ -134,7 +128,6 @@ if($setOption == 'rusticwood'){
   $thisPackage = new RusticWoodPackage();
 }
 
-
 $packageMarkup = '
 <div class= row>
 <div class="col-12 center">
@@ -173,8 +166,6 @@ $packageMarkup = '
                     <br>
                     <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
-                    <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
-                    <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
                     <?php 
                       echo $packageMarkup; 
                     ?>

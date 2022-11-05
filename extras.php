@@ -24,16 +24,11 @@ window.location.href="pickYourSet.php";
   }else{
     $packageCode = $_GET['packageCode'];
     $thisPackage = Packages::getPackageByCode($packageCode);
+    $setOption = $thisPackage->getSetName();
     //$thisPackage->setSubsetType(32);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption01(TRUE);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption04(TRUE);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption10(TRUE);                            //***************For testing only   REMOVE THESE */
-  }
-
-  if( !isset($_GET['setOption']) ){
-    echo $redirect;
-  }else{
-    $setOption = $_GET['setOption'];
   }
 
   if( !isset($_GET['packageChoice']) ){
@@ -41,15 +36,6 @@ window.location.href="pickYourSet.php";
   }else{
     $packageChoice = $_GET['packageChoice'];
   }  
-
-  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
-    $displaySets = 'true';
-  }else{
-    $displaySets = 'true';
-  }
-
-
-
 
 
   $hexarchAvailable = $weddingMonth == 1 ? 'disabled' : '';
@@ -71,23 +57,29 @@ window.location.href="pickYourSet.php";
   $cost = 0;
   if($setOption == 'layeredarch'){
     if($packageChoice == 'fullset'){
+      $thisPackage->setSubsetType(16);
         $cost = $priceArray[0];
     }
     if($packageChoice == 'pick6'){
+      $thisPackage->setSubsetType(32);
         $cost = $priceArray[2];
     }
     if($packageChoice == 'pick4'){
+      $thisPackage->setSubsetType(48);
         $cost = $priceArray[3];
     }    
   }
   if($setOption == 'modernround'){
     if($packageChoice == 'fullset'){
+      $thisPackage->setSubsetType(16);
         $cost = $priceArray[1];
     }
     if($packageChoice == 'pick6'){
+      $thisPackage->setSubsetType(32);
         $cost = $priceArray[3];
     }
     if($packageChoice == 'pick4'){
+      $thisPackage->setSubsetType(48);
         $cost = $priceArray[5];
     }    
   }
@@ -290,10 +282,10 @@ window.location.href="pickYourSet.php";
         $packageUp = $VMGoldTitle;
         $priceDiff  = $priceArray[1] - $cost;
       }
+            //*************************** KAT use *Package class here instead.  You may want to create an Upsell class *****************************/
             $upgradeMarkup .= '
                <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
                   <input type="hidden" id="weddingDate" name="weddingDate" value="'.$weddingDate.'">
-                  <input type="hidden" id="displaySets" name="displaySets" value="'.$displaySets.'">
                   <input type="hidden" id="setOption" name="setOption" value="'.$setOption.'">
                   <input type="hidden" id="upsellPackage" name="upsellPackage" value="'.$value.'">                
                   <input type="submit" value="Upgrade to '.$packageUp.' for $'.$priceDiff.'">
@@ -345,11 +337,11 @@ window.location.href="pickYourSet.php";
 
             <div class = "form-group text-start">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
-                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
-                <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
-                <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
-                <input type="hidden" id="packageChoice" name="packageChoice" value="<?php echo $packageChoice;?>">
+                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
+                <!--input type="hidden" id="displaySets" name="displaySets" value="<?php //echo $displaySets;?>"-->
+                <!--input type="hidden" id="setOption" name="setOption" value="<?php //echo $setOption;?>"-->
+                <!--input type="hidden" id="packageChoice" name="packageChoice" value="<?php //echo $packageChoice;?>"-->
 
                 <br>
                 <br>
