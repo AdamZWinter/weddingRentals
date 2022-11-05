@@ -237,23 +237,44 @@ window.location.href="pickYourSet.php";
   $upgradeMarkup = '';
   if(!empty($upgradeOptions)){
     foreach($upgradeOptions as $value){
+      //FULL SET UPGRADE
       if($value == 'fullset'){
         $packageUp = $fullSetTitle;
         if($setOption == 'layeredarch'){
           $priceDiff = $priceArray[0] - $cost;
         }
+        if($setOption == 'modernround'){
+          $priceDiff = $priceArray[1] - $cost;
+        }
+        if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
+          $priceDiff = $priceArray[6] - $cost;
+        }
       }
+      //PICK 6 UPGRADE
       if($value == 'pick6' || $value == 'vmpick6' ){
         $packageUp = $pick6Title;
         if($setOption == 'layeredarch'){
           $priceDiff = $priceArray[2] - $cost;
         }
+        if($setOption == 'modernround'){
+          $priceDiff = $priceArray[3] - $cost;
+        }
+        if($setOption == 'rusticwood' || $setOption == 'darkwalnut'){
+          $priceDiff = $priceArray[7] - $cost;
+        }
+        if($setOption == 'vintagemirror'){
+          $priceDiff = $priceArray[4] - $cost;
+        }
       }
+      //PLATINUM UPGRADE
       if($value == 'platinum'){
         $packageUp = $VMPlatinumTitle;
+        $priceDiff = $priceArray[0] - $cost;
       }
+      //GOLD UPGRADE
       if($value == 'gold'){
         $packageUp = $VMGoldTitle;
+        $priceDiff  = $priceArray[1] - $cost;
       }
             $upgradeMarkup .= '
                <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
