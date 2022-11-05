@@ -17,6 +17,7 @@
 //reserve.php
 require('header.php');
 require('./models/Packages.php');
+require('./models/Extras.php');
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
@@ -138,50 +139,6 @@ $packageCode = 0;
     array_push($extras,'Delivery');
     $packageCode = $packageCode | (256 << 6);
   }
-
-  switch ($setOption){
-    case 'layeredarch':
-        $setOptionLang = 'Layered Arch';
-        array_push($totalPrice, 849);
-        $packageCode = $packageCode | 1;
-        break;
-    case 'modernround':
-        $setOptionLang = 'Modern Round';
-        array_push($totalPrice, 799);
-        $packageCode = $packageCode | 2;
-        break;
-    case 'vintagemirror':
-        $setOptionLang = 'Vintage Mirror';
-        array_push($totalPrice, 849);
-        $packageCode = $packageCode | 3;
-        break;
-    case 'darkwalnut':
-        $setOptionLang = 'Dark Walnut';
-        array_push($totalPrice, 299);
-        $packageCode = $packageCode | 4;
-        break;
-    case 'rusticwood':
-        $setOptionLang = 'Rustic Wood';
-        array_push($totalPrice, 299);
-        $packageCode = $packageCode | 5;
-        break;
-  }//end switch
-
-  switch ($packageChoice){
-    case 'fullSet':
-        $packageCode = $packageCode | 16;
-        break;
-    case 'pickSix':
-        $packageCode = $packageCode | 32;
-        break;
-    case 'pick4':
-        $packageCode = $packageCode | 48;
-        break;
-    case 'platinum':
-        $packageCode = $packageCode | 64;
-        break;
-  }//end switch
-
   //var_dump($_GET);
 
 ?>
@@ -229,7 +186,6 @@ $packageCode = 0;
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
-                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $packageCode;?>">
                 <input type="hidden" id="packageChoice" name="packageChoice" value="<?php echo $packageChoice;?>">
                 <input type="hidden" id="hexarbor" name="hexarbor" value="<?php echo $hexarbor;?>">
                 <input type="hidden" id="antiquejugs" name="antiquejugs" value="<?php echo $antiquejugs;?>">
