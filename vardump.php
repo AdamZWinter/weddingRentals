@@ -6,6 +6,7 @@ require('header.php');
 require('../weddingRentals.conf.php');
 require('utilities/DatabaseConnector.php');
 require('./models/Packages.php');
+require('./models/Extras.php');
 
 $myDB = new DatabaseConnector();
 $db = $myDB->getdb();
@@ -14,12 +15,29 @@ $redirect = '<script>
 window.location.href="pickYourSet.php";
 </script>';
 
+if( !isset($_GET['weddingDate']) ){
+  echo $redirect;
+}else{
+  $weddingDate = $_GET['weddingDate'];
+  $dateArray = date_parse($weddingDate);
+  $weddingMonth = $dateArray['month'];
+}
+
 if( !isset($_GET['packageCode']) ){
   echo $redirect;
 }else{
   $packageCode = $_GET['packageCode'];
   $thisPackage = Packages::getPackageByCode($packageCode);
 }
+
+if( !isset($_GET['extrasCode']) ){
+  echo $redirect;
+}else{
+  $extrasCode = $_GET['extrasCode'];
+  $thisExtras = new Extras();
+  $thisExtras->decode($extrasCode);
+}
+
   
   if( !isset($_GET['fname']) ){
     echo $redirect;
@@ -92,16 +110,6 @@ if( !isset($_GET['packageCode']) ){
         break;
     }//end switch
   }
-
-  if( !isset($_GET['weddingDate']) ){
-    echo $redirect;
-  }else{
-    $weddingDate = $_GET['weddingDate'];
-    $dateArray = date_parse($weddingDate);
-    $weddingMonth = $dateArray['month'];
-  }
-
-
 
   //extras
 
