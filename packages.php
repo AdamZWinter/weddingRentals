@@ -186,7 +186,7 @@ $packageMarkup = '
 <label for="packageChoice" class="rental-head">Choose Your Package:</label>
 
 <br>
-<select class="form-control select-style" id="packageChoice" name="packageChoice" onchange="displayPackageDetails();">
+<select class="form-control select-style" id="packageChoice" name="packageChoice" onchange=" countHowManyBoxesAreChecked(); displayPackageDetails();">
 '.$optionMarkup.'
 </select>
 </div>
@@ -290,31 +290,124 @@ $packageCheckList = '
       if( optionChoiceDetails == "Pick 6- $749" ) {
 
         // allow user to pick just 6 boxes
-        check6Boxes();
+        clearCheckBoxes();
+        countHowManyBoxesAreChecked();
       }
       if( optionChoiceDetails == "Pick 4- $649" ) {
 
         // allow user to pick just 4 boxes
+        clearCheckBoxes();
+        countHowManyBoxesAreChecked();
+
       }
+  }
+
+  function countHowManyBoxesAreChecked(){
+    var optionChoice = document.getElementById("packageChoice").selectedIndex;
+    var optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for(var i = 0; i < checkboxes.length; i++ ){
+      var count = 0;
+
+      checkboxes[i].onchange = function(){
+
+        for(var i = 0; i < checkboxes.length; i++ ){
+          var box = checkboxes[i];
+          if (box.checked) {
+            count++;
+          }
+          if( count = 4 && optionChoiceDetails == "Pick 4- $649" ){
+            //console.log("4 boxes are clicked");
+            check4Boxes();
+            break;
+          }
+          if( count = 6 && optionChoiceDetails == "Pick 6- $749"){
+            //console.log("6 boxes are clicked");
+            check6Boxes();
+            break;
+          }
+          
+        } 
+        
+        
+      }
+        
+    }
   }
     
 
   function check6Boxes() {
     var count = 0;
-    var boxesThatAreChecked;
+    var maxCount = 6;
+    var boxesThatAreChecked = [];
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    for(var i = 0; i < checkboxes.length; i++ ){
+      var box = checkboxes[i];
+      if (box.checked) {
+        count++;
+        boxesThatAreChecked.push(box);
+      }
+     if(boxesThatAreChecked.length == maxCount){
+        //console.log("MAX COUNT HAS BEEN REACHED " + count);
+
+        // if checkbox is not in boxesThatAreChecked - disable it
+      for(var i = 0; i < checkboxes.length; i++ ){
+        if( !boxesThatAreChecked.includes(checkboxes[i])){
+          checkboxes[i].disabled = true;
+        }
+
+      }
+      }
+
+    }
+  
+  }
+
+
+  function check4Boxes() {
+    var count = 0;
+    var maxCount = 4;
+    var boxesThatAreChecked = [];
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    for(var i = 0; i < checkboxes.length; i++ ){
+      var box = checkboxes[i];
+      if (box.checked) {
+        count++;
+        boxesThatAreChecked.push(box);
+      }
+     if(boxesThatAreChecked.length == maxCount){
+        console.log("MAX COUNT HAS BEEN REACHED " + count);
+
+        // if checkbox is not in boxesThatAreChecked - disable it
+      for(var i = 0; i < checkboxes.length; i++ ){
+        if( !boxesThatAreChecked.includes(checkboxes[i])){
+          checkboxes[i].disabled = true;
+        }
+
+      }
+      }
+
+    }
+  
+  }
+
+  function clearCheckBoxes() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for (var checkbox of checkboxes) {
       checkbox.checked = false;
+      checkbox.disabled = false;
     }
-    
   }
-
 
       
   function checkAllBoxes() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for (var checkbox of checkboxes) {
       checkbox.checked = true;
+      checkbox.disabled = false;
+
     }
   }
     
