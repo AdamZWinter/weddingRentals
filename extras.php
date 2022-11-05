@@ -131,8 +131,8 @@ window.location.href="pickYourSet.php";
   $VMPlatinumSub = "INCLUDES ALL OF THE FOLLOWING 11 ITEMS";
   $VMGoldSub = "INCLUDES ALL THE FOLLOWING 8 ITEMS";
   $fullsetSub = "INCLUDES ALL OF THE FOLLOWING ITEMS";
-  $pick6Sub = "CHOOSE 6 OF THE FOLLOWING ITEMS";
-  $pick4Sub = "CHOOSE 4 OF THE FOLLOWING ITEMS";
+  $pick6Sub = "YOUR 6 SET ITEMS";
+  $pick4Sub = "YOUR 4 SET ITEMS";
 
   $pick6Title = "PICK 6 Rental";
   $pick4Title = "PICK 4 Rental";
@@ -198,7 +198,7 @@ window.location.href="pickYourSet.php";
     }
   }
 //TODO update $packageList to only include items selected on packages page.
-  if($setOption == 'layeredarch'){
+  
     $packageList = '
     <ul class = "descriptionList"> 
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
@@ -215,7 +215,7 @@ window.location.href="pickYourSet.php";
                     <li>"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</li>
                     </ul>
     ';
-  }
+  
 
   // UPSELL package code below
   
