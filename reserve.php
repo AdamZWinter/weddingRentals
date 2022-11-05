@@ -177,8 +177,6 @@ $packageCode = 0;
                     echo '<br>';
                     echo 'Estimated Total price: $' . array_sum($totalPrice);
                     
-
-
                 ?>
             </div>
 
