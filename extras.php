@@ -262,7 +262,13 @@ window.location.href="pickYourSet.php";
      <h6 > <?php echo $subtitle;?> </h6>
      <?php echo $packageList;?>   
     
-    
+     <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
+                <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
+                <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
+                <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
+                <input type="hidden" id="upsellPackage" name="upsellPackage" value="fullset">                
+                <input type="submit" value="Upgrade">
+  </form>  
     
     
     <div>
