@@ -558,3 +558,7 @@ div.col-sm-6 {
 #wrap{
   display: inline-block;
 }
+
+.formClass > label {
+  font-size: large;
+}

@@ -400,32 +400,7 @@ window.location.href="pickYourSet.php";
 
 </script>
 
-<?php
-if( !isset($_GET['packageChoice']) ){
-  //echo $redirect;
-}else{
-  $packageChoice = $_GET['packageChoice'];
-  if( $packageChoice == 'fullSet'){
-    //echo("<script>console.log('packageChoice = fullSet');</script>");
 
-    echo '<script type="text/javascript">',
-     'checkAllExtrasBoxes();',
-     '</script>';
-  }
-  if( $packageChoice == 'pickSix'){
-    //echo("<script>console.log('packageChoice = pickSix');</script>");
-
-  }
-  if( $packageChoice == 'pick4'){
-    //echo("<script>console.log('packageChoice = pick4');</script>");
-    echo '<script type="text/javascript">',
-     'checkFourBoxes();',
-     '</script>';;
-  }
- 
-
-}
-?>
 
 <?php
 //footer

@@ -107,18 +107,18 @@ $walnutRustic= '
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 $layeredArchFullSetPackageDetails = '
-<form name="packageList" id="extrasForm" action="extras.php" method="get">
+<form class="formClass" name="packageList" id="extrasForm" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
                 <br>
-                <input  type="checkbox">
+                <input name = "lang[]" value = "value" type="checkbox">
                 <label class = "option-style">Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "lang[]" value = "value"  type="checkbox">
                 <label  class = "option-style">3 piece seating chart half arch set (print service for cards is available for a small additional fee)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "lang[]" value = "value"  type="checkbox">
                 <label  class = "option-style">Table numbers 1-30</label>
                 <br>
                 <input  type="checkbox">
@@ -154,7 +154,7 @@ $layeredArchFullSetPackageDetails = '
 </form>
 ';
 $modernRoundFullSetPackageDetails = '
-<form name="packageList" id="extrasForm" action="extras.php" method="get">
+<form class="formClass" id= "packageList" name="packageList" id="extrasForm" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
@@ -192,7 +192,7 @@ $modernRoundFullSetPackageDetails = '
 </form>
 ';
 $darkWalnutFullSetPackageDetails = '
-<form name="packageList" id="extrasForm" action="extras.php" method="get">
+<form class="formClass" name="packageList" id="packageList" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
@@ -290,6 +290,10 @@ $packageCheckList = '
   document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/signonTable.jpg')";
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
+
+  window.onload = (event) => {
+    displayPackageDetails()};
+
 </script>
 
 
@@ -307,11 +311,11 @@ $packageCheckList = '
                     <br>
                     <br>
                     <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
-                    <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
+                    <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">                   
                     <?php 
                       echo $packageMarkup; 
                     ?>
-                    <button class = "btn btn-primary button" type="submit" >Continue</button>                             
+                    <button class = "btn btn-primary button" type="submit" >Continue</button>            
                 </form>               
             </p>
 
@@ -323,6 +327,7 @@ $packageCheckList = '
                     <br>
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                     <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
+                    <input type="hidden" id="packageList" name="packageList" value="2">
                     <input type="hidden" id="setOption" name="setOption" value="">
                     <button type="submit">Try a Different Set</button>   
                 </form>            
@@ -384,27 +389,34 @@ $packageCheckList = '
     var optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for(var i = 0; i < checkboxes.length; i++ ){
-      var count = 0;
+      
 
       checkboxes[i].onchange = function(){
+        var count = 0;
+
 
         for(var i = 0; i < checkboxes.length; i++ ){
           var box = checkboxes[i];
           if (box.checked) {
             count++;
           }
+          if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") ){
+            enableAllCheckboxes();
+          }
           if( (count = 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") ){
-            //console.log("4 boxes are clicked");
             check4Boxes();
-            break;
+          }
+          if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")){
+            enableAllCheckboxes();
           }
           if( (count = 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")){
-            //console.log("6 boxes are clicked");
             check6Boxes();
             break;
           }
           
         } 
+        console.log("number of checkboxes checked: "+ count );
+
         
         
       }
@@ -418,7 +430,8 @@ $packageCheckList = '
     var maxCount = 6;
     var boxesThatAreChecked = [];
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
+
+     
     for(var i = 0; i < checkboxes.length; i++ ){
       var box = checkboxes[i];
       if (box.checked) {
@@ -440,6 +453,15 @@ $packageCheckList = '
     }
   
   }
+  function enableAllCheckboxes(){
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for(var i = 0; i < checkboxes.length; i++ ){
+      var box = checkboxes[i];
+      box.disabled = false;
+
+    }
+
+  }
 
 
   function check4Boxes() {
@@ -447,7 +469,7 @@ $packageCheckList = '
     var maxCount = 4;
     var boxesThatAreChecked = [];
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
+
     for(var i = 0; i < checkboxes.length; i++ ){
       var box = checkboxes[i];
       if (box.checked) {
@@ -462,6 +484,7 @@ $packageCheckList = '
         if( !boxesThatAreChecked.includes(checkboxes[i])){
           checkboxes[i].disabled = true;
         }
+        
 
       }
       }
@@ -487,11 +510,24 @@ $packageCheckList = '
 
     }
   }
+
+
+
+
+  function getCheckedBoxes(){
+    var checkedBoxes = new Array();
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      if( checkbox.checked ){
+        checkedBoxes.push(checkbox);
+      }
+    }
+    console.log(checkedBoxes);
+    document.getElementById("packageList").value == checkedBoxes;
+  }
     
 
-    function showLayeredArchFullSetPackage(){
-      document.getElementById("insertInfo").innerHTML = "LayeredArch full set";
-    }
+  
     
   </script>
 
