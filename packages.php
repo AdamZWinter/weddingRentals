@@ -31,17 +31,6 @@ window.location.href="pickYourSet.php";
     $upsellPackage = $_GET['upsellPackage'];
   }
 
-
-  // for package list
-  if(!isset($_GET['packageChoice'])){
-    $packageCheckList = ($_GET['packageChoice']);
-  }
-  if($packageCheckList == 'fullset'){
-    $packageListMarkup = $layeredArchFullSetPackageDetails;
-  }
-
-
-
   //var_dump($weddingMonth);
 
   $available = true;
@@ -117,10 +106,61 @@ $walnutRustic= '
   <option class= "option-style" value= "pick6"'.$sixSelected.'>Pick 6- $245</option>
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
+$layeredArchFullSetPackageDetails = '
+<form name="packageList" id="extrasForm" action="extras.php" method="get">
+
+<label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
+                <br>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">3 piece seating chart half arch set (print service for cards is available for a small additional fee)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Table numbers 1-30</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Gold Card Terrarium with choice of “Gifts & Cards” sign</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">5 “Reserved” signs</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Dont Mind if I Do,” “In Loving Memory”)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text)</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Unplugged Ceremony sign</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">Hairpin Record Player Prop</label>
+                <br>
+                <input  type="checkbox">
+                <label for="hexarbor" class = "option-style">"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</label>
+                <br>
+                <br>
+                <input type="submit" value="Continue">
+
+</form>
+
+
+';
 
 if($setOption == 'layeredarch'){
   $optionMarkup = $layeredArch;
   $thisPackage = new LayeredArchPackage();
+  // for packages checklist
+  $packageListMarkup = $layeredArchFullSetPackageDetails;
 }
 if($setOption == 'modernround'){
     $optionMarkup = $modernRound;
@@ -155,37 +195,11 @@ $packageMarkup = '
 ';
 
 
-$layeredArchFullSetPackageDetails = '
-<label for="packageItemsForm" class="rental-head">INCLUDES EACH OF THE FOLLOWING ITEMS:</label>              
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="vintagesofa" class = "option-style"> Vintage Sofa</label>
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="antiquejugs" class = "option-style"> Antique Gallon Jugs</label>   
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="winejug" class = "option-style"> XL Wine Jugs</label>
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="clearjars" class = "option-style"> Clear Antique Ball Jars</label>
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
-                <label for="bluejars" class = "option-style"> Blue Antique Ball Jars</label>
-                <br>
-                <br>
-                <input  type="checkbox" id="hexarbor" name="hexarbor">
 
-';
 
 
 $packageCheckList = '
-            <form name="packageItemsForm" id="packageItemsForm" action="packages.php" method="get">
             '.$packageListMarkup.'
-                <input type="submit" value="Continue">
-            </form>
            
 ';
 
@@ -257,7 +271,7 @@ $packageCheckList = '
 
 
   <script>
-  
+
   function displayPackageDetails() {
 
     var optionChoice = document.getElementById("packageChoice").selectedIndex;
@@ -269,16 +283,40 @@ $packageCheckList = '
       if(optionChoiceValue != null ){
         document.getElementById("collapseDiv").className = "collapse show";
       }
-      // if(optionChoiceDetails == "Full Set- $849" ){
-        // showLayeredArchFullSetPackage();
-      // }
-      // else {
-        // document.getElementById("insertInfo").innerHTML = "not layered arch";
+      if(optionChoiceDetails == "Full Set- $849" ){
+        // check every checkbox
+        checkAllBoxes();
+      }
+      if( optionChoiceDetails == "Pick 6- $749" ) {
 
-      // }
+        // allow user to pick just 6 boxes
+        check6Boxes();
+      }
+      if( optionChoiceDetails == "Pick 4- $649" ) {
+
+        // allow user to pick just 4 boxes
+      }
   }
     
+
+  function check6Boxes() {
+    var count = 0;
+    var boxesThatAreChecked;
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      checkbox.checked = false;
+    }
+    
+  }
+
+
       
+  function checkAllBoxes() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      checkbox.checked = true;
+    }
+  }
     
 
     function showLayeredArchFullSetPackage(){
