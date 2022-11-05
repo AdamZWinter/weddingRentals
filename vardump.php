@@ -179,7 +179,7 @@ window.location.href="pickYourSet.php";
 
   if( !isset($_GET['clearjars']) || $_GET['clearjars'] == '' ){
     //nothing
-  }else{
+  }else{  
     $clearjars = true;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
