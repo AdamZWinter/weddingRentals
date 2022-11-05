@@ -244,7 +244,7 @@ if( !isset($_GET['extrasCode']) ){
         <div class="col-2">
             <h3>Extras:</h3> 
             <p>
-            <?php foreach ($extras as $extra){
+            <?php foreach ($thisExtras->getSelectedExtrasArrayLang() as $extra){
                             echo '- ' .$extra ;
                             echo '<br>';
                     } 

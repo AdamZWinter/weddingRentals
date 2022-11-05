@@ -61,6 +61,16 @@ class Extras{
     public function getExtrasArrayLang(){
         return $this->extrasArrayLang;
     }
+
+    public function getSelectedExtrasArrayLang(){
+        $selectedArray = [];
+        for($i = 0; $i < count($this->extrasArrayStatus); $i++){
+            if($this->extrasArrayStatus[$i]){
+                array_push($selectedArray, $this->extrasArrayLang[$i]);
+            }
+        }
+        return $selectedArray;
+    }
 }
 
 
