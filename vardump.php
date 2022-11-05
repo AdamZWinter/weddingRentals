@@ -63,126 +63,6 @@ if( !isset($_GET['extrasCode']) ){
     $email = $_GET['email'];
   }
 
-  if( !isset($_GET['setOption']) ){
-    echo $redirect;
-  }else{
-    $setOption = $_GET['setOption'];
-
-    switch ($setOption){
-      case 'layeredarch':
-          $setOptionLang = 'Layered Arch';
-          break;
-      case 'modernround':
-          $setOptionLang = 'Modern Round';
-          break;
-      case 'vintagemirror':
-          $setOptionLang = 'Vintage Mirror';
-          break;
-      case 'darkwalnut':
-          $setOptionLang = 'Dark Walnut';
-          break;
-      case 'rusticwood':
-          $setOptionLang = 'Rustic Wood';
-          break;
-    }//end switch
-  }
-
-  
-
-  //package
-  if( !isset($_GET['packageChoice']) ){
-    echo $redirect;
-  }else{
-    $packageChoice = $_GET['packageChoice'];
-
-    switch($packageChoice){
-      case 'fullSet':
-        $packageChoiceLang = 'Full Set';
-        break;
-    case 'pickSix':
-        $packageChoiceLang = 'Pick Six';
-        break;
-    case 'pick4':
-        $packageChoiceLang = 'Pick 4';
-        break;
-    case 'platinum':
-        $packageChoiceLang = 'Platinum';
-        break;
-    }//end switch
-  }
-
-  //extras
-
-  $extras = [];
-  $hexarborLang ='';
-  $vintagesofaLang ='';
-  $antiquejugsLang ='';
-  $winejugLang ='';
-  $clearjarsLang ='';
-  $bluejarsLang ='';
-  $deliveryLang ='';
-
-
-
-
-  if( !isset($_GET['hexarbor']) || $_GET['hexarbor'] == '' ){
-    //nothing
-  }else{
-    $hexarbor = true;
-    $hexarborLang = 'Hexagonal Arbor';
-    array_push($extras, 'Hexagonal Arbor');
-  }
-
-  if( !isset($_GET['vintagesofa']) || $_GET['vintagesofa'] == ''){
-    //nothing
-  }else{
-    $vintagesofa = true;
-    $vintagesofaLang = 'Vintage Sofa';
-    array_push($extras, 'Vintage Sofa');
-  }
-
-  if( !isset($_GET['antiquejugs']) || $_GET['antiquejugs'] == ''){
-    //nothing
-  }else{
-    $antiquejugs = true;
-    $antiquejugsLang = 'Antique Jugs';
-    array_push($extras, 'Antique Jugs');
-  }
-
-  if( !isset($_GET['winejug']) || $_GET['winejug'] == '' ){
-    //nothing
-  }else{
-    $winejug = true;
-    $winejugLang = 'Wine Jug';
-    array_push($extras, 'Wine Jug');
-  }
-
-  if( !isset($_GET['clearjars']) || $_GET['clearjars'] == '' ){
-    //nothing
-  }else{  
-    $clearjars = true;
-    $clearjarsLang = 'Clear Jars';
-    array_push($extras, 'Clear Jars');
-  }
-
-  if( !isset($_GET['bluejars']) || $_GET['bluejars'] == ''){
-    //nothing
-  }else{
-    $bluejars = true;
-    $bluejarsLang = 'Blue Jars';
-    array_push($extras, 'Blue Jars');
-  }
-
-  if( !isset($_GET['delivery']) || $_GET['delivery'] == ''){
-    //nothing
-  }else{
-    $delivery = true;
-    $deliveryLang = 'Delivery';
-    array_push($extras,'Delivery');
-  }
-
-
-
 //****************************************Insert to Database *****************************************************/
 
 //$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
@@ -193,8 +73,6 @@ if( !isset($_GET['extrasCode']) ){
 
 //$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
 //$db->query($query);
-
-
 
 
 ?>
@@ -229,7 +107,7 @@ if( !isset($_GET['extrasCode']) ){
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>Set Option: </h3>
-        <span class="text-color"><?php echo $setOptionLang ?></span>
+        <span class="text-color"><?php echo $thisPackage->getSetNameLang(); ?></span>
         </div>
         <div class="col-2">
         <h3>Package: </h3>
@@ -256,6 +134,11 @@ if( !isset($_GET['extrasCode']) ){
 
   
 <?php
+$setOption = $thisPackage->getSetName();
+$setOptionLang = $thisPackage->getSetNameLang();
+$packageChoice = $thisPackage->getSubsetType();
+$packageChoiceLang = $thisPackage->getSubsetTypeLang();
+
 //Sending the email
   //recipient
   //$to = "britanytorres888@gmail.com";

@@ -87,6 +87,12 @@ class LayeredArchPackage implements Package{
         }
     }
 
+    public function setSubsetType($typeCode){
+        $this->subsetType = $typeCode;
+        $this->packageCode = $this->packageCode & 0b11111111111111111111111100001111;
+        $this->packageCode = $this->packageCode | $typeCode;
+    }
+
     public function getCode(){
         $this->packageCode = $this->packageCode & 0b00000000000000000000000011111111;
         if($this->option01){$this->packageCode = $this->packageCode ^ (1 << 8);}
@@ -119,12 +125,6 @@ class LayeredArchPackage implements Package{
         if( ((1 << 17) & $packageCode) != 0 ){$this->setOption10(TRUE);}
         if( ((1 << 18) & $packageCode) != 0 ){$this->setOption11(TRUE);}
         if( ((1 << 19) & $packageCode) != 0 ){$this->setOption12(TRUE);}
-    }
-
-    public function setSubsetType($typeCode){
-        $this->subsetType = $typeCode;
-        $this->packageCode = $this->packageCode & 0b11111111111111111111111100001111;
-        $this->packageCode = $this->packageCode | $typeCode;
     }
 
     public function getPackageOptionsArray(){return $this->packageOptionsArray;}
