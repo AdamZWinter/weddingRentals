@@ -241,7 +241,7 @@ window.location.href="pickYourSet.php";
       if($value == 'fullset'){
         $packageUp = $fullSetTitle;
       }
-      if($value == 'pick6' || $value == ['vmpick6'] ){
+      if($value == 'pick6' || $value == 'vmpick6' ){
         $packageUp = $pick6Title;
       }
       if($value == 'platinum'){
