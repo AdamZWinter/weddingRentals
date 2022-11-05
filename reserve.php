@@ -71,6 +71,8 @@ $packageCode = 0;
   // create list of prices to add
   $totalPrice = [];
 
+  $extrasObj = new Extras();
+
   if( !isset($_GET['hexarbor']) ){
     $hexarbor = false;
   }else{
@@ -78,7 +80,7 @@ $packageCode = 0;
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
     array_push($totalPrice, 350);
-    $packageCode = $packageCode | 256 ;
+    $extrasObj->setOptionStatus(1, TRUE);
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -88,7 +90,7 @@ $packageCode = 0;
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
     array_push($totalPrice, 99);
-    $packageCode = $packageCode | (256 << 1);
+    $extrasObj->setOptionStatus(2, TRUE);
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -98,7 +100,7 @@ $packageCode = 0;
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
     array_push($totalPrice, 4);
-    $packageCode = $packageCode | (256 << 2);
+    $extrasObj->setOptionStatus(3, TRUE);
   }
 
   if( !isset($_GET['winejug']) ){
@@ -108,7 +110,7 @@ $packageCode = 0;
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
     array_push($totalPrice, 20);
-    $packageCode = $packageCode | (256 << 3);
+    $extrasObj->setOptionStatus(4, TRUE);
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -118,7 +120,7 @@ $packageCode = 0;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode | (256 << 4);
+    $extrasObj->setOptionStatus(5, TRUE);
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -128,7 +130,7 @@ $packageCode = 0;
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode | (256 << 5);
+    $extrasObj->setOptionStatus(6, TRUE);
   }
 
   if( !isset($_GET['delivery']) ){
@@ -137,7 +139,7 @@ $packageCode = 0;
     $delivery = true;
     $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
-    $packageCode = $packageCode | (256 << 6);
+    $extrasObj->setOptionStatus(7, TRUE);
   }
   //var_dump($_GET);
 
@@ -184,6 +186,7 @@ $packageCode = 0;
             <form name="extrasForm" id="extrasForm" action="vardump.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
+                <input type="hidden" id="extrasCode" name="extrasCode" value="<?php echo $extrasObj->getCode();?>">
                 <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
                 <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
                 <input type="hidden" id="packageChoice" name="packageChoice" value="<?php echo $packageChoice;?>">

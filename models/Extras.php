@@ -1,9 +1,9 @@
 <?php
 
 class Extras{
-    private extrasArrayStatus;
-    private extrasArrayLang;
-    private extrasCode;
+    private $extrasArrayStatus;
+    private $extrasArrayLang;
+    private $extrasCode;
 
     public function __construct(){
         $this->extrasArrayStatus = array(
