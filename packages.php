@@ -113,48 +113,123 @@ $layeredArchFullSetPackageDetails = '
                 <br>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</label>
+                <label class = "option-style">Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">3 piece seating chart half arch set (print service for cards is available for a small additional fee)</label>
+                <label  class = "option-style">3 piece seating chart half arch set (print service for cards is available for a small additional fee)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Table numbers 1-30</label>
+                <label  class = "option-style">Table numbers 1-30</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Gold Card Terrarium with choice of “Gifts & Cards” sign</label>
+                <label  class = "option-style">Gold Card Terrarium with choice of “Gifts & Cards” sign</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">5 “Reserved” signs</label>
+                <label  class = "option-style">5 “Reserved” signs</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Dont Mind if I Do,” “In Loving Memory”)</label>
+                <label  class = "option-style">Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Dont Mind if I Do,” “In Loving Memory”)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</label>
+                <label  class = "option-style">Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</label>
+                <label  class = "option-style">1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text)</label>
+                <label  class = "option-style">1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text)</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Unplugged Ceremony sign</label>
+                <label  class = "option-style">Unplugged Ceremony sign</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">Hairpin Record Player Prop</label>
+                <label  class = "option-style">Hairpin Record Player Prop</label>
                 <br>
                 <input  type="checkbox">
-                <label for="hexarbor" class = "option-style">"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</label>
+                <label  class = "option-style">"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</label>
                 <br>
                 <br>
                 <input type="submit" value="Continue">
 
 </form>
-
-
 ';
+$modernRoundFullSetPackageDetails = '
+<form name="packageList" id="extrasForm" action="extras.php" method="get">
+
+<label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
+                <br>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Large Custom Welcome (round center becomes a keepsake) </label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Large Magnetic Rectangular (“Find Your Seat”, “Cocktails”, “Let’s Party”, or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">1-30 free standing table numbers</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Set of “Reserved” signs (5)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">2 Selections of Small Square Bracket Signs (“In Loving Memory”, “Gifts & Cards”, “Take One”, and/or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">2 Selections of Small Horizontal Bracket Signs (“Guestbook”, “Programs”, “Mr. & Mrs”. “Take One”, “Gifts and Cards”,  and/or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">1 Medium Table Top  (“Unplugged Ceremony”, or Magnetic Sign with “Cocktails” heading,  “In Loving Memory” heading or customize.</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake</label>
+                <br>
+                <br>
+                <input type="submit" value="Continue">
+
+</form>
+';
+$darkWalnutFullSetPackageDetails = '
+<form name="packageList" id="extrasForm" action="extras.php" method="get">
+
+<label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
+                <br>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Large Custom Welcome (round center becomes a keepsake) </label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Large Magnetic Rectangular (“Find Your Seat”, “Cocktails”, “Let’s Party”, or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">1-30 free standing table numbers</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">Set of “Reserved” signs (5)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">2 Selections of Small Square Bracket Signs (“In Loving Memory”, “Gifts & Cards”, “Take One”, and/or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">2 Selections of Small Horizontal Bracket Signs (“Guestbook”, “Programs”, “Mr. & Mrs”. “Take One”, “Gifts and Cards”,  and/or customize)</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">1 Medium Table Top  (“Unplugged Ceremony”, or Magnetic Sign with “Cocktails” heading,  “In Loving Memory” heading or customize.</label>
+                <br>
+                <input  type="checkbox">
+                <label class = "option-style">All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake</label>
+                <br>
+                <br>
+                <input type="submit" value="Continue">
+
+</form>
+';
+
 
 if($setOption == 'layeredarch'){
   $optionMarkup = $layeredArch;
@@ -165,6 +240,8 @@ if($setOption == 'layeredarch'){
 if($setOption == 'modernround'){
     $optionMarkup = $modernRound;
     $thisPackage = new ModernRoundPackage();
+    $packageListMarkup = $modernRoundFullSetPackageDetails;
+
 }
 if($setOption == 'vintagemirror'){
     $optionMarkup = $vintageMirror;
@@ -283,17 +360,17 @@ $packageCheckList = '
       if(optionChoiceValue != null ){
         document.getElementById("collapseDiv").className = "collapse show";
       }
-      if(optionChoiceDetails == "Full Set- $849" ){
+      if(optionChoiceDetails == "Full Set- $849" || optionChoiceDetails == "Full Set- $799"  ){
         // check every checkbox
         checkAllBoxes();
       }
-      if( optionChoiceDetails == "Pick 6- $749" ) {
+      if( optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699" ) {
 
         // allow user to pick just 6 boxes
         clearCheckBoxes();
         countHowManyBoxesAreChecked();
       }
-      if( optionChoiceDetails == "Pick 4- $649" ) {
+      if( optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" ) {
 
         // allow user to pick just 4 boxes
         clearCheckBoxes();
@@ -316,12 +393,12 @@ $packageCheckList = '
           if (box.checked) {
             count++;
           }
-          if( count = 4 && optionChoiceDetails == "Pick 4- $649" ){
+          if( (count = 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") ){
             //console.log("4 boxes are clicked");
             check4Boxes();
             break;
           }
-          if( count = 6 && optionChoiceDetails == "Pick 6- $749"){
+          if( (count = 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")){
             //console.log("6 boxes are clicked");
             check6Boxes();
             break;
