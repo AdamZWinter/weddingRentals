@@ -30,16 +30,16 @@ class Extras{
     }
 
     public function decode($extrasCode){
-        $this->extrasCode = $extrasCode;
+        //$this->extrasCode = $extrasCode;
         for($i = 0; $i < count($this->extrasArrayStatus); $i++){
-            if( ($this->extrasCode & (1 << $i)) != 0 ){
+            if( ($extrasCode & (1 << $i)) != 0 ){
                 $this->setOptionStatus($i, TRUE);
             }
-        $i++;
-        }
-    }
+        }//end for
+    }//end function
 
     public function getCode(){
+        $this->extrasCode = 0;
         $i = 0;
         foreach($this->extrasArrayStatus as $included){
             if($included){

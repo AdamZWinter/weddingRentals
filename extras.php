@@ -24,6 +24,7 @@ window.location.href="pickYourSet.php";
   }else{
     $packageCode = $_GET['packageCode'];
     $thisPackage = Packages::getPackageByCode($packageCode);
+    //$thisPackage->setSubsetType(32);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption01(TRUE);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption04(TRUE);                            //***************For testing only   REMOVE THESE */
     $thisPackage->setOption10(TRUE);                            //***************For testing only   REMOVE THESE */

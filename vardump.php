@@ -233,7 +233,7 @@ if( !isset($_GET['extrasCode']) ){
         </div>
         <div class="col-2">
         <h3>Package: </h3>
-        <p><?php echo $packageChoiceLang ?></p>
+        <p><?php echo $thisPackage->getSubsetTypeLang(); ?></p>
         </div>
     </div>
     <div class="row justify-content-center">

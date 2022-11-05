@@ -80,7 +80,7 @@ $packageCode = 0;
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
     array_push($totalPrice, 350);
-    $extrasObj->setOptionStatus(1, TRUE);
+    $extrasObj->setOptionStatus(0, TRUE);
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -90,7 +90,7 @@ $packageCode = 0;
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
     array_push($totalPrice, 99);
-    $extrasObj->setOptionStatus(2, TRUE);
+    $extrasObj->setOptionStatus(1, TRUE);
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -100,7 +100,7 @@ $packageCode = 0;
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
     array_push($totalPrice, 4);
-    $extrasObj->setOptionStatus(3, TRUE);
+    $extrasObj->setOptionStatus(2, TRUE);
   }
 
   if( !isset($_GET['winejug']) ){
@@ -110,7 +110,7 @@ $packageCode = 0;
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
     array_push($totalPrice, 20);
-    $extrasObj->setOptionStatus(4, TRUE);
+    $extrasObj->setOptionStatus(3, TRUE);
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -120,7 +120,7 @@ $packageCode = 0;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
     array_push($totalPrice, 30);
-    $extrasObj->setOptionStatus(5, TRUE);
+    $extrasObj->setOptionStatus(4, TRUE);
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -130,7 +130,7 @@ $packageCode = 0;
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
     array_push($totalPrice, 30);
-    $extrasObj->setOptionStatus(6, TRUE);
+    $extrasObj->setOptionStatus(5, TRUE);
   }
 
   if( !isset($_GET['delivery']) ){
@@ -139,7 +139,7 @@ $packageCode = 0;
     $delivery = true;
     $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
-    $extrasObj->setOptionStatus(7, TRUE);
+    $extrasObj->setOptionStatus(6, TRUE);
   }
   //var_dump($_GET);
 
