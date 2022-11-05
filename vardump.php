@@ -13,6 +13,14 @@ $redirect = '<script>
 window.location.href="pickYourSet.php";
 </script>';
 
+if( !isset($_GET['weddingDate']) ){
+  echo $redirect;
+}else{
+  $weddingDate = $_GET['weddingDate'];
+  $dateArray = date_parse($weddingDate);
+  $weddingMonth = $dateArray['month'];
+}
+
 if( !isset($_GET['packageCode']) ){
   echo $redirect;
 }else{
@@ -57,13 +65,6 @@ if( !isset($_GET['packageCode']) ){
     $packageChoice = $_GET['packageChoice'];
   }
 
-  if( !isset($_GET['weddingDate']) ){
-    echo $redirect;
-  }else{
-    $weddingDate = $_GET['weddingDate'];
-    $dateArray = date_parse($weddingDate);
-    $weddingMonth = $dateArray['month'];
-  }
 
 
 
