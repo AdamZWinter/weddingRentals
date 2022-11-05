@@ -397,16 +397,7 @@ window.location.href="pickYourSet.php";
   document.getElementById("headerImage").style.height = "300px";
 
 
-  
 
-  
-  function checkFourBoxes(){
-  console.log("checkFourBoxes() is triggered ");
-  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  for (var checkbox of checkboxes) {
-      checkbox.checked = true;
-  }
-}
 </script>
 
 <?php
