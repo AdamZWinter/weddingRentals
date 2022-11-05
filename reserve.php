@@ -1,17 +1,23 @@
 <?php
 
-//Set, package, and extras are bitwise encoded into the $packageCode as follows:
-// |------------------Extras--------------------||--Package--||----Set----|
+//Set, package, and choices are bitwise encoded into the $packageCode as follows:
+// |------------------Choices--------------------||--Package--||----Set----|
 //                 [remaining bits]                 [4 bits]    [4 bits] 
 //
 // 1 = Layered Arch, 2 = Modern Round, 3 = Vintage Mirror, 4 = Dark Walnut, 5 = Rustic Wood
 // 16 = Full Set, 17 = Pick Six, 18 = Pick Four,  19 = platinum
-// 256 = Hex Arbor,  257 = Vintage Sofa,  258 = Gallon Jug,  259 = XL Win Jugs,  260 = Clear Jars,  261 = Blue Jars
-// 262 =  Delivery
+// 256 and above will individual bit flags for the package choices
+
+
+//Extras will be encoded into their own value  (values below are to be deprecated)
+// 256 = Hex Arbor,  257 = Vintage Sofa,  258 = Gallon Jug,  259 = XL Win Jugs,  260 = Clear Jars,  261 = Blue Jars   (to be deprecated)
+// 262 =  Delivery  (to be deprecated)
 
 
 //reserve.php
 require('header.php');
+require('./models/Packages.php');
+require('./models/Extras.php');
 
 $redirect = '<script>
 window.location.href="pickYourSet.php";
@@ -27,23 +33,30 @@ $packageCode = 0;
     $weddingMonth = $dateArray['month'];
   }
 
-  if( !isset($_GET['setOption']) ){
+  if( !isset($_GET['packageCode']) ){
     echo $redirect;
   }else{
-    $setOption = $_GET['setOption'];
+    $packageCode = $_GET['packageCode'];
+    $thisPackage = Packages::getPackageByCode($packageCode);
   }
 
-  if( !isset($_GET['packageChoice']) ){
-    echo $redirect;
-  }else{
-    $packageChoice = $_GET['packageChoice'];
-  }
+  // if( !isset($_GET['setOption']) ){
+  //   echo $redirect;
+  // }else{
+  //   $setOption = $_GET['setOption'];
+  // }
 
-  if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
-    $displaySets = 'true';
-  }else{
-    $displaySets = 'true';
-  }
+  // if( !isset($_GET['packageChoice']) ){
+  //   echo $redirect;
+  // }else{
+  //   $packageChoice = $_GET['packageChoice'];
+  // }
+
+  // if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
+  //   $displaySets = 'true';
+  // }else{
+  //   $displaySets = 'true';
+  // }
 
   $hexarborLang ='';
   $vintagesofaLang ='';
@@ -58,6 +71,8 @@ $packageCode = 0;
   // create list of prices to add
   $totalPrice = [];
 
+  $extrasObj = new Extras();
+
   if( !isset($_GET['hexarbor']) ){
     $hexarbor = false;
   }else{
@@ -65,7 +80,7 @@ $packageCode = 0;
     $hexarborLang = 'Hexagonal Arbor';
     array_push($extras, 'Hexagonal Arbor');
     array_push($totalPrice, 350);
-    $packageCode = $packageCode | 256 ;
+    $extrasObj->setOptionStatus(0, TRUE);
   }
 
   if( !isset($_GET['vintagesofa']) ){
@@ -75,7 +90,7 @@ $packageCode = 0;
     $vintagesofaLang = 'Vintage Sofa';
     array_push($extras, 'Vintage Sofa');
     array_push($totalPrice, 99);
-    $packageCode = $packageCode | (256 << 1);
+    $extrasObj->setOptionStatus(1, TRUE);
   }
 
   if( !isset($_GET['antiquejugs']) ){
@@ -85,7 +100,7 @@ $packageCode = 0;
     $antiquejugsLang = 'Antique Jugs';
     array_push($extras, 'Antique Jugs');
     array_push($totalPrice, 4);
-    $packageCode = $packageCode | (256 << 2);
+    $extrasObj->setOptionStatus(2, TRUE);
   }
 
   if( !isset($_GET['winejug']) ){
@@ -95,7 +110,7 @@ $packageCode = 0;
     $winejugLang = 'Wine Jug';
     array_push($extras, 'Wine Jug');
     array_push($totalPrice, 20);
-    $packageCode = $packageCode | (256 << 3);
+    $extrasObj->setOptionStatus(3, TRUE);
   }
 
   if( !isset($_GET['clearjars']) ){
@@ -105,7 +120,7 @@ $packageCode = 0;
     $clearjarsLang = 'Clear Jars';
     array_push($extras, 'Clear Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode | (256 << 4);
+    $extrasObj->setOptionStatus(4, TRUE);
   }
 
   if( !isset($_GET['bluejars']) ){
@@ -115,7 +130,7 @@ $packageCode = 0;
     $bluejarsLang = 'Blue Jars';
     array_push($extras, 'Blue Jars');
     array_push($totalPrice, 30);
-    $packageCode = $packageCode | (256 << 5);
+    $extrasObj->setOptionStatus(5, TRUE);
   }
 
   if( !isset($_GET['delivery']) ){
@@ -124,52 +139,8 @@ $packageCode = 0;
     $delivery = true;
     $deliveryLang = 'Delivery';
     array_push($extras,'Delivery');
-    $packageCode = $packageCode | (256 << 6);
+    $extrasObj->setOptionStatus(6, TRUE);
   }
-
-  switch ($setOption){
-    case 'layeredarch':
-        $setOptionLang = 'Layered Arch';
-        array_push($totalPrice, 849);
-        $packageCode = $packageCode | 1;
-        break;
-    case 'modernround':
-        $setOptionLang = 'Modern Round';
-        array_push($totalPrice, 799);
-        $packageCode = $packageCode | 2;
-        break;
-    case 'vintagemirror':
-        $setOptionLang = 'Vintage Mirror';
-        array_push($totalPrice, 849);
-        $packageCode = $packageCode | 3;
-        break;
-    case 'darkwalnut':
-        $setOptionLang = 'Dark Walnut';
-        array_push($totalPrice, 299);
-        $packageCode = $packageCode | 4;
-        break;
-    case 'rusticwood':
-        $setOptionLang = 'Rustic Wood';
-        array_push($totalPrice, 299);
-        $packageCode = $packageCode | 5;
-        break;
-  }//end switch
-
-  switch ($packageChoice){
-    case 'fullSet':
-        $packageCode = $packageCode | 16;
-        break;
-    case 'pickSix':
-        $packageCode = $packageCode | 32;
-        break;
-    case 'pick4':
-        $packageCode = $packageCode | 48;
-        break;
-    case 'platinum':
-        $packageCode = $packageCode | 64;
-        break;
-  }//end switch
-
   //var_dump($_GET);
 
 ?>
@@ -191,13 +162,13 @@ $packageCode = 0;
 
             <div class="text-start">
                 <?php
-                    echo 'Set Selection: '.$setOptionLang;
+                    echo 'Set Selection: '.$thisPackage->getSetNameLang();
                     echo '<br>';
                     echo 'Wedding Date: '.$weddingDate;
                     echo '<br>';
                     echo 'Extras: ';
                     
-                      foreach ($extras as $extra){
+                      foreach ($extrasObj->getSelectedExtrasArrayLang() as $extra){
                           echo '<br>';
                           echo '- ' .$extra ;
 
@@ -206,25 +177,24 @@ $packageCode = 0;
                     echo '<br>';
                     echo 'Estimated Total price: $' . array_sum($totalPrice);
                     
-
-
                 ?>
             </div>
 
             <div class = "form-group text-start">
             <form name="extrasForm" id="extrasForm" action="vardump.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
-                <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
-                <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
-                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $packageCode;?>">
-                <input type="hidden" id="packageChoice" name="packageChoice" value="<?php echo $packageChoice;?>">
-                <input type="hidden" id="hexarbor" name="hexarbor" value="<?php echo $hexarbor;?>">
-                <input type="hidden" id="antiquejugs" name="antiquejugs" value="<?php echo $antiquejugs;?>">
-                <input type="hidden" id="vintagesofa" name="vintagesofa" value="<?php echo $vintagesofa;?>">
-                <input type="hidden" id="winejug" name="winejug" value="<?php echo $winejug;?>">
-                <input type="hidden" id="clearjars" name="clearjars" value="<?php echo $clearjars;?>">
-                <input type="hidden" id="bluejars" name="bluejars" value="<?php echo $bluejars;?>">
-                <input type="hidden" id="delivery" name="delivery" value="<?php echo $delivery;?>">
+                <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
+                <input type="hidden" id="extrasCode" name="extrasCode" value="<?php echo $extrasObj->getCode();?>">
+                <!--input type="hidden" id="displaySets" name="displaySets" value="<?php //echo $displaySets;?>"-->
+                <!--input type="hidden" id="setOption" name="setOption" value="<?php //echo $setOption;?>"-->
+                <!--input type="hidden" id="packageChoice" name="packageChoice" value="<?php //echo $packageChoice;?>"-->
+                <!--input type="hidden" id="hexarbor" name="hexarbor" value="<?php //echo $hexarbor;?>"-->
+                <!--input type="hidden" id="antiquejugs" name="antiquejugs" value="<?php //echo $antiquejugs;?>"-->
+                <!--input type="hidden" id="vintagesofa" name="vintagesofa" value="<?php //echo $vintagesofa;?>"-->
+                <!--input type="hidden" id="winejug" name="winejug" value="<?php //echo $winejug;?>"-->
+                <!--input type="hidden" id="clearjars" name="clearjars" value="<?php //echo $clearjars;?>"-->
+                <!--input type="hidden" id="bluejars" name="bluejars" value="<?php //echo $bluejars;?>"-->
+                <!--input type="hidden" id="delivery" name="delivery" value="<?php //echo $delivery;?>"-->
 
                 <label for="fname" class="rental-head">First Name: </label>
                 <input type="text" class= "form-control" id="fname" name="fname">

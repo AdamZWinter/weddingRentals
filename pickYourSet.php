@@ -3,24 +3,14 @@
 //comments test
 require('header.php');
 
-if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
+if( !isset($_GET['weddingDate']) ){
+  $weddingDate = date('Y-m-d');
   $displaySets = 'false';
   $collapse = 'collapse';
 }else{
+  $weddingDate = $_GET['weddingDate'];
   $displaySets = 'true';
   $collapse = 'collapse show';
-}
-
-if( !isset($_GET['weddingDate']) ){
-  $weddingDate = date('Y-m-d');
-}else{
-  $weddingDate = $_GET['weddingDate'];
-}
-
-if( !isset($_GET['setOption']) ){
-  $setOption = '';
-}else{
-  $setOption = $_GET['setOption'];
 }
 
 ?>
@@ -53,7 +43,7 @@ if( !isset($_GET['setOption']) ){
         <div class = "col-12 col-md-4 text-center">
           <input type="date" id="weddingDate" name="weddingDate" onchange="showSets()" value="<?php echo $weddingDate;?>">
           <input type="hidden" id="displaySets" name="displaySets" value="<?php echo $displaySets;?>">
-          <input type="hidden" id="setOption" name="setOption" value="<?php echo $setOption;?>">
+          <input type="hidden" id="setOption" name="setOption" value="tbd">
           <button class="btn btn-primary w-100" data-bs-toggle="collapse" data-bs-target="#pickSet" aria-expanded="false" aria-controls="pickSet" hidden></button>
 
           <p id="dateFeedback" class="text-danger">
