@@ -31,17 +31,6 @@ window.location.href="pickYourSet.php";
     $displaySets = 'true';
   }
 
-
-  // for package list
-  if(!isset($_GET['packageChoice'])){
-    $packageCheckList = ($_GET['packageChoice']);
-  }
-  if($packageCheckList == 'fullset'){
-    $packageListMarkup = $layeredArchFullSetPackageDetails;
-  }
-
-
-
   if( !isset($_GET['upsellPackage']) ){
     $upsellPackage = '';
   }else{

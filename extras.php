@@ -35,7 +35,6 @@ window.location.href="pickYourSet.php";
   }else{
     $setOption = $_GET['setOption'];
   }
-
   if( !isset($_GET['packageChoice']) ){
     echo $redirect;
   }else{
@@ -296,7 +295,7 @@ window.location.href="pickYourSet.php";
                   <input type="hidden" id="displaySets" name="displaySets" value="'.$displaySets.'">
                   <input type="hidden" id="setOption" name="setOption" value="'.$setOption.'">
                   <input type="hidden" id="upsellPackage" name="upsellPackage" value="'.$value.'">                
-                  <input type="submit" value="Upgrade to '.$packageUp.' for $'.$priceDiff.'">
+                  <input class = "btn btn-primary button" type="submit" value="Upgrade to '.$packageUp.' for $'.$priceDiff.'">
               </form>              
   ';
   }
@@ -308,7 +307,7 @@ window.location.href="pickYourSet.php";
 
 
 <div class = "container-fluid">
-  <h3>Your Package:</h3>
+  <h3 class = "rental-head">Your Package:</h3>
   <div class = "row">
     <div class = "col-sm-3"></div>
     <div class = "col-sm-6 topper">
