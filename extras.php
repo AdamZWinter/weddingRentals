@@ -197,8 +197,8 @@ window.location.href="pickYourSet.php";
       $subtitle = $pick4Sub;
     }
   }
-//TODO update $packageList to only include items selected on packages page.
-  
+
+//TODO update $packageList to only include items selected on packages page.  
     $packageList = '
     <ul class = "descriptionList"> 
                     <li>Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</li>
@@ -217,8 +217,7 @@ window.location.href="pickYourSet.php";
     ';
   
 
-  // UPSELL package code below
-  
+  // UPSELL package code below  
   if($packageChoice == "pick4"){
     $upgradeOptions = ['fullset' , 'pick6'];
   };
@@ -240,9 +239,15 @@ window.location.href="pickYourSet.php";
     foreach($upgradeOptions as $value){
       if($value == 'fullset'){
         $packageUp = $fullSetTitle;
+        if($setOption == 'layeredarch'){
+          $priceDiff = $priceArray[0] - $cost;
+        }
       }
       if($value == 'pick6' || $value == 'vmpick6' ){
         $packageUp = $pick6Title;
+        if($setOption == 'layeredarch'){
+          $priceDiff = $priceArray[2] - $cost;
+        }
       }
       if($value == 'platinum'){
         $packageUp = $VMPlatinumTitle;
