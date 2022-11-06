@@ -209,7 +209,7 @@ $packageCode = 0;
                 <input type="email" class= "form-control" id="email" name="email">
                 <br>
                 <br>
-                <input type="submit" value="Continue">
+                <input class = "btn btn-primary button" type="submit" value="Continue">
             </form>
             </div>
 
