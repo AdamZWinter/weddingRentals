@@ -107,54 +107,53 @@ $walnutRustic= '
   <option class= "option-style" value= "pick4">Pick 4- $199</option>
 ';
 $layeredArchFullSetPackageDetails = '
-<form class="formClass" name="packageList" id="extrasForm" action="extras.php" method="get">
+<form class="formClass" name="packageList" id="packageListForm" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
                 <br>
-                <input name = "lang[]" value = "value" type="checkbox">
+                <input name = "check_list[]" value = "Customized welcome sign" type="checkbox">
                 <label class = "option-style">Customized welcome sign (choice of trellis half arch or smooth half arch insert up to 25 words text)</label>
                 <br>
-                <input name = "lang[]" value = "value"  type="checkbox">
+                <input  name = "check_list[]" value = "3 piece seating chart half arch set "  type="checkbox">
                 <label  class = "option-style">3 piece seating chart half arch set (print service for cards is available for a small additional fee)</label>
                 <br>
-                <input name = "lang[]" value = "value"  type="checkbox">
+                <input  name = "check_list[]"  value = "Table numbers 1-30"  type="checkbox">
                 <label  class = "option-style">Table numbers 1-30</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "Gold Card Terrarium with choice of “Gifts & Cards” sign" type="checkbox">
                 <label  class = "option-style">Gold Card Terrarium with choice of “Gifts & Cards” sign</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "5 “Reserved” signs" type="checkbox">
                 <label  class = "option-style">5 “Reserved” signs</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]"value = "Up to 2 Double Half Arch Small signs" type="checkbox">
                 <label  class = "option-style">Up to 2 Double Half Arch Small signs (“Gifts & Cards,” “Take One,” “Dont Mind if I Do,” “In Loving Memory”)</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "Up to 2 Sunset Small signs" type="checkbox">
                 <label  class = "option-style">Up to 2 Sunset Small signs (“Please Sign Our Guestbook,” “Gifts & Cards,” “In Loving Memory”)</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "1 Double Half Arch Medium sign" type="checkbox">
                 <label  class = "option-style">1 Double Half Arch Medium sign (“Cheers,” “The Bar,” “Guestbook,” or Custom Acrylic Text)</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "1 Double Full Arch Medium sign" type="checkbox">
                 <label  class = "option-style">1 Double Full Arch Medium sign (“Signature Drinks,” or Custom Acrylic Text)</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "Unplugged Ceremony sign" type="checkbox">
                 <label  class = "option-style">Unplugged Ceremony sign</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = "Hairpin Record Player Prop" type="checkbox">
                 <label  class = "option-style">Hairpin Record Player Prop</label>
                 <br>
-                <input  type="checkbox">
+                <input  name = "check_list[]" value = ""Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above" type="checkbox">
                 <label  class = "option-style">"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</label>
                 <br>
                 <br>
-                <input type="submit" value="Continue">
 
 </form>
 ';
 $modernRoundFullSetPackageDetails = '
-<form class="formClass" id= "packageList" name="packageList" id="extrasForm" action="extras.php" method="get">
+<form class="formClass" id= "packageList" name="packageListForm" id="extrasForm" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
@@ -192,7 +191,7 @@ $modernRoundFullSetPackageDetails = '
 </form>
 ';
 $darkWalnutFullSetPackageDetails = '
-<form class="formClass" name="packageList" id="packageList" action="extras.php" method="get">
+<form class="formClass" name="packageList" id="packageListForm" action="extras.php" method="get">
 
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
@@ -229,7 +228,7 @@ $darkWalnutFullSetPackageDetails = '
 
 </form>
 ';
-
+$packageListValue = "";
 
 if($setOption == 'layeredarch'){
   $optionMarkup = $layeredArch;
@@ -292,7 +291,9 @@ $packageCheckList = '
   document.getElementById("headerImage").style.height = "300px";
 
   window.onload = (event) => {
-    displayPackageDetails()};
+    displayPackageDetails();
+    getCheckedBoxes();
+  };
 
 </script>
 
@@ -311,11 +312,14 @@ $packageCheckList = '
                     <br>
                     <br>
                     <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
-                    <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">                   
+                    <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>"> 
+                    <input class="collapse" type="hidden" id="packageListCollapse" name="packageList" value="">
+                  
                     <?php 
                       echo $packageMarkup; 
                     ?>
-                    <button class = "btn btn-primary button" type="submit" >Continue</button>            
+                    <button class = "btn btn-primary button" type="submit" onclick = "getCheckedBoxes()"  >Continue</button>  
+          
                 </form>               
             </p>
 
@@ -348,8 +352,11 @@ $packageCheckList = '
     <div class="collapse" id="collapseDiv">
       <div class="card card-body">
 
-      <h1 id= "insertInfo"><?php echo $packageCheckList;?></h1>
-    </div><!-- Card collapse -->
+      <form class="formClass" id= "packageList" name="packageList" id="extrasForm" action="extras.php" method="get">
+      <input type="hidden" id="packageList" name="packageList" value="<?php echo $packageCheckList;?>">
+      </form>
+    </div>
+    <!-- Card collapse -->
 
 
   <script>
@@ -359,8 +366,8 @@ $packageCheckList = '
     var optionChoice = document.getElementById("packageChoice").selectedIndex;
       optionChoiceValue = document.getElementsByTagName("option")[optionChoice].value;
       optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
-      console.log( optionChoiceValue + " was chosen");
-      console.log( "Option choice details: " + optionChoiceDetails);
+      //console.log( optionChoiceValue + " was chosen");
+      //console.log( "Option choice details: " + optionChoiceDetails);
 
       if(optionChoiceValue != null ){
         document.getElementById("collapseDiv").className = "collapse show";
@@ -368,6 +375,8 @@ $packageCheckList = '
       if(optionChoiceDetails == "Full Set- $849" || optionChoiceDetails == "Full Set- $799"  ){
         // check every checkbox
         checkAllBoxes();
+        countHowManyBoxesAreChecked();
+
       }
       if( optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699" ) {
 
@@ -392,6 +401,7 @@ $packageCheckList = '
       
 
       checkboxes[i].onchange = function(){
+        getCheckedBoxes();
         var count = 0;
 
 
@@ -414,11 +424,7 @@ $packageCheckList = '
             break;
           }
           
-        } 
-        console.log("number of checkboxes checked: "+ count );
-
-        
-        
+        }         
       }
         
     }
@@ -515,15 +521,29 @@ $packageCheckList = '
 
 
   function getCheckedBoxes(){
+    console.log("value function is called");
+
     var checkedBoxes = new Array();
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var valueToPass = "";
+
     for (var checkbox of checkboxes) {
       if( checkbox.checked ){
-        checkedBoxes.push(checkbox);
+        checkedBoxes.push(checkbox.value);
+        valueToPass += (checkbox.value + ", ");
       }
     }
-    console.log(checkedBoxes);
-    document.getElementById("packageList").value == checkedBoxes;
+    //console.log(checkedBoxes);
+    var packageListValue = document.getElementById("packageListCollapse");
+
+
+    packageListValue.setAttribute("value", valueToPass );  
+    console.log("The current 'value': " + packageListValue.getAttribute("value"));
+    
+    
+    var x = "<?php echo "$packageListValue"?>";
+    x = valueToPass;
+
   }
     
 
