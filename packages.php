@@ -108,7 +108,6 @@ $walnutRustic= '
 ';
 $layeredArchFullSetPackageDetails = '
 <form class="formClass" name="packageList" id="packageListForm" action="extras.php" method="get">
-
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
                 <br>
@@ -154,77 +153,96 @@ $layeredArchFullSetPackageDetails = '
 ';
 $modernRoundFullSetPackageDetails = '
 <form class="formClass" id= "packageList" name="packageListForm" id="extrasForm" action="extras.php" method="get">
-
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "Large Custom Welcome (round center becomes a keepsake)" type="checkbox">
                 <label class = "option-style">Large Custom Welcome (round center becomes a keepsake) </label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "Large Magnetic Rectangular" type="checkbox">
                 <label class = "option-style">Large Magnetic Rectangular (“Find Your Seat”, “Cocktails”, “Let’s Party”, or customize)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "1-30 free standing table numbers" type="checkbox">
                 <label class = "option-style">1-30 free standing table numbers</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)" type="checkbox">
                 <label class = "option-style">Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "Set of “Reserved” signs (5)" type="checkbox">
                 <label class = "option-style">Set of “Reserved” signs (5)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "2 Selections of Small Square Bracket Signs" type="checkbox">
                 <label class = "option-style">2 Selections of Small Square Bracket Signs (“In Loving Memory”, “Gifts & Cards”, “Take One”, and/or customize)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "2 Selections of Small Horizontal Bracket Signs" type="checkbox">
                 <label class = "option-style">2 Selections of Small Horizontal Bracket Signs (“Guestbook”, “Programs”, “Mr. & Mrs”. “Take One”, “Gifts and Cards”,  and/or customize)</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "1 Medium Table Top" type="checkbox">
                 <label class = "option-style">1 Medium Table Top  (“Unplugged Ceremony”, or Magnetic Sign with “Cocktails” heading,  “In Loving Memory” heading or customize.</label>
                 <br>
-                <input  type="checkbox">
+                <input name = "check_list[]" value = "All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake" type="checkbox">
                 <label class = "option-style">All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake</label>
                 <br>
                 <br>
-                <input type="submit" value="Continue">
 
 </form>
 ';
 $darkWalnutFullSetPackageDetails = '
-<form class="formClass" name="packageList" id="packageListForm" action="extras.php" method="get">
-
+<form class="formClass" id= "packageList" name="packageListForm" id="extrasForm" action="extras.php" method="get">
 <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
                 <br>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">Large Custom Welcome (round center becomes a keepsake) </label>
+                <input name = "check_list[]" value = "“Welcome to Our Beginning” Round or Rectangular" type="checkbox">
+                <label class = "option-style">“Welcome to Our Beginning” Round (24” diameter, with easel) or Rectangular (35.5” x 21” with easel)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">Large Magnetic Rectangular (“Find Your Seat”, “Cocktails”, “Let’s Party”, or customize)</label>
+                <input name = "check_list[]" value = "“Find your Seat”  (35.5” x 21” organizer with 30 clips & easel) " type="checkbox">
+                <label class = "option-style">“Find your Seat”  (35.5” x 21” organizer with 30 clips & easel) </label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">1-30 free standing table numbers</label>
+                <input name = "check_list[]" value = "Table Numbers" type="checkbox">
+                <label class = "option-style">Table Numbers, double-sided (Numbers 1-30, 3.5” x 9”)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">Modern Locking Card Box or Vintage Industrial Typewriter Rental with custom message to guests (up to 100 words)</label>
+                <input name = "check_list[]" value = "Antique Jug with “Honeymoon Fund” " type="checkbox">
+                <label class = "option-style">Antique Jug with “Honeymoon Fund” (jug & mini-hanger, 4.75” x 10”) (2pc)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">Set of “Reserved” signs (5)</label>
+                <input name = "check_list[]" value = "“Mr. & Mrs.” Head Table Sign with small easel 7.25” x 22.5”" type="checkbox">
+                <label class = "option-style">“Mr. & Mrs.” Head Table Sign with small easel 7.25” x 22.5”</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">2 Selections of Small Square Bracket Signs (“In Loving Memory”, “Gifts & Cards”, “Take One”, and/or customize)</label>
+                <input name = "check_list[]" value = "“We know that you would be here today if Heaven weren’t so far away”  (10” x 10.5” memorial sign or seat saver with small easel)" type="checkbox">
+                <label class = "option-style">“We know that you would be here today if Heaven weren’t so far away”  (10” x 10.5” memorial sign or seat saver with small easel)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">2 Selections of Small Horizontal Bracket Signs (“Guestbook”, “Programs”, “Mr. & Mrs”. “Take One”, “Gifts and Cards”,  and/or customize)</label>
+                <input name = "check_list[]" value = "“Here comes the Bride” ring bearer carrier  (10.25” x 17.25” with cord)" type="checkbox">
+                <label class = "option-style">“Here comes the Bride” ring bearer carrier  (10.25” x 17.25” with cord)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">1 Medium Table Top  (“Unplugged Ceremony”, or Magnetic Sign with “Cocktails” heading,  “In Loving Memory” heading or customize.</label>
+                <input name = "check_list[]" value = "“Better” & “Together” Chair Hangers (with cord 10.25” x 17.25”) (2pc)" type="checkbox">
+                <label class = "option-style">“Better” & “Together” Chair Hangers (with cord 10.25” x 17.25”) (2pc)</label>
                 <br>
-                <input  type="checkbox">
-                <label class = "option-style">All Full Set Rental Clients receive 1 SMALL COMPLIMENTARY 3-D CUSTOMIZATION on a small sign in addition to their Round Welcome Sign Keepsake</label>
+                <input name = "check_list[]" value = "“Please Sign our Guestbook” (self standing 7.25” x 16”)" type="checkbox">
+                <label class = "option-style">“Please Sign our Guestbook” (self standing 7.25” x 16”)</label>
+                <br>
+                <input name = "check_list[]" value = "“Just Married” & “Thank You” (reversible photo-shoot prop 7.25” x 31”)" type="checkbox">
+                <label class = "option-style">“Just Married” & “Thank You” (reversible photo-shoot prop 7.25” x 31”)</label>
                 <br>
                 <br>
-                <input type="submit" value="Continue">
+                <input name = "check_list[]" value = "“Take One” (7.25” x 7.25”)" type="checkbox">
+                <label class = "option-style">“Take One” (7.25” x 7.25”)</label>
+                <br>
+                <br>
+                <input name = "check_list[]" value = "“Programs” (7.25” x 16”)" type="checkbox">
+                <label class = "option-style">“Programs” (7.25” x 16”)</label>
+                <br>
+                <br>
+                <input name = "check_list[]" value = "“Enjoy the Moment - no photography please” 10.5” x 17” with small easel" type="checkbox">
+                <label class = "option-style">“Enjoy the Moment, no photography please” 10.5” x 17” with small easel</label>
+                <br>
+                <br>
+                <input name = "check_list[]" value = "8 Reserved signs (3.5” x 12”  4 with cord hanger option) (8pc)" type="checkbox">
+                <label class = "option-style">8 Reserved signs (3.5” x 12”  4 with cord hanger option) (8pc)</label>
+                <br>
+                <br>
+                <input name = "check_list[]" value = "Antique Leather and Wooden Trunk with “Cards” Banner" type="checkbox">
+                <label class = "option-style">Antique Leather and Wooden Trunk with “Cards” Banner</label>
+                <br>
+                <br>
 
 </form>
 ';
@@ -249,6 +267,8 @@ if($setOption == 'vintagemirror'){
 if($setOption ==  'darkwalnut'){
   $optionMarkup = $walnutRustic;
   $thisPackage = new DarkWalnutPackage();
+  $packageListMarkup = $darkWalnutFullSetPackageDetails;
+
 }
 if($setOption == 'rusticwood'){
   $optionMarkup = $walnutRustic;
@@ -318,7 +338,7 @@ $packageCheckList = '
                     <?php 
                       echo $packageMarkup; 
                     ?>
-                    <button class = "btn btn-primary button" type="submit" onclick = "getCheckedBoxes()"  >Continue</button>  
+                    <button class = "btn btn-primary button" type="submit" onclick = "getCheckedBoxes()"   >Continue</button>  
           
                 </form>               
             </p>
@@ -361,6 +381,21 @@ $packageCheckList = '
 
   <script>
 
+    function ensureItemsAreChosen(){
+      optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      // if 4 or 6 items aren't chosen, alert
+      if( optionChoiceDetails == "Pick 6- $749" && checkboxes.length < 6 ) {
+
+        alert("You must choose 6 items!");
+      }
+      if( optionChoiceDetails == "Pick 4- $649" && checkboxes.length < 4 ) {
+
+        alert("You must choose 4 items!");
+      }
+    }
+
   function displayPackageDetails() {
 
     var optionChoice = document.getElementById("packageChoice").selectedIndex;
@@ -372,19 +407,22 @@ $packageCheckList = '
       if(optionChoiceValue != null ){
         document.getElementById("collapseDiv").className = "collapse show";
       }
-      if(optionChoiceDetails == "Full Set- $849" || optionChoiceDetails == "Full Set- $799"  ){
+      if(optionChoiceDetails == "Full Set- $849" || optionChoiceDetails == "Full Set- $799"
+          || optionChoiceDetails == "Full Set- $299"  ){
         // check every checkbox
         checkAllBoxes();
         countHowManyBoxesAreChecked();
 
       }
-      if( optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699" ) {
+      if( optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699"
+          || optionChoiceDetails == "Pick 6- $245"  ) {
 
         // allow user to pick just 6 boxes
         clearCheckBoxes();
         countHowManyBoxesAreChecked();
       }
-      if( optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" ) {
+      if( optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" 
+          || optionChoiceDetails == "Pick 4- $199" ) {
 
         // allow user to pick just 4 boxes
         clearCheckBoxes();
@@ -410,16 +448,20 @@ $packageCheckList = '
           if (box.checked) {
             count++;
           }
-          if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") ){
+          if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") 
+                          || optionChoiceDetails == "Pick 4- $199") {
             enableAllCheckboxes();
           }
-          if( (count = 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") ){
+          if( (count = 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599")
+                          || optionChoiceDetails == "Pick 4- $199") {
             check4Boxes();
           }
-          if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")){
+          if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
+                          || optionChoiceDetails == "Pick 6- $245") {
             enableAllCheckboxes();
           }
-          if( (count = 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")){
+          if( (count = 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
+                          || optionChoiceDetails == "Pick 6- $245"){
             check6Boxes();
             break;
           }
@@ -521,6 +563,9 @@ $packageCheckList = '
 
 
   function getCheckedBoxes(){
+    
+    
+
     console.log("value function is called");
 
     var checkedBoxes = new Array();
