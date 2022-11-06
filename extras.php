@@ -298,7 +298,7 @@ window.location.href="pickYourSet.php";
     <div class = "col-sm-6 topper">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
      <h6 > <?php echo $subtitle;?> </h6>
-     
+     <p class = "option-style">
      <?php 
      
      foreach( $pieces as $item ){
@@ -308,7 +308,7 @@ window.location.href="pickYourSet.php";
      }
           
      ?>   
-    
+    </p>
        
     
     <div>
