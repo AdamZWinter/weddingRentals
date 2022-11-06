@@ -316,7 +316,7 @@ window.location.href="pickYourSet.php";
   <div class = "row">
     <div class = "col-sm-3"></div>
 
-    <div class = "col-sm-6 topper">
+    <div class = "col-sm-6 topper text-center">
       <?php echo $upgradeMarkup;?>       
     </div>
 
