@@ -145,7 +145,7 @@ $layeredArchFullSetPackageDetails = '
                 <input  name = "check_list[]" value = "Hairpin Record Player Prop" type="checkbox">
                 <label  class = "option-style">Hairpin Record Player Prop</label>
                 <br>
-                <input  name = "check_list[]" value = ""Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above" type="checkbox">
+                <input  name = "check_list[]" value = "Mr & Mrs Custom Head Table Keepsake is a free gift in addition to the items above"" type="checkbox">
                 <label  class = "option-style">"Mr & Mrs" Custom Head Table Keepsake is a free gift in addition to the items above</label>
                 <br>
                 <br>

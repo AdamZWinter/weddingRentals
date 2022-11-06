@@ -209,9 +209,10 @@ window.location.href="pickYourSet.php";
 
 //TODO update $packageList to only include items selected on packages page.  
 
+  $packageString = $_GET['packageList'];
+  $pieces = explode(", ", $packageString);
 
 
-    $packageList = $_GET['packageList'] ;
   
 
   // UPSELL package code below  
@@ -297,7 +298,16 @@ window.location.href="pickYourSet.php";
     <div class = "col-sm-6 topper">
      <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
      <h6 > <?php echo $subtitle;?> </h6>
-     <?php echo $packageList;?>   
+     
+     <?php 
+     
+     foreach( $pieces as $item ){
+        echo $item;
+        echo "<br />";
+
+     }
+          
+     ?>   
     
        
     
