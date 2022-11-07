@@ -28,7 +28,7 @@ echo '<br>';
 echo '<br>';
 echo $laPackage->getSubsetTypeLang();
 echo '<br>';
-//var_dump($laPackage->getChoicesArray());
+var_dump($laPackage->getChoicesArray());
 foreach($laPackage->getChoicesArray() as $option){
     echo $option;
     echo '<br>';

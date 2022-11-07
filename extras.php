@@ -25,10 +25,6 @@ window.location.href="pickYourSet.php";
     $packageCode = $_GET['packageCode'];
     $thisPackage = Packages::getPackageByCode($packageCode);
     $setOption = $thisPackage->getSetName();
-    //$thisPackage->setSubsetType(32);                            //***************For testing only   REMOVE THESE */
-    $thisPackage->setOption01(TRUE);                            //***************For testing only   REMOVE THESE */
-    $thisPackage->setOption04(TRUE);                            //***************For testing only   REMOVE THESE */
-    $thisPackage->setOption10(TRUE);                            //***************For testing only   REMOVE THESE */
   }
 
   if( !isset($_GET['packageChoice']) ){
@@ -36,6 +32,21 @@ window.location.href="pickYourSet.php";
   }else{
     $packageChoice = $_GET['packageChoice'];
   }  
+
+  //TODO update $packageList to only include items selected on packages page.  
+
+  if( !isset($_GET['packageList']) ){
+    echo $redirect;
+  }else{
+    $packageString = $_GET['packageList'];
+    $choiceIndexes = explode(", ", $packageString);
+    foreach($choiceIndexes as $index){
+      //echo $index;
+      $thisPackage->setOptionStatus($index, TRUE);
+    }
+    $pieces = $thisPackage->getChoicesArray();         //This is not working
+    //var_dump($thisPackage->getChoicesArray());
+  }
 
 
   $hexarchAvailable = $weddingMonth == 1 ? 'disabled' : '';
@@ -218,15 +229,7 @@ window.location.href="pickYourSet.php";
   }
 
 
-  
-
-//TODO update $packageList to only include items selected on packages page.  
-
-  $packageString = $_GET['packageList'];
-  $pieces = explode(", ", $packageString);
-
-
-  
+    
 
   // UPSELL package code below  
   if($packageChoice == "pick4"){
