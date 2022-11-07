@@ -344,6 +344,7 @@ window.location.href="pickYourSet.php";
                 <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
                 <br>
+                <div class = "center">
                 <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p>
                 <input  type="checkbox" id="hexarbor" name="hexarbor" <?php echo $hexarchAvailable;?>>
                 <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
@@ -366,6 +367,7 @@ window.location.href="pickYourSet.php";
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
                 <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
+                </div>
                 <br>
                 <br>
                 <div class = "center">
