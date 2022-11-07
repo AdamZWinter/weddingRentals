@@ -329,7 +329,7 @@ window.location.href="pickYourSet.php";
       <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-12 col-md-4 text-center">
+        <div class = "col-md-4 center">
 
             <div class = "form-group text-start center">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
@@ -341,8 +341,6 @@ window.location.href="pickYourSet.php";
 
                 <br>
                 <br>
-
-
                 <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
                 <br>
@@ -370,7 +368,7 @@ window.location.href="pickYourSet.php";
                 <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
                 <br>
                 <br>
-                <input class = "btn btn-primary button center" type="submit" value="Continue">
+                <input class = "btn btn-primary button" type="submit" value="Continue">
             </form>
             </div>
             
