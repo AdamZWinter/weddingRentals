@@ -85,35 +85,48 @@ window.location.href="pickYourSet.php";
   }
   if($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
+      $thisPackage->setSubsetType(16);
         $cost = $priceArray[0];
     }
     if($packageChoice == 'gold'){
+      $thisPackage->setSubsetType(32);
         $cost = $priceArray[1];
     }
     if($packageChoice == 'vmpick6'){
+      $thisPackage->setSubsetType(48);
         $cost = $priceArray[4];
     }    
     if($packageChoice == 'vmpick4'){
+      $thisPackage->setSubsetType(64);
         $cost = $priceArray[5];
     }  
   }
-  if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
-    $cost = $priceArray[8];
+
+  if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
+    $cost = $priceArray[6];
+    $thisPackage->setSubsetType(16);
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick6'){
     $cost = $priceArray[7];
+    $thisPackage->setSubsetType(32);
   }
-  if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
-    $cost = $priceArray[6];
+  if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
+    $cost = $priceArray[8];
+    $thisPackage->setSubsetType(48);
   }
+
+
   if($setOption == 'rusticwood' && $packageChoice == 'pick4'){
     $cost = $priceArray[8];
+    $thisPackage->setSubsetType(16);
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick6'){
     $cost = $priceArray[7];
+    $thisPackage->setSubsetType(32);
   }
   if($setOption == 'rusticwood' && $packageChoice == 'fullset'){
     $cost = $priceArray[6];
+    $thisPackage->setSubsetType(48);
   }
     
 
