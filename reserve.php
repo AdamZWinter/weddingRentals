@@ -72,10 +72,10 @@ $packageCode = 0;
   $bluejarsLang ='';
   $deliveryLang ='';
 
-  $extras = [$cost];
+  $extras = [];
 
   // create list of prices to add
-  $totalPrice = [];
+  $totalPrice = [$cost];
 
   $extrasObj = new Extras();
 
