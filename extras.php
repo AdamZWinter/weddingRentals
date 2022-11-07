@@ -368,7 +368,9 @@ window.location.href="pickYourSet.php";
                 <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
                 <br>
                 <br>
-                <input class = "btn btn-primary button text-center" type="submit" value="Continue">
+                <div class = "center">
+                <input class = "btn btn-primary button" type="submit" value="Continue">
+                </div>
             </form>
             </div>
             
