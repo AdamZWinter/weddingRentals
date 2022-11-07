@@ -331,7 +331,7 @@ window.location.href="pickYourSet.php";
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
 
-            <div class = "form-group text-start">
+            <div class = "form-group text-start center">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
@@ -370,7 +370,7 @@ window.location.href="pickYourSet.php";
                 <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
                 <br>
                 <br>
-                <input class = "btn btn-primary button text-center" type="submit" value="Continue">
+                <input class = "btn btn-primary button" type="submit" value="Continue">
             </form>
             </div>
             

@@ -214,7 +214,7 @@ white-space: nowrap;
 
 /*Kat's CSS merged from extras.css*/
 .center{
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
