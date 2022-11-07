@@ -275,29 +275,11 @@ if($setOption == 'rusticwood'){
   $thisPackage = new RusticWoodPackage();
 }
 
-$packageMarkup = '
-<div class= row>
-<div class="col-12 center">
-<div class="form-group">     
-<label for="packageChoice" class="rental-head">Choose Your Package:</label>
 
-<br>
-<select class="form-control select-style" id="packageChoice" name="packageChoice" onchange=" countHowManyBoxesAreChecked(); displayPackageDetails();">
-'.$optionMarkup.'
-</select>
-</div>
-</div>    
-</div>   
-';
-
-
-
-
-
-$packageCheckList = '
-            '.$packageListMarkup.'
+// $packageCheckList = '
+//             '.$packageListMarkup.'
            
-';
+// ';
 
 
 
@@ -335,9 +317,21 @@ $packageCheckList = '
                     <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>"> 
                     <input class="collapse" type="hidden" id="packageListCollapse" name="packageList" value="">
                   
+                    <div class= row>
+                    <div class="col-12 center">
+                    <div class="form-group">     
+                    <label for="packageChoice" class="rental-head">Choose Your Package:</label>
+
+                    <br>
+                    <select class="form-control select-style" id="packageChoice" name="packageChoice" onchange=" countHowManyBoxesAreChecked(); displayPackageDetails();">
                     <?php 
-                      echo $packageMarkup; 
+                      echo $optionMarkup; 
                     ?>
+                    </select>
+                    </div>
+                    </div>    
+                    </div> 
+
                     <button class = "btn btn-primary button" type="submit" onclick = "getCheckedBoxes()"   >Continue</button>  
           
                 </form>               
@@ -371,10 +365,21 @@ $packageCheckList = '
     <!-- Collapse that displays the Package checkboxes  -->
     <div class="collapse" id="collapseDiv">
       <div class="card card-body">
-
-      <form class="formClass" id= "packageList" name="packageList" id="extrasForm" action="extras.php" method="get">
-      <input type="hidden" id="packageList" name="packageList" value="<?php echo $packageCheckList;?>">
-      </form>
+        <form class="formClass" id= "packageList" name="packageListForm" id="extrasForm" action="extras.php" method="get">
+        <label for="packageCheckList" class="rental-head">Choose Your Set Items ( FULL SET INCLUDES ALL OF THE FOLLOWING ITEMS ):</label>
+          <br>
+          <br>
+          <?php
+            $i = 0;
+            foreach($thisPackage->getPackageOptionsArray() as $optionDescription){
+              echo '<input name = "check_list[]" value = "'.$i.'" type="checkbox">';
+              echo '<label class = "option-style">'.$optionDescription.'</label>';
+              echo '<br>';
+              $i++;
+            }
+          ?>
+        </form>
+      </div>
     </div>
     <!-- Card collapse -->
 
