@@ -331,7 +331,7 @@ window.location.href="pickYourSet.php";
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-md-4">
 
-            <div class = "form-group text-start">
+            <div class = "form-group text-start center">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
