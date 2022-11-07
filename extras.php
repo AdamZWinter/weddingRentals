@@ -287,7 +287,7 @@ window.location.href="pickYourSet.php";
         $packageUp = $VMGoldTitle;
         $priceDiff  = $priceArray[1] - $cost;
       }
-            //*************************** KAT use *Package class here instead.  You may want to create an Upsell class *****************************/
+
             $upgradeMarkup .= '
                <form name="upgradeForm" id="upgradeForm" action="packages.php" method="get">
                   <input type="hidden" id="weddingDate" name="weddingDate" value="'.$weddingDate.'">

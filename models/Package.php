@@ -18,6 +18,8 @@ interface Package{
     public function setSubsetType($typeCode);
     public function getPackageOptionsArray();
     public function getChoicesArray();
+    public function getOptionStatus($index);
+    public function setOptionStatus($index, $booleanStatus);
 }
 
 ?>

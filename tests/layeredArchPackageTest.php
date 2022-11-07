@@ -15,10 +15,10 @@ echo '<br>';
 echo $laPackage->getSubsetType();
 echo '<br>';
 
-$laPackage->setOption01(TRUE);
-$laPackage->setOption03(TRUE);
-//$laPackage->setOption10(TRUE);
-//$laPackage->setOption12(TRUE);
+$laPackage->setOptionStatus(0, TRUE);
+$laPackage->setOptionStatus(5, TRUE);
+//$laPackage->setOptionStatus(8, TRUE);
+//$laPackage->setOptionStatus(10, TRUE);
 
 echo $laPackage->getCode();
 echo '<br>';
@@ -53,10 +53,9 @@ echo '<br>';
 echo $laPackage->getSubsetType();
 echo '<br>';
 
-//$laPackage->setOption01(TRUE);
-//$laPackage->setOption03(TRUE);
-$laPackage->setOption08(TRUE);
-$laPackage->setOption10(TRUE);
+
+$laPackage->setOptionStatus(8, TRUE);
+$laPackage->setOptionStatus(10, TRUE);
 
 echo $laPackage->getCode();
 echo '<br>';
