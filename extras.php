@@ -331,7 +331,7 @@ window.location.href="pickYourSet.php";
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-md-4">
 
-            <div class = "form-group text-start center">
+            <div class = "form-group text-start">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
@@ -344,7 +344,6 @@ window.location.href="pickYourSet.php";
                 <label for="extras" class="rental-head">Choose Your Extras:</label>
                 <br>
                 <br>
-                <div class = "center">
                 <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p>
                 <input  type="checkbox" id="hexarbor" name="hexarbor" <?php echo $hexarchAvailable;?>>
                 <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
@@ -367,7 +366,7 @@ window.location.href="pickYourSet.php";
                 <br>
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
                 <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
-                </div>
+               
                 <br>
                 <br>
                 <div class = "center">
