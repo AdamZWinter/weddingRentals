@@ -326,7 +326,7 @@ window.location.href="pickYourSet.php";
 
 
     <div class = "container-fluid ">
-      <div class = "row">      
+      <div class = "row center">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-md-4 center">
