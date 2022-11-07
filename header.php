@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active margin-right" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle active margin-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Menu
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
