@@ -334,6 +334,7 @@ window.location.href="pickYourSet.php";
             <div class = "form-group text-start center">
             <form name="extrasForm" id="extrasForm" action="reserve.php" method="get">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
+                <input type="hidden" id="cost" name="cost" value="<?php echo $cost;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <!--input type="hidden" id="displaySets" name="displaySets" value="<?php //echo $displaySets;?>"-->
                 <!--input type="hidden" id="setOption" name="setOption" value="<?php //echo $setOption;?>"-->

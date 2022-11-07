@@ -40,6 +40,12 @@ $packageCode = 0;
     $thisPackage = Packages::getPackageByCode($packageCode);
   }
 
+  if( !isset($_GET['cost']) ){
+    echo $redirect;
+  }else{
+    $cost = $_GET['cost'];
+  }
+
   // if( !isset($_GET['setOption']) ){
   //   echo $redirect;
   // }else{
@@ -66,7 +72,7 @@ $packageCode = 0;
   $bluejarsLang ='';
   $deliveryLang ='';
 
-  $extras = [];
+  $extras = [$cost];
 
   // create list of prices to add
   $totalPrice = [];
