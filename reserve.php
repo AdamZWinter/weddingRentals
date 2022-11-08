@@ -157,14 +157,24 @@ $packageCode = 0;
   document.getElementById("headerImage").style.height = "300px";
 </script>
 
+<div class = "relative">
+      <span class="text-style">Sets</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Packages</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Extras</span>
+      <span class="text-style"> / </span>
+      <span class="page-select">Reservation</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Confirmation</span>
+  </div>
+
     <div class = "container-fluid ">
       <div class = "row">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
-          <br>
-          <br>
-          <br>
+          
 
             <div class="text-start">
                 <?php

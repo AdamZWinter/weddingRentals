@@ -22,10 +22,18 @@ if( !isset($_GET['weddingDate']) ){
 
 
   <br>
-  <br>
-  <br>
-  <br>
 
+  <div class = "relative">
+      <span class="page-select">Sets</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Packages</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Extras</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Reservation</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Confirmation</span>
+  </div>
   <form name="pickYourSetForm" id="pickYourSetForm" action="packages.php" method="get" onsubmit="event.preventDefault();">
   <div class = "container-fluid">
     <div class = "row">      

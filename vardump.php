@@ -107,7 +107,19 @@ $db->query($query);
 
 ?>
 
-<h1 class="text-center">Thank you for choosing Walnut Ridge</h1>
+<div class = "relative">
+      <span class="text-style">Sets</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Packages</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Extras</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Reservation</span>
+      <span class="text-style"> / </span>
+      <span class="page-select">Confirmation</span>
+  </div>
+
+<h1 class="text-center">Thank you for choosing Walnut Ridge</h1><br>
 <p class="text-center">The Walnut Ridge Wedding Rental Team will be confirming your order soon</p>
 <p class="text-center">A copy of the information below will be emailed to you</p><br><br>
 

@@ -306,6 +306,18 @@ window.location.href="pickYourSet.php";
 ?>
 
 
+<div class = "relative">
+      <span class="text-style">Sets</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Packages</span>
+      <span class="text-style"> / </span>
+      <span class="page-select">Extras</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Reservation</span>
+      <span class="text-style"> / </span>
+      <span class="text-style">Confirmation</span>
+  </div>
+
 
 <div class = "container-fluid">
   <h3 class = "rental-head">Your Package:</h3>

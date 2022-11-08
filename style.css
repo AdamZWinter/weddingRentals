@@ -566,3 +566,22 @@ div.col-sm-6 {
 .formClass > label {
   font-size: large;
 }
+
+/*   Breadcrumbs styles   */
+.relative{
+  position: relative;
+  left: 20px;
+  margin-bottom: 50px;
+}
+
+span{
+  display: inline;
+}
+
+.text-style{
+  color:#d5b6ae;
+}
+
+.page-select{
+  color: #f78fa7;
+}
