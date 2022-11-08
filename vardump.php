@@ -21,6 +21,7 @@ if( !isset($_GET['weddingDate']) ){
   $weddingDate = $_GET['weddingDate'];
   $dateArray = date_parse($weddingDate);
   $weddingMonth = $dateArray['month'];
+  $unixTime = mktime(0, 0, 0, $dateArray['month'], $dateArray['day'], $dateArray['year']);
 }
 
 if( !isset($_GET['packageCode']) ){
@@ -65,14 +66,43 @@ if( !isset($_GET['extrasCode']) ){
 
 //****************************************Insert to Database *****************************************************/
 
-//$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-//$db->query($query);
+$reservationID = $weddingDate.'_'.$packageCode.'_'.$extrasCode.'_'.$lname;
 
-//$query = "INSERT INTO `extras`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-//$db->query($query);
+$query = "SELECT `email` FROM `customers` WHERE `email` = '". $email ."'";
+$result = $db->query($query);
+if($result->num_rows == 0){
+  $query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+  $db->query($query);
+}else{
+  //customer already exists
+}
 
-//$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-//$db->query($query);
+$query = "INSERT INTO `extras`(`reservationID`, `extrasJSON`, `extrasCode`, `hexArborQty`, `vintageSofaQty`, `antiqueGallonQty`, `wineJugsQty`, `clearBallJarsQty`, `blueBallJarsQty`, `deliveryQty`) 
+          VALUES ('". $reservationID ."',
+                  '". json_encode($thisExtras->getSelectedExtrasArrayLang()) ."',
+                  '". $thisExtras->getCode() ."',
+                  '". $thisExtras->getOptionQty(0) ."',
+                  '". $thisExtras->getOptionQty(1) ."',
+                  '". $thisExtras->getOptionQty(2) ."',
+                  '". $thisExtras->getOptionQty(3) ."',
+                  '". $thisExtras->getOptionQty(4) ."',
+                  '". $thisExtras->getOptionQty(5) ."',
+                  '". $thisExtras->getOptionQty(6) ."'
+                  )";
+$db->query($query);
+
+$query = "INSERT INTO `reservations`(`reservationID`, `customerID`, `dateUnix`, `dateHuman`, `signSet`, `package`, `packageCode`, `packageJSON`, `status`) 
+          VALUES ('". $reservationID ."',
+                  '". $email ."',
+                  '". $unixTime ."',
+                  '". $weddingDate ."',
+                  '". $thisPackage->getSetNameLang() ."',
+                  '". $thisPackage->getSubsetTypeLang() ."',
+                  '". $thisPackage->getCode() ."',
+                  '". json_encode($thisPackage->getChoicesArray()) ."',
+                  'new'
+                  )";
+$db->query($query);
 
 
 ?>

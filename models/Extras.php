@@ -58,6 +58,14 @@ class Extras{
         return $this->extrasArrayStatus[$index];
     }
 
+    public function getOptionQty($index){
+        if($this->getOptionStatus($index)){
+            return 1;
+        }else{
+            return 0;
+        }  
+    }
+
     public function getExtrasArrayLang(){
         return $this->extrasArrayLang;
     }
