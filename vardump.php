@@ -15,53 +15,53 @@ $redirect = '<script>
 window.location.href="pickYourSet.php";
 </script>';
 
-if( !isset($_GET['weddingDate']) ){
+if( !isset($_POST['weddingDate']) ){
   echo $redirect;
 }else{
-  $weddingDate = $_GET['weddingDate'];
+  $weddingDate = $_POST['weddingDate'];
   $dateArray = date_parse($weddingDate);
   $weddingMonth = $dateArray['month'];
   $unixTime = mktime(0, 0, 0, $dateArray['month'], $dateArray['day'], $dateArray['year']);
 }
 
-if( !isset($_GET['packageCode']) ){
+if( !isset($_POST['packageCode']) ){
   echo $redirect;
 }else{
-  $packageCode = $_GET['packageCode'];
+  $packageCode = $_POST['packageCode'];
   $thisPackage = Packages::getPackageByCode($packageCode);
 }
 
-if( !isset($_GET['extrasCode']) ){
+if( !isset($_POST['extrasCode']) ){
   echo $redirect;
 }else{
-  $extrasCode = $_GET['extrasCode'];
+  $extrasCode = $_POST['extrasCode'];
   $thisExtras = new Extras();
   $thisExtras->decode($extrasCode);
 }
 
   
-  if( !isset($_GET['fname']) ){
+  if( !isset($_POST['fname']) ){
     echo $redirect;
   }else{
-    $fname = $_GET['fname'];
+    $fname = $_POST['fname'];
   }
  
-  if( !isset($_GET['lname']) ){
+  if( !isset($_POST['lname']) ){
     echo $redirect;
   }else{
-    $lname = $_GET['lname'];
+    $lname = $_POST['lname'];
   }
 
-  if( !isset($_GET['phone']) ){
+  if( !isset($_POST['phone']) ){
     echo $redirect;
   }else{
-    $phone = $_GET['phone'];
+    $phone = $_POST['phone'];
   }
 
-  if( !isset($_GET['email']) ){
+  if( !isset($_POST['email']) ){
     echo $redirect;
   }else{
-    $email = $_GET['email'];
+    $email = $_POST['email'];
   }
 
 //****************************************Insert to Database *****************************************************/
@@ -127,22 +127,22 @@ $db->query($query);
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>First Name: </h3>
-        <span class="text-color"><?php echo $_GET['fname'] ?></span>
+        <span class="text-color"><?php echo $_POST['fname'] ?></span>
         </div>
         <div class="col-2">
         <h3>Last Name: </h3>
-        <p><?php echo $_GET['lname'] ?></p>
+        <p><?php echo $_POST['lname'] ?></p>
       </div>
     </div>
 
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>Email: </h3>
-        <span class="text-color"><?php echo $_GET['email'] ?></span>
+        <span class="text-color"><?php echo $_POST['email'] ?></span>
         </div>
         <div class="col-2">
         <h3>Phone Number: </h3>
-        <p><?php echo $_GET['phone'] ?></p>
+        <p><?php echo $_POST['phone'] ?></p>
         </div>
     </div>
 
@@ -159,7 +159,7 @@ $db->query($query);
     <div class="row justify-content-center">
         <div class="col-2">
         <h3>Wedding Date: </h3>
-        <span class="text-color"><?php echo $_GET['weddingDate'] ?></span>
+        <span class="text-color"><?php echo $_POST['weddingDate'] ?></span>
         </div>
         <div class="col-2">
             <h3>Extras:</h3> 

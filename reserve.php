@@ -46,24 +46,6 @@ $packageCode = 0;
     $cost = $_GET['cost'];
   }
 
-  // if( !isset($_GET['setOption']) ){
-  //   echo $redirect;
-  // }else{
-  //   $setOption = $_GET['setOption'];
-  // }
-
-  // if( !isset($_GET['packageChoice']) ){
-  //   echo $redirect;
-  // }else{
-  //   $packageChoice = $_GET['packageChoice'];
-  // }
-
-  // if(!isset($_GET['displaySets']) || $_GET['displaySets'] == 'false'){
-  //   $displaySets = 'true';
-  // }else{
-  //   $displaySets = 'true';
-  // }
-
   $hexarborLang ='';
   $vintagesofaLang ='';
   $antiquejugsLang ='';
@@ -197,20 +179,10 @@ $packageCode = 0;
             </div>
 
             <div class = "form-group text-start">
-            <form name="extrasForm" id="extrasForm" action="vardump.php" method="get">
+            <form name="extrasForm" id="extrasForm" action="vardump.php" method="post">
                 <input type="hidden" id="weddingDate" name="weddingDate" value="<?php echo $weddingDate;?>">
                 <input type="hidden" id="packageCode" name="packageCode" value="<?php echo $thisPackage->getCode();?>">
                 <input type="hidden" id="extrasCode" name="extrasCode" value="<?php echo $extrasObj->getCode();?>">
-                <!--input type="hidden" id="displaySets" name="displaySets" value="<?php //echo $displaySets;?>"-->
-                <!--input type="hidden" id="setOption" name="setOption" value="<?php //echo $setOption;?>"-->
-                <!--input type="hidden" id="packageChoice" name="packageChoice" value="<?php //echo $packageChoice;?>"-->
-                <!--input type="hidden" id="hexarbor" name="hexarbor" value="<?php //echo $hexarbor;?>"-->
-                <!--input type="hidden" id="antiquejugs" name="antiquejugs" value="<?php //echo $antiquejugs;?>"-->
-                <!--input type="hidden" id="vintagesofa" name="vintagesofa" value="<?php //echo $vintagesofa;?>"-->
-                <!--input type="hidden" id="winejug" name="winejug" value="<?php //echo $winejug;?>"-->
-                <!--input type="hidden" id="clearjars" name="clearjars" value="<?php //echo $clearjars;?>"-->
-                <!--input type="hidden" id="bluejars" name="bluejars" value="<?php //echo $bluejars;?>"-->
-                <!--input type="hidden" id="delivery" name="delivery" value="<?php //echo $delivery;?>"-->
 
                 <label for="fname" class="rental-head">First Name: </label>
                 <input type="text" class= "form-control" id="fname" name="fname">
