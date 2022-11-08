@@ -93,7 +93,7 @@ class ModernRoundPackage implements Package{
     public function getChoicesArray(){
         $choicesArray = [];
         for($i = 0; $i < count($this->packageOptionsArray); $i++){
-            if( ((1 << ($i + 8)) & $this->packageCode) != 0 ){
+            if( $this->optionStatusArray[$i] == TRUE ){
                 array_push($choicesArray, $this->packageOptionsArray[$i]);
             }
         }
@@ -116,6 +116,7 @@ class ModernRoundPackage implements Package{
     public function setOptionStatus($index, $booleanStatus)
     {
         $this->optionStatusArray[$index] = $booleanStatus;
+        $updateCodeAndDisregard = $this->getCode();
     }
 
 
