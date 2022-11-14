@@ -47,7 +47,7 @@ window.location.href="pickYourSet.php";
   $result = $db->query($query);
   if($result->num_rows == 0){
     //$available = true;  //already initialized as true
-  }elseif ($result->num_rows > 0 && ($setOption == 'vintagemirror' || $setOption == 'darkwalnut' || $setOption == 'rusticwood')) {
+  }elseif ($result->num_rows == 1 && ($setOption == 'vintagemirror' || $setOption == 'darkwalnut' || $setOption == 'rusticwood')) {
     //$available = true;  //already initialized as true
   }else{
     $available = false;
