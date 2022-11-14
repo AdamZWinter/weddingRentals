@@ -2,6 +2,8 @@
 //Test comment
 //packages.php
 require('header.php');
+require('../weddingRentals.conf.php');
+require('utilities/DatabaseConnector.php');
 require('./models/Packages.php');
 
 $thisPackage;
@@ -17,6 +19,7 @@ window.location.href="pickYourSet.php";
     $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
+    $unixTime = mktime(0, 0, 0, $dateArray['month'], $dateArray['day'], $dateArray['year']);
   }
 
   if( !isset($_GET['setOption']) ){
@@ -33,24 +36,17 @@ window.location.href="pickYourSet.php";
 
   //var_dump($weddingMonth);
 
-  $available = true;
-  if($setOption == 'layeredarch' && $weddingMonth == 1){
-    $available = false;
-  }
-
-  if($setOption == 'modernround' && $weddingMonth == 2){
-    $available = false;
-  }
-
-  if($setOption == 'vintagemirror' && $weddingMonth == 3){
-    $available = false;
-  }
-
-  if($setOption == 'darkwalnut' && $weddingMonth == 4){
-    $available = false;
-  }
-
-  if($setOption == 'rusticwood' && $weddingMonth == 5){
+   $available = true;
+  $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
+  $daysLater = $unixTime + $reservationRangeDays;
+  $daysBefore = $unixTime - $reservationRangeDays;
+  $query = "SELECT `email` FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
+  $result = $db->query($query);
+  if($result->num_rows == 0){
+    //$available = true;  //already initialized as true
+  }elseif ($result->num_rows == 1 && ($setOption == 'vintagemirror' || $setOption == 'darkwalnut' || $setOption == 'rusticwood')) {
+    //$available = true;  //already initialized as true
+  }else{
     $available = false;
   }
 

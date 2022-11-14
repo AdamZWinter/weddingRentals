@@ -3,7 +3,10 @@
 
 //extras.php
 require('header.php');
+require('../weddingRentals.conf.php');
+require('utilities/DatabaseConnector.php');
 require('./models/Packages.php');
+require('./models/Extras.php');
 
 $thisPackage;
 
@@ -17,6 +20,7 @@ window.location.href="pickYourSet.php";
     $weddingDate = $_GET['weddingDate'];
     $dateArray = date_parse($weddingDate);
     $weddingMonth = $dateArray['month'];
+    $unixTime = mktime(0, 0, 0, $dateArray['month'], $dateArray['day'], $dateArray['year']);
   }
 
   if( !isset($_GET['packageCode']) ){
@@ -48,14 +52,43 @@ window.location.href="pickYourSet.php";
     //var_dump($thisPackage->getChoicesArray());
   }
 
+  $extrasCodesCombined = 0;
+  $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
+  $daysLater = $unixTime + $reservationRangeDays;
+  $daysBefore = $unixTime - $reservationRangeDays;
+  $query = "SELECT `extras.extrasCode` 
+              FROM `extras` 
+              LEFT JOIN `reservations` ON `extras.reservationID` = `reservations.reservationID`
+              WHERE (`reservations.dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."')";
+  $result = $db->query($query);
+  if($result->num_rows == 0){
+    //$extrasCodesCombined = 0;  //already initialized
+  }elseif ($result->num_rows == 1) {
+    $result->data_seek(0);
+    $row = $result->fetch_assoc();
+    $extrasCodesCombined = $row["extrasCode"];
+  }elseif ($result->num_rows > 1){
+    for($i = 0; $i < $result->num_rows; $i++){
+      $result->data_seek($i);
+      $row = $result->fetch_assoc();
+      $extrasCode = $row["extrasCode"];
+      $extrasCodesCombined = $extrasCodesCombined | $extrasCode;
+    } 
+  }else {
+    //something went wrong
+  }
 
-  $hexarchAvailable = $weddingMonth == 1 ? 'disabled' : '';
-  $couchAvailable = $weddingMonth == 2 ? 'disabled' : '';
-  $antiquejugsAvailable = $weddingMonth == 3 ? 'disabled': '';
-  $winejugsAvailable = $weddingMonth == 3 ? 'disabled': '';
-  $clearjarsAvailable = $weddingMonth == 4 ? 'disabled': '';
-  $bluejarsAvailable = $weddingMonth == 4 ? 'disabled': '';
-  $deliveryAvailable = $weddingMonth == 5 ? 'disabled' : '';
+  $allExtras = new Extras();
+  $allExtras->decode($extrasCodesCombined);
+
+  $hexarchAvailable = $allExtras.getOptionStatus(0) ? 'disabled' : '';
+  $couchAvailable = $allExtras.getOptionStatus(1) ? 'disabled' : '';
+  $antiquejugsAvailable = $allExtras.getOptionStatus(2) ? 'disabled': '';
+  $winejugsAvailable = $allExtras.getOptionStatus(3) ? 'disabled': '';
+  $clearjarsAvailable = $allExtras.getOptionStatus(4) ? 'disabled': '';
+  $bluejarsAvailable = $allExtras.getOptionStatus(5) ? 'disabled': '';
+  $deliveryAvailable = $allExtras.getOptionStatus(6) ? 'disabled' : '';
+
 
   $extrasWarning = ($hexarchAvailable || $couchAvailable || $antiquejugsAvailable || $clearjarsAvailable || $deliveryAvailable) ? 'd-block' : 'd-none';
   //$extrasWarning = "d-block";

@@ -91,11 +91,12 @@ $query = "INSERT INTO `extras`(`reservationID`, `extrasJSON`, `extrasCode`, `hex
                   )";
 $db->query($query);
 
-$query = "INSERT INTO `reservations`(`reservationID`, `customerID`, `dateUnix`, `dateHuman`, `signSet`, `package`, `packageCode`, `packageJSON`, `status`) 
+$query = "INSERT INTO `reservations`(`reservationID`, `customerID`, `dateUnix`, `dateHuman`, `signSet`, `signSetLang`, `package`, `packageCode`, `packageJSON`, `status`) 
           VALUES ('". $reservationID ."',
                   '". $email ."',
                   '". $unixTime ."',
                   '". $weddingDate ."',
+                  '". $thisPackage->getSetName() ."',
                   '". $thisPackage->getSetNameLang() ."',
                   '". $thisPackage->getSubsetTypeLang() ."',
                   '". $thisPackage->getCode() ."',
