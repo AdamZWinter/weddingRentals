@@ -43,11 +43,11 @@ window.location.href="pickYourSet.php";
   $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
   $daysLater = $unixTime + $reservationRangeDays;
   $daysBefore = $unixTime - $reservationRangeDays;
-  $query = "SELECT `email` FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
+  $query = "SELECT `reservationID` FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
   $result = $db->query($query);
   if($result->num_rows == 0){
     //$available = true;  //already initialized as true
-  }elseif ($result->num_rows == 1 && ($setOption == 'vintagemirror' || $setOption == 'darkwalnut' || $setOption == 'rusticwood')) {
+  }elseif ($result->num_rows > 0 && ($setOption == 'vintagemirror' || $setOption == 'darkwalnut' || $setOption == 'rusticwood')) {
     //$available = true;  //already initialized as true
   }else{
     $available = false;
