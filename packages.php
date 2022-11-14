@@ -43,8 +43,11 @@ window.location.href="pickYourSet.php";
   $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
   $daysLater = $unixTime + $reservationRangeDays;
   $daysBefore = $unixTime - $reservationRangeDays;
-  $query = "SELECT `reservationID` FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
+  $query = "SELECT * FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
   $result = $db->query($query);
+  echo $daysBefore;
+  echo $unixTime;
+  echo $daysLater;
   echo $result->num_rows;
   if($result->num_rows == 0){
     //$available = true;  //already initialized as true
