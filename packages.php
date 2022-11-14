@@ -45,9 +45,11 @@ window.location.href="pickYourSet.php";
   $daysBefore = $unixTime - $reservationRangeDays;
   $query = "SELECT * FROM `reservations` WHERE (`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."') AND `signSet` = '".$setOption."'";
   $result = $db->query($query);
-  echo $daysBefore <br>;
-  echo $unixTime <br>;
-  echo $daysLater <br>;
+  echo $daysBefore;
+  echo <br>;
+  echo $unixTime;
+  echo <br>;
+  echo $daysLater;
   echo $result->num_rows;
   if($result->num_rows == 0){
     //$available = true;  //already initialized as true
