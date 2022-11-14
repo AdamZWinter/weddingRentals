@@ -84,13 +84,13 @@ window.location.href="pickYourSet.php";
   $allExtras = new Extras();
   $allExtras->decode($extrasCodesCombined);
 
-  $hexarchAvailable = $allExtras.getOptionStatus(0) ? 'disabled' : '';
-  $couchAvailable = $allExtras.getOptionStatus(1) ? 'disabled' : '';
-  $antiquejugsAvailable = $allExtras.getOptionStatus(2) ? 'disabled': '';
-  $winejugsAvailable = $allExtras.getOptionStatus(3) ? 'disabled': '';
-  $clearjarsAvailable = $allExtras.getOptionStatus(4) ? 'disabled': '';
-  $bluejarsAvailable = $allExtras.getOptionStatus(5) ? 'disabled': '';
-  $deliveryAvailable = $allExtras.getOptionStatus(6) ? 'disabled' : '';
+  $hexarchAvailable = $allExtras->getOptionStatus(0) ? 'disabled' : '';
+  $couchAvailable = $allExtras->getOptionStatus(1) ? 'disabled' : '';
+  $antiquejugsAvailable = $allExtras->getOptionStatus(2) ? 'disabled': '';
+  $winejugsAvailable = $allExtras->getOptionStatus(3) ? 'disabled': '';
+  $clearjarsAvailable = $allExtras->getOptionStatus(4) ? 'disabled': '';
+  $bluejarsAvailable = $allExtras->getOptionStatus(5) ? 'disabled': '';
+  $deliveryAvailable = $allExtras->getOptionStatus(6) ? 'disabled' : '';
 
 
   $extrasWarning = ($hexarchAvailable || $couchAvailable || $antiquejugsAvailable || $clearjarsAvailable || $deliveryAvailable) ? 'd-block' : 'd-none';
