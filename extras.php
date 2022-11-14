@@ -56,10 +56,10 @@ window.location.href="pickYourSet.php";
   $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
   $daysLater = $unixTime + $reservationRangeDays;
   $daysBefore = $unixTime - $reservationRangeDays;
-  $query = "SELECT `extras.extrasCode` 
+  $query = "SELECT `extras`.`extrasCode` 
               FROM `extras` 
-              LEFT JOIN `reservations` ON `extras.reservationID` = `reservations.reservationID`
-              WHERE (`reservations.dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."')";
+              LEFT JOIN `reservations` ON `extras`.`reservationID` = `reservations`.`reservationID`
+              WHERE (`reservations`.`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."')";
   $result = $db->query($query);
   if($result->num_rows == 0){
     //$extrasCodesCombined = 0;  //already initialized
