@@ -36,7 +36,7 @@ window.location.href="pickYourSet.php";
 
   //var_dump($weddingMonth);
 
-   $available = true;
+  $available = true;
   $reservationRangeDays = 60 * 60 * 24 * 2;  //two days in seconds
   $daysLater = $unixTime + $reservationRangeDays;
   $daysBefore = $unixTime - $reservationRangeDays;
