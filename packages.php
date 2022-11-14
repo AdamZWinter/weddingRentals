@@ -6,6 +6,9 @@ require('../weddingRentals.conf.php');
 require('utilities/DatabaseConnector.php');
 require('./models/Packages.php');
 
+$myDB = new DatabaseConnector();
+$db = $myDB->getdb();
+
 $thisPackage;
 
 $redirect = '<script>

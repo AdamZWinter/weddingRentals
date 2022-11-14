@@ -8,6 +8,9 @@ require('utilities/DatabaseConnector.php');
 require('./models/Packages.php');
 require('./models/Extras.php');
 
+$myDB = new DatabaseConnector();
+$db = $myDB->getdb();
+
 $thisPackage;
 
 $redirect = '<script>
