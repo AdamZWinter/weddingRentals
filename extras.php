@@ -62,7 +62,7 @@ window.location.href="pickYourSet.php";
   $query = "SELECT `extras`.`extrasCode` 
               FROM `extras` 
               LEFT JOIN `reservations` ON `extras`.`reservationID` = `reservations`.`reservationID`
-              WHERE (`reservations`.`dateUnix` BETWEEN '".$daysLater."' AND '".$daysBefore."')";
+              WHERE (`reservations`.`dateUnix` BETWEEN '".$daysBefore."' AND '".$daysLater."')";
   $result = $db->query($query);
   if($result->num_rows == 0){
     //$extrasCodesCombined = 0;  //already initialized
