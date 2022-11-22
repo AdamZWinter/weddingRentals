@@ -4,7 +4,7 @@ require('header.php');
 
 <script>
   document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/rusticWood.jpg')";
-  document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 35%";
 </script>
 
   <!--
