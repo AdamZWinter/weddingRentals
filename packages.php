@@ -148,9 +148,9 @@ if($setOption == 'rusticwood'){
   document.getElementById("headerImage").style.height = "300px";
 
   window.onload = (event) => {
-    displayPackageDetails();
-    getCheckedBoxes();
+    displayPackageDetails();  
     hideItemsWhenSetNotAvailable();
+    getCheckedBoxes();
   };
 
 </script>
@@ -469,12 +469,12 @@ if($setOption == 'rusticwood'){
 
     var form = document.getElementById("conntinue2extras");
     var formClass = form.getAttribute("class");
-    //alert("Class = " + formClass);
+    //alert(formClass);
 
     var setItemsDiv = document.getElementById("collapseDiv");
     document.getElementById("collapseDiv").className = "collapse show";
 
-    if( form.classList.contains = formClass) {
+    if( !(form.classList.contains("d-block"))) {
       //alert("Set not available");
       setItemsDiv.className = "collapse";
     }
