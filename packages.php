@@ -150,6 +150,7 @@ if($setOption == 'rusticwood'){
   window.onload = (event) => {
     displayPackageDetails();
     getCheckedBoxes();
+    hideItemsWhenSetNotAvailable();
   };
 
 </script>
@@ -462,6 +463,22 @@ if($setOption == 'rusticwood'){
 
   }
     
+
+
+  function hideItemsWhenSetNotAvailable(){
+
+    var form = document.getElementById("conntinue2extras");
+    var formClass = form.getAttribute("class");
+    //alert("Class = " + formClass);
+
+    var setItemsDiv = document.getElementById("collapseDiv");
+    document.getElementById("collapseDiv").className = "collapse show";
+
+    if( form.classList.contains = formClass) {
+      //alert("Set not available");
+      setItemsDiv.className = "collapse";
+    }
+  }
 
   
     
