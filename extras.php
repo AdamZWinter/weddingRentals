@@ -98,7 +98,7 @@ window.location.href="pickYourSet.php";
 
    //adding cost variable based on set choice 
   //TODO : UPDATE packageChoice names on package.php!!!!
-  //$priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
+  $priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
 
 
   $cost = 0;
