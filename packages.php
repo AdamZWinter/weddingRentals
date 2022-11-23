@@ -199,7 +199,8 @@ if($setOption == 'rusticwood'){
                     </div>    
                     </div> 
 
-                    <button class = "btn btn-primary button" type="submit" onclick = "getCheckedBoxes()"   >Continue</button>  
+                    <button class = "btn btn-primary button" type="submit" id="continueButton" onclick = "getCheckedBoxes()" >Continue</button>
+                    <span class="text-success d-none" id="continueWarning"></br>Please make selections below before continuing.</span>
           
                 </form>               
             </p>
@@ -253,22 +254,23 @@ if($setOption == 'rusticwood'){
 
   <script>
 
-    function ensureItemsAreChosen(){
-      optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
-      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    // function ensureItemsAreChosen(){
+    //   optionChoiceDetails = document.getElementsByTagName("option")[optionChoice].text;
+    //   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-      // if 4 or 6 items aren't chosen, alert
-      if( optionChoiceDetails == "Pick 6- $749" && checkboxes.length < 6 ) {
+    //   // if 4 or 6 items aren't chosen, alert
+    //   if( optionChoiceDetails == "Pick 6- $749" && checkboxes.length < 6 ) {
 
-        alert("You must choose 6 items!");
-      }
-      if( optionChoiceDetails == "Pick 4- $649" && checkboxes.length < 4 ) {
+    //     alert("You must choose 6 items!");
+    //   }
+    //   if( optionChoiceDetails == "Pick 4- $649" && checkboxes.length < 4 ) {
 
-        alert("You must choose 4 items!");
-      }
-    }
+    //     alert("You must choose 4 items!");
+    //   }
+    // }
 
   function displayPackageDetails() {
+    console.log("Called on selector change.");
 
     var optionChoice = document.getElementById("packageChoice").selectedIndex;
       optionChoiceValue = document.getElementsByTagName("option")[optionChoice].value;
@@ -292,6 +294,7 @@ if($setOption == 'rusticwood'){
         // allow user to pick just 6 boxes
         clearCheckBoxes();
         countHowManyBoxesAreChecked();
+        disableContinueButton();
       }
       if( optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" 
           || optionChoiceDetails == "Pick 4- $199" ) {
@@ -299,6 +302,7 @@ if($setOption == 'rusticwood'){
         // allow user to pick just 4 boxes
         clearCheckBoxes();
         countHowManyBoxesAreChecked();
+        disableContinueButton();
 
       }
   }
@@ -323,18 +327,22 @@ if($setOption == 'rusticwood'){
           if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") 
                           || optionChoiceDetails == "Pick 4- $199") {
             enableAllCheckboxes();
+            disableContinueButton();
           }
-          if( (count = 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599")
+          if( (count == 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599")
                           || optionChoiceDetails == "Pick 4- $199") {
             check4Boxes();
+            enableContinueButton();
           }
           if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
                           || optionChoiceDetails == "Pick 6- $245") {
             enableAllCheckboxes();
+            disableContinueButton();
           }
-          if( (count = 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
+          if( (count == 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
                           || optionChoiceDetails == "Pick 6- $245"){
             check6Boxes();
+            enableContinueButton();
             break;
           }
           
@@ -344,6 +352,16 @@ if($setOption == 'rusticwood'){
     }
   }
     
+
+  function enableAllCheckboxes(){
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for(var i = 0; i < checkboxes.length; i++ ){
+      var box = checkboxes[i];
+      box.disabled = false;
+
+    }
+    return true;
+  }
 
   function check6Boxes() {
     var count = 0;
@@ -373,16 +391,6 @@ if($setOption == 'rusticwood'){
     }
   
   }
-  function enableAllCheckboxes(){
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for(var i = 0; i < checkboxes.length; i++ ){
-      var box = checkboxes[i];
-      box.disabled = false;
-
-    }
-
-  }
-
 
   function check4Boxes() {
     var count = 0;
@@ -478,6 +486,20 @@ if($setOption == 'rusticwood'){
       //alert("Set not available");
       setItemsDiv.className = "collapse";
     }
+  }
+
+  function enableContinueButton(){
+    console.log("enableContinueButton() was called");
+    document.getElementById("continueWarning").classList.remove('d-block');
+    document.getElementById("continueWarning").classList.add('d-none');
+    document.getElementById("continueButton").removeAttribute('disabled');
+  }
+
+  function disableContinueButton(){
+    console.log("disableContinueButton() was called");
+    document.getElementById("continueWarning").classList.remove('d-none');
+    document.getElementById("continueWarning").classList.add('d-block');
+    document.getElementById("continueButton").setAttribute('disabled', '');
   }
 
   
