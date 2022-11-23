@@ -173,7 +173,7 @@ $packageCode = 0;
                       }
 
                     echo '<br>';
-                    echo 'Estimated Total price: $' . array_sum($totalPrice);
+                    echo 'Estimated Total price: $' . ( $extrasObj->getTotalExtrasPrice() + $thisPackage->getPackagePrice() );
                     
                 ?>
             </div>

@@ -20,6 +20,8 @@ interface Package{
     public function getChoicesArray();
     public function getOptionStatus($index);
     public function setOptionStatus($index, $booleanStatus);
+    public function getPackagePrice();
+    
 }
 
 ?>

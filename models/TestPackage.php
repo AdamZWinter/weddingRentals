@@ -8,10 +8,10 @@
 // Package 16 = Full Set, 32 = Pick Six, 48 = Pick Four,  64 = platinum
 // 256 and above will individual bit flags for the package choices
 
-class LayeredArchPackage extends ParentPackage{
+class TestPackage extends ParentPackage{
 
     public function __construct(){
-        $this->packageCode = 1;
+        $this->packageCode = 0;
         $this->subsetType = 0;
         $this->setName = "layeredarch";
         $this->setNameLang = "Layered Arch";
@@ -35,18 +35,12 @@ class LayeredArchPackage extends ParentPackage{
                                         "Pick Four" //48
                                         );
 
-        $this->subsetPricesArray = array(849.00,
-                                        749.00,
-                                        649.00
-                                        );
-
 
         $this->optionStatusArray = [];
         for($i=0; $i<count($this->packageOptionsArray); $i++){
             array_push($this->optionStatusArray, FALSE);
         }
     }
-
 
 }//end class
 

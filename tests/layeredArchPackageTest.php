@@ -2,9 +2,12 @@
 
 require('../models/Packages.php');
 
-$laPackage = new LayeredArchPackage();
+//$laPackage = new LayeredArchPackage();
+//$laPackage = new VintageMirrorPackage();
+$laPackage = new ModernRoundPackage();
 
-$laPackage->setSubsetType(16);
+//$laPackage->setSubsetType(16);
+$laPackage->setSubsetType(32);
 
 
 echo $laPackage->getSetName();
@@ -12,6 +15,10 @@ echo '<br>';
 echo $laPackage->getSetNameLang();
 echo '<br>';
 echo $laPackage->getSubsetType();
+echo '<br>';
+echo $laPackage->getPackagePrice();
+echo '<br>';
+var_dump($laPackage->getSubsetPricesArray());
 echo '<br>';
 
 $laPackage->setOptionStatus(0, TRUE);

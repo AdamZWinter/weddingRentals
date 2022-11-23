@@ -94,6 +94,15 @@ class Extras{
     public function getPricesArray(){
         return $this->extrasPrices;
     }
+
+    public function getTotalExtrasPrice(){
+        $total = 0.0;
+        $i = 0;
+        foreach($this->extrasArrayStatus as $included){
+            if($included){$total = $total + $this->extrasPrices[$i];}
+        }
+        return $total;
+    }
 }
 
 

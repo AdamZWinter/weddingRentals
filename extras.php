@@ -98,81 +98,81 @@ window.location.href="pickYourSet.php";
 
    //adding cost variable based on set choice 
   //TODO : UPDATE packageChoice names on package.php!!!!
-  $priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
+  //$priceArray = [849, 799, 749, 699, 649, 599, 299, 249, 199];
 
 
   $cost = 0;
   if($setOption == 'layeredarch'){
     if($packageChoice == 'fullset'){
       $thisPackage->setSubsetType(16);
-        $cost = $priceArray[0];
+        //$cost = $thisPackage->getPackagePrice();
     }
     if($packageChoice == 'pick6'){
       $thisPackage->setSubsetType(32);
-        $cost = $priceArray[2];
+        //$cost = $priceArray[2];
     }
     if($packageChoice == 'pick4'){
       $thisPackage->setSubsetType(48);
-        $cost = $priceArray[3];
+        //$cost = $priceArray[3];
     }    
   }
   if($setOption == 'modernround'){
     if($packageChoice == 'fullset'){
       $thisPackage->setSubsetType(16);
-        $cost = $priceArray[1];
+        //$cost = $priceArray[1];
     }
     if($packageChoice == 'pick6'){
       $thisPackage->setSubsetType(32);
-        $cost = $priceArray[3];
+        //$cost = $priceArray[3];
     }
     if($packageChoice == 'pick4'){
       $thisPackage->setSubsetType(48);
-        $cost = $priceArray[5];
+        //$cost = $priceArray[5];
     }    
   }
   if($setOption == 'vintagemirror'){
     if($packageChoice == 'platinum'){
       $thisPackage->setSubsetType(16);
-        $cost = $priceArray[0];
+        //$cost = $priceArray[0];
     }
     if($packageChoice == 'gold'){
       $thisPackage->setSubsetType(32);
-        $cost = $priceArray[1];
+        //$cost = $priceArray[1];
     }
     if($packageChoice == 'vmpick6'){
       $thisPackage->setSubsetType(48);
-        $cost = $priceArray[4];
+        //$cost = $priceArray[4];
     }    
     if($packageChoice == 'vmpick4'){
       $thisPackage->setSubsetType(64);
-        $cost = $priceArray[5];
+        //$cost = $priceArray[5];
     }  
   }
 
   if($setOption == 'darkwalnut' && $packageChoice == 'fullset'){
-    $cost = $priceArray[6];
+    //$cost = $priceArray[6];
     $thisPackage->setSubsetType(16);
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick6'){
-    $cost = $priceArray[7];
+    //$cost = $priceArray[7];
     $thisPackage->setSubsetType(32);
   }
   if($setOption == 'darkwalnut' && $packageChoice == 'pick4'){
-    $cost = $priceArray[8];
+    //$cost = $priceArray[8];
     $thisPackage->setSubsetType(48);
   }
 
 
   if($setOption == 'rusticwood' && $packageChoice == 'pick4'){
-    $cost = $priceArray[8];
+    //$cost = $priceArray[8];
     $thisPackage->setSubsetType(16);
   }
   if($setOption == 'rusticwood' && $packageChoice == 'pick6'){
-    $cost = $priceArray[7];
+    //$cost = $priceArray[7];
     $thisPackage->setSubsetType(32);
   }
   if($setOption == 'rusticwood' && $packageChoice == 'fullset'){
-    $cost = $priceArray[6];
+    //$cost = $priceArray[6];
     $thisPackage->setSubsetType(48);
   }
     
@@ -210,6 +210,7 @@ window.location.href="pickYourSet.php";
   //TODO : HTML mark-up for upsell package AND logic to decide which to show below
   $titleName = '';
   $subtitle = '';
+  $cost = $thisPackage->getPackagePrice();
   if($setOption == 'layeredarch' || $setOption == 'modernround'){
     if($packageChoice == 'fullset'){
       $titleName = "{$setName} {$fullSetTitle} $".$cost;

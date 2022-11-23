@@ -1,6 +1,7 @@
 <?php
 
 require('Package.php');
+require('ParentPackage.php');
 require('LayeredArchPackage.php');
 require('ModernRoundPackage.php');
 require('VintageMirrorPackage.php');
