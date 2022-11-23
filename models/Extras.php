@@ -3,6 +3,7 @@
 class Extras{
     private $extrasArrayStatus;
     private $extrasArrayLang;
+    private $extrasPrices;
     private $extrasCode;
 
     public function __construct(){
@@ -24,6 +25,16 @@ class Extras{
             "Clear Antique Ball Jars",  //4
             "Blue Antique Ball Jars",   //5
             "Delivery"                  //6
+        );
+
+        $this->extrasPrices = array(
+            350.00,                 //0
+            99.00,                  //1
+            40.00,                  //2
+            20.00,                  //3
+            30.00,                  //4
+            30.00,                  //5
+            80.00                   //6
         );
 
         $this->extrasCode = 0;
@@ -78,6 +89,10 @@ class Extras{
             }
         }
         return $selectedArray;
+    }
+
+    public function getPricesArray(){
+        return $this->extrasPrices;
     }
 }
 

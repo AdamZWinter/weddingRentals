@@ -192,12 +192,16 @@ $packageCode = 0;
                 <br>
                 <label for="phone" class="rental-head">Phone: </label>
                 <input type="text" class= "form-control" id="phone" name="phone">
+                <span class="text-danger d-none" id="phoneValidFalse">Please, enter a valide phone number.</span>
+                <span class="text-success d-none" id="phoneValidTrue">Phone number format validated.</span>
                 <br>
                 <label for="email" class="rental-head">E-mail: </label>
                 <input type="email" class= "form-control" id="email" name="email">
+                <span class="text-danger d-none" id="emailValidFalse">Please, enter a valide email address.</span>
+                <span class="text-success d-none" id="emailValidTrue">Email format validated.</span>
                 <br>
                 <br>
-                <input class = "btn btn-primary button" type="submit" value="Continue">
+                <input class = "btn btn-primary button" type="submit" id="submitButton" value="Continue" disabled/>
             </form>
             </div>
 
@@ -208,6 +212,53 @@ $packageCode = 0;
 
       </div><!--end of row--> 
     </div><!--End of container-fluid-->
+
+<script>
+
+document.getElementById('email').addEventListener("change", ValidateEmail);
+
+function ValidateEmail() {
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[\.][a-zA-Z0-9-]{2,}$/;
+  var emailAddr = document.getElementById('email').value;
+  console.log(emailAddr);
+  if (emailAddr.match(validRegex)) {
+    document.getElementById("submitButton").removeAttribute('disabled');
+    document.getElementById("emailValidTrue").classList.add('d-block');
+    document.getElementById("emailValidTrue").classList.remove('d-none');
+    document.getElementById("emailValidFalse").classList.add('d-none');
+    document.getElementById("emailValidFalse").classList.remove('d-block');
+    return true;
+  } else {
+    document.getElementById("submitButton").setAttribute('disabled', '');
+    document.getElementById("emailValidFalse").classList.add('d-block');
+    document.getElementById("emailValidFalse").classList.remove('d-none');
+    document.getElementById("emailValidTrue").classList.add('d-none');
+    document.getElementById("emailValidTrue").classList.remove('d-block');
+    return true;
+  }
+}
+
+document.getElementById('phone').addEventListener("change", ValidatePhone);
+
+function ValidatePhone() {
+  var validRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  var phoneNum = document.getElementById('phone').value;
+  console.log(phoneNum);
+  if (phoneNum.match(validRegex)) {
+    document.getElementById("phoneValidTrue").classList.add('d-block');
+    document.getElementById("phoneValidTrue").classList.remove('d-none');
+    document.getElementById("phoneValidFalse").classList.add('d-none');
+    document.getElementById("phoneValidFalse").classList.remove('d-block');
+    return true;
+  } else {
+    document.getElementById("phoneValidFalse").classList.add('d-block');
+    document.getElementById("phoneValidFalse").classList.remove('d-none');
+    document.getElementById("phoneValidTrue").classList.add('d-none');
+    document.getElementById("phoneValidTrue").classList.remove('d-block');
+    return true;
+  }
+}
+</script>
 
 
 <?php

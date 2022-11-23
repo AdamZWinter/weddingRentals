@@ -1,7 +1,6 @@
 <?php
 
-require('../models/Package.php');
-require('../models/LayeredArchPackage.php');
+require('../models/Packages.php');
 
 $laPackage = new LayeredArchPackage();
 
