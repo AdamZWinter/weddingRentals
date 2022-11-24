@@ -59,7 +59,7 @@ echo '</tr>';
 //prevents SQL injection by using array for col names
 $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
 //Determins which column we sort by
-$column = null !== (($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]));
+$column = isset($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]);
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
 if($resultSort = $db->query('SELECT * FROM `reservations` ORDER BY ' . $column . ' ' . $sort_order)){
@@ -168,12 +168,16 @@ echo '</table>';
         <body>
             <table>
                 <tr>
-                    <th><a href="tablesort.php?column=name&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>" ></i></a></th>
+                <th><a href="tablesort.php?column=name&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="tablesort.php?column=name&order=<?php echo $asc_or_desc; ?>">First Name<i class="fas fa-sort<?php echo $column == 'fname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="tablesort.php?column=name&order=<?php echo $asc_or_desc; ?>">Last Name<i class="fas fa-sort<?php echo $column == 'lname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                     <!-- Add other columns -->
                 </tr>
                 <?php while ($row = $resultSort->fetch_assoc()) : ?>
                     <tr>
                     <td<?php echo $column == 'dateHuman' ? $add_class : ''; ?>><?php echo $row['dateHuman']; ?></td>
+                    <td<?php echo $column == 'fname' ? $add_class : ''; ?>><?php echo $row['fname']; ?></td>
+                    <td<?php echo $column == 'lname' ? $add_class : ''; ?>><?php echo $row['lname']; ?></td>
                     </tr>
                     <?php endwhile; ?>
             </table>
