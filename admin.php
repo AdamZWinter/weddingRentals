@@ -62,7 +62,7 @@ $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email')
 $column = null !== (($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]));
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
-if($resultSort = $db->query('SELECT * FROM `reservations` ORDER BY' . $column . ' ' . $sort_order)){
+if($resultSort = $db->query('SELECT * FROM `reservations` ORDER BY ' . $column . ' ' . $sort_order)){
     //uses font awesome to get up and down icons
     $up_or_down = str_replace(array('ASC', 'DESC'), array('up', 'down'), $sort_order);
     //determine toggle state for active column
