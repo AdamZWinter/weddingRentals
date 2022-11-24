@@ -22,13 +22,13 @@ if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
     $_SESSION['username'] = $username;
    
     if((strcmp($username, 'admin') != 0)){
-        // echo $redirect;
-        echo 'problem here 1';
+        echo $redirect;
+        // echo 'problem here 1';
     }
 }
 elseif(strcmp($_SESSION['username'], 'admin') != 0){
-    // echo $redirect;
-    echo 'problem here 2';
+    echo $redirect;
+    // echo 'problem here 2';
 }
 
 if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
@@ -39,13 +39,13 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
       $_SESSION['password'] = $password;
      
       if((strcmp($password, 'admin') != 0)){
-        //   echo $redirect;
-        echo 'problem here 3';
+          echo $redirect;
+        // echo 'problem here 3';
       }
   }
   elseif(strcmp($_SESSION['password'], 'admin') != 0){
-    //   echo $redirect;
-    echo 'problem here 4';
+      echo $redirect;
+    // echo 'problem here 4';
   }
 
 // echo '<table>';
