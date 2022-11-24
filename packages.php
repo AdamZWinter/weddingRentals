@@ -323,30 +323,31 @@ if($setOption == 'rusticwood'){
           var box = checkboxes[i];
           if (box.checked) {
             count++;
+            console.log("box is checked");
           }
-          if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599") 
-                          || optionChoiceDetails == "Pick 4- $199") {
+        }
+        console.log(count);    
+
+          if( (count < 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" || optionChoiceDetails == "Pick 4- $199")) {
             enableAllCheckboxes();
             disableContinueButton();
           }
-          if( (count == 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599")
-                          || optionChoiceDetails == "Pick 4- $199") {
+          if( (count == 4) && (optionChoiceDetails == "Pick 4- $649" || optionChoiceDetails == "Pick 4- $599" || optionChoiceDetails == "Pick 4- $199")) {
+            console.log("count is 4");
             check4Boxes();
             enableContinueButton();
           }
-          if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
-                          || optionChoiceDetails == "Pick 6- $245") {
+          if( (count < 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699" || optionChoiceDetails == "Pick 6- $245")) {
             enableAllCheckboxes();
             disableContinueButton();
           }
-          if( (count == 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699")
-                          || optionChoiceDetails == "Pick 6- $245"){
+          if( (count == 6) && (optionChoiceDetails == "Pick 6- $749" || optionChoiceDetails == "Pick 6- $699"|| optionChoiceDetails == "Pick 6- $245")){
+            console.log("count is 6");
             check6Boxes();
             enableContinueButton();
-            break;
-          }
-          
-        }         
+            //break;
+          }     
+
       }
         
     }
