@@ -78,48 +78,48 @@ ORDER BY ' . $column . ' ' . $sort_order)){
 
 
 //SORT CODE FINISH
-$query = "SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`
-FROM `reservations` 
-LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
-WHERE 1 = 1
-ORDER BY `reservations`.`dateUnix` ASC";
-$result = $db->query($query);
-if($result->num_rows == 0){
-//nothing to display
-}elseif ($result->num_rows > 0) {
-    for($i = 0; $i < $result->num_rows; $i++){
-        $result->data_seek($i);
-        $row = $result->fetch_assoc();
-        echo '<tr>';
-        echo '<td>';
-        echo $row["dateHuman"];
-        echo '</td>';
-        echo '<td>';
-        echo $row["signSetLang"];
-        echo '</td>';
-        echo '<td>';
-        echo $row["fname"];
-        echo '</td>';
-        echo '<td>';
-        echo $row["lname"];
-        echo '</td>';
-        echo '<td>';
-        echo $row["phone"];
-        echo '</td>';
-        echo '<td>';
-        echo $row["email"];
-        echo '</td>';
-        echo '</tr>';
-        } 
-}else {
-//something went wrong
-}
+// $query = "SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`
+// FROM `reservations` 
+// LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
+// WHERE 1 = 1
+// ORDER BY `reservations`.`dateUnix` ASC";
+// $result = $db->query($query);
+// if($result->num_rows == 0){
+// //nothing to display
+// }elseif ($result->num_rows > 0) {
+//     for($i = 0; $i < $result->num_rows; $i++){
+//         $result->data_seek($i);
+//         $row = $result->fetch_assoc();
+//         echo '<tr>';
+//         echo '<td>';
+//         echo $row["dateHuman"];
+//         echo '</td>';
+//         echo '<td>';
+//         echo $row["signSetLang"];
+//         echo '</td>';
+//         echo '<td>';
+//         echo $row["fname"];
+//         echo '</td>';
+//         echo '<td>';
+//         echo $row["lname"];
+//         echo '</td>';
+//         echo '<td>';
+//         echo $row["phone"];
+//         echo '</td>';
+//         echo '<td>';
+//         echo $row["email"];
+//         echo '</td>';
+//         echo '</tr>';
+//         } 
+// }else {
+// //something went wrong
+// }
 
-echo '</table>';
-//$setOption = $thisPackage->getSetName();
-//$setOptionLang = $thisPackage->getSetNameLang();
-//$packageChoice = $thisPackage->getSubsetType();
-//$packageChoiceLang = $thisPackage->getSubsetTypeLang();
+// echo '</table>';
+// //$setOption = $thisPackage->getSetName();
+// //$setOptionLang = $thisPackage->getSetNameLang();
+// //$packageChoice = $thisPackage->getSubsetType();
+// //$packageChoiceLang = $thisPackage->getSubsetTypeLang();
 
 ?>
 <!DOCTYPE html>
