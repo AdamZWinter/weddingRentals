@@ -1,5 +1,6 @@
 <?php
 session_start();
+//TODO: ADD SESSION TIMEOUT
 //vardump.php
 require('header.php');
 
@@ -23,12 +24,10 @@ if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
    
     if((strcmp($username, 'admin') != 0)){
         echo $redirect;
-        // echo 'problem here 1';
     }
 }
 elseif(strcmp($_SESSION['username'], 'admin') != 0){
     echo $redirect;
-    // echo 'problem here 2';
 }
 
 if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
@@ -40,35 +39,12 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
      
       if((strcmp($password, 'admin') != 0)){
           echo $redirect;
-        // echo 'problem here 3';
       }
   }
   elseif(strcmp($_SESSION['password'], 'admin') != 0){
       echo $redirect;
-    // echo 'problem here 4';
   }
 
-// echo '<table>';
-// echo '<tr>';
-// echo '<td>';
-// echo "Date";
-// echo '</td>';
-// echo '<td>';
-// echo "Set";
-// echo '</td>';
-// echo '<td>';
-// echo "First";
-// echo '</td>';
-// echo '<td>';
-// echo "Last";
-// echo '</td>';
-// echo '<td>';
-// echo "Phone";
-// echo '</td>';
-// echo '<td>';
-// echo "Email";
-// echo '</td>';
-// echo '</tr>';
 //SORT CODE START
 //prevents SQL injection by using array for col names
 $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
@@ -91,42 +67,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
 
 
 //SORT CODE FINISH
-// $query = "SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`
-// FROM `reservations` 
-// LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
-// WHERE 1 = 1
-// ORDER BY `reservations`.`dateUnix` ASC";
-// $result = $db->query($query);
-// if($result->num_rows == 0){
-// //nothing to display
-// }elseif ($result->num_rows > 0) {
-//     for($i = 0; $i < $result->num_rows; $i++){
-//         $result->data_seek($i);
-//         $row = $result->fetch_assoc();
-//         echo '<tr>';
-//         echo '<td>';
-//         echo $row["dateHuman"];
-//         echo '</td>';
-//         echo '<td>';
-//         echo $row["signSetLang"];
-//         echo '</td>';
-//         echo '<td>';
-//         echo $row["fname"];
-//         echo '</td>';
-//         echo '<td>';
-//         echo $row["lname"];
-//         echo '</td>';
-//         echo '<td>';
-//         echo $row["phone"];
-//         echo '</td>';
-//         echo '<td>';
-//         echo $row["email"];
-//         echo '</td>';
-//         echo '</tr>';
-//         } 
-// }else {
-// //something went wrong
-// }
+
 
 // echo '</table>';
 // //$setOption = $thisPackage->getSetName();
