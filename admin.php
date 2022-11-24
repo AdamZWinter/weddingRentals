@@ -15,27 +15,34 @@ $redirect = '<script>
 window.location.href="admin.html";
 </script>';
 
-if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
+if( !isset($_POST['username']) || !isset($_SESSION['username'])  ){
   echo $redirect;
-}else{
+} elseif (!isset($_POST['username'])) {
     $username = $_POST['username'];
-    $_SESSION["username"] = $username;
-    $sessionUser = 
-    if((strcmp($username, 'admin') != 0) && (strcmp($_SESSION["username"], 'admin') != 0)){
+    $_SESSION['username'] = $username;
+   
+    if((strcmp($username, 'admin') != 0)){
         echo $redirect;
     }
 }
-
-if( !isset($_POST['password']) && !isset($_SESSION['password']) ){
-  echo $redirect;
-}else{
-    $password = $_POST['password'];
-    $_SESSION["password"] = $password;
-    if((strcmp($password, 'admin') != 0) && (strcmp($_SESSION["password"], 'admin') != 0)){
-        echo $redirect;
-    }
+elseif(strcmp($_SESSION['username'], 'admin') != 0){
+    echo $redirect;
 }
 
+if( !isset($_POST['password']) || !isset($_SESSION['password'])  ){
+    echo $redirect;
+  }
+  elseif (!isset($_POST['password'])) {
+      $username = $_POST['password'];
+      $_SESSION['password'] = $password;
+     
+      if((strcmp($password, 'admin') != 0)){
+          echo $redirect;
+      }
+  }
+  elseif(strcmp($_SESSION['password'], 'admin') != 0){
+      echo $redirect;
+  }
 
 // echo '<table>';
 // echo '<tr>';
