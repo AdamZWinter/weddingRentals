@@ -20,7 +20,7 @@ if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
 }else{
     $username = $_POST['username'];
     $_SESSION["username"] = $username;
-    if((strcmp($username, 'admin') != 0) || (strcmp($_SESSION["username"], 'admin') != 0)){
+    if((strcmp($username, 'admin') != 0) && (strcmp($_SESSION["username"], 'admin') != 0)){
         echo $redirect;
     }
 }
@@ -30,7 +30,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password']) ){
 }else{
     $password = $_POST['password'];
     $_SESSION["password"] = $password;
-    if((strcmp($password, 'admin') != 0) || (strcmp($_SESSION["password"], 'admin') != 0)){
+    if((strcmp($password, 'admin') != 0) && (strcmp($_SESSION["password"], 'admin') != 0)){
         echo $redirect;
     }
 }
