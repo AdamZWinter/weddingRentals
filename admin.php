@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //vardump.php
 require('header.php');
 
@@ -15,20 +15,22 @@ $redirect = '<script>
 window.location.href="admin.html";
 </script>';
 
-if( !isset($_POST['username']) ){
-//   echo $redirect;
+if( !isset($_POST['username']) || !isset($_SESSION['username'])  ){
+  echo $redirect;
 }else{
     $username = $_POST['username'];
-    if(strcmp($username, 'admin') != 0){
+    $_SESSION["username"] = $username;
+    if((strcmp($username, 'admin') != 0) || (strcmp($_SESSION["username"], 'admin') != 0)){
         echo $redirect;
     }
 }
 
-if( !isset($_POST['password']) ){
-//   echo $redirect;
+if( !isset($_POST['password']) || !isset($_SESSION['password']) ){
+  echo $redirect;
 }else{
     $password = $_POST['password'];
-    if(strcmp($password, 'admin') != 0){
+    $_SESSION["password"] = $password;
+    if((strcmp($password, 'admin') != 0) || (strcmp($_SESSION["password"], 'admin') != 0)){
         echo $redirect;
     }
 }
