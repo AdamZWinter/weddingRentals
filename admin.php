@@ -35,7 +35,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
     echo $redirect;
   }
   elseif (isset($_POST['password'])) {
-      $username = $_POST['password'];
+      $password = $_POST['password'];
       $_SESSION['password'] = $password;
      
       if((strcmp($password, 'admin') != 0)){
