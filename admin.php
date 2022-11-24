@@ -55,8 +55,25 @@ echo '<td>';
 echo "Email";
 echo '</td>';
 echo '</tr>';
+//SORT CODE START
+//prevents SQL injection by using array for col names
+$columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
+//Determins which column we sort by
+$column = isset($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]);
+$sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
+
+if($resultSort = $db->query('SELECT * FROM reservations ORDER BY' . $column . ' ' . $sort_order)){
+    //uses font awesome to get up and down icons
+    $up_or_down = str_replace(array('ASC', 'DESC'), array('up', 'down'), $sort_order);
+    //determine toggle state for active column
+    $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
+    //highligh active column
+    $add_class = ' class = "highlight"';
+}
 
 
+
+//SORT CODE FINISH
 $query = "SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`
 FROM `reservations` 
 LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
@@ -101,8 +118,69 @@ echo '</table>';
 //$packageChoiceLang = $thisPackage->getSubsetTypeLang();
 
 ?>
-
-
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Admin Table</title>
+			<meta charset="utf-8">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+			<style>
+			html {
+				font-family: Tahoma, Geneva, sans-serif;
+				padding: 10px;
+			}
+			table {
+				border-collapse: collapse;
+				width: 500px;
+			}
+			th {
+				background-color: #54585d;
+				border: 1px solid #54585d;
+			}
+			th:hover {
+				background-color: #64686e;
+			}
+			th a {
+				display: block;
+				text-decoration:none;
+				padding: 10px;
+				color: #ffffff;
+				font-weight: bold;
+				font-size: 13px;
+			}
+			th a i {
+				margin-left: 5px;
+				color: rgba(255,255,255,0.4);
+			}
+			td {
+				padding: 10px;
+				color: #636363;
+				border: 1px solid #dddfe1;
+			}
+			tr {
+				background-color: #ffffff;
+			}
+			tr .highlight {
+				background-color: #f9fafb;
+			}
+			</style>
+		</head>
+        <body>
+            <table>
+                <tr>
+                    <th><a href="tablesort.php?column=name&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>" ></i></a></th>
+                    <!-- Add other columns -->
+                </tr>
+                <?php while ($row = $resultSort->fetch_assoc()) : ?>
+                    <tr>
+                    <td<?php echo $column == 'dateHuman' ? $add_class : ''; ?>><?php echo $row['dateHuman']; ?></td>
+                    </tr>
+                    <?php endwhile; ?>
+            </table>
+        </body>
+        </html>
+        <?php 
+        $resultSort-> free();
 
 
   
