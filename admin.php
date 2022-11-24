@@ -15,17 +15,18 @@ $redirect = '<script>
 window.location.href="admin.html";
 </script>';
 
-if( !isset($_POST['username']) || !isset($_SESSION['username'])  ){
+if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
   echo $redirect;
 }else{
     $username = $_POST['username'];
     $_SESSION["username"] = $username;
+    $sessionUser = 
     if((strcmp($username, 'admin') != 0) && (strcmp($_SESSION["username"], 'admin') != 0)){
         echo $redirect;
     }
 }
 
-if( !isset($_POST['password']) || !isset($_SESSION['password']) ){
+if( !isset($_POST['password']) && !isset($_SESSION['password']) ){
   echo $redirect;
 }else{
     $password = $_POST['password'];
