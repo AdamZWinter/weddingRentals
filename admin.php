@@ -59,7 +59,7 @@ echo '</tr>';
 //prevents SQL injection by using array for col names
 $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
 //Determins which column we sort by
-$column = isset($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]);
+$column = null !== (($_GET['column'] && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0]));
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
 if($resultSort = $db->query('SELECT * FROM reservations ORDER BY' . $column . ' ' . $sort_order)){
