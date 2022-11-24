@@ -68,11 +68,10 @@ LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
 WHERE 1 = 1
 ORDER BY ' . $column . ' ' . $sort_order)){
     //uses font awesome to get up and down icons
-    $up_or_down = str_replace(array('ASC', 'DESC'), array('up', 'down'), $sort_order);
-    //determine toggle state for active column
-    $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
-    //highligh active column
-    $add_class = ' class = "highlight"';
+    $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
+	$asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
+	$add_class = ' class="highlight"';
+	
 
 
 
@@ -172,12 +171,12 @@ ORDER BY ' . $column . ' ' . $sort_order)){
         <body>
             <table>
                 <tr>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">First Name<i class="fas fa-sort<?php echo $column == 'fname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">Last Name<i class="fas fa-sort<?php echo $column == 'lname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=name&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=dateHuman&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=fname&order=<?php echo $asc_or_desc; ?>">First Name<i class="fas fa-sort<?php echo $column == 'fname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=lname&order=<?php echo $asc_or_desc; ?>">Last Name<i class="fas fa-sort<?php echo $column == 'lname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=signSetLang&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=phone&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a href="admin.php?column=email&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                     <!-- Add other columns -->
                 </tr>
                 <?php while ($row = $resultSort->fetch_assoc()) : ?>
