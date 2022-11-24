@@ -34,27 +34,27 @@ if( !isset($_POST['password']) ){
 }
 
 
-echo '<table>';
-echo '<tr>';
-echo '<td>';
-echo "Date";
-echo '</td>';
-echo '<td>';
-echo "Set";
-echo '</td>';
-echo '<td>';
-echo "First";
-echo '</td>';
-echo '<td>';
-echo "Last";
-echo '</td>';
-echo '<td>';
-echo "Phone";
-echo '</td>';
-echo '<td>';
-echo "Email";
-echo '</td>';
-echo '</tr>';
+// echo '<table>';
+// echo '<tr>';
+// echo '<td>';
+// echo "Date";
+// echo '</td>';
+// echo '<td>';
+// echo "Set";
+// echo '</td>';
+// echo '<td>';
+// echo "First";
+// echo '</td>';
+// echo '<td>';
+// echo "Last";
+// echo '</td>';
+// echo '<td>';
+// echo "Phone";
+// echo '</td>';
+// echo '<td>';
+// echo "Email";
+// echo '</td>';
+// echo '</tr>';
 //SORT CODE START
 //prevents SQL injection by using array for col names
 $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
