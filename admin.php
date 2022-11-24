@@ -181,6 +181,7 @@ echo '</table>';
         </html>
         <?php 
         $resultSort-> free();
+        ?>
 
 
   
