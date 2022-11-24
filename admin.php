@@ -92,12 +92,15 @@ ORDER BY ' . $column . ' ' . $sort_order)){
 				width: 500px;
 			}
 			th {
-				background-color: #54585d;
-				border: 1px solid #54585d;
+				background-color: #d5b6ae;
+				border: 1px solid #808080;
 			}
 			th:hover {
-				background-color: #64686e;
+				background-color: #808080;
 			}
+            .link:hover{
+                color: #d5b6ae;
+            }
 			th a {
 				display: block;
 				text-decoration:none;
@@ -126,12 +129,12 @@ ORDER BY ' . $column . ' ' . $sort_order)){
         <body>
             <table>
                 <tr>
-                <th><a href="admin.php?column=dateHuman&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=fname&order=<?php echo $asc_or_desc; ?>">First Name<i class="fas fa-sort<?php echo $column == 'fname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=lname&order=<?php echo $asc_or_desc; ?>">Last Name<i class="fas fa-sort<?php echo $column == 'lname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=signSetLang&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=phone&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                <th><a href="admin.php?column=email&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=dateHuman&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=fname&order=<?php echo $asc_or_desc; ?>">First Name<i class="fas fa-sort<?php echo $column == 'fname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=lname&order=<?php echo $asc_or_desc; ?>">Last Name<i class="fas fa-sort<?php echo $column == 'lname' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=signSetLang&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=phone&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=email&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                     <!-- Add other columns -->
                 </tr>
                 <?php while ($row = $resultSort->fetch_assoc()) : ?>
