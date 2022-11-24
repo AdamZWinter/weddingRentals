@@ -73,7 +73,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
     $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
     //highligh active column
     $add_class = ' class = "highlight"';
-}
+
 
 
 
@@ -195,6 +195,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
         </html>
         <?php 
         $resultSort-> free();
+                }
         ?>
 
 
