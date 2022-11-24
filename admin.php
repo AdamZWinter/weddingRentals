@@ -16,7 +16,7 @@ window.location.href="admin.html";
 </script>';
 
 if( !isset($_POST['username']) ){
-  echo $redirect;
+//   echo $redirect;
 }else{
     $username = $_POST['username'];
     if(strcmp($username, 'admin') != 0){
@@ -25,7 +25,7 @@ if( !isset($_POST['username']) ){
 }
 
 if( !isset($_POST['password']) ){
-  echo $redirect;
+//   echo $redirect;
 }else{
     $password = $_POST['password'];
     if(strcmp($password, 'admin') != 0){
