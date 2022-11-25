@@ -108,12 +108,12 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
   }
   echo '</tbody>';
   echo '</table>';
-$(function () {
+  $(function() {
     $("#myTable").tablesorter();
-});
-$(function()) {
-    $("#myTable").tablesorter({ sortList: [[0,0], [1,0]]});
-};
+  });
+  $(function() {
+    $("#myTable").tablesorter();
+  });
 
   
 
