@@ -112,12 +112,6 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
     ("#myTable").tablesorter();
   };
 
-  
-
-
-
-//footer
-
 ?>
 
 <!DOCTYPE html>
@@ -154,7 +148,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
     <?php echo $tableData ?>
 </tbody>
 </body>
-</html>
 <?php 
 require('footer.php');
 ?>
+</html>
