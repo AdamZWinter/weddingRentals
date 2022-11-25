@@ -44,6 +44,25 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
   elseif(strcmp($_SESSION['password'], 'admin') != 0){
       echo $redirect;
   }
+  if( !isset($_GET['statusChange']) && !isset($_GET['email'])){
+
+    //set individually
+    // SET `reservations`.`status` = '".$status."'  
+    // WHERE `customers`.`email` = '".$email."'
+
+    //set all
+    // SET `reservations`.`status` = 'unconfirmed'  
+
+
+  }else{
+    $status = $_GET['statusChange'];
+    $email = $_GET['email'];
+    $db->query("UPDATE `reservations` 
+    LEFT JOIN `customers`  ON `reservations`.`customerID` = `customers`.`email`
+    SET `reservations`.`status` = '".$status."'  
+    WHERE `customers`.`email` = '".$email."'
+    ");
+  }
 
 //SORT CODE START
 //prevents SQL injection by using array for col names
@@ -61,7 +80,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
     $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
 	$asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
 	$add_class = ' class="highlight"';
-	
+
 
 
 
@@ -145,10 +164,11 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                     <td<?php echo $column == 'status' ? $add_class : ''; ?>><?php echo $row['status']; ?></td>
                     <td>
                         
-                        <form class= "">
+                        <form action="admin.php" method="get">
                             <div class= "d-flex">
-                                <select>
-                                    <option value= "confirmed">Confirmed</option>
+                            <input type="hidden" id="email" name="email" value="<?php echo $row['email']; ?>">
+                                <select name= "statusChange" id="statusChange">
+                                    <option  value= "confirmed">Confirmed</option>
                                     <option value= "canceled">Canceled</option>                                    
                                 </select>                                                              
                                 <button class= "btn btn-primary button" type = "submit">Update</button>
@@ -165,7 +185,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
         </html>
         <?php 
         $resultSort-> free();
-                }
+                }    
         ?> 
 
 
