@@ -120,6 +120,8 @@ ORDER BY ' . $column . ' ' . $sort_order)){
 			</style>
 		</head>
         <body>
+            <br><br>
+            <div class= "center">
             <table>
                 <tr>
                 <th><a class ="link" href="admin.php?column=dateHuman&order=<?php echo $asc_or_desc; ?>">Date<i class="fas fa-sort<?php echo $column == 'dateHuman' ? '-' . $up_or_down : ''; ?>"></i></a></th>
@@ -142,19 +144,23 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                     <td<?php echo $column == 'email' ? $add_class : ''; ?>><?php echo $row['email']; ?></td>
                     <td<?php echo $column == 'status' ? $add_class : ''; ?>><?php echo $row['status']; ?></td>
                     <td>
-                        <div class= "input-group">
-                            <form>
+                        
+                        <form class= "">
+                            <div class= "d-flex">
                                 <select>
                                     <option value= "confirmed">Confirmed</option>
-                                    <option value= "canceled">Canceled</option>
-                                    
-                                </select>
-                            </form>
-                        </div>
+                                    <option value= "canceled">Canceled</option>                                    
+                                </select>                                                              
+                                <button class= "btn btn-primary button" type = "submit">Update</button>
+                            </div>
+                        </form>
+
+                       
                     </td>
                     </tr>
                     <?php endwhile; ?>
             </table>
+                </div>
         </body>
         </html>
         <?php 
