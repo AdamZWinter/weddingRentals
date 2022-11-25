@@ -66,7 +66,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
 
 //SORT CODE START
 //prevents SQL injection by using array for col names
-$columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email');
+$columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email', 'status');
 //Determins which column we sort by
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
