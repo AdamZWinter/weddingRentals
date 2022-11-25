@@ -52,7 +52,7 @@ $columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email')
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
-if($resultSort = $db->query('SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`
+if($resultSort = $db->query('SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`, `reservations`.`status`
 FROM `reservations` 
 LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
 WHERE 1 = 1
@@ -67,13 +67,6 @@ ORDER BY ' . $column . ' ' . $sort_order)){
 
 
 //SORT CODE FINISH
-
-
-// echo '</table>';
-// //$setOption = $thisPackage->getSetName();
-// //$setOptionLang = $thisPackage->getSetNameLang();
-// //$packageChoice = $thisPackage->getSubsetType();
-// //$packageChoiceLang = $thisPackage->getSubsetTypeLang();
 
 ?>
 <!DOCTYPE html>
@@ -135,6 +128,8 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                 <th><a class ="link" href="admin.php?column=signSetLang&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                 <th><a class ="link" href="admin.php?column=phone&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                 <th><a class ="link" href="admin.php?column=email&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=status&order=<?php echo $asc_or_desc; ?>">Status<i class="fas fa-sort<?php echo $column == 'status' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a  class = "link">Change Status</a></th>
                     <!-- Add other columns -->
                 </tr>
                 <?php while ($row = $resultSort->fetch_assoc()) : ?>
@@ -145,6 +140,18 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                     <td<?php echo $column == 'signSetLang' ? $add_class : ''; ?>><?php echo $row['signSetLang']; ?></td>
                     <td<?php echo $column == 'phone' ? $add_class : ''; ?>><?php echo $row['phone']; ?></td>
                     <td<?php echo $column == 'email' ? $add_class : ''; ?>><?php echo $row['email']; ?></td>
+                    <td<?php echo $column == 'status' ? $add_class : ''; ?>><?php echo $row['status']; ?></td>
+                    <td>
+                        <div class= "input-group">
+                            <form>
+                                <select>
+                                    <option value= "confirmed">Confirmed</option>
+                                    <option value= "canceled">Canceled</option>
+                                    
+                                </select>
+                            </form>
+                        </div>
+                    </td>
                     </tr>
                     <?php endwhile; ?>
             </table>
@@ -153,10 +160,7 @@ ORDER BY ' . $column . ' ' . $sort_order)){
         <?php 
         $resultSort-> free();
                 }
-        ?>
-
-
-  
+        ?> 
 
 
 <?php
