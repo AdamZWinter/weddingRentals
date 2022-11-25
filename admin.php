@@ -45,7 +45,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
       echo $redirect;
   }
   echo '<table class= "tablesorter" id= "myTable" >';
-  echo '<thread>'
+  echo '<thread>';
   echo '<tr>';
   echo '<td>';
   echo "Date";
