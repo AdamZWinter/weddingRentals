@@ -44,21 +44,21 @@ if( !isset($_POST['extrasCode']) ){
     echo $redirect;
   }else{
     $fname = $_POST['fname'];
-    $fname = filter_input(INPUT_POST, $fname, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
  
   if( !isset($_POST['lname']) ){
     echo $redirect;
   }else{
     $lname = $_POST['lname'];
-    $lname = filter_input(INPUT_POST, $lname, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $lname = filter_input(INPUT_POST, 'lname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
   if( !isset($_POST['phone']) ){
     echo $redirect;
   }else{
     $phone = $_POST['phone'];
-    $phone = filter_input(INPUT_POST, $phone, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
   if( !isset($_POST['email']) ){
