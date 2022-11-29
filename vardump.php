@@ -26,17 +26,23 @@ if( !isset($_POST['weddingDate']) ){
 
 if( !isset($_POST['packageCode']) ){
   echo $redirect;
-}else{
+}else if(ctype_digit($_POST['packageCode'])){
   $packageCode = $_POST['packageCode'];
   $thisPackage = Packages::getPackageByCode($packageCode);
+}else{
+  echo "GTFO";
+  exit;
 }
 
 if( !isset($_POST['extrasCode']) ){
   echo $redirect;
-}else{
+}else if(ctype_digit($_POST['extrasCode'])){
   $extrasCode = $_POST['extrasCode'];
   $thisExtras = new Extras();
   $thisExtras->decode($extrasCode);
+}else{
+  echo "GTFO";
+  exit;
 }
 
   
