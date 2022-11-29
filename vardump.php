@@ -42,9 +42,12 @@ if( !isset($_POST['extrasCode']) ){
   
   if( !isset($_POST['fname']) ){
     echo $redirect;
-  }else{
-    $fname = $_POST['fname'];
+  }else if(ctype_alpha($_POST['fname'])){
+    //$fname = $_POST['fname'];
     $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }else{
+    echo "First name format is incorrect. ";
+    exit;
   }
  
   if( !isset($_POST['lname']) ){
@@ -81,8 +84,12 @@ $reservationID = $weddingDate.'_'.$packageCode.'_'.$extrasCode.'_'.$lname;
 $query = "SELECT `email` FROM `customers` WHERE `email` = '". $email ."'";
 $result = $db->query($query);
 if($result->num_rows == 0){
-  $query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-  $db->query($query);
+  //$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+  //$db->query($query);
+  $stmt = $db->prepare("INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES (?,?,?,?)");
+  $stmt->bind_param("ssss", $email, $fname, $lname, $phone);
+  $stmt->execute();
+  $result = $stmt->get_result();
 }else{
   //customer already exists
 }
