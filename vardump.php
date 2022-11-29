@@ -42,23 +42,26 @@ if( !isset($_POST['extrasCode']) ){
   
   if( !isset($_POST['fname']) ){
     echo $redirect;
+  }else if(ctype_alpha($_POST['fname'])){
+    //$fname = $_POST['fname'];
+    $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }else{
-    $fname = $_POST['fname'];
-    $fname = filter_input(INPUT_POST, $fname, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    echo "First name format is incorrect. ";
+    exit;
   }
  
   if( !isset($_POST['lname']) ){
     echo $redirect;
   }else{
     $lname = $_POST['lname'];
-    $lname = filter_input(INPUT_POST, $lname, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $lname = filter_input(INPUT_POST, 'lname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
   if( !isset($_POST['phone']) ){
     echo $redirect;
   }else{
     $phone = $_POST['phone'];
-    $phone = filter_input(INPUT_POST, $phone, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
   if( !isset($_POST['email']) ){
@@ -81,8 +84,12 @@ $reservationID = $weddingDate.'_'.$packageCode.'_'.$extrasCode.'_'.$lname;
 $query = "SELECT `email` FROM `customers` WHERE `email` = '". $email ."'";
 $result = $db->query($query);
 if($result->num_rows == 0){
-  $query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
-  $db->query($query);
+  //$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
+  //$db->query($query);
+  $stmt = $db->prepare("INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES (?,?,?,?)");
+  $stmt->bind_param("ssss", $email, $fname, $lname, $phone);
+  $stmt->execute();
+  $result = $stmt->get_result();
 }else{
   //customer already exists
 }
