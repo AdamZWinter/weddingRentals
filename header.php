@@ -10,7 +10,7 @@
 
 <style>
 </style>
-    
+
 </head>
 
 <header>
@@ -27,12 +27,12 @@
     -------------------- NAV BAR ---------------------------------------------------------------
   -->
   <nav class="navbar navbar-expand-lg navbar-light position-absolute top-0 end-0 navbar-custom">
-          <div class="container-fluid">
-            <!--a class="navbar-brand" href="#">Navbar</a-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="container-fluid collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </button> -->
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle active margin-menu" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,7 +54,7 @@
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li-->
               </ul>
-            </div>
+            <!-- </div> -->
           </div>
         </nav>
   <!--
@@ -80,7 +80,7 @@ function changeHeight() {
     -------------------- End of HEADER ---------------------------------------------------------------
   -->
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" id="grad1">
 <!-- <body class="d-flex flex-column h-100" id="grad1"> -->
 <!-- <body class="d-flex flex-column h-100" id="grad1" style="height:10300px"> -->
 
