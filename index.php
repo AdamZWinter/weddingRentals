@@ -37,14 +37,14 @@ require('header.php');
   </div><!--End of container-fluid-->
 
   <div class = "container-fluid">
-    <div class = "row" style="height:220px">      
+    <div class = "row" style="height:310px">      
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-3 d-none d-md-block">
         <h3 class="py-5"><a href="pickYourSet.php">Five Unique Styles to Choose From</a></h3>
       </div>
       <div class = "col-12 col-md-4 text-center">
         <a href="layeredArchSet.php">
-        <img class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
+        <img class= "fit-img rounded-5 mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
         </a>
         <h3 class="under-start text-center"><a href="layeredArchSet.php">Layered Arch</a></h3>
       </div>
@@ -54,38 +54,38 @@ require('header.php');
       <div class = "col-1 d-none d-md-block"></div>
     </div><!--end of row--> 
 
-    <div class = "row" style="height:250px">      
-      <div class = "col-1 d-none d-md-block"></div>
-      <div class = "col-6 col-md-4">
+    <div class = "row" style="height:330px">      
+      <div class = "col-1-special d-none d-md-block"></div>
+      <div class = "col-6 col-md-4-special">
         <a href="modernround.php">
-        <img class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round">
+        <img class= "fit-img rounded-5 float-end" src= "img/modernround.jpg" alt= "photo of modern round">
         </a>
-        <h3 class="under-end text-end"><a href="modernround.php">Modern Round</a></h3>
+        <h3 class="under-end text-end px-5"><a href="modernround.php">Modern Round</a></h3>
       </div>
-      <div class = "col-2 d-none d-md-block"></div>
-      <div class = "col-6 col-md-4">
+      <div class = "col-2-special d-none d-md-block"></div>
+      <div class = "col-6 col-md-4-special">
         <a href="vintagemirror.php">
-        <img class= "fit-img rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
+        <img class= "fit-img rounded-5 float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
         </a>
-        <h3 class="under-start text-start"><a href="vintagemirror.php">Vintage Mirror</a></h3>
+        <h3 class="under-start text-start px-5"><a href="vintagemirror.php">Vintage Mirror</a></h3>
       </div>
-      <div class = "col-1 d-none d-md-block"></div>
+      <div class = "col-1-special d-none d-md-block"></div>
     </div><!--end of row--> 
 
-    <div class = "row" style="height:300px">      
+    <div class = "row" style="height:340px">      
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
         <a href="darkwalnut.php">
-        <img class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
+        <img class= "fit-img rounded-5 float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
         </a>
-        <h3 class="under-end text-end"><a href="darkwalnut.php">Dark Walnut</a></h3>
+        <h3 class="under-end text-end px-5"><a href="darkwalnut.php">Dark Walnut</a></h3>
       </div>
       <div class = "col-2 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
         <a href="rusticWoodSet.php">
-        <img class= "fit-img rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
+        <img class= "fit-img rounded-5 float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
         </a>
-        <h3 class="under-start text-start"><a href="rusticWoodSet.php">Rustic Wood</a></h3>
+        <h3 class="under-start text-start px-5"><a href="rusticWoodSet.php">Rustic Wood</a></h3>
       </div>
       <div class = "col-1 d-none d-md-block"></div>
     </div><!--end of row--> 
@@ -93,7 +93,7 @@ require('header.php');
     <div class = "row">      
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
-        <p>Select from the five styles above to learn more, </br>
+        <p class="text-end">Select from the five styles above to learn more, </br>
            or choose from the menu on the right. </p>
       </div>
       <div class = "col-2 d-none d-md-block"></div>

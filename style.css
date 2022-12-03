@@ -3,9 +3,10 @@
 */
 
 :root {
-    --weddingRentalMauve: 213, 182, 174, .87;
+    /* --weddingRentalMauve: 213, 182, 174, .87; */
+    --weddingRentalMauve: 191, 163, 120, .97;
     --mauveFooter: 213, 182, 174, 1;
-    --bodyBackgroundFade: 117, 50, 54;
+    --bodyBackgroundFade: 213, 182, 174;
     --footerFade: 255, 255, 255, .01;
 }
 
@@ -20,7 +21,7 @@ html {
 }
 
 #grad1 {
-  background-image: radial-gradient(circle at center, rgba(256,256,256,1), rgba(var(--bodyBackgroundFade), .09));
+  background-image: radial-gradient(circle at center, rgba(256,256,256,1), rgba(var(--bodyBackgroundFade), .12));
   background-size: cover;
   position: relative;
 }
@@ -46,7 +47,7 @@ display: table;
 }
 
 a {
-  color: #d5b6ae;
+  color: rgba(var(--weddingRentalMauve));
   text-decoration: none;
   background: transparent;
 }
@@ -99,6 +100,12 @@ a:hover {
   color: white !important;
 }
 
+.footerLinksBlack{
+  color:black; 
+  white-space: nowrap;
+}
+
+
 
 /*
 ************************  index.html *********************************************************************
@@ -146,6 +153,26 @@ a:hover {
   margin-inline-end: 0px;
 }
 
+.col-1-special {
+  flex: 0 0 auto;
+  width: 6%;
+}
+.col-2-special {
+  flex: 0 0 auto;
+  width: 10%;
+}
+
+@media (min-width: 768px) {
+  .col-md-4-special {
+    flex: 0 0 auto;
+    width: 39%;
+  }
+}
+
+/*
+************************  What is this?  *********************************************************************
+*/
+
 
 #Question1group{
   padding-bottom: 25px;
@@ -174,8 +201,8 @@ Start of CSS for aboutus.html
 }
 
 .fit-img{
- width: 200px;
- height: 200px;
+ width: 280px;
+ height: 280px;
  object-fit: cover;
 }
 
