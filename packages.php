@@ -48,7 +48,7 @@ window.location.href="pickYourSet.php";
   // echo $result->num_rows;
   // echo $setOption;
   while($row = mysqli_fetch_array($result)){
-    echo $row['reservationID'];
+    //echo $row['reservationID'];
   }
   
   if($result->num_rows == 0){
