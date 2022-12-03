@@ -45,7 +45,7 @@
                     <li><a class="dropdown-item" href="darkwalnut.php">Dark Walnut</a></li>
                     <li><a class="dropdown-item" href="rusticWoodSet.php">Rustic Wood</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="extras.html">Extras</a></li>
+                    <li><a class="dropdown-item" href="extraDecor.php">Extras</a></li>
                     <li><a class="dropdown-item" href="availability.php">Check Availability</a></li>
                     <li><a class="dropdown-item" href="pickYourSet.php">Pick Your Set</a></li>
                   </ul>
