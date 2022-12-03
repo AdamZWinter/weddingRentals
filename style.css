@@ -3,40 +3,29 @@
 */
 
 :root {
-    --weddingRentalMauve: 213, 182, 174, .87;
-    --mauveFooter: 213, 182, 174, 1;
-    --bodyBackgroundFade: 117, 50, 54;
-    --footerFade: 213, 182, 174, .05;
+  --weddingRentalMauve: 213, 182, 174, .87;
+  --mauveFooter: 213, 182, 174, 1;
 }
 
 
 html, body {
-  overflow: auto;
-}
-
-html {
-  min-height: 100%;
-}
-
-#grad1 {
-  background-image: radial-gradient(circle at center, rgba(256,256,256,1), rgba(var(--bodyBackgroundFade), .08));
-  background-size: cover;
-  position: relative;
+height: 100%;
+width: 100%;
 }
 
 h1 {
-  color: rgba(var(--weddingRentalMauve));
+color: rgba(var(--weddingRentalMauve));
 }
 
 h3 {
-  font-family: proxima-nova;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1.2em;
-  color: rgba(var(--weddingRentalMauve));
+font-family: proxima-nova;
+font-weight: 600;
+font-style: normal;
+font-size: 16px;
+letter-spacing: 2px;
+text-transform: uppercase;
+line-height: 1.2em;
+color: rgba(var(--weddingRentalMauve));
 }
 
 clear {
@@ -44,42 +33,33 @@ clear: both;
 display: table;
 }
 
-a {
-  color: #d5b6ae;
-  text-decoration: none;
-  background: transparent;
-}
-
-a:hover {
-  color: black;
-}
 
 /*
 ************************  Header *********************************************************************
 */
 
 #headerImage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/headerImages/frontHeader.jpg');
-  background-position: 50% 30%;
-  background-size: cover;
-  height: 600px;
-  transition: 1.9s;
+background-image: url('img/headerImages/frontHeader.jpg');
+background-position: 50% 30%;
+background-size: cover;
+height: 600px;
+transition: 1.9s;
 }
 
 .navbar-custom {
-  font-size: x-large;
-  font-weight: 400;
-  
+font-size: x-large;
+font-weight: 400;
+
 }
 
 #navbarSupportedContent {
-  background: rgba(255,255,255,.3);
-  border-radius: 20px;
+background: rgba(255,255,255,.5);
+border-radius: 20px;
 }
 
 .margin-menu{
-  margin-right: 25px;
-  margin-left: 25px;
+margin-right: 25px;
+margin-left: 25px;
 }
 /*
 ************************  Footer *********************************************************************
@@ -87,15 +67,15 @@ a:hover {
 
 
 .footer-style{
-  background-image: radial-gradient(circle, rgba(var(--mauveFooter)), rgba(var(--footerFade)) );
-  font-family:sans-serif;
-  font-weight: 150;
-  font-size: large;
-  color: white;
+background-image: radial-gradient(circle, rgba(var(--mauveFooter)), rgba(255,255,255,1) );
+font-family:sans-serif;
+font-weight: 150;
+font-size: large;
+color: white;
 }
 
 .foot-link {
-  color: white !important;
+color: white !important;
 }
 
 
