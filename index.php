@@ -49,7 +49,7 @@ require('header.php');
         <h3 class="under-start text-center"><a href="layeredArchSet.php">Layered Arch</a></h3>
       </div>
       <div class = "col-3 d-none d-md-block">
-        <h3 class="py-5 text-right"><a href="extras.html">Additional Decor Accents Available As Well</a></h3>
+        <h3 class="py-5 text-right"><a href="extras.html">Additional Decor Accents Available</a></h3>
       </div>
       <div class = "col-1 d-none d-md-block"></div>
     </div><!--end of row--> 
