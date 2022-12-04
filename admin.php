@@ -15,7 +15,14 @@ $db = $myDB->getdb();
 $redirect = '<script>
 window.location.href="admin.html";
 </script>';
-
+//will redirect to login after 30 minutes of inactivity
+if(isset($_SESSION["username"])){
+    if(time() - $_SESSION["login_time"] > 600){
+        session_unset();
+        session_destroy();
+        echo $redirect;
+    }
+  }else{
 if( !isset($_POST['username']) && !isset($_SESSION['username'])  ){
   echo $redirect;
 } elseif (isset($_POST['username'])) {
@@ -36,6 +43,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
   elseif (isset($_POST['password'])) {
       $password = $_POST['password'];
       $_SESSION['password'] = $password;
+      $_SESSION["login_time"] = time();
      
       if((strcmp($password, 'admin') != 0)){
           echo $redirect;
@@ -44,6 +52,7 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
   elseif(strcmp($_SESSION['password'], 'admin') != 0){
       echo $redirect;
   }
+}
   if( !isset($_GET['statusChange']) && !isset($_GET['email'])){
 
     //set individually
@@ -63,6 +72,8 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
     WHERE `customers`.`email` = '".$email."'
     ");
   }
+  
+  
 
 //SORT CODE START
 //prevents SQL injection by using array for col names
