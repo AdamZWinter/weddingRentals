@@ -1,16 +1,16 @@
 <?php
 require('header.php');
 ?>
+
 <script>
   document.getElementById("headerImage").style.backgroundImage = "url('img/DecorAccent8.jpg')";
-  document.getElementById("headerImage").style.backgroundPosition = "45% 60%";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
+  document.getElementById("headerImage").style.height = "300px";
 </script>
 
 <section class="section">
  <h1 class = "site-head">Extras</h1>
   
-  <!-- <center>
-  <p class="top-desc">Choose from our available decor items to complete the style of your event. </p></center> -->
   </section>
  
   <section class= "section">
@@ -176,7 +176,6 @@ Blue Antique Ball Jars - $30 for 25 Jars (Assorted Sizes)<br>
 <br>
 
 <script src="extras.js"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 <?php
 //footer
