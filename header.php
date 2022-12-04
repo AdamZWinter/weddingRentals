@@ -47,7 +47,7 @@
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="extraDecor.php">Extras</a></li>
                     <li><a class="dropdown-item" href="availability.php">Check Availability</a></li>
-                    <li><a class="dropdown-item" href="pickYourSet.php">Pick Your Set</a></li>
+                    <li><a class="dropdown-item" href="pickYourSet.php">Reserve Your Set</a></li>
                   </ul>
                 </li>
                 <!--li class="nav-item">
