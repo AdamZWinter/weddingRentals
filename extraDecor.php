@@ -5,7 +5,7 @@ require('header.php');
   document.getElementById("headerImage").style.backgroundImage = "url('img/DecorAccent4.jpg)')";
   document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
 </script>
-<section class="section back-img">
+<section class="section">
  <h1 class = "site-head">Extras</h1>
   
   <!-- <center>
