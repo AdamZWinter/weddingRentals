@@ -8,8 +8,8 @@ require('header.php');
 <section class="section back-img">
  <h1 class = "site-head">Extras</h1>
   
-  <center>
-  <p class="top-desc">Choose from our available decor items to complete the style of your event. </p></center>
+  <!-- <center>
+  <p class="top-desc">Choose from our available decor items to complete the style of your event. </p></center> -->
   </section>
  
   <section class= "section">
