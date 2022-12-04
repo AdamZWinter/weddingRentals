@@ -169,7 +169,7 @@ Blue Antique Ball Jars - $30 for 25 Jars (Assorted Sizes)<br>
   </div>
   <br>
   <br>
-  <center><a class="btn btn-primary button"  href="availability.html">
+  <center><a class="btn btn-primary button"  href="availability.php">
     Check Availability
   </a></center>
   
