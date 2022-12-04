@@ -78,6 +78,43 @@ if( !isset($_POST['extrasCode']) ){
     $validEmail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
   }
 
+
+  // alternate info
+  if( !isset($_POST['altFirstName']) ){
+    echo $redirect;
+  }else if(ctype_alpha($_POST['altFirstName'])){
+    //$altFirstName = $_POST['altFirstName'];
+    $altFirstName = filter_input(INPUT_POST, 'altFirstName', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }
+  
+  //else{
+  //  echo "First name format is incorrect. ";
+   // exit;
+  //}
+ 
+  if( !isset($_POST['altLastName']) ){
+    //echo $redirect;
+  }else{
+    $altLastName = $_POST['altLastName'];
+    $altLastName = filter_input(INPUT_POST, 'altLastName', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }
+
+  if( !isset($_POST['altPhone']) ){
+    //echo $redirect;
+  }else{
+    $altPhone = $_POST['altPhone'];
+    $altPhone = filter_input(INPUT_POST, 'altPhone', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  }
+
+  if( !isset($_POST['altEmail']) ){
+    //echo $redirect;
+  }else{
+    $altEmail = $_POST['altEmail'];
+    $altEmail = filter_input(INPUT_POST, 'altEmail', FILTER_SANITIZE_EMAIL);
+    $altEmail = filter_input(INPUT_POST, 'altEmail', FILTER_VALIDATE_EMAIL);
+  }
+
+
   if(!$validEmail){
     echo 'Sorry, there seems to be some trouble with the email address you provided.';
     exit;
@@ -92,8 +129,8 @@ $result = $db->query($query);
 if($result->num_rows == 0){
   //$query = "INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES ('".$email."','".$fname."','".$lname."','".$phone."')";
   //$db->query($query);
-  $stmt = $db->prepare("INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`) VALUES (?,?,?,?)");
-  $stmt->bind_param("ssss", $email, $fname, $lname, $phone);
+  $stmt = $db->prepare("INSERT INTO `customers`(`email`, `fname`, `lname`, `phone`, `altEmail`, `altFirstName`, `altLastName`, `altPhone`) VALUES (?,?,?,?,?,?,?,?)");
+  $stmt->bind_param("ssssssss", $email, $fname, $lname, $phone, $altEmail, $altFirstName, $altLastName, $altPhone);
   $stmt->execute();
   $result = $stmt->get_result();
 }else{

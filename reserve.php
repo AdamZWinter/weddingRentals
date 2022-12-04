@@ -192,13 +192,33 @@ $packageCode = 0;
                 <br>
                 <label for="phone" class="rental-head">Phone: </label>
                 <input type="text" class= "form-control" id="phone" name="phone">
-                <span class="text-danger d-none" id="phoneValidFalse">Please, enter a valide phone number.</span>
+                <span class="text-danger d-none" id="phoneValidFalse">Please, enter a valid phone number.</span>
                 <span class="text-success d-none" id="phoneValidTrue">Phone number format validated.</span>
                 <br>
                 <label for="email" class="rental-head">E-mail: </label>
                 <input type="email" class= "form-control" id="email" name="email">
-                <span class="text-danger d-none" id="emailValidFalse">Please, enter a valide email address.</span>
+                <span class="text-danger d-none" id="emailValidFalse">Please, enter a valid email address.</span>
                 <span class="text-success d-none" id="emailValidTrue">Email format validated.</span>
+
+                <br>
+                <hr>
+
+                <h3 class="alternateContactHeader">Alternate Contact Information (optional)</h3>
+                <label for="alternateFirstName" class="rental-head">Alternate First Name: </label>
+                <input type="text" class= "form-control" id="alternateFirstName" name="altFirstName">
+                <br>
+                <label for="alternateLastName" class="rental-head">Alternate Last Name: </label>
+                <input type="text" class= "form-control" id="alternateLastName" name="altLastName">
+                <br>
+                <label for="alternatePhone" class="rental-head">Alternate Phone: </label>
+                <input type="text" class= "form-control" id="alternatePhone" name="altPhone">
+                <span class="text-danger d-none" id="altPhoneValidFalse">Please, enter a valid phone number.</span>
+                <span class="text-success d-none" id="altPhoneValidTrue">Phone number format validated.</span>
+                <br>
+                <label for="alternateEmail" class="rental-head">Alternate E-mail: </label>
+                <input type="email" class= "form-control" id="alternateEmail" name="altEmail">
+                <span class="text-danger d-none" id="altEmailValidFalse">Please, enter a valid email address.</span>
+                <span class="text-success d-none" id="altEmailValidTrue">Email format validated.</span>
                 <br>
                 <br>
                 <input class = "btn btn-primary button" type="submit" id="submitButton" value="Continue" disabled/>
@@ -238,7 +258,10 @@ function ValidateEmail() {
   }
 }
 
+
 document.getElementById('phone').addEventListener("change", ValidatePhone);
+document.getElementById('alternatePhone').addEventListener("change", ValidateAlternatePhone);
+
 
 function ValidatePhone() {
   var validRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
@@ -255,6 +278,26 @@ function ValidatePhone() {
     document.getElementById("phoneValidFalse").classList.remove('d-none');
     document.getElementById("phoneValidTrue").classList.add('d-none');
     document.getElementById("phoneValidTrue").classList.remove('d-block');
+    return true;
+  }
+}
+
+
+function ValidateAlternatePhone() {
+  var validRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  var phoneNum = document.getElementById('alternatePhone').value;
+  console.log(phoneNum);
+  if (phoneNum.match(validRegex)) {
+    document.getElementById("altPhoneValidTrue").classList.add('d-block');
+    document.getElementById("altPhoneValidTrue").classList.remove('d-none');
+    document.getElementById("altPhoneValidFalse").classList.add('d-none');
+    document.getElementById("altPhoneValidFalse").classList.remove('d-block');
+    return true;
+  } else {
+    document.getElementById("altPhoneValidFalse").classList.add('d-block');
+    document.getElementById("altPhoneValidFalse").classList.remove('d-none');
+    document.getElementById("altPhoneValidTrue").classList.add('d-none');
+    document.getElementById("altPhoneValidTrue").classList.remove('d-block');
     return true;
   }
 }

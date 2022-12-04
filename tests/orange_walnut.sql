@@ -11,7 +11,7 @@ CREATE TABLE `customers` (
   `email` varchar(128) NOT NULL,
   `fname` varchar(32) NOT NULL,
   `lname` varchar(32) NOT NULL,
-  `phone` varchar(16) NOT NULL
+  `phone` varchar(16) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

@@ -676,3 +676,10 @@ span{
 .page-select{
   color: #f78fa7;
 }
+
+/* reserve.php styles */
+.alternateContactHeader {
+  color:#d5b6ae !important;
+  padding: 2%;
+}
+
