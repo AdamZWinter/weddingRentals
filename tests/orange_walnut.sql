@@ -27,7 +27,6 @@ INSERT INTO `customers` (`email`, `fname`, `lname`, `phone`, `altEmail`, `altFir
 ('amySpicuzza@gmail.com', 'Amy', 'Spicuzza', '7894561232', '', '', '', ''),
 ('ashleyKelver@yahoo.com', 'Ashley', 'Kelver', '1234569873', '', '', '', ''),
 ('elaineKing@comcast.net', 'Elaine', 'King', '9876543210', '', '', '', ''),
-('email@emaill.com', 'Adam', 'Winter', '2537095103', '', '', '', ''),
 ('email@emailstuff.com', 'Adam', 'Winter', '5555555555', '', '', '', ''),
 ('janeJansen@yahoo.com', 'Jane', 'Jansen', '4567891230', '', '', '', ''),
 ('jenniferAllen@gmail.com', 'Jennifer', 'Allen', '4567891236', '', '', '', ''),
