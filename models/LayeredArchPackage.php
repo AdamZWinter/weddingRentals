@@ -27,7 +27,7 @@ class LayeredArchPackage extends ParentPackage{
                                             "1 Double Full Arch Medium sign (Signature Drinks, or Custom Acrylic Text)",
                                             "Unplugged Ceremony sign",
                                             "Hairpin Record Player Prop",
-                                            "%22Mr & Mrs%22 Custom Head Table Keepsake is a free gift in addition to the items above"
+                                            "\"Mr & Mrs\" Custom Head Table Keepsake is a free gift in addition to the items above"
                                             );
         
         $this->subsetTypeArray = array("Full Set",   //16
