@@ -1,7 +1,7 @@
 <?php
 
 //comments test
-require('header.php');
+
 
 if( !isset($_GET['weddingDate']) ){
   $weddingDate = date('Y-m-d');
@@ -13,6 +13,14 @@ if( !isset($_GET['weddingDate']) ){
   $collapse = 'collapse show';
 }
 
+setcookie('cookieDate', $weddingDate);
+
+
+if(isset($_COOKIE['cookieDate'])){
+  $weddingDate = $_COOKIE['cookieDate'];
+}
+
+require('header.php');
 ?>
 
 <script>
@@ -109,11 +117,39 @@ if( !isset($_GET['weddingDate']) ){
       document.getElementById('setOption').value = setOption;
       document.getElementById('pickYourSetForm').submit();
       //return false;
+      /*//create cookie
+      setCookie('cookieSet', setOption, 1);
+      setOption = getCookie('cookieSet');
+      console.log(getCookie'cookieSet');*/
+
     }
 
     function validateForm(){
       return false;
     }
+
+    /*function setCookie(name, value, daysTillExpire){
+      const expDate = new Date();
+      date.setTime(date.getTime() + (daysTillExpire * 24 * 60 * 60 * 1000));
+      let expires = 'expires=' + date.toUTCString();
+      document.cookie = `${name} = ${value}; ${expires}; path=/`
+    }
+
+    function getCookie(name){
+      const cDecoded = decodeURIComponent(document.cookie);
+      const cArray = cDecoded.split('; ');
+      let result = null;
+
+      cArray.forEach(element =>{
+        if(element.indexOf(name) == 0){
+          result = element.substring(name.length + 1)
+        }
+      })
+
+      return result;
+    }*/
+
+
   </script>
 
   <div class="<?php echo $collapse;?>" id="pickSet">

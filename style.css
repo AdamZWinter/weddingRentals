@@ -683,3 +683,65 @@ span{
   padding: 2%;
 }
 
+/*-----------------Modern Round---------------*/
+
+.package-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.side{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.image{
+  flex-basis: 50%;
+}
+.img-size{
+  height: 60%;
+}
+
+.text-right{
+  font-size: 15px;
+  padding-left: 20px;
+  text-align: center;
+  margin-left: 20pt;
+}
+
+.text-left{
+  font-size: 15px;
+  padding-right: 20px;
+  text-align: center;
+  margin-right: 20pt
+}
+
+h6{
+  color: rgba(174, 178, 183, 0.984);
+  font-size: 25px;
+}
+
+h4, h5{
+  color: #d5b6ae;
+  text-align: center;
+}
+
+.pck-btn{
+  background-color:  #d5b6ae !important;
+  color: white !important;
+  display: inline-block;
+  width: 50% ;
+}
+
+#guestbook{
+  padding-right: 20%;
+}
+
+h2, #note{
+  font-weight: bold !important;
+}
+
+li{
+  margin-top: 12pt;
+}
