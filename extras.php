@@ -362,21 +362,38 @@ $noUpgrade = '';
 <div class = "container-fluid">
   <h4 class = "rental-head">Your Package:</h4>
   <div class = "row">
-    <div class = "col-sm-3"></div>
-    <div class = "col-sm-6 topper text-center">
+    <div class = "col-1 d-none d-md-block"></div>
+    <div class = "col-12 col-md-10 topper text-center">
       <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
-      <h6> <?php echo $subtitle;?> </h6>
-      <p class = "option-style">
-        <?php      
-          foreach( $pieces as $item ){
-            echo $item;
-            echo "<br />";
-          }          
-        ?>   
-      </p>      
+
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h6 id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <?php echo $subtitle;?>
+            </button>
+          </h6>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <p class = "option-style">
+                  <?php      
+                    foreach( $pieces as $item ){
+                      echo "-".$item;
+                      echo "<br>";
+                    }          
+                  ?>   
+                </p>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        
     </div>
 
-    <div class = "col-sm-3"></div>
+    <div class = "col-1 d-none d-md-block"></div>
   </div>
 </div>
 
