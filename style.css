@@ -41,6 +41,16 @@ h3 {
   color: rgba(var(--weddingRentalMauve));
 }
 
+h5 {
+  font-family: proxima-nova;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  color: rgba(var(--weddingRentalMauve));
+}
+
 clear {
 clear: both;
 display: table;
@@ -306,6 +316,39 @@ white-space: nowrap;
 }
 
 #rusticWood:hover {
+  border: 5px solid #555
+}
+
+
+/*
+********************************************  extras.php  ***********************************************
+*/
+
+.fit-img-extras{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+ }
+
+ #option0:hover {
+  border: 5px solid #555
+}
+#option1:hover {
+  border: 5px solid #555
+}
+#option2:hover {
+  border: 5px solid #555
+}
+#option3:hover {
+  border: 5px solid #555
+}
+#option4:hover {
+  border: 5px solid #555
+}
+#option5:hover {
+  border: 5px solid #555
+}
+#option6:hover {
   border: 5px solid #555
 }
 

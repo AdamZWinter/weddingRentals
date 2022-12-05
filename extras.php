@@ -267,23 +267,26 @@ window.location.href="pickYourSet.php";
 
 
     
-
+$noUpgrade = '';
   // UPSELL package code below  
   if($packageChoice == "pick4"){
     $upgradeOptions = ['fullset' , 'pick6'];
-  };
-  if($packageChoice == "pick6"){
+  }
+  else if($packageChoice == "pick6"){
     $upgradeOptions = ['fullset'];
-  };
-  if($packageChoice == "vmpick4"){
+  }
+  else if($packageChoice == "vmpick4"){
     $upgradeOptions = ['platinum', 'gold' , 'vmpick6'];
-  };
-  if($packageChoice == "vmpick6"){
+  }
+  else if($packageChoice == "vmpick6"){
     $upgradeOptions = ['platinum', 'gold'];
-  };
-  if($packageChoice == "gold"){
+  }
+  else if($packageChoice == "gold"){
     $upgradeOptions = ['platinum'];
-  };
+  }
+  else{
+    $noUpgrade = 'd-none';
+  }
   
   $upgradeMarkup = '';
   if(!empty($upgradeOptions)){
@@ -357,12 +360,12 @@ window.location.href="pickYourSet.php";
 
 
 <div class = "container-fluid">
-  <h3 class = "rental-head">Your Package:</h3>
+  <h4 class = "rental-head">Your Package:</h4>
   <div class = "row">
     <div class = "col-sm-3"></div>
     <div class = "col-sm-6 topper text-center">
       <h5 class = "rental-head"> <?php echo $titleName;?> </h5>
-      <h6 > <?php echo $subtitle;?> </h6>
+      <h6> <?php echo $subtitle;?> </h6>
       <p class = "option-style">
         <?php      
           foreach( $pieces as $item ){
@@ -377,7 +380,7 @@ window.location.href="pickYourSet.php";
   </div>
 </div>
 
-<div class = "container-fluid">
+<div class = "container-fluid <?php echo $noUpgrade;?>">
   <div class = "row">
     <div class = "col-sm-3"></div>
 
@@ -388,6 +391,58 @@ window.location.href="pickYourSet.php";
     <div class = "col-sm-3"></div>
   </div>
 </div>
+
+                      <div class = "container-fluid">
+
+                        <div class = "row">      
+                          <div class = "col-12 text-center">
+                            <br>
+                            <h1 class="rental-head">Choose Your Extras:</h1>
+                            <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p>
+                          </div>
+                        </div><!--end of row-->
+
+                        <div class = "row">      
+                          <div class = "col-4">
+                              <img id="option0" class= "fit-img-extras rounded-circle float-end" src= "img/extras/hexArbor.jpg" alt= "select Hex Arbor" onclick="setChecked(0)">
+                              <h5 class="under-end text-end">Hex Arbor</h5>
+                          </div>
+                          <div class = "col-4 text-center">
+                            <img id="option1" class= "fit-img-extras rounded-circle mx-auto" src= "img/extras/vintageSofa.jpg" alt= "select Vintage Sofa" onclick="setChecked(1)">
+                            <h5 class="under-start">Vintage Sofa</h5>
+                          </div>
+                          <div class = "col-4">
+                            <img id="option2" class= "fit-img-extras rounded-circle float-start" src= "img/extras/jugs.jpg" alt= "select Antique Gallon Jugs" onclick="setChecked(2)">
+                            <h5 class="under-start text-start">Antique Gallon Jugs</h5>
+                          </div>
+                        </div><!--end of row--> 
+
+                        <div class = "row">      
+                          <div class = "col-4">
+                              <img id="option3" class= "fit-img-extras rounded-circle float-end" src= "img/extras/LXwineJugs.jpg" alt= "select XL Wing Jugs" onclick="setChecked(3)">
+                              <h5 class="under-end text-end">XL Wine Jugs</h5>
+                          </div>
+                          <div class = "col-4 text-center">
+                            <img id="option4" class= "fit-img-extras rounded-circle mx-auto" src= "img/extras/clearJars.jpg" alt= "select Clear Antique Bal Jars" onclick="setChecked(4)">
+                            <h5 class="under-start">Clear Antique Ball Jars</h5>
+                          </div>
+                          <div class = "col-4">
+                            <img id="option5" class= "fit-img-extras rounded-circle float-start" src= "img/extras/blueJars.jpg" alt= "select Blue Antique Ball Jars" onclick="setChecked(5)">
+                            <h5 class="under-start text-start">Blue Antique Ball Jars</h5>
+                          </div>
+                        </div><!--end of row--> 
+
+                        <div class = "row">
+                          <div class = "col-3 d-none d-md-block"></div>
+                          <div class = "col-1 d-none d-md-block"></div>
+                          <div class = "col-12 col-md-4 text-center">
+                            <img id="option6" class="fit-img-extras rounded-5 mx-auto d-block" src= "img/extras/deliverysmall.JPG" alt= "delivery" onclick="setChecked(6)">
+                            <h3 class="under-start text-center">Delivery</h3>
+                          </div>
+                          <div class = "col-1 d-none d-md-block"></div>
+                          <div class = "col-3 d-none d-md-block"></div>
+                        </div><!--end of row--> 
+                      </div><!--End of container-fluid-->
 
 
     <div class = "container-fluid ">
@@ -405,35 +460,30 @@ window.location.href="pickYourSet.php";
                 <!--input type="hidden" id="setOption" name="setOption" value="<?php //echo $setOption;?>"-->
                 <!--input type="hidden" id="packageChoice" name="packageChoice" value="<?php //echo $packageChoice;?>"-->
 
-                <br>
-                <br>
-                <label for="extras" class="rental-head">Choose Your Extras:</label>
-                <br>
-                <br>
-                <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p>
+                <!-- <label for="extras" class="rental-head">Choose Your Extras:</label> -->
+                <!-- <p class="<?php echo $extrasWarning;?>">(Some of these are not available on <?php echo $weddingDate;?>)</p> -->
                 <input  type="checkbox" id="hexarbor" name="hexarbor" <?php echo $hexarchAvailable;?>>
-                <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
-                <br>
+                <!-- <label for="hexarbor" class = "option-style">  Hexagon Arbor</label>
+                <br> -->
                 <input type="checkbox" id="vintagesofa" name="vintagesofa" <?php echo $couchAvailable;?>>
-                <label for="vintagesofa" class = "option-style"> Vintage Sofa</label>
-                <br>
+                <!-- <label for="vintagesofa" class = "option-style"> Vintage Sofa</label>
+                <br> -->
                 <input type="checkbox" id="antiquejugs" name="antiquejugs" <?php echo $antiquejugsAvailable;?>>
-                <label for="antiquejugs" class = "option-style"> Antique Gallon Jugs</label>   
-                <br>
+                <!-- <label for="antiquejugs" class = "option-style"> Antique Gallon Jugs</label>   
+                <br> -->
                 <input type="checkbox" id="winejug" name="winejug" <?php echo $winejugsAvailable;?>>
-                <label for="winejug" class = "option-style"> XL Wine Jugs</label>
-                <br>
+                <!-- <label for="winejug" class = "option-style"> XL Wine Jugs</label>
+                <br> -->
                 <input type="checkbox" id="clearjars" name="clearjars" <?php echo $clearjarsAvailable;?>>
-                <label for="clearjars" class = "option-style"> Clear Antique Ball Jars</label>
-                <br>
+                <!-- <label for="clearjars" class = "option-style"> Clear Antique Ball Jars</label>
+                <br> -->
                 <input type="checkbox" id="bluejars" name="bluejars" <?php echo $bluejarsAvailable;?>>
-                <label for="bluejars" class = "option-style"> Blue Antique Ball Jars</label>
+                <!-- <label for="bluejars" class = "option-style"> Blue Antique Ball Jars</label>
                 <br>
-                <br>
+                <br> -->
                 <input type="checkbox" id="delivery" name="delivery" <?php echo $deliveryAvailable;?>>
-                <label for="delivery" class="upper">Delivery</label><a href="delivery.html">?</a>
-               
-                <br>
+                <!-- <label for="delivery" class="upper">Delivery</label><a href="delivery.html">&nbsp;?</a>               
+                <br> -->
                 <br>
                 <div class = "center">
                 <input class = "btn btn-primary button" type="submit" value="Continue">
@@ -459,7 +509,97 @@ window.location.href="pickYourSet.php";
   document.getElementById("headerImage").style.backgroundPosition = "50% 67%";
   document.getElementById("headerImage").style.height = "300px";
 
-
+function setChecked(optionNum){
+  console.log("call to setChecked");
+  var optionByNum = "option"+optionNum;
+  var hexarchAvailable = "<?php echo $hexarchAvailable;?>";
+  var couchAvailable = "<?php echo $couchAvailable;?>";
+  var antiqueJugsAvailable = "<?php echo $antiquejugsAvailable;?>";
+  var winejugsAvailable = "<?php echo $winejugsAvailable;?>";
+  var clearjarsAvailable = "<?php echo $clearjarsAvailable;?>";
+  var bluejarsAvailable = "<?php echo $bluejarsAvailable;?>";
+  var deliveryAvailable = "<?php echo $deliveryAvailable;?>";
+  switch(optionNum){
+    case 0:
+      if(document.getElementById("hexarbor").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("hexarbor").checked = false;
+      }else if(hexarchAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("hexarbor").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 1:
+      if(document.getElementById("vintagesofa").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("vintagesofa").checked = false;
+      }else if(couchAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("vintagesofa").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 2:
+      if(document.getElementById("antiquejugs").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("antiquejugs").checked = false;
+      }else if(antiqueJugsAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("antiquejugs").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 3:
+      if(document.getElementById("winejug").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("winejug").checked = false;
+      }else if(winejugsAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("winejug").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 4:
+      if(document.getElementById("clearjars").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("clearjars").checked = false;
+      }else if(clearjarsAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("clearjars").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 5:
+      if(document.getElementById("bluejars").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("bluejars").checked = false;
+      }else if(bluejarsAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("bluejars").checked = true;
+      }else{
+        //not available
+      }
+      break;
+      case 6:
+      if(document.getElementById("delivery").checked){
+        document.getElementById(optionByNum).style.border = "none";
+        document.getElementById("delivery").checked = false;
+      }else if(deliveryAvailable === ""){
+        document.getElementById(optionByNum).style.border = "15px solid #555";
+        document.getElementById("delivery").checked = true;
+      }else{
+        //not available
+      }
+      break;
+  }
+  
+}
 
 </script>
 
