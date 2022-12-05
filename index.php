@@ -44,7 +44,7 @@ require('header.php');
       </div>
       <div class = "col-12 col-md-4 text-center">
         <a href="layeredArchSet.php">
-        <img class= "fit-img rounded-5 mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
+        <img id="layeredArch" class= "fit-img rounded-5 mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch">
         </a>
         <h3 class="under-start text-center"><a href="layeredArchSet.php">Layered Arch</a></h3>
       </div>
