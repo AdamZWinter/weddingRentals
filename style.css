@@ -5,7 +5,7 @@
 :root {
     /* --weddingRentalMauve: 213, 182, 174, .87; */
     --weddingRentalMauve: 191, 163, 120, .97;
-    --mauveFooter: 213, 182, 174, 1;
+    --mauveFooter: 190, 182, 174, 1;
     --bodyBackgroundFade: 213, 182, 174;
     --footerFade: 255, 255, 255, .01;
 }
@@ -21,7 +21,7 @@ html {
 }
 
 #grad1 {
-  background-image: radial-gradient(circle at center, rgba(256,256,256,1), rgba(var(--bodyBackgroundFade), .12));
+  background-image: radial-gradient(circle at center, rgba(256,256,256,1), rgba(var(--bodyBackgroundFade), .14));
   background-size: cover;
   position: relative;
 }
