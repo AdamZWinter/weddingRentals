@@ -58,14 +58,14 @@ require('header.php');
       <div class = "col-1-special d-none d-md-block"></div>
       <div class = "col-6 col-md-4-special">
         <a href="modernround.php">
-        <img class= "fit-img rounded-5 float-end" src= "img/modernround.jpg" alt= "photo of modern round">
+        <img id="modernRound" class= "fit-img rounded-5 float-end" src= "img/modernround.jpg" alt= "photo of modern round">
         </a>
         <h3 class="under-end text-end px-5"><a href="modernround.php">Modern Round</a></h3>
       </div>
       <div class = "col-2-special d-none d-md-block"></div>
       <div class = "col-6 col-md-4-special">
         <a href="vintagemirror.php">
-        <img class= "fit-img rounded-5 float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
+        <img id="vintageMirror" class= "fit-img rounded-5 float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror">
         </a>
         <h3 class="under-start text-start px-5"><a href="vintagemirror.php">Vintage Mirror</a></h3>
       </div>
@@ -76,14 +76,14 @@ require('header.php');
       <div class = "col-1 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
         <a href="darkwalnut.php">
-        <img class= "fit-img rounded-5 float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
+        <img id="darkWalnut" class= "fit-img rounded-5 float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut">
         </a>
         <h3 class="under-end text-end px-5"><a href="darkwalnut.php">Dark Walnut</a></h3>
       </div>
       <div class = "col-2 d-none d-md-block"></div>
       <div class = "col-6 col-md-4">
         <a href="rusticWoodSet.php">
-        <img class= "fit-img rounded-5 float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
+        <img id="rusticWood" class= "fit-img rounded-5 float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood">
         </a>
         <h3 class="under-start text-start px-5"><a href="rusticWoodSet.php">Rustic Wood</a></h3>
       </div>

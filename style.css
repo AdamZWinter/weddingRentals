@@ -34,7 +34,7 @@ h3 {
   font-family: proxima-nova;
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 1.2em;
@@ -159,15 +159,21 @@ a:hover {
 }
 .col-2-special {
   flex: 0 0 auto;
-  width: 10%;
+  width: 8%;
 }
 
 @media (min-width: 768px) {
   .col-md-4-special {
     flex: 0 0 auto;
-    width: 39%;
+    width: 40%;
   }
 }
+
+.fit-img{
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+ }
 
 /*
 ************************  What is this?  *********************************************************************
@@ -198,12 +204,6 @@ Start of CSS for aboutus.html
   height:75px;
   object-fit: cover;
   float: right;
-}
-
-.fit-img{
- width: 280px;
- height: 280px;
- object-fit: cover;
 }
 
 .about-us-foot{
@@ -268,6 +268,12 @@ End of Agreement Page CSS
 /*
 ********************************************Pick Your Set ***********************************************
 */
+
+.fit-img-2{
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+ }
 
 .center-align{
   text-align: center;  

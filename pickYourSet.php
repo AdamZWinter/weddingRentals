@@ -121,42 +121,42 @@ if( !isset($_GET['weddingDate']) ){
 
 
     <div class = "container-fluid">
-      <div class = "row" style="height:250px">      
+      <div class = "row" style="height:280px">      
         <div class = "col-3 d-none d-md-block"></div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-12 col-md-4 text-center">
           <h2>Pick Your Set</h2>
-          <img id="layeredArch" class= "fit-img rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic('layeredarch')">
+          <img id="layeredArch" class= "fit-img-2 rounded-circle mx-auto d-block" src= "img/layeredarch.jpg" alt= "photo of layered arch" onclick="submitSetPic('layeredarch')">
           <h3 class="under-start text-center">Layered Arch</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-3 d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      <div class = "row" style="height:250px">      
-        <div class = "col-1 d-none d-md-block"></div>
-        <div class = "col-6 col-md-4">
-          <img id="modernRound" class= "fit-img rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round" onclick="submitSetPic('modernround')">
-          <h3 class="under-end text-end">Modern Round</h3>
+      <div class = "row" style="height:280px">      
+      <div class = "col-1-special d-none d-md-block"></div>
+      <div class = "col-6 col-md-4-special">
+          <img id="modernRound" class= "fit-img-2 rounded-circle float-end" src= "img/modernround.jpg" alt= "photo of modern round" onclick="submitSetPic('modernround')">
+          <h3 class="under-end text-end px-5">Modern Round</h3>
         </div>
-        <div class = "col-2 d-none d-md-block"></div>
-        <div class = "col-6 col-md-4">
-          <img id="vintageMirror" class= "fit-img rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror" onclick="submitSetPic('vintagemirror')">
-          <h3 class="under-start text-start">Vintage Mirror</h3>
+      <div class = "col-2-special d-none d-md-block"></div>
+      <div class = "col-6 col-md-4-special">
+          <img id="vintageMirror" class= "fit-img-2 rounded-circle float-start" src= "img/vintagemirror.jpg" alt= "photo of vintage mirror" onclick="submitSetPic('vintagemirror')">
+          <h3 class="under-start text-start px-5">Vintage Mirror</h3>
         </div>
-        <div class = "col-1 d-none d-md-block"></div>
+        <div class = "col-1-special d-none d-md-block"></div>
       </div><!--end of row--> 
 
-      <div class = "row" style="height:250px">      
+      <div class = "row" style="height:280px">      
         <div class = "col-1 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <img id="darkWalnut" class= "fit-img rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut" onclick="submitSetPic('darkwalnut')">
-          <h3 class="under-end text-end">Dark Walnut</h3>
+          <img id="darkWalnut" class= "fit-img-2 rounded-circle float-end" src= "img/darkwalnut.jpg" alt= "photo of dark walnut" onclick="submitSetPic('darkwalnut')">
+          <h3 class="under-end text-end px-5">Dark Walnut</h3>
         </div>
         <div class = "col-2 d-none d-md-block"></div>
         <div class = "col-6 col-md-4">
-          <img id="rusticWood" class= "fit-img rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood" onclick="submitSetPic('rusticwood')">
-          <h3 class="under-start text-start">Rustic Wood</h3>
+          <img id="rusticWood" class= "fit-img-2 rounded-circle float-start" src= "img/rusticwood.jpg" alt= "photo of rustic wood" onclick="submitSetPic('rusticwood')">
+          <h3 class="under-start text-start px-5">Rustic Wood</h3>
         </div>
         <div class = "col-1 d-none d-md-block"></div>
       </div><!--end of row--> 
