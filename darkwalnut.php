@@ -1,3 +1,13 @@
+<?php
+require('header.php');
+?>
+
+
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/headerImages/darkWalnutHeader.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Walnut</title>
     <link href="extras.css" rel="stylesheet" type="text/css" />
-    <link href="darkwalnut.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
     crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body id="body">
     <div class="container-fluid upper">
         <div class="row">
           <div class="col-md-3"><img src="img/logo.png" class="logo"> </div>
@@ -61,19 +71,19 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/weddingRentals/darkWalnutImages/carousel1.jpg" class= "img-size" class="d-block w-100" alt="...">
+            <img src="img/darkWalnutImages/carousel1.jpg" class= "img-size" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/weddingRentals/darkWalnutImages/carousel2.jpg" class= "img-size" class="d-block w-100" alt="...">
+            <img src="img/darkWalnutImages/carousel2.jpg" class= "img-size" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/weddingRentals/darkWalnutImages/carousel3.jpg" class= "img-size" class="d-block w-100" alt="...">
+            <img src="img/darkWalnutImages/carousel3.jpg" class= "img-size" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/weddingRentals/darkWalnutImages/carousel4.jpg" class= "img-size" class="d-block w-100" alt="...">
+            <img src="img/darkWalnutImages/carousel4.jpg" class= "img-size" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="/weddingRentals/darkWalnutImages/carousel5.jpg" class= "img-size" class="d-block w-100" alt="...">
+            <img src="img/darkWalnutImages/carousel5.jpg" class= "img-size" class="d-block w-100" alt="...">
         </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -88,15 +98,15 @@
     </center>
     <!--<h2 class="section-head">DARK WALNUT RENTAL PIECES</h2>-->
     <div id="buttonDiv" class="row justify-content-center">
-        <button id="checkAvailabilityButton" type="submit" class="btn">CHECK AVAILABILITY</button></button>
+        <button id="checkAvailButton" type="submit" class="btn">CHECK AVAILABILITY</button></button>
     </div>
 
     <!--Dark walnut full package rental-->
     <section>
-        <h2 class="section-head" class="smallHead"><strong>Dark Walnut Full Package Rental</strong></h2>
+        <h2 class="section-head" class="smallHead" class="added-sh"><strong>Dark Walnut Full Package Rental</strong></h2>
         <div class="row justify-content-around">
             <center>
-                <img src="/weddingRentals/darkWalnutImages/walnut1.jpg" class="img-fluid" alt="medium square mirror on an easel">
+                <img src="img/darkWalnutImages/walnut1.jpg" class="img-fluid" alt="medium square mirror on an easel">
             </center>
         </div>
         <p id="price">$299 plus tax</p>
@@ -130,7 +140,7 @@
         <h2 class="section-head" class="smallHead"><strong>Dark Walnut “No Seating” Rental</strong></h2>
         <div class="row justify-content-around">
             <center>
-                <img src="/weddingRentals/darkWalnutImages/walnut2.jfif" class="img-fluid" alt="medium square mirror on an easel">
+                <img src="img/darkWalnutImages/walnut1.jpg" class="img-fluid" alt="medium square mirror on an easel">
             </center>
         </div>
         <center>
@@ -175,47 +185,47 @@
         </center>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_1.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="darkWalnutImages/up4_2.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_1.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_2.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_3.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_4.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_3.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_4.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_5.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_6.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_5.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_6.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_7.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_8.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_7.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_8.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_9.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_10.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_9.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_10.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_11.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_12.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_11.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_12.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_13.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_14.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_13.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_14.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
 
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_15.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
-            <img src="/weddingRentals/darkWalnutImages/up4_16.jpg" class="img-fluid" alt="medium round mirror on an easel">
+            <img src="img/darkWalnutImages/up4_15.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_16.jpg" class="img-fluid" alt="medium round mirror on an easel">
         </div>
         
         <div class="package-list">
-            <img src="/weddingRentals/darkWalnutImages/up4_17.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
+            <img src="img/darkWalnutImages/up4_17.jpg" class="pad-left" class="img-fluid" alt="medium square mirror on an easel">
         </div>
 
         <center>
@@ -263,10 +273,10 @@
         </center>
         <div class="row justify-content-around">
             <div class="col-4">
-                <img src="/weddingRentals/darkWalnutImages/choice1.jpg" class="img-fluid" alt="medium square mirror on an easel">
+                <img src="img/darkWalnutImages/carousel5.jpg" class="img-fluid" alt="medium square mirror on an easel">
             </div>
             <div class="col-4">
-                <img src="/weddingRentals/darkWalnutImages/choice2.jpg" class="img-fluid" alt="medium round mirror on an easel">
+                <img src="img/darkWalnutImages/up4_1.jpg" class="img-fluid" alt="medium round mirror on an easel">
             </div>
         </div>
     </section>
@@ -281,14 +291,14 @@
                  <p>$99 with any rental package</p>
             </div>
             <div class="image">
-                 <img src="/weddingRentals/darkWalnutImages/add-on1.jpg" class="img-fluid" alt="table with flowers and five numbered mirrors">
+                 <img src="img/darkWalnutImages/add-on1.jpg" class="img-fluid" alt="table with flowers and five numbered mirrors">
             </div>
          </div>
         <hr>
          <!--Vintage typewriter-->
          <div class="side">
              <div class="image">
-                 <img src="/weddingRentals/darkWalnutImages/add-on2.jpg" class="img-fluid" alt="mirror on table top easel and flowers on a table">
+                 <img src="img/darkWalnutImages/add-on2.jpg" class="img-fluid" alt="mirror on table top easel and flowers on a table">
              </div>
              <div class="text-right">
                  <h6>VINTAGE TYPWRITER WITH MESSAGE TO GUESTS</h6>
@@ -303,7 +313,7 @@
     <p id="photo">Product images courtesy of ROSIE photography.</p>
    
 
-<footer class="extras-footer">
+<!-- <footer class="extras-footer">
     <center>
       <a class = "footer-style" href="extras.html">Contact Us</a>
       <br><br>
@@ -311,6 +321,10 @@
   ORRVILLE, OHIO</p>
       <a class= "footer-style" href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
     </center>
-  </footer>
+  </footer> -->
+  <?php
+//footer
+require('footer.php');
+?>
 </body>
 </html>

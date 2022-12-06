@@ -801,3 +801,42 @@ h2, #note{
 li{
   margin-top: 12pt;
 }
+
+/* --------------------Dark Walnut-----------------*/
+#body{
+  padding-right: 32px;
+      padding-left: 32px;
+      padding-bottom: 96px;
+      padding-top: 0px;
+}
+.added-sh{
+  margin-top: 15px;
+    color:#d5b6ae;
+    font-family: serif;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+}
+
+#checkAvailButton{
+  background-color:  #d5b6ae;
+  color: white;
+  display: inline-block;
+  width: 50%;
+}
+
+#price{
+  color:#383939;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20pt;
+}
+
+.pad-left{
+  margin-left: 20%;
+}
+
+#photo{
+  text-align: center !important;
+  color:#383939;
+}
