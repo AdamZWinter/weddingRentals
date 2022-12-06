@@ -1,3 +1,13 @@
+<?php
+require('header.php');
+?>
+
+
+<script>
+  document.getElementById("headerImage").style.backgroundImage = "url('img/vintagemirror.jpg')";
+  document.getElementById("headerImage").style.backgroundPosition = "50% 45%";
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vintage Mirror Set</title>
     <link href="extras.css" rel="stylesheet" type="text/css" />
-    <link href="vintagemirror.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous">
@@ -77,7 +87,7 @@
      <!--<div class="container text-center">-->
         <div class="side">
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm2.jfif" class="img-fluid" alt="mirror on an easel with a welcome message">
+                <img src="img/vmpictures/vm2.jfif" class="img-fluid" alt="mirror on an easel with a welcome message">
             </div>
             <div class="text-right">
                 <h6>WELCOME SIGN</h6>
@@ -93,12 +103,12 @@
                 <p>(Mirror pictured “Gabriella”) </p>
             </div>
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm3.jpg" class="img-fluid" alt="mirror on easel with 12 cards attached on">
+                <img src="img/vmpictures/vm3.jpg" class="img-fluid" alt="mirror on easel with 12 cards attached on">
             </div>
         </div>
         <div class="side">
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm4.jpeg" class= "img-fluid" alt="Two mirrors on easels">
+                <img src="img/vmpictures/vm4.jpeg" class= "img-fluid" alt="Two mirrors on easels">
             </div>
             <div class="text-right"> 
                 <h6>PAIR OF LINEN CORD STRINGERS</h6>
@@ -121,12 +131,12 @@
                 <p>Numbers are self-standing and in various orientations, giving a collected yet cohesive feel.</p>
            </div>
            <div class="image">
-                <img src="/weddingRentals/vmpictures/vm5.jfif" class="img-fluid" alt="table with flowers and five numbered mirrors">
+                <img src="img/vmpictures/vm5.jfif" class="img-fluid" alt="table with flowers and five numbered mirrors">
            </div>
         </div>
         <div class="side">
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm6.jfif" class="img-fluid" alt="mirror on table top easel and flowers on a table">
+                <img src="img/vmpictures/vm6.jfif" class="img-fluid" alt="mirror on table top easel and flowers on a table">
             </div>
             <div class="text-right">
                 <h6>NO PHOTOGRAPHY PLEASE</h6>
@@ -139,12 +149,12 @@
                 <p>Includes tabletop easel for display.</p>
             </div>
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm7.jfif" class="img-fluid" alt="mirror on table top easel with a guestbook sign on it">
+                <img src="img/vmpictures/vm7.jfif" class="img-fluid" alt="mirror on table top easel with a guestbook sign on it">
             </div>
         </div>
         <div class="side">
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm8.jfif" class="img-fluid" alt="leather trunk, flowers, and mirror on a mini easel on a table">
+                <img src="img/vmpictures/vm8.jfif" class="img-fluid" alt="leather trunk, flowers, and mirror on a mini easel on a table">
             </div>
             <div class="text-right">
                 <h6>LEATHER CARD TRUNK</h6>
@@ -157,12 +167,12 @@
                 <p>Use this message to give unique guestbook instructions, welcome your guests to cocktail hour, or honor deceased loved ones.</p>
             </div>
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm9.jfif" class="img-fluid" alt="typrewriter and flowers on a table">
+                <img src="img/vmpictures/vm9.jfif" class="img-fluid" alt="typrewriter and flowers on a table">
             </div>
         </div>
         <div class="side">
             <div class="image">
-                <img src="/weddingRentals/vmpictures/vm10.jfif" class="img-fluid" alt="mirror with message and flowers on a table">
+                <img src="img/vmpictures/vm10.jfif" class="img-fluid" alt="mirror with message and flowers on a table">
             </div>
             <div class="text-right">
                 <h6>TAKE ONE</h6>
@@ -185,10 +195,10 @@
         </center>
         <div class="row justify-content-around">
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_smallCustom1.jfif" class="img-fluid" alt="mirror on mini easel and flowers on a table">
+                <img src="img/vmpictures/vm_smallCustom1.jfif" class="img-fluid" alt="mirror on mini easel and flowers on a table">
             </div>
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_smallCustom2.jfif" class="img-fluid" alt="round mirror on easel and flowers on a table">
+                <img src="img/vmpictures/vm_smallCustom2.jfif" class="img-fluid" alt="round mirror on easel and flowers on a table">
             </div>
         </div>
     <hr>
@@ -205,10 +215,10 @@
         </center>
         <div class="row justify-content-around">
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_smallCustom3.jfif" class="img-fluid" alt="medium square mirror on an easel">
+                <img src="img/vmpictures/vm_smallCustom3.jfif" class="img-fluid" alt="medium square mirror on an easel">
             </div>
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_smallCustom4.jfif" class="img-fluid" alt="medium round mirror on an easel">
+                <img src="img/vmpictures/vm_smallCustom4.jfif" class="img-fluid" alt="medium round mirror on an easel">
             </div>
         </div>
     </section>
@@ -224,13 +234,13 @@
         </center> 
         <div class="row justify-content-around">
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_LCustom1.jfif" class="img-fluid" alt="curvy ornate mirror on an easel">
+                <img src="img/vmpictures/vm_LCustom1.jfif" class="img-fluid" alt="curvy ornate mirror on an easel">
             </div>
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_LCustom2.jpg" class="img-fluid" alt="rectangular mirror on an easel">
+                <img src="img/vmpictures/vm_LCustom2.jpg" class="img-fluid" alt="rectangular mirror on an easel">
             </div>
             <div class="col-4">
-                <img src="/weddingRentals/vmpictures/vm_LCustom3.jpeg" class="img-fluid" alt="rectangular mirror on an easel">
+                <img src="img/vmpictures/vm_LCustom3.jpeg" class="img-fluid" alt="rectangular mirror on an easel">
             </div>
         </div>
         <hr>
@@ -365,7 +375,7 @@
         <button  <button onclick="window.location.href='extras.html';" id="checkAvailabilityButton" type="submit" class="btn">CHECK AVAILABILITY</button></button>
     </div>
 
-    <footer class="extras-footer">
+    <!-- <footer class="extras-footer">
         <center>
           <a class = "footer-style" href="extras.html">Contact Us</a>
           <br><br>
@@ -373,6 +383,11 @@
       ORRVILLE, OHIO</p>
           <a class= "footer-style" href = "mailto: Walnutridgeleathercompany@gmail.com">Walnutridgeleathercompany@gmail.com</a>
         </center>
-      </footer>
+      </footer> -->
 </body>
 </html>
+
+<?php
+//footer
+require('footer.php');
+?>
