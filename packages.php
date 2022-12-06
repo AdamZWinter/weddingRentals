@@ -156,16 +156,12 @@ if($setOption == 'rusticwood'){
 </script>
 
 
-<div class = "relative">
-      <span class="text-style">Sets</span>
-      <span class="text-style"> / </span>
-      <span class="page-select">Packages</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Extras</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Reservation</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Confirmation</span>
+<ul class = "relative">
+      <li class="text-style">Sets</li>
+      <li class="page-select">Packages</li>
+      <li class="text-style">Extras</li>
+      <li class="text-style">Reservation</li>
+      <li class="text-style">Confirmation</li>
   </div>
 
     <div class = "container-fluid">

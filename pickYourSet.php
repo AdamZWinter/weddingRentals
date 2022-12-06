@@ -31,17 +31,14 @@ require('header.php');
 
   <br>
 
-  <div class = "relative">
-      <span class="page-select">Sets</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Packages</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Extras</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Reservation</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Confirmation</span>
+  <ul class = "relative">
+      <li class="page-select">Sets</li>
+      <li class="text-style">Packages</li>
+      <li class="text-style">Extras</li>
+      <li class="text-style">Reservation</li>
+      <li class="text-style">Confirmation</li>
   </div>
+
   <form name="pickYourSetForm" id="pickYourSetForm" action="packages.php" method="get" onsubmit="event.preventDefault();">
   <div class = "container-fluid">
     <div class = "row">      

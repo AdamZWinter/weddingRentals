@@ -1,5 +1,20 @@
 <?php
+//saving all contact information
+//   if(!empty($_POST)){
+//     setcookie('fname', $_POST['fname'], time()+3600);
+//      setcookie('lname', $_POST['lname'], time()+3600);
+//     setcookie('phone', $_POST['phone'], time()+3600);
+//     setcookie('email', $_POST['email'], time()+3600);
 
+//     $cookieRedirect = '<script>
+//     window.location.href="vardump.php";
+//     </script>';
+
+//     echo $cookieRedirect;
+
+//   }else{
+//     echo "<p>first name is: </p>".$_COOKIE['fname'];
+//   }
 //vardump.php
 require('header.php');
 
@@ -168,19 +183,15 @@ $db->query($query);
 
 ?>
 
-<div class = "relative">
-      <span class="text-style">Sets</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Packages</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Extras</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Reservation</span>
-      <span class="text-style"> / </span>
-      <span class="page-select">Confirmation</span>
+<ul class = "relative">
+      <li class="text-style">Sets</li>
+      <li class="text-style">Packages</li>
+      <li class="text-style">Extras</li>
+      <li class="text-style">Reservation</li>
+      <li class="page-select">Confirmation</li>
   </div>
 
-<h1 class="text-center">Thank you for choosing Walnut Ridge</h1><br>
+<h1 class="text-center">Thank you for choosing Walnut Ridge, <?php echo $fname?></h1><br>
 <p class="text-center">The Walnut Ridge Wedding Rental Team will be confirming your order soon</p>
 <p class="text-center">A copy of the information below will be emailed to you</p><br><br>
 

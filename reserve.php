@@ -139,16 +139,12 @@ $packageCode = 0;
   document.getElementById("headerImage").style.height = "300px";
 </script>
 
-<div class = "relative">
-      <span class="text-style">Sets</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Packages</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Extras</span>
-      <span class="text-style"> / </span>
-      <span class="page-select">Reservation</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Confirmation</span>
+<ul class = "relative">
+      <li class="text-style">Sets</li>
+      <li class="text-style">Packages</li>
+      <li class="text-style">Extras</li>
+      <li class="page-select">Reservation</li>
+      <li class="text-style">Confirmation</li>
   </div>
 
     <div class = "container-fluid ">
@@ -168,7 +164,7 @@ $packageCode = 0;
                     
                       foreach ($extrasObj->getSelectedExtrasArrayLang() as $extra){
                           echo '<br>';
-                          echo '- ' .$extra ;
+                          echo '- ' . $extra;
 
                       }
 

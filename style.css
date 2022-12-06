@@ -715,14 +715,22 @@ div.col-sm-6 {
 }
 
 /*   Breadcrumbs styles   */
-.relative{
+ul.relative{
   position: relative;
-  left: 20px;
+  left: 0px;
   margin-bottom: 50px;
+  list-style: none;
 }
 
-span{
+ul.relative li{
   display: inline;
+  padding-bottom: 20px;;
+}
+
+ul.relative li+li:before{
+  padding: 2px;
+  color: #d5b6ae;
+  content: "/\00a0";
 }
 
 .text-style{

@@ -346,16 +346,12 @@ $noUpgrade = '';
 ?>
 
 
-<div class = "relative">
-      <span class="text-style">Sets</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Packages</span>
-      <span class="text-style"> / </span>
-      <span class="page-select">Extras</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Reservation</span>
-      <span class="text-style"> / </span>
-      <span class="text-style">Confirmation</span>
+<ul class = "relative">
+      <li class="text-style">Sets</li>
+      <li class="text-style">Packages</li>
+      <li class="page-select">Extras</li>
+      <li class="text-style">Reservation</li>
+      <li class="text-style">Confirmation</li>
   </div>
 
 
@@ -422,30 +418,30 @@ $noUpgrade = '';
                         <div class = "row">      
                           <div class = "col-4">
                               <img id="option0" class= "fit-img-extras rounded-circle float-end" src= "img/extras/hexArbor.jpg" alt= "select Hex Arbor" onclick="setChecked(0)">
-                              <h5 class="under-end text-end">Hex Arbor</h5>
+                              <h5 class="under-end text-end">Hex Arbor - $350</h5>
                           </div>
                           <div class = "col-4 text-center">
                             <img id="option1" class= "fit-img-extras rounded-circle mx-auto" src= "img/extras/vintageSofa.jpg" alt= "select Vintage Sofa" onclick="setChecked(1)">
-                            <h5 class="under-start">Vintage Sofa</h5>
+                            <h5 class="under-start">Vintage Sofa - $99</h5>
                           </div>
                           <div class = "col-4">
                             <img id="option2" class= "fit-img-extras rounded-circle float-start" src= "img/extras/jugs.jpg" alt= "select Antique Gallon Jugs" onclick="setChecked(2)">
-                            <h5 class="under-start text-start">Antique Gallon Jugs</h5>
+                            <h5 class="under-start text-start">Antique Gallon Jugs - $4</h5>
                           </div>
                         </div><!--end of row--> 
 
                         <div class = "row">      
                           <div class = "col-4">
                               <img id="option3" class= "fit-img-extras rounded-circle float-end" src= "img/extras/LXwineJugs.jpg" alt= "select XL Wing Jugs" onclick="setChecked(3)">
-                              <h5 class="under-end text-end">XL Wine Jugs</h5>
+                              <h5 class="under-end text-end">XL Wine Jugs - $20</h5>
                           </div>
                           <div class = "col-4 text-center">
-                            <img id="option4" class= "fit-img-extras rounded-circle mx-auto" src= "img/extras/clearJars.jpg" alt= "select Clear Antique Bal Jars" onclick="setChecked(4)">
-                            <h5 class="under-start">Clear Antique Ball Jars</h5>
+                            <img id="option4" class= "fit-img-extras rounded-circle mx-auto" src= "img/extras/clearJars.jpg" alt= "select Clear Antique Ball Jars" onclick="setChecked(4)">
+                            <h5 class="under-start">Clear Antique Ball Jars - $30</h5>
                           </div>
                           <div class = "col-4">
                             <img id="option5" class= "fit-img-extras rounded-circle float-start" src= "img/extras/blueJars.jpg" alt= "select Blue Antique Ball Jars" onclick="setChecked(5)">
-                            <h5 class="under-start text-start">Blue Antique Ball Jars</h5>
+                            <h5 class="under-start text-start">Blue Antique Ball Jars - $30</h5>
                           </div>
                         </div><!--end of row--> 
 
