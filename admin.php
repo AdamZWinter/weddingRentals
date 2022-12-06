@@ -77,14 +77,16 @@ if( !isset($_POST['password']) && !isset($_SESSION['password'])  ){
 
 //SORT CODE START
 //prevents SQL injection by using array for col names
-$columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email', 'status');
+$columns = array('dateHuman', 'signSetLang', 'fname', 'lname', 'phone', 'email', 'status', 'altFirstName', 'altLastName', 'altEmail', 'altPhone');
 //Determins which column we sort by
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
-if($resultSort = $db->query('SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`, `reservations`.`status`
+if($resultSort = $db->query('SELECT `reservations`.`dateUnix`, `reservations`.`dateHuman`, `reservations`.`signSetLang`, `customers`.`fname`, `customers`.`lname`, `customers`.`phone`, `customers`.`email`, `reservations`.`status`,
+`extras`.`extrasJSON`, `customers`.`altEmail`, `customers`.`altFirstName`, `customers`.`altLastName`, `customers`.`altPhone`
 FROM `reservations` 
 LEFT JOIN `customers` ON `reservations`.`customerID` = `customers`.`email`
+LEFT JOIN `extras` ON `extras`.`reservationID` = `reservations`.`reservationID`
 WHERE 1 = 1
 ORDER BY ' . $column . ' ' . $sort_order)){
     //uses font awesome to get up and down icons
@@ -160,6 +162,11 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                 <th><a class ="link" href="admin.php?column=signSetLang&order=<?php echo $asc_or_desc; ?>">Set<i class="fas fa-sort<?php echo $column == 'signSetLang' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                 <th><a class ="link" href="admin.php?column=phone&order=<?php echo $asc_or_desc; ?>">Phone<i class="fas fa-sort<?php echo $column == 'phone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                 <th><a class ="link" href="admin.php?column=email&order=<?php echo $asc_or_desc; ?>">Email<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=altFirstName&order=<?php echo $asc_or_desc; ?>">Alternate First Name<i class="fas fa-sort<?php echo $column == 'altFirstName' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=altLastName&order=<?php echo $asc_or_desc; ?>">Alternate Last Name<i class="fas fa-sort<?php echo $column == 'altLastName' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=altPhone&order=<?php echo $asc_or_desc; ?>">Alternate Phone<i class="fas fa-sort<?php echo $column == 'altPhone' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a class ="link" href="admin.php?column=altEmail&order=<?php echo $asc_or_desc; ?>">Alternate Email<i class="fas fa-sort<?php echo $column == 'altEmail' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                <th><a  class = "link">Extras</a></th>
                 <th><a class ="link" href="admin.php?column=status&order=<?php echo $asc_or_desc; ?>">Status<i class="fas fa-sort<?php echo $column == 'status' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                 <th><a  class = "link">Change Status</a></th>
                     <!-- Add other columns -->
@@ -172,6 +179,21 @@ ORDER BY ' . $column . ' ' . $sort_order)){
                     <td<?php echo $column == 'signSetLang' ? $add_class : ''; ?>><?php echo $row['signSetLang']; ?></td>
                     <td<?php echo $column == 'phone' ? $add_class : ''; ?>><?php echo $row['phone']; ?></td>
                     <td<?php echo $column == 'email' ? $add_class : ''; ?>><?php echo $row['email']; ?></td>
+                    <td<?php echo $column == 'altFirstName' ? $add_class : ''; ?>><?php echo $row['altFirstName']; ?></td>
+                    <td<?php echo $column == 'altLastName' ? $add_class : ''; ?>><?php echo $row['altLastName']; ?></td>
+                    <td<?php echo $column == 'altPhone' ? $add_class : ''; ?>><?php echo $row['altPhone']; ?></td>
+                    <td<?php echo $column == 'altEmail' ? $add_class : ''; ?>><?php echo $row['altEmail']; ?></td>
+                    <td<?php echo $column == 'extrasJSON' ? $add_class : ''; ?>><?php
+                    $data = json_decode($row['extrasJSON']);
+                    echo "<ul>";
+                    if(count($data) > 0){
+                        foreach($data as $extra){
+                            echo "<li>$extra</li>";
+                        }
+                    }
+                    echo "</ul>";
+                    
+                    ?></td>
                     <td<?php echo $column == 'status' ? $add_class : ''; ?>><?php echo $row['status']; ?></td>
                     <td>
                         
